@@ -25,99 +25,10 @@
 
 NSString *const YAJLErrorDomain = @"YAJL";
 
-#define YAJLDebug(...) NSLog(__VA_ARGS__)
-//#define YAJLDebug(...) do { } while(0)
+//#define YAJLDebug(...) NSLog(__VA_ARGS__)
+#define YAJLDebug(...) do { } while(0)
 
 @implementation YAJLDecoder
-
-- (id)init {
-	if ((self = [super init])) {
-		stack_ = [[NSMutableArray alloc] init];
-		keyStack_ = [[NSMutableArray alloc] init];
-	}
-	return self;
-}
-
-- (void)dealloc {
-	[stack_ release];
-	[keyStack_ release];
-	[result_ release];
-	[super dealloc];
-}
-
-- (void)_add:(id)value {
-	switch(currentType_) {
-		case YAJLDecoderCurrentTypeArray:
-			[array_ addObject:value];
-			break;
-		case YAJLDecoderCurrentTypeDict:
-			NSParameterAssert(key_);
-			[dict_ setObject:value forKey:key_];
-			[self _popKey];
-			break;
-	}	
-}
-
-- (void)_mapKey:(NSString *)key {
-	key_ = key;
-	[keyStack_ addObject:key_]; // Push
-}
-
-- (void)_popKey {
-	key_ = nil;
-	[keyStack_ removeLastObject]; // Pop	
-	if ([keyStack_ count] > 0) 
-		key_ = [keyStack_ objectAtIndex:[keyStack_ count]-1];	
-}
-
-- (void)_startDictionary {
-	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-	if (!result_) result_ = [dict retain];
-	[stack_ addObject:dict]; // Push
-	[dict release];
-	dict_ = dict;
-	currentType_ = YAJLDecoderCurrentTypeDict;	
-}
-
-- (void)_endDictionary {
-	id value = [[stack_ objectAtIndex:[stack_ count]-1] retain];
-	[self _pop];
-	[self _add:value];
-	[value release];
-}
-
-- (void)_startArray {	
-	NSMutableArray *array = [[NSMutableArray alloc] init];
-	if (!result_) result_ = [array retain];
-	[stack_ addObject:array]; // Push
-	[array release];
-	array_ = array;
-	currentType_ = YAJLDecoderCurrentTypeArray;
-}
-
-- (void)_endArray {
-	id value = [[stack_ objectAtIndex:[stack_ count]-1] retain];
-	[self _pop];	
-	[self _add:value];
-	[value release];
-}
-
-- (void)_pop {
-	[stack_ removeLastObject];
-	array_ = nil;
-	dict_ = nil;
-	currentType_ = YAJLDecoderCurrentTypeNone;
-
-	id value = nil;
-	if ([stack_ count] > 0) value = [stack_ objectAtIndex:[stack_ count]-1];
-	if ([value isKindOfClass:[NSArray class]]) {		
-		array_ = (NSMutableArray *)value;
-		currentType_ = YAJLDecoderCurrentTypeArray;
-	} else if ([value isKindOfClass:[NSDictionary class]]) {		
-		dict_ = (NSMutableDictionary *)value;
-		currentType_ = YAJLDecoderCurrentTypeDict;
-	}
-}
 
 #pragma mark YAJL Callbacks
 
@@ -198,19 +109,121 @@ yajl_start_array,
 yajl_end_array
 };
 
-- (id)parse:(NSData *)data error:(NSError **)error {
-	
-	yajl_parser_config cfg = {
-		0, // allowComments: if nonzero, javascript style comments will be allowed in the input (both /* */ and //)
-		0  // checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
-	};
-	handle_ = yajl_alloc(&callbacks, &cfg, self);
-	if (!handle_) {
-		NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Unable to allocate YAJL handle" forKey:NSLocalizedDescriptionKey];
-		if (*error) *error = [NSError errorWithDomain:YAJLErrorDomain code:-1 userInfo:userInfo];
-		return nil;
+#pragma mark -
+
+- (id)initWithError:(NSError **)error {
+	if ((self = [super init])) {
+		yajl_parser_config cfg = {
+			0, // allowComments: if nonzero, javascript style comments will be allowed in the input (both /* */ and //)
+			0  // checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
+		};
+		handle_ = yajl_alloc(&callbacks, &cfg, self);
+		if (!handle_) {
+			NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Unable to allocate YAJL handle" forKey:NSLocalizedDescriptionKey];
+			if (*error) *error = [NSError errorWithDomain:YAJLErrorDomain code:-1 userInfo:userInfo];
+			return nil;
+		}		
 	}
-	
+	return self;
+}
+
+- (void)dealloc {
+	yajl_free(handle_);
+	[self reset];
+	[super dealloc];
+}
+
+- (void)setup {
+	stack_ = [[NSMutableArray alloc] init];
+	keyStack_ = [[NSMutableArray alloc] init];
+}
+
+- (void)reset {
+	dict_ = nil;
+	array_ = nil;
+	key_ = nil;
+	[stack_ release];
+	stack_ = nil;
+	[keyStack_ release];
+	keyStack_ = nil;
+}
+
+- (void)_add:(id)value {
+	switch(currentType_) {
+		case YAJLDecoderCurrentTypeArray:
+			[array_ addObject:value];
+			break;
+		case YAJLDecoderCurrentTypeDict:
+			NSParameterAssert(key_);
+			[dict_ setObject:value forKey:key_];
+			[self _popKey];
+			break;
+	}	
+}
+
+- (void)_mapKey:(NSString *)key {
+	key_ = key;
+	[keyStack_ addObject:key_]; // Push
+}
+
+- (void)_popKey {
+	key_ = nil;
+	[keyStack_ removeLastObject]; // Pop	
+	if ([keyStack_ count] > 0) 
+		key_ = [keyStack_ objectAtIndex:[keyStack_ count]-1];	
+}
+
+- (void)_startDictionary {
+	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+	if (!result_) result_ = [dict retain];
+	[stack_ addObject:dict]; // Push
+	[dict release];
+	dict_ = dict;
+	currentType_ = YAJLDecoderCurrentTypeDict;	
+}
+
+- (void)_endDictionary {
+	id value = [[stack_ objectAtIndex:[stack_ count]-1] retain];
+	[self _pop];
+	[self _add:value];
+	[value release];
+}
+
+- (void)_startArray {	
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	if (!result_) result_ = [array retain];
+	[stack_ addObject:array]; // Push
+	[array release];
+	array_ = array;
+	currentType_ = YAJLDecoderCurrentTypeArray;
+}
+
+- (void)_endArray {
+	id value = [[stack_ objectAtIndex:[stack_ count]-1] retain];
+	[self _pop];	
+	[self _add:value];
+	[value release];
+}
+
+- (void)_pop {
+	[stack_ removeLastObject];
+	array_ = nil;
+	dict_ = nil;
+	currentType_ = YAJLDecoderCurrentTypeNone;
+
+	id value = nil;
+	if ([stack_ count] > 0) value = [stack_ objectAtIndex:[stack_ count]-1];
+	if ([value isKindOfClass:[NSArray class]]) {		
+		array_ = (NSMutableArray *)value;
+		currentType_ = YAJLDecoderCurrentTypeArray;
+	} else if ([value isKindOfClass:[NSDictionary class]]) {		
+		dict_ = (NSMutableDictionary *)value;
+		currentType_ = YAJLDecoderCurrentTypeDict;
+	}
+}
+
+- (id)parse:(NSData *)data error:(NSError **)error {
+	[self setup];	
 	yajl_status status = yajl_parse(handle_, [data bytes], [data length]);
 	if (status != yajl_status_insufficient_data && status != yajl_status_ok) {
 		unsigned char *errorMessage = yajl_get_error(handle_, 0, [data bytes], [data length]);
@@ -218,10 +231,11 @@ yajl_end_array
 		if (*error) *error = [NSError errorWithDomain:YAJLErrorDomain code:status userInfo:userInfo];
 		yajl_free_error(errorMessage);
 	}
+	[self reset];
 	
-	yajl_free(handle_);
-	
-	return result_;
+	id result = [result_ autorelease];
+	result_ = nil;
+	return result;
 }	
 
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00DC5FEA0F5F853000F81751 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC5FE50F5F853000F81751 /* NSObject+SBJSON.m */; };
+		00DC5FEB0F5F853000F81751 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC5FE70F5F853000F81751 /* NSString+SBJSON.m */; };
+		00DC5FEC0F5F853000F81751 /* SBJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC5FE90F5F853000F81751 /* SBJSONScanner.m */; };
+		00DC5FEE0F5F856700F81751 /* SBJSONTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC5FED0F5F856700F81751 /* SBJSONTest.m */; };
 		00E5DDFF0F5B6E5400C11F1D /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E5DDFE0F5B6E5400C11F1D /* GHUnit.framework */; };
 		00E5DE020F5B6E6100C11F1D /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAJL.framework */; };
 		00E5DE0A0F5B6EAD00C11F1D /* DecoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E5DE090F5B6EAD00C11F1D /* DecoderTest.m */; };
@@ -44,6 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00DC5FE30F5F853000F81751 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		00DC5FE40F5F853000F81751 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		00DC5FE50F5F853000F81751 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		00DC5FE60F5F853000F81751 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		00DC5FE70F5F853000F81751 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		00DC5FE80F5F853000F81751 /* SBJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSONScanner.h; sourceTree = "<group>"; };
+		00DC5FE90F5F853000F81751 /* SBJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSONScanner.m; sourceTree = "<group>"; };
+		00DC5FED0F5F856700F81751 /* SBJSONTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSONTest.m; sourceTree = "<group>"; };
 		00E5DDF80F5B6E3E00C11F1D /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E5DDFA0F5B6E3E00C11F1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		00E5DDFE0F5B6E5400C11F1D /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
@@ -98,11 +110,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00DC5FE20F5F853000F81751 /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				00DC5FE30F5F853000F81751 /* JSON.h */,
+				00DC5FE40F5F853000F81751 /* NSObject+SBJSON.h */,
+				00DC5FE50F5F853000F81751 /* NSObject+SBJSON.m */,
+				00DC5FE60F5F853000F81751 /* NSString+SBJSON.h */,
+				00DC5FE70F5F853000F81751 /* NSString+SBJSON.m */,
+				00DC5FE80F5F853000F81751 /* SBJSONScanner.h */,
+				00DC5FE90F5F853000F81751 /* SBJSONScanner.m */,
+			);
+			path = SBJSON;
+			sourceTree = "<group>";
+		};
 		00E5DE080F5B6EA200C11F1D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				00E5DE090F5B6EAD00C11F1D /* DecoderTest.m */,
 				00E5DE0B0F5B6F6A00C11F1D /* example.json */,
+				00DC5FED0F5F856700F81751 /* SBJSONTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -153,6 +180,7 @@
 			children = (
 				00E5E0050F5B86D400C11F1D /* yajl_src */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
+				00DC5FE20F5F853000F81751 /* SBJSON */,
 				00E5DE080F5B6EA200C11F1D /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
@@ -322,6 +350,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E5DE0A0F5B6EAD00C11F1D /* DecoderTest.m in Sources */,
+				00DC5FEA0F5F853000F81751 /* NSObject+SBJSON.m in Sources */,
+				00DC5FEB0F5F853000F81751 /* NSString+SBJSON.m in Sources */,
+				00DC5FEC0F5F853000F81751 /* SBJSONScanner.m in Sources */,
+				00DC5FEE0F5F856700F81751 /* SBJSONTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

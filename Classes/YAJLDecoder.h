@@ -32,6 +32,10 @@ extern NSString *const YAJLErrorDomain;
 	yajl_handle handle_;	
 }
 
+- (id)initWithError:(NSError **)error;
+
 - (id)parse:(NSData *)data error:(NSError **)error;
+
+- (void)reset;
 
 @end
