@@ -358,7 +358,7 @@ yajl_lex_number(yajl_lexer lexer, const unsigned char * jsonText,
 
     unsigned char c;
 
-    yajl_tok tok = yajl_tok_integer;
+    yajl_tok tok = yajl_tok_double;//tok = yajl_tok_integer;
 
     RETURN_IF_EOF;    
     c = readChar(lexer, jsonText, offset);

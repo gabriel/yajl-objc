@@ -3,7 +3,7 @@
 //  YAJL
 //
 //  Created by Gabriel Handford on 3/4/09.
-//  Copyright 2009 Yelp. All rights reserved.
+//  Copyright 2009. All rights reserved.
 //
 
 #import <GHUnit/GHUnit.h>
@@ -31,11 +31,11 @@
 	NSInteger count = 100000;
 	for(NSInteger i = 0; i < count; i++) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		[testString_ JSONValue];
-		[pool release];
+		id value = [testString_ JSONValue];		
+		if (!value) GHFail(@"No result");
+		[pool release];		
 	}
-	NSTimeInterval interval = [date timeIntervalSinceNow];
-	NSLog(@"Took %0.2f", interval);
+	GHTestLog(@"Took %0.4f", -[date timeIntervalSinceNow]);
 	
 }
 

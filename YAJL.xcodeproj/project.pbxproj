@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0024E5200F6341C9007E5C51 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 0024E51E0F6341C9007E5C51 /* example.json */; };
+		0024E5210F6341C9007E5C51 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 0024E51F0F6341C9007E5C51 /* sample.json */; };
 		00DC5FEA0F5F853000F81751 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC5FE50F5F853000F81751 /* NSObject+SBJSON.m */; };
 		00DC5FEB0F5F853000F81751 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC5FE70F5F853000F81751 /* NSString+SBJSON.m */; };
 		00DC5FEC0F5F853000F81751 /* SBJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC5FE90F5F853000F81751 /* SBJSONScanner.m */; };
 		00DC5FEE0F5F856700F81751 /* SBJSONTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC5FED0F5F856700F81751 /* SBJSONTest.m */; };
 		00E5DDFF0F5B6E5400C11F1D /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E5DDFE0F5B6E5400C11F1D /* GHUnit.framework */; };
 		00E5DE020F5B6E6100C11F1D /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAJL.framework */; };
-		00E5DE0A0F5B6EAD00C11F1D /* DecoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E5DE090F5B6EAD00C11F1D /* DecoderTest.m */; };
-		00E5DE510F5B70F800C11F1D /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 00E5DE0B0F5B6F6A00C11F1D /* example.json */; };
+		00E5DE0A0F5B6EAD00C11F1D /* YAJLDecoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E5DE090F5B6EAD00C11F1D /* YAJLDecoderTest.m */; };
 		00E5DFF10F5B855900C11F1D /* YAJLDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E5DFEF0F5B855900C11F1D /* YAJLDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00E5DFF20F5B855900C11F1D /* YAJLDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E5DFF00F5B855900C11F1D /* YAJLDecoder.m */; };
 		00E5E0170F5B86D400C11F1D /* yajl_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E5E0070F5B86D400C11F1D /* yajl_common.h */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0024E51E0F6341C9007E5C51 /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.json; sourceTree = "<group>"; };
+		0024E51F0F6341C9007E5C51 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.json; sourceTree = "<group>"; };
 		00DC5FE30F5F853000F81751 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		00DC5FE40F5F853000F81751 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		00DC5FE50F5F853000F81751 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -59,8 +62,7 @@
 		00E5DDF80F5B6E3E00C11F1D /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E5DDFA0F5B6E3E00C11F1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		00E5DDFE0F5B6E5400C11F1D /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
-		00E5DE090F5B6EAD00C11F1D /* DecoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecoderTest.m; sourceTree = "<group>"; };
-		00E5DE0B0F5B6F6A00C11F1D /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.json; sourceTree = "<group>"; };
+		00E5DE090F5B6EAD00C11F1D /* YAJLDecoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDecoderTest.m; sourceTree = "<group>"; };
 		00E5DFEF0F5B855900C11F1D /* YAJLDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLDecoder.h; sourceTree = "<group>"; };
 		00E5DFF00F5B855900C11F1D /* YAJLDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDecoder.m; sourceTree = "<group>"; };
 		00E5E0070F5B86D400C11F1D /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_common.h; sourceTree = "<group>"; };
@@ -110,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0024E51D0F6341C9007E5C51 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				0024E51E0F6341C9007E5C51 /* example.json */,
+				0024E51F0F6341C9007E5C51 /* sample.json */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
 		00DC5FE20F5F853000F81751 /* SBJSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +138,8 @@
 		00E5DE080F5B6EA200C11F1D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				00E5DE090F5B6EAD00C11F1D /* DecoderTest.m */,
-				00E5DE0B0F5B6F6A00C11F1D /* example.json */,
+				0024E51D0F6341C9007E5C51 /* Samples */,
+				00E5DE090F5B6EAD00C11F1D /* YAJLDecoderTest.m */,
 				00DC5FED0F5F856700F81751 /* SBJSONTest.m */,
 			);
 			path = Tests;
@@ -327,7 +338,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E5DE510F5B70F800C11F1D /* example.json in Resources */,
+				0024E5200F6341C9007E5C51 /* example.json in Resources */,
+				0024E5210F6341C9007E5C51 /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E5DE0A0F5B6EAD00C11F1D /* DecoderTest.m in Sources */,
+				00E5DE0A0F5B6EAD00C11F1D /* YAJLDecoderTest.m in Sources */,
 				00DC5FEA0F5F853000F81751 /* NSObject+SBJSON.m in Sources */,
 				00DC5FEB0F5F853000F81751 /* NSString+SBJSON.m in Sources */,
 				00DC5FEC0F5F853000F81751 /* SBJSONScanner.m in Sources */,

@@ -10,12 +10,12 @@
 
 #import <YAJL/YAJLDecoder.h>
 
-@interface DecoderTest : GHTestCase { 
+@interface YAJLDecoderTest : GHTestCase { 
 	NSData *testData_;
 }
 @end
 
-@implementation DecoderTest
+@implementation YAJLDecoderTest
 
 - (void)setUp {
 	NSString *examplePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"json"];
@@ -28,19 +28,18 @@
 
 - (void)testDecode {	
 	NSError *error = nil;
-	YAJLDecoder *decoder = [[YAJLDecoder alloc] initWithError:&error];
-	if (error) GHFail(@"error=%@", error);
+	YAJLDecoder *decoder = [[YAJLDecoder alloc] init];
 	NSDate *date = [NSDate date];
 	NSInteger count = 100000;
 	for(NSInteger i = 0; i < count; i++) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		[decoder parse:testData_ error:&error];
-		if (error) GHFail(@"error=%@", error);
+		id value = [decoder parse:testData_ error:&error];
+		if (error) GHFail(@"Error: %@", error);
+		if (!value) GHFail(@"No result");
 		[pool release];
 	}
-	NSTimeInterval interval = [date timeIntervalSinceNow];
-	NSLog(@"Took %0.2f", interval);
 	[decoder release];
+	GHTestLog(@"Took %0.4f", -[date timeIntervalSinceNow]);
 }
 
 @end
