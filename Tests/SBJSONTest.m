@@ -26,7 +26,7 @@
 	[testString_ release];
 }
 
-- (void)testDecode {
+- (void)_testDecode {
 	NSDate *date = [NSDate date];
 	NSInteger count = 100000;
 	for(NSInteger i = 0; i < count; i++) {
