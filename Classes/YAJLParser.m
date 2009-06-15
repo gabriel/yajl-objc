@@ -67,6 +67,7 @@ NSString *const YAJLErrorDomain = @"YAJLErrorDomain";
 
 - (void)dealloc {
 	[self _reset];
+	[_parserError release];
 	[_data release];
 	[super dealloc];
 }
@@ -144,9 +145,11 @@ yajl_end_array
 #pragma mark -
 
 - (void)_setup:(NSError **)error {
+	self.parserError = nil;
+	
 	yajl_parser_config cfg = {
-		((_parserOptions | YAJLParserOptionsAllowComments) ? 1 : 0), // allowComments: if nonzero, javascript style comments will be allowed in the input (both /* */ and //)
-		((_parserOptions | YAJLParserOptionsCheckUTF8) ? 1 : 0)  // checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
+		((_parserOptions & YAJLParserOptionsAllowComments == YAJLParserOptionsAllowComments) ? 1 : 0), // allowComments: if nonzero, javascript style comments will be allowed in the input (both /* */ and //)
+		((_parserOptions & YAJLParserOptionsCheckUTF8 == YAJLParserOptionsCheckUTF8) ? 1 : 0)  // checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
 	};
 
 	handle_ = yajl_alloc(&callbacks, &cfg, NULL, self);
@@ -164,10 +167,7 @@ yajl_end_array
 	if (handle_ != NULL) {
 		yajl_free(handle_);
 		handle_ = NULL;
-	}
-	
-	[_parserError release];
-	_parserError = nil;
+	}	
 }
 
 - (void)_add:(id)value {
@@ -195,6 +195,7 @@ yajl_end_array
 }
 
 - (BOOL)parse {
+	YAJLDebug(@"Parsing");
 	NSError *error = nil;
 	[self _setup:&error];
 	if (error) {
@@ -209,8 +210,7 @@ yajl_end_array
 		unsigned char *errorMessage = yajl_get_error(handle_, 0, [_data bytes], [_data length]);
 		NSString *errorString = [NSString stringWithUTF8String:(char *)errorMessage];
 		NSDictionary *userInfo = [NSDictionary dictionaryWithObject:errorString forKey:NSLocalizedDescriptionKey];
-		[_parserError release];
-		_parserError = [[NSError errorWithDomain:YAJLErrorDomain code:status userInfo:userInfo] retain];
+		self.parserError = [NSError errorWithDomain:YAJLErrorDomain code:status userInfo:userInfo];
 		YAJLDebug(@"Error: %@", *_parserError);
 		yajl_free_error(handle_, errorMessage);
 		[self _reset];

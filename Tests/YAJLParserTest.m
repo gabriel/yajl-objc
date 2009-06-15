@@ -11,7 +11,7 @@
 
 #import <YAJL/YAJLParser.h>
 
-@interface YAJLParserTest : GHTestCase <YAJLParserDelegate> { 
+@interface YAJLParserTest : GHTestCase { 
 	NSData *testData_;
 }
 @end
@@ -19,18 +19,17 @@
 @implementation YAJLParserTest
 
 - (void)setUp {
-	NSString *examplePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"json"];
-	testData_ = [[NSData dataWithContentsOfFile:examplePath options:NSUncachedRead error:nil] retain];
 }
 
 - (void)tearDown {
-	[testData_ release];
+	
 }
 
 - (void)test {	
+	NSString *examplePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"json"];
+	NSData *testData = [[NSData dataWithContentsOfFile:examplePath options:NSUncachedRead error:nil] retain];
 	
 	YAJLParser *parser = [[YAJLParser alloc] initWithData:testData_ parserOptions:0];
-	parser.delegate = self;
 	[parser parse];
 	
 	NSError *error = [parser parserError];
@@ -39,20 +38,65 @@
 		GHFail(@"Error: %@", error);
 	}
 	
-	[parser release];	
+	[parser release];
+	[testData release];
 }
 
-#pragma mark Delegates (YAJLParser)
+- (void)testError {
+	
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"error" ofType:@"json"];
+	NSData *data = [[NSData dataWithContentsOfFile:path options:NSUncachedRead error:nil] retain];
+	
+	YAJLParser *parser = [[YAJLParser alloc] initWithData:data parserOptions:0];
+	BOOL ok = [parser parse];
+	GHAssertFalse(ok, @"Should not have OK status");
+	
+	NSError *error = [parser parserError];
+	if (error) {
+		GHTestLog(@"Parse error:\n%@", error);		
+	} else {
+		GHFail(@"Should have error");
+	}
+	
+	[parser release];
+	[data release];
+}
 
-- (void)parserDidStartDictionary:(YAJLParser *)parser { }
-- (void)parserDidEndDictionary:(YAJLParser *)parser { }
+- (void)testComments {
+	
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"comments" ofType:@"json"];
+	NSData *data = [[NSData dataWithContentsOfFile:path options:NSUncachedRead error:nil] retain];
+	
+	YAJLParser *parser = [[YAJLParser alloc] initWithData:data parserOptions:YAJLParserOptionsAllowComments];
+	[parser parse];
+	
+	NSError *error = [parser parserError];
+	if (error) {
+		GHTestLog(@"Parse error:\n%@", error);		
+		GHFail(@"Error: %@", error);
+	}
+	
+	[parser release];
+	[data release];
+}
 
-- (void)parserDidStartArray:(YAJLParser *)parser { }
-- (void)parserDidEndArray:(YAJLParser *)parser { }
+- (void)testFailOnComments {
+	
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"comments" ofType:@"json"];
+	NSData *data = [[NSData dataWithContentsOfFile:path options:NSUncachedRead error:nil] retain];
+	
+	YAJLParser *parser = [[YAJLParser alloc] initWithData:data parserOptions:0];
+	[parser parse];
+	
+	NSError *error = [parser parserError];
+	if (error) {
+		GHTestLog(@"Parse error:\n%@", error);		
+	} else {
+		GHFail(@"Should have error");
+	}
 
-- (void)parser:(YAJLParser *)parser didMapKey:(NSString *)key { }
-- (void)parser:(YAJLParser *)parser didAdd:(id)value { }
-
-
+	[parser release];
+	[data release];
+}
 
 @end

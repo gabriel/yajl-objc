@@ -1,0 +1,4 @@
+{ 
+  "Test with comments (1)": 1, // Comment
+	"Test with comments (2)": 2 /* Comment */
+}

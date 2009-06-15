@@ -33,7 +33,11 @@
 
 extern NSString *const YAJLErrorDomain;
 
+#ifdef DEBUG
 #define YAJLDebug(...) NSLog(__VA_ARGS__)
+#else
+#define YAJLDebug(...) do {} while(0)
+#endif
 
 
 /*!
