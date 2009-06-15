@@ -11,21 +11,13 @@
 
 #import <YAJL/YAJLParser.h>
 
-@interface YAJLParserTest : GHTestCase { 
-	NSData *testData_;
-}
+@interface YAJLParserTest : GHTestCase {}
 @end
 
 @implementation YAJLParserTest
 
-- (void)setUp {
-}
-
-- (void)tearDown {
-	
-}
-
 - (void)test {	
+	
 	NSString *examplePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"json"];
 	NSData *testData = [[NSData dataWithContentsOfFile:examplePath options:NSUncachedRead error:nil] retain];
 	

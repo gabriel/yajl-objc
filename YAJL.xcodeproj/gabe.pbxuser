@@ -204,9 +204,9 @@
 	};
 	00C4FCDC0FE5F00D003CE908 /* YAJLParser.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1433, 3632}}";
-			sepNavSelRange = "{3858, 10}";
-			sepNavVisRange = "{3451, 770}";
+			sepNavIntBoundsRect = "{{0, 0}, {1433, 3712}}";
+			sepNavSelRange = "{3933, 19}";
+			sepNavVisRange = "{3451, 794}";
 		};
 	};
 	00C4FCE70FE5F619003CE908 /* PBXTextBookmark */ = {
@@ -355,9 +355,9 @@
 	};
 	00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1611, 1568}}";
-			sepNavSelRange = "{883, 0}";
-			sepNavVisRange = "{326, 1949}";
+			sepNavIntBoundsRect = "{{0, 0}, {1131, 1504}}";
+			sepNavSelRange = "{279, 0}";
+			sepNavVisRange = "{0, 956}";
 		};
 	};
 	00C4FD060FE5F74A003CE908 /* PBXTextBookmark */ = {
@@ -425,7 +425,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 32";
 		rLen = 10;
-		rLoc = 568;
+		rLoc = 505;
 		rType = 0;
 		vrLen = 849;
 		vrLoc = 0;
@@ -705,7 +705,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 20";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 260;
 		rType = 0;
 		vrLen = 1052;
 		vrLoc = 24;
@@ -725,7 +725,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 32";
 		rLen = 10;
-		rLoc = 568;
+		rLoc = 505;
 		rType = 0;
 		vrLen = 849;
 		vrLoc = 0;
@@ -775,7 +775,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 19";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 260;
 		rType = 0;
 		vrLen = 940;
 		vrLoc = 0;
@@ -843,7 +843,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 19";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 260;
 		rType = 0;
 		vrLen = 940;
 		vrLoc = 0;
@@ -871,7 +871,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 19";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 260;
 		rType = 0;
 		vrLen = 940;
 		vrLoc = 0;
@@ -961,7 +961,7 @@
 		comments = "warning: 'YAJLParser' may not respond to '-parse'";
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		rLen = 0;
-		rLoc = 32;
+		rLoc = 24;
 		rType = 1;
 	};
 	00C4FD760FE5F8D6003CE908 /* PBXTextBookmark */ = {
@@ -969,7 +969,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 33";
 		rLen = 0;
-		rLoc = 627;
+		rLoc = 564;
 		rType = 0;
 		vrLen = 307;
 		vrLoc = 535;
@@ -979,7 +979,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 19";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 260;
 		rType = 0;
 		vrLen = 845;
 		vrLoc = 0;
@@ -1019,7 +1019,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 19";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 260;
 		rType = 0;
 		vrLen = 845;
 		vrLoc = 0;
@@ -1066,7 +1066,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 33";
 		rLen = 0;
-		rLoc = 627;
+		rLoc = 564;
 		rType = 0;
 		vrLen = 309;
 		vrLoc = 535;
@@ -1126,7 +1126,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 33";
 		rLen = 0;
-		rLoc = 627;
+		rLoc = 564;
 		rType = 0;
 		vrLen = 346;
 		vrLoc = 535;
@@ -1146,7 +1146,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 33";
 		rLen = 0;
-		rLoc = 627;
+		rLoc = 564;
 		rType = 0;
 		vrLen = 346;
 		vrLoc = 535;
@@ -1193,7 +1193,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 33";
 		rLen = 0;
-		rLoc = 627;
+		rLoc = 564;
 		rType = 0;
 		vrLen = 346;
 		vrLoc = 535;
@@ -1359,7 +1359,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 32";
 		rLen = 0;
-		rLoc = 624;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 272;
@@ -1399,7 +1399,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 19";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 260;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 272;
@@ -1699,7 +1699,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 32";
 		rLen = 0;
-		rLoc = 624;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 272;
@@ -1719,7 +1719,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 30";
 		rLen = 0;
-		rLoc = 339;
+		rLoc = 274;
 		rType = 0;
 		vrLen = 1069;
 		vrLoc = 272;
@@ -1729,7 +1729,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 65";
 		rLen = 0;
-		rLoc = 1358;
+		rLoc = 1295;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 607;
@@ -1739,7 +1739,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 40";
 		rLen = 0;
-		rLoc = 770;
+		rLoc = 707;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 0;
@@ -1787,16 +1787,16 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 18";
 		rLen = 0;
-		rLoc = 251;
+		rLoc = 229;
 		rType = 0;
 		vrLen = 950;
 		vrLoc = 0;
 	};
 	00C4FDF10FE5FFF7003CE908 /* README.md */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1611, 1184}}";
-			sepNavSelRange = "{311, 0}";
-			sepNavVisRange = "{0, 2224}";
+			sepNavIntBoundsRect = "{{0, 0}, {1131, 1168}}";
+			sepNavSelRange = "{89, 29}";
+			sepNavVisRange = "{0, 1416}";
 		};
 	};
 	00C4FDF20FE5FFFD003CE908 /* PBXTextBookmark */ = {
@@ -1804,7 +1804,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 18";
 		rLen = 0;
-		rLoc = 251;
+		rLoc = 229;
 		rType = 0;
 		vrLen = 950;
 		vrLoc = 0;
@@ -1824,7 +1824,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 18";
 		rLen = 0;
-		rLoc = 251;
+		rLoc = 229;
 		rType = 0;
 		vrLen = 950;
 		vrLoc = 0;
@@ -1874,7 +1874,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 22";
 		rLen = 0;
-		rLoc = 300;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 153;
@@ -1914,7 +1914,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 22";
 		rLen = 0;
-		rLoc = 300;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 153;
@@ -3258,7 +3258,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 54";
 		rLen = 0;
-		rLoc = 1229;
+		rLoc = 1166;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 265;
@@ -3308,7 +3308,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 54";
 		rLen = 0;
-		rLoc = 1229;
+		rLoc = 1166;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 265;
@@ -3368,7 +3368,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 43";
 		rLen = 0;
-		rLoc = 814;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1020;
 		vrLoc = 284;
@@ -3388,7 +3388,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 43";
 		rLen = 0;
-		rLoc = 814;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1020;
 		vrLoc = 284;
@@ -3455,7 +3455,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 69";
 		rLen = 13;
-		rLoc = 1628;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 700;
@@ -3495,7 +3495,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 68";
 		rLen = 0;
-		rLoc = 1522;
+		rLoc = 1459;
 		rType = 0;
 		vrLen = 1166;
 		vrLoc = 700;
@@ -3505,7 +3505,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 62";
 		rLen = 0;
-		rLoc = 1355;
+		rLoc = 1292;
 		rType = 0;
 		vrLen = 1166;
 		vrLoc = 700;
@@ -3515,7 +3515,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 30";
 		rLen = 0;
-		rLoc = 487;
+		rLoc = 424;
 		rType = 0;
 		vrLen = 1078;
 		vrLoc = 152;
@@ -3535,7 +3535,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 30";
 		rLen = 0;
-		rLoc = 487;
+		rLoc = 424;
 		rType = 0;
 		vrLen = 1078;
 		vrLoc = 152;
@@ -3615,7 +3615,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 70";
 		rLen = 13;
-		rLoc = 1628;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 1102;
 		vrLoc = 768;
@@ -3655,7 +3655,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 70";
 		rLen = 13;
-		rLoc = 1628;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 1102;
 		vrLoc = 768;
@@ -3685,7 +3685,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 70";
 		rLen = 13;
-		rLoc = 1628;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 1102;
 		vrLoc = 768;
@@ -3712,7 +3712,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 70";
 		rLen = 13;
-		rLoc = 1628;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 1102;
 		vrLoc = 768;
@@ -3752,7 +3752,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 70";
 		rLen = 0;
-		rLoc = 1567;
+		rLoc = 1504;
 		rType = 0;
 		vrLen = 1211;
 		vrLoc = 737;
@@ -3762,7 +3762,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 70";
 		rLen = 13;
-		rLoc = 1628;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 737;
@@ -3792,7 +3792,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 70";
 		rLen = 13;
-		rLoc = 1628;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 737;
@@ -3862,7 +3862,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 70";
 		rLen = 13;
-		rLoc = 1628;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 1170;
 		vrLoc = 700;
@@ -3882,7 +3882,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 97";
 		rLen = 0;
-		rLoc = 2320;
+		rLoc = 2257;
 		rType = 0;
 		vrLen = 1197;
 		vrLoc = 1124;
@@ -3912,7 +3912,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 53";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1112;
 		rType = 0;
 		vrLen = 1197;
 		vrLoc = 1124;
@@ -3932,7 +3932,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 53";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1112;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 1124;
@@ -3942,7 +3942,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 73";
 		rLen = 0;
-		rLoc = 1733;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 1124;
@@ -3952,7 +3952,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 48";
 		rLen = 0;
-		rLoc = 960;
+		rLoc = 897;
 		rType = 0;
 		vrLen = 1949;
 		vrLoc = 326;
@@ -3962,7 +3962,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 47";
 		rLen = 0;
-		rLoc = 883;
+		rLoc = 820;
 		rType = 0;
 		vrLen = 1949;
 		vrLoc = 326;
@@ -3982,7 +3982,7 @@
 		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
 		name = "YAJLParserTest.m: 47";
 		rLen = 0;
-		rLoc = 883;
+		rLoc = 820;
 		rType = 0;
 		vrLen = 1949;
 		vrLoc = 326;
@@ -3995,6 +3995,66 @@
 		rLoc = 311;
 		rType = 0;
 		vrLen = 2224;
+		vrLoc = 0;
+	};
+	00C4FF710FE61E6B003CE908 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00C4FCDC0FE5F00D003CE908 /* YAJLParser.m */;
+		name = "YAJLParser.m: 157";
+		rLen = 19;
+		rLoc = 3933;
+		rType = 0;
+		vrLen = 794;
+		vrLoc = 3451;
+	};
+	00C4FF720FE61E6C003CE908 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00C4FDF10FE5FFF7003CE908 /* README.md */;
+		name = "README.md: 3";
+		rLen = 29;
+		rLoc = 89;
+		rType = 0;
+		vrLen = 2224;
+		vrLoc = 0;
+	};
+	00C4FF750FE6BB09003CE908 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00C4FDF10FE5FFF7003CE908 /* README.md */;
+		name = "README.md: 3";
+		rLen = 29;
+		rLoc = 89;
+		rType = 0;
+		vrLen = 1416;
+		vrLoc = 0;
+	};
+	00C4FF760FE6BB09003CE908 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
+		name = "YAJLParserTest.m: 47";
+		rLen = 0;
+		rLoc = 820;
+		rType = 0;
+		vrLen = 1144;
+		vrLoc = 326;
+	};
+	00C4FF770FE6BB09003CE908 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00C4FDF10FE5FFF7003CE908 /* README.md */;
+		name = "README.md: 3";
+		rLen = 29;
+		rLoc = 89;
+		rType = 0;
+		vrLen = 1416;
+		vrLoc = 0;
+	};
+	00C4FF780FE6BB09003CE908 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00C4FCF90FE5F643003CE908 /* YAJLParserTest.m */;
+		name = "YAJLParserTest.m: 20";
+		rLen = 0;
+		rLoc = 279;
+		rType = 0;
+		vrLen = 956;
 		vrLoc = 0;
 	};
 	00DC5FE50F5F853000F81751 /* NSObject+SBJSON.m */ = {
@@ -4271,7 +4331,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					1433,
+					953,
 					20,
 					48,
 					43,
@@ -4700,6 +4760,12 @@
 			00C4FF6E0FE61693003CE908 /* PBXTextBookmark */ = 00C4FF6E0FE61693003CE908 /* PBXTextBookmark */;
 			00C4FF6F0FE61693003CE908 /* PBXTextBookmark */ = 00C4FF6F0FE61693003CE908 /* PBXTextBookmark */;
 			00C4FF700FE61693003CE908 /* PBXTextBookmark */ = 00C4FF700FE61693003CE908 /* PBXTextBookmark */;
+			00C4FF710FE61E6B003CE908 /* PBXTextBookmark */ = 00C4FF710FE61E6B003CE908 /* PBXTextBookmark */;
+			00C4FF720FE61E6C003CE908 /* PBXTextBookmark */ = 00C4FF720FE61E6C003CE908 /* PBXTextBookmark */;
+			00C4FF750FE6BB09003CE908 /* PBXTextBookmark */ = 00C4FF750FE6BB09003CE908 /* PBXTextBookmark */;
+			00C4FF760FE6BB09003CE908 /* PBXTextBookmark */ = 00C4FF760FE6BB09003CE908 /* PBXTextBookmark */;
+			00C4FF770FE6BB09003CE908 /* PBXTextBookmark */ = 00C4FF770FE6BB09003CE908 /* PBXTextBookmark */;
+			00C4FF780FE6BB09003CE908 /* PBXTextBookmark */ = 00C4FF780FE6BB09003CE908 /* PBXTextBookmark */;
 			00DC60070F5F8BC900F81751 = 00DC60070F5F8BC900F81751 /* PBXTextBookmark */;
 			00DC60080F5F8BC900F81751 = 00DC60080F5F8BC900F81751 /* PBXTextBookmark */;
 			00DC600B0F5F8BC900F81751 = 00DC600B0F5F8BC900F81751 /* PBXTextBookmark */;
