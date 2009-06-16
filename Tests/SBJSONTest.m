@@ -6,7 +6,6 @@
 //  Copyright 2009. All rights reserved.
 //
 
-#import <GHUnit/GHUnit.h>
 #import "NSString+SBJSON.h"
 
 @interface SBJSONTest : GHTestCase { 

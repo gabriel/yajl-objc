@@ -7,10 +7,6 @@
 //
 
 
-#import <GHUnit/GHUnit.h>
-
-#import <YAJL/YAJLParser.h>
-
 @interface YAJLParserTest : GHTestCase {}
 @end
 
@@ -21,7 +17,7 @@
 	NSString *examplePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"json"];
 	NSData *testData = [[NSData dataWithContentsOfFile:examplePath options:NSUncachedRead error:nil] retain];
 	
-	YAJLParser *parser = [[YAJLParser alloc] initWithData:testData_ parserOptions:0];
+	YAJLParser *parser = [[YAJLParser alloc] initWithData:testData parserOptions:0];
 	[parser parse];
 	
 	NSError *error = [parser parserError];

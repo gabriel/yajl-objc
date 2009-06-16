@@ -6,11 +6,6 @@
 //  Copyright 2009. All rights reserved.
 //
 
-#import <GHUnit/GHUnit.h>
-
-#import <YAJL/YAJLDocument.h>
-#import <limits.h>
-
 @interface YAJLDocumentTest : GHTestCase { 
 	NSData *testData_;
 }
