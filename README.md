@@ -12,7 +12,7 @@ YAJL.framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.c
 
 [libYAJLIPhone-0.2.2.zip](https://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.2.zip) *Static Library for iPhone OS 3.0 Simulator & Device*
 
-## Install
+## Install (Mac OS X)
 
 There are two options. You can install it globally in /Library/Frameworks or with a little extra effort embed it with your project.
 
@@ -32,6 +32,9 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 	- Drag `YAJL.framework` into the the build phase
 	- Make sure the copy phase appears before any `Run Script` phases 
 
+## Install (iPhone)
+
+Coming soon!
 
 ## Using (SAX-style)
 
