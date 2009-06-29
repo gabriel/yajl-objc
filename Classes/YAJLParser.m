@@ -105,6 +105,7 @@ int yajl_string(void *ctx, const unsigned char *stringVal, unsigned int stringLe
 int yajl_map_key(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
 	NSString *s = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
 	[(id)ctx _mapKey:s];
+	[s release];
 	return 1;
 }
 

@@ -105,14 +105,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* YAJLIPhone (Device-3.0) */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = "YAJLIPhone (Device-3.0)";
 		};
 		00C405F20FE77A07003CE908 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 00C405CE0FE779BF003CE908 /* YAJLIPhone (Simulator-3.0) */;
+			remoteGlobalIDString = 00C405CE0FE779BF003CE908;
 			remoteInfo = "YAJLIPhone (Simulator-3.0)";
 		};
 /* End PBXContainerItemProxy section */
