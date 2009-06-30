@@ -49,6 +49,7 @@ To use the streaming (or SAX style) parser, use `YAJLParser`.
 		NSLog(@"Error:\n%@", parser.parserError);
 	}
 
+	parser.delegate = nil;
 	[parser release];
 	
 	// Include delegate methods from YAJLParserDelegate
