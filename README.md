@@ -65,23 +65,19 @@ To use the streaming (or SAX style) parser, use `YAJLParser`.
 	
 ### Streaming Example
 
-	NSData *chunk1 = [NSData dataWithContentsOfFile:@"stream1.json"];
-	NSData *chunk2 = [NSData dataWithContentsOfFile:@"stream2.json"];
-
-	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
+	YAJLParser *parser = [[[YAJLParser alloc] initWithParserOptions:0] autorelease];
 	parser.delegate = self;
 
-	YAJLParserStatus status;
-	status = [parser parse:chunk1];
-	// 'status' should be YAJLParserInsufficientData
+	// A chunk of data comes...
+	YAJLParserStatus status = [parser parse:chunk1];
+	// 'status' should be YAJLParserStatusInsufficientData, if its not finished
 	if (parser.parserError) ...;
 	
-	status = [parser parse:chunk2];
-	// 'status' should be YAJLParserOK
+	// Another chunk of data comes...
+	YAJLParserStatus status = [parser parse:chunk2];
+	// 'status' should be YAJLParserStatusOK if its finished
 	if (parser.parserError) ...;
 
-	[parser release];	
-		
 ## Usage (Document-style)
 
 To use the document style, use `YAJLDocument`. Usage should be very similar to `NSXMLDocument`.
