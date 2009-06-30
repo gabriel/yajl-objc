@@ -36,15 +36,16 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 
 Coming soon!
 
-## Using (SAX-style)
+## Usage
 
-To use the SAX style (or streaming) parser, use `YAJLParser`.
+To use the streaming (or SAX style) parser, use `YAJLParser`.
 
 	NSData *data = [NSData dataWithContentsOfFile:@"example.json"];
 
 	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsAllowComments];
 	parser.delegate = self;
-	if ([parser parse:data] != YAJLParserStatusOK) {
+	[parser parse:data];
+	if (parser.parserError) {
 		NSLog(@"Error:\n%@", parser.parserError);
 	}
 
@@ -70,14 +71,18 @@ To use the SAX style (or streaming) parser, use `YAJLParser`.
 	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
 	parser.delegate = self;
 
-	[parser parse:chunk1];
-	// Check for error	
-	[parser parse:chunk2];
-	// Check for error
+	YAJLParserStatus status;
+	status = [parser parse:chunk1];
+	// 'status' should be YAJLParserInsufficientData
+	if (parser.parserError) ...;
+	
+	status = [parser parse:chunk2];
+	// 'status' should be YAJLParserOK
+	if (parser.parserError) ...;
 
 	[parser release];	
 		
-## Using (Document-style)
+## Usage (Document-style)
 
 To use the document style, use `YAJLDocument`. Usage should be very similar to `NSXMLDocument`.
 

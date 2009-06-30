@@ -30,6 +30,7 @@
 		00ABD3070FFA0C5900965787 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ABD3020FFA0C5900965787 /* NSObject+SBJSON.m */; };
 		00ABD3080FFA0C5900965787 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ABD3040FFA0C5900965787 /* NSString+SBJSON.m */; };
 		00ABD3090FFA0C5900965787 /* SBJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ABD3060FFA0C5900965787 /* SBJSONScanner.m */; };
+		00ABD32A0FFA0D0E00965787 /* PerfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ABD3290FFA0D0E00965787 /* PerfTest.m */; };
 		00C405020FE77661003CE908 /* YAJLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404FE0FE77661003CE908 /* YAJLDocument.h */; };
 		00C405030FE77661003CE908 /* YAJLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404FF0FE77661003CE908 /* YAJLDocument.m */; };
 		00C405040FE77661003CE908 /* YAJLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C405000FE77661003CE908 /* YAJLParser.h */; };
@@ -151,6 +152,7 @@
 		00ABD3040FFA0C5900965787 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
 		00ABD3050FFA0C5900965787 /* SBJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSONScanner.h; sourceTree = "<group>"; };
 		00ABD3060FFA0C5900965787 /* SBJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSONScanner.m; sourceTree = "<group>"; };
+		00ABD3290FFA0D0E00965787 /* PerfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfTest.m; sourceTree = "<group>"; };
 		00C404FE0FE77661003CE908 /* YAJLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLDocument.h; sourceTree = "<group>"; };
 		00C404FF0FE77661003CE908 /* YAJLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDocument.m; sourceTree = "<group>"; };
 		00C405000FE77661003CE908 /* YAJLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLParser.h; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		00C4056C0FE777B4003CE908 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00ABD3290FFA0D0E00965787 /* PerfTest.m */,
 				00ABD2F30FFA0C3100965787 /* YAJLTestCase.h */,
 				00ABD2F40FFA0C3100965787 /* YAJLTestCase.m */,
 				00C4056E0FE777B4003CE908 /* Samples */,
@@ -623,6 +626,7 @@
 				00ABD3070FFA0C5900965787 /* NSObject+SBJSON.m in Sources */,
 				00ABD3080FFA0C5900965787 /* NSString+SBJSON.m in Sources */,
 				00ABD3090FFA0C5900965787 /* SBJSONScanner.m in Sources */,
+				00ABD32A0FFA0D0E00965787 /* PerfTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
