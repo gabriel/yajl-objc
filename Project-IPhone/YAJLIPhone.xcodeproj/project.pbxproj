@@ -23,6 +23,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		00ABD2EF0FFA0C1800965787 /* overflow.json in Resources */ = {isa = PBXBuildFile; fileRef = 00ABD2EC0FFA0C1800965787 /* overflow.json */; };
+		00ABD2F00FFA0C1800965787 /* stream1.json in Resources */ = {isa = PBXBuildFile; fileRef = 00ABD2ED0FFA0C1800965787 /* stream1.json */; };
+		00ABD2F10FFA0C1800965787 /* stream2.json in Resources */ = {isa = PBXBuildFile; fileRef = 00ABD2EE0FFA0C1800965787 /* stream2.json */; };
+		00ABD2F50FFA0C3100965787 /* YAJLTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ABD2F40FFA0C3100965787 /* YAJLTestCase.m */; };
+		00ABD3070FFA0C5900965787 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ABD3020FFA0C5900965787 /* NSObject+SBJSON.m */; };
+		00ABD3080FFA0C5900965787 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ABD3040FFA0C5900965787 /* NSString+SBJSON.m */; };
+		00ABD3090FFA0C5900965787 /* SBJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ABD3060FFA0C5900965787 /* SBJSONScanner.m */; };
 		00C405020FE77661003CE908 /* YAJLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404FE0FE77661003CE908 /* YAJLDocument.h */; };
 		00C405030FE77661003CE908 /* YAJLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404FF0FE77661003CE908 /* YAJLDocument.m */; };
 		00C405040FE77661003CE908 /* YAJLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C405000FE77661003CE908 /* YAJLParser.h */; };
@@ -132,6 +139,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00ABD2EC0FFA0C1800965787 /* overflow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = overflow.json; sourceTree = "<group>"; };
+		00ABD2ED0FFA0C1800965787 /* stream1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream1.json; sourceTree = "<group>"; };
+		00ABD2EE0FFA0C1800965787 /* stream2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream2.json; sourceTree = "<group>"; };
+		00ABD2F30FFA0C3100965787 /* YAJLTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLTestCase.h; sourceTree = "<group>"; };
+		00ABD2F40FFA0C3100965787 /* YAJLTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLTestCase.m; sourceTree = "<group>"; };
+		00ABD3000FFA0C5900965787 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		00ABD3010FFA0C5900965787 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		00ABD3020FFA0C5900965787 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		00ABD3030FFA0C5900965787 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		00ABD3040FFA0C5900965787 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		00ABD3050FFA0C5900965787 /* SBJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSONScanner.h; sourceTree = "<group>"; };
+		00ABD3060FFA0C5900965787 /* SBJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSONScanner.m; sourceTree = "<group>"; };
 		00C404FE0FE77661003CE908 /* YAJLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLDocument.h; sourceTree = "<group>"; };
 		00C404FF0FE77661003CE908 /* YAJLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDocument.m; sourceTree = "<group>"; };
 		00C405000FE77661003CE908 /* YAJLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLParser.h; sourceTree = "<group>"; };
@@ -224,6 +243,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00ABD2FF0FFA0C5900965787 /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				00ABD3000FFA0C5900965787 /* JSON.h */,
+				00ABD3010FFA0C5900965787 /* NSObject+SBJSON.h */,
+				00ABD3020FFA0C5900965787 /* NSObject+SBJSON.m */,
+				00ABD3030FFA0C5900965787 /* NSString+SBJSON.h */,
+				00ABD3040FFA0C5900965787 /* NSString+SBJSON.m */,
+				00ABD3050FFA0C5900965787 /* SBJSONScanner.h */,
+				00ABD3060FFA0C5900965787 /* SBJSONScanner.m */,
+			);
+			name = SBJSON;
+			path = ../SBJSON;
+			sourceTree = SOURCE_ROOT;
+		};
 		00C404FD0FE77661003CE908 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +353,8 @@
 		00C4056C0FE777B4003CE908 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00ABD2F30FFA0C3100965787 /* YAJLTestCase.h */,
+				00ABD2F40FFA0C3100965787 /* YAJLTestCase.m */,
 				00C4056E0FE777B4003CE908 /* Samples */,
 				00C405740FE777B4003CE908 /* YAJLDocumentTest.m */,
 				00C405750FE777B4003CE908 /* YAJLParserTest.m */,
@@ -330,6 +366,9 @@
 		00C4056E0FE777B4003CE908 /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				00ABD2EC0FFA0C1800965787 /* overflow.json */,
+				00ABD2ED0FFA0C1800965787 /* stream1.json */,
+				00ABD2EE0FFA0C1800965787 /* stream2.json */,
 				00C4056F0FE777B4003CE908 /* comments.json */,
 				00C405700FE777B4003CE908 /* error.json */,
 				00C405710FE777B4003CE908 /* example.json */,
@@ -366,6 +405,7 @@
 				00C405550FE77784003CE908 /* Libraries */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				00C4052B0FE77688003CE908 /* XCConfig */,
+				00ABD2FF0FFA0C5900965787 /* SBJSON */,
 				00C4056C0FE777B4003CE908 /* Tests */,
 				00C405FF0FE77A81003CE908 /* Scripts */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -525,6 +565,9 @@
 				00C405990FE778EC003CE908 /* CMakeLists.txt in Resources */,
 				00C4059A0FE778ED003CE908 /* yajl in Resources */,
 				00C4059C0FE778ED003CE908 /* YAJL.dxy in Resources */,
+				00ABD2EF0FFA0C1800965787 /* overflow.json in Resources */,
+				00ABD2F00FFA0C1800965787 /* stream1.json in Resources */,
+				00ABD2F10FFA0C1800965787 /* stream2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +619,10 @@
 				00C405A00FE778F1003CE908 /* yajl_gen.c in Sources */,
 				00C405A10FE778F2003CE908 /* yajl_lex.c in Sources */,
 				00C405A20FE778F2003CE908 /* yajl_parser.c in Sources */,
+				00ABD2F50FFA0C3100965787 /* YAJLTestCase.m in Sources */,
+				00ABD3070FFA0C5900965787 /* NSObject+SBJSON.m in Sources */,
+				00ABD3080FFA0C5900965787 /* NSString+SBJSON.m in Sources */,
+				00ABD3090FFA0C5900965787 /* SBJSONScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

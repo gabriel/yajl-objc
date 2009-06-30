@@ -44,9 +44,9 @@
 - (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error {
 	if ((self = [super init])) {		
 		[self _setup];
-		parser_ = [[YAJLParser alloc] initWithData:data parserOptions:parserOptions];
+		parser_ = [[YAJLParser alloc] initWithParserOptions:parserOptions];
 		parser_.delegate = self;
-		[parser_ parse];
+		[parser_ parse:data];
 		if (error) *error = [parser_ parserError];
 		[parser_ release];
 		[self _reset];

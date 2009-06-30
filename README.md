@@ -6,11 +6,11 @@ YAJL.framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.c
 
 ### Mac OS X
 
-[YAJL-0.2.3.zip](http://rel.me.s3.amazonaws.com/yajl/YAJL-0.2.3.zip) *YAJL.framework* (2009/06/28)
+[YAJL-0.2.4.zip](http://rel.me.s3.amazonaws.com/yajl/YAJL-0.2.4.zip) *YAJL.framework* (2009/06/30)
 
 ### iPhone
 
-[libYAJLIPhone-0.2.3.zip](https://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.3.zip) *Static Library for iPhone OS 3.0 Simulator & Device*
+[libYAJLIPhone-0.2.4.zip](https://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.4.zip) *Static Library for iPhone OS 3.0 Simulator & Device*
 
 ## Install (Mac OS X)
 
@@ -38,18 +38,17 @@ Coming soon!
 
 ## Using (SAX-style)
 
-To use the SAX style parser, use `YAJLParser`. Usage should be very similar to `NSXMLParser`.
+To use the SAX style (or streaming) parser, use `YAJLParser`.
 
 	NSData *data = [NSData dataWithContentsOfFile:@"example.json"];
 
-	YAJLParser *parser = [[YAJLParser alloc] initWithData:data parserOptions:0];
+	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsAllowComments];
 	parser.delegate = self;
-	[parser parse];
+	if ([parser parse:data] != YAJLParserStatusOK) {
+		NSLog(@"Error:\n%@", parser.parserError);
+	}
 
-	NSError *error = [parser parserError];
-	if (error) NSLog(@"Error:\n%@", error);
-
-	[parser release];	
+	[parser release];
 	
 	// Include delegate methods from YAJLParserDelegate
 	/*
@@ -63,6 +62,21 @@ To use the SAX style parser, use `YAJLParser`. Usage should be very similar to `
 	- (void)parser:(YAJLParser *)parser didAdd:(id)value;
 	*/
 	
+### Streaming Example
+
+	NSData *chunk1 = [NSData dataWithContentsOfFile:@"stream1.json"];
+	NSData *chunk2 = [NSData dataWithContentsOfFile:@"stream2.json"];
+
+	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
+	parser.delegate = self;
+
+	[parser parse:chunk1];
+	// Check for error	
+	[parser parse:chunk2];
+	// Check for error
+
+	[parser release];	
+		
 ## Using (Document-style)
 
 To use the document style, use `YAJLDocument`. Usage should be very similar to `NSXMLDocument`.

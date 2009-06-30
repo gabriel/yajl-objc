@@ -50,8 +50,14 @@ enum {
 	YAJLParserOptionsAllowComments = 1 << 0,
 	YAJLParserOptionsCheckUTF8 = 1 << 1,
 };
-
 typedef NSUInteger YAJLParserOptions;
+
+enum {
+	YAJLParserStatusOK = 1,
+	YAJLParserStatusInsufficientData,
+	YAJLParserStatusError
+};
+typedef NSUInteger YAJLParserStatus;
 
 
 @class YAJLParser;
@@ -81,12 +87,11 @@ typedef NSUInteger YAJLParserOptions;
 	
 	yajl_handle handle_;
 	
-	id <YAJLParserDelegate> _delegate; // weak
+	id <YAJLParserDelegate> delegate_; // weak
 		
-	NSData *_data;
-	YAJLParserOptions _parserOptions;
-	
-	NSError *_parserError;
+	YAJLParserOptions parserOptions_;
+
+	NSError *parserError_;
 }
 
 @property (assign, nonatomic) id <YAJLParserDelegate> delegate;
@@ -94,15 +99,19 @@ typedef NSUInteger YAJLParserOptions;
 
 /*!
  Create parser with data and options.
- @param data
  @param parserOptions
  */
-- (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions;
+- (id)initWithParserOptions:(YAJLParserOptions)parserOptions;
 
 /*!
  Parse data.
- @result YES if parse was successful, NO otherwise; See parserError for error details
+ 
+ If streaming, you can call parse multiple times as long as 
+ previous calls return YAJLParserStatusInsufficientData.
+ 
+ @param data
+ @result See YAJLParserStatus
  */
-- (BOOL)parse;
+- (YAJLParserStatus)parse:(NSData *)data;
 
 @end
