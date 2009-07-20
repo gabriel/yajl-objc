@@ -15,7 +15,7 @@
 
 #define kPerfTestCount 200
 
-- (void)testYAJLParser {
+- (void)_testYAJLParser {
 	NSString *examplePath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"json"];
 	NSData *data = [[NSData dataWithContentsOfFile:examplePath options:NSUncachedRead error:nil] retain];	
 	
@@ -32,7 +32,7 @@
 	[data release];
 }
 
-- (void)testSBJSON {
+- (void)_testSBJSON {
 	NSString *examplePath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"json"];
 	NSData *testData = [NSData dataWithContentsOfFile:examplePath options:NSUncachedRead error:nil];
 	NSString *testString = [[NSString alloc] initWithData:testData encoding:NSUTF8StringEncoding];

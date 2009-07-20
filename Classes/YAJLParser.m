@@ -58,7 +58,7 @@ NSString *const YAJLErrorDomain = @"YAJLErrorDomain";
 @synthesize parserError=parserError_, delegate=delegate_;
 
 - (id)initWithParserOptions:(YAJLParserOptions)parserOptions {
-	if ((self = [super init])) {
+	if ((self = [self init])) {
 		parserOptions_ = parserOptions;		
 	}
 	return self;
@@ -199,8 +199,8 @@ yajl_end_array
 - (YAJLParserStatus)parse:(NSData *)data {
 	if (!handle_) {
 		yajl_parser_config cfg = {
-			((parserOptions_ & YAJLParserOptionsAllowComments == YAJLParserOptionsAllowComments) ? 1 : 0), // allowComments: if nonzero, javascript style comments will be allowed in the input (both /* */ and //)
-			((parserOptions_ & YAJLParserOptionsCheckUTF8 == YAJLParserOptionsCheckUTF8) ? 1 : 0)  // checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
+			((parserOptions_ & YAJLParserOptionsAllowComments) ? 1 : 0), // allowComments: if nonzero, javascript style comments will be allowed in the input (both /* */ and //)
+			((parserOptions_ & YAJLParserOptionsCheckUTF8) ? 1 : 0)  // checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
 		};
 		
 		handle_ = yajl_alloc(&callbacks, &cfg, NULL, self);

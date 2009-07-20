@@ -16,6 +16,10 @@
 	return [NSData dataWithContentsOfFile:path options:NSUncachedRead error:nil];	
 }
 
+- (NSString *)loadString:(NSString *)name {
+	return [[[NSString alloc] initWithData:[self loadData:name] encoding:NSUTF8StringEncoding] autorelease];
+}
+
 - (NSString *)directoryWithPath:(NSString *)path {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *fullPath = [[paths lastObject] stringByAppendingPathComponent:path];
