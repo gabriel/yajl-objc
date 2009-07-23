@@ -101,10 +101,7 @@
 
 - (void)parserDidStartDictionary:(YAJLParser *)parser {
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-	if (!root_) {
-		[root_ release];
-		root_ = [dict retain];
-	}
+	if (!root_) root_ = [dict retain];
 	[stack_ addObject:dict]; // Push
 	[dict release];
 	dict_ = dict;
@@ -120,10 +117,7 @@
 
 - (void)parserDidStartArray:(YAJLParser *)parser {
 	NSMutableArray *array = [[NSMutableArray alloc] init];
-	if (!root_) {
-		[root_ release];
-		root_ = [array retain];
-	}
+	if (!root_) root_ = [array retain];
 	[stack_ addObject:array]; // Push
 	[array release];
 	array_ = array;
