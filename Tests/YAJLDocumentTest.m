@@ -23,6 +23,25 @@
 	[document release];
 }
 
+- (void)testStreaming {
+	YAJLDocument *document = [[YAJLDocument alloc] initWithParserOptions:0];
+
+	NSError *error = nil;
+	NSData *data1 = [self loadData:@"stream_array1"];
+	YAJLParserStatus status1 = [document parse:data1 error:&error];
+	GHAssertTrue(status1 == YAJLParserStatusInsufficientData, nil);
+	if (error) GHFail(@"Error: %@", error);
+	GHTestLog(@"First part: %@", document.root);
+	
+	NSData *data2 = [self loadData:@"stream_array2"];
+	YAJLParserStatus status2 = [document parse:data2 error:&error];
+	GHAssertTrue(status2 == YAJLParserStatusOK, nil);
+	if (error) GHFail(@"Error: %@", error);
+
+	GHTestLog(@"Root: %@", document.root);
+	[document release];	
+}
+
 // This sample.json is too insane; Will need to revisit
 - (void)_testEqualToSBJSON {
 	
