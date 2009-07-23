@@ -89,4 +89,16 @@ To use the document style, use `YAJLDocument`. Usage should be very similar to `
 	// Access root element at document.root
 	NSLog(@"Root: %@", document.root);
 	[document release];
+	
+Or stream to the document:
+	
+	YAJLDocument *document = [[YAJLDocument alloc] initWithWithParserOptions:YAJLParserOptionsNone];
+	
+	NSError *error = nil;
+	[document parse:chunk1 error:error];
+	[document parse:chunk2 error:error];
+
+	// Access root element at document.root
+	NSLog(@"Root: %@", document.root);
+	[document release];
 
