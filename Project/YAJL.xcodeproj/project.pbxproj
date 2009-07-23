@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		005BF33F10185ECF00C35A81 /* stream_array2.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF33E10185ECB00C35A81 /* stream_array2.json */; };
+		005BF34010185ED300C35A81 /* stream_array1.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF33D10185EC300C35A81 /* stream_array1.json */; };
 		00727D1910141A0A005F9BB7 /* YAJLGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 00727D1710141A0A005F9BB7 /* YAJLGen.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00727D1A10141A0A005F9BB7 /* YAJLGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00727D1810141A0A005F9BB7 /* YAJLGen.m */; };
 		00727D4110141EB9005F9BB7 /* YAJLGenTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00727D4010141EB9005F9BB7 /* YAJLGenTest.m */; };
@@ -89,6 +91,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		005BF33D10185EC300C35A81 /* stream_array1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array1.json; sourceTree = "<group>"; };
+		005BF33E10185ECB00C35A81 /* stream_array2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array2.json; sourceTree = "<group>"; };
 		0067B0B50FF8452F00441738 /* Tests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests_Prefix.pch; sourceTree = "<group>"; };
 		0067B0E40FF845DC00441738 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
 		0067B1000FF8464F00441738 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = SOURCE_ROOT; };
@@ -251,6 +255,8 @@
 				00727DEE101422FA005F9BB7 /* gen_expected1.json */,
 				00727E36101425AD005F9BB7 /* gen_expected2.json */,
 				0080423A10184D6F0090C385 /* object_expected_array.json */,
+				005BF33D10185EC300C35A81 /* stream_array1.json */,
+				005BF33E10185ECB00C35A81 /* stream_array2.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -484,6 +490,8 @@
 				00727DFC101423B9005F9BB7 /* gen_expected1.json in Resources */,
 				00727E37101425B4005F9BB7 /* gen_expected2.json in Resources */,
 				0080423B10184D8F0090C385 /* object_expected_array.json in Resources */,
+				005BF33F10185ECF00C35A81 /* stream_array2.json in Resources */,
+				005BF34010185ED300C35A81 /* stream_array1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
