@@ -31,8 +31,6 @@
 #import "YAJLDocument.h"
 
 @interface YAJLDocument (Private)
-- (void)_setup;
-- (void)_reset;
 - (void)_pop;
 - (void)_popKey;
 @end
@@ -41,42 +39,37 @@
 
 @synthesize root=root_;
 
-- (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error {
-	if ((self = [super init])) {		
-		[self _setup];
+- (id)initWithParserOptions:(YAJLParserOptions)parserOptions {
+	if ((self = [super init])) {
+		stack_ = [[NSMutableArray alloc] init];
+		keyStack_ = [[NSMutableArray alloc] init];		
+		status_ = YAJLParserStatusNone;
 		parser_ = [[YAJLParser alloc] initWithParserOptions:parserOptions];
 		parser_.delegate = self;
-		[parser_ parse:data];
-		if (error) *error = [parser_ parserError];
-		[parser_ release];
-		[self _reset];
-		
+	}
+	return self;
+}
+
+- (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error {
+	if ((self = [self initWithParserOptions:parserOptions])) {		
+		[self parse:data error:error];
 	}
 	return self;
 }
 
 - (void)dealloc {
+	[stack_ release];
+	[keyStack_ release];
+	parser_.delegate = nil;
+	[parser_ release];	
 	[root_ release];
 	[super dealloc];
 }
 
-- (void)_setup {
-	[stack_ release];
-	stack_ = [[NSMutableArray alloc] init];
-	[keyStack_ release];
-	keyStack_ = [[NSMutableArray alloc] init];
-	[root_ release];
-	root_ = nil;
-}
-
-- (void)_reset {
-	dict_ = nil;
-	array_ = nil;
-	key_ = nil;
-	[stack_ release];
-	stack_ = nil;
-	[keyStack_ release];
-	keyStack_ = nil;
+- (YAJLParserStatus)parse:(NSData *)data error:(NSError **)error {
+	status_ = [parser_ parse:data];
+	if (error) *error = [parser_ parserError];
+	return status_;
 }
 
 #pragma mark Delegates

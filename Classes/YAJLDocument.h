@@ -53,10 +53,32 @@ typedef enum {
 	
 	YAJLDecoderCurrentType currentType_;
 	
+	YAJLParserStatus status_;
+	
 }
 
 @property (readonly, nonatomic) id root; //! Root element
 
+/*!
+ Create document from data.
+ @param data Data to parse
+ @param parserOptions Parse options
+ @param error Error to set on failure
+ */
 - (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error;
+
+/*!
+ Create empty document with parser options.
+ @param parserOptions Parse options
+ */
+- (id)initWithParserOptions:(YAJLParserOptions)parserOptions;
+
+/*!
+ Parse data.
+ @param data Data to parse
+ @param error Error to set on failure
+ @result Parser status
+ */
+- (YAJLParserStatus)parse:(NSData *)data error:(NSError **)error;
 
 @end
