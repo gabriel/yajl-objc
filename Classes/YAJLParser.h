@@ -53,6 +53,7 @@ enum {
 typedef NSUInteger YAJLParserOptions;
 
 enum {
+	YAJLParserStatusNone = 0,
 	YAJLParserStatusOK = 1,
 	YAJLParserStatusInsufficientData,
 	YAJLParserStatusError
