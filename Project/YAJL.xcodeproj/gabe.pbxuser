@@ -656,6 +656,46 @@
 		vrLen = 897;
 		vrLoc = 505;
 	};
+	005BF35310185F4E00C35A81 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00C404900FE77552003CE908 /* YAJLDocumentTest.m */;
+		name = "YAJLDocumentTest.m: 29";
+		rLen = 0;
+		rLoc = 650;
+		rType = 0;
+		vrLen = 897;
+		vrLoc = 505;
+	};
+	005BF35410185F4E00C35A81 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0067B0E40FF845DC00441738 /* README.md */;
+		name = "README.md: 97";
+		rLen = 0;
+		rLoc = 3242;
+		rType = 0;
+		vrLen = 912;
+		vrLoc = 2506;
+	};
+	005BF35510185F4E00C35A81 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00C404900FE77552003CE908 /* YAJLDocumentTest.m */;
+		name = "YAJLDocumentTest.m: 29";
+		rLen = 0;
+		rLoc = 650;
+		rType = 0;
+		vrLen = 897;
+		vrLoc = 505;
+	};
+	005BF35610185F4E00C35A81 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0067B0E40FF845DC00441738 /* README.md */;
+		name = "README.md: 73";
+		rLen = 0;
+		rLoc = 2396;
+		rType = 0;
+		vrLen = 1029;
+		vrLoc = 2189;
+	};
 	0067B0B50FF8452F00441738 /* Tests_Prefix.pch */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1131, 556}}";
@@ -696,8 +736,8 @@
 	0067B0E40FF845DC00441738 /* README.md */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1131, 1680}}";
-			sepNavSelRange = "{3242, 0}";
-			sepNavVisRange = "{2183, 1236}";
+			sepNavSelRange = "{2396, 0}";
+			sepNavVisRange = "{2189, 1029}";
 		};
 	};
 	0067B1000FF8464F00441738 /* CHANGELOG.md */ = {
@@ -2478,6 +2518,10 @@
 			005BF35010185EF500C35A81 /* PBXTextBookmark */ = 005BF35010185EF500C35A81 /* PBXTextBookmark */;
 			005BF35110185EFF00C35A81 /* PBXTextBookmark */ = 005BF35110185EFF00C35A81 /* PBXTextBookmark */;
 			005BF35210185F0200C35A81 /* PBXTextBookmark */ = 005BF35210185F0200C35A81 /* PBXTextBookmark */;
+			005BF35310185F4E00C35A81 /* PBXTextBookmark */ = 005BF35310185F4E00C35A81 /* PBXTextBookmark */;
+			005BF35410185F4E00C35A81 /* PBXTextBookmark */ = 005BF35410185F4E00C35A81 /* PBXTextBookmark */;
+			005BF35510185F4E00C35A81 /* PBXTextBookmark */ = 005BF35510185F4E00C35A81 /* PBXTextBookmark */;
+			005BF35610185F4E00C35A81 /* PBXTextBookmark */ = 005BF35610185F4E00C35A81 /* PBXTextBookmark */;
 			0067B0CC0FF845A000441738 = 0067B0CC0FF845A000441738 /* PBXTextBookmark */;
 			0067B0D20FF845A000441738 = 0067B0D20FF845A000441738 /* PBXTextBookmark */;
 			0067B0D30FF845A000441738 = 0067B0D30FF845A000441738 /* PBXTextBookmark */;
