@@ -12,6 +12,14 @@
 		00727D4110141EB9005F9BB7 /* YAJLGenTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00727D4010141EB9005F9BB7 /* YAJLGenTest.m */; };
 		00727DFC101423B9005F9BB7 /* gen_expected1.json in Resources */ = {isa = PBXBuildFile; fileRef = 00727DEE101422FA005F9BB7 /* gen_expected1.json */; };
 		00727E37101425B4005F9BB7 /* gen_expected2.json in Resources */ = {isa = PBXBuildFile; fileRef = 00727E36101425AD005F9BB7 /* gen_expected2.json */; };
+		008042051018439A0090C385 /* NSObject+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 008042031018439A0090C385 /* NSObject+YAJL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008042061018439A0090C385 /* NSObject+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 008042041018439A0090C385 /* NSObject+YAJL.m */; };
+		008042091018448E0090C385 /* NSString+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 008042071018448E0090C385 /* NSString+YAJL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0080420A1018448E0090C385 /* NSString+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 008042081018448E0090C385 /* NSString+YAJL.m */; };
+		0080420D101847A70090C385 /* YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 0080420B101847A70090C385 /* YAJL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00804210101848010090C385 /* NSObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080420F101848010090C385 /* NSObjectTest.m */; };
+		008042121018480D0090C385 /* NSStringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 008042111018480D0090C385 /* NSStringTest.m */; };
+		0080423B10184D8F0090C385 /* object_expected_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 0080423A10184D6F0090C385 /* object_expected_array.json */; };
 		008B7C680FF9E82500C791B4 /* PerfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 008B7C670FF9E82500C791B4 /* PerfTest.m */; };
 		00ABD1500FF9F36400965787 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404750FE77543003CE908 /* NSObject+SBJSON.m */; };
 		00ABD1510FF9F36400965787 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404770FE77543003CE908 /* NSString+SBJSON.m */; };
@@ -89,6 +97,14 @@
 		00727D4010141EB9005F9BB7 /* YAJLGenTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLGenTest.m; sourceTree = "<group>"; };
 		00727DEE101422FA005F9BB7 /* gen_expected1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gen_expected1.json; sourceTree = "<group>"; };
 		00727E36101425AD005F9BB7 /* gen_expected2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gen_expected2.json; sourceTree = "<group>"; };
+		008042031018439A0090C385 /* NSObject+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YAJL.h"; sourceTree = "<group>"; };
+		008042041018439A0090C385 /* NSObject+YAJL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YAJL.m"; sourceTree = "<group>"; };
+		008042071018448E0090C385 /* NSString+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YAJL.h"; sourceTree = "<group>"; };
+		008042081018448E0090C385 /* NSString+YAJL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YAJL.m"; sourceTree = "<group>"; };
+		0080420B101847A70090C385 /* YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJL.h; sourceTree = "<group>"; };
+		0080420F101848010090C385 /* NSObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectTest.m; sourceTree = "<group>"; };
+		008042111018480D0090C385 /* NSStringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTest.m; sourceTree = "<group>"; };
+		0080423A10184D6F0090C385 /* object_expected_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = object_expected_array.json; sourceTree = "<group>"; };
 		008B7C670FF9E82500C791B4 /* PerfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfTest.m; sourceTree = "<group>"; };
 		00ABD1A10FF9F6F900965787 /* overflow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = overflow.json; sourceTree = "<group>"; };
 		00ABD2200FF9FFB500965787 /* stream1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream1.json; sourceTree = "<group>"; };
@@ -179,6 +195,11 @@
 				00C404710FE77543003CE908 /* YAJLParser.m */,
 				00727D1710141A0A005F9BB7 /* YAJLGen.h */,
 				00727D1810141A0A005F9BB7 /* YAJLGen.m */,
+				008042031018439A0090C385 /* NSObject+YAJL.h */,
+				008042041018439A0090C385 /* NSObject+YAJL.m */,
+				008042071018448E0090C385 /* NSString+YAJL.h */,
+				008042081018448E0090C385 /* NSString+YAJL.m */,
+				0080420B101847A70090C385 /* YAJL.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -210,6 +231,8 @@
 				00ABD2610FFA033900965787 /* YAJLTestCase.h */,
 				00ABD2620FFA033900965787 /* YAJLTestCase.m */,
 				00727D4010141EB9005F9BB7 /* YAJLGenTest.m */,
+				0080420F101848010090C385 /* NSObjectTest.m */,
+				008042111018480D0090C385 /* NSStringTest.m */,
 			);
 			name = Tests;
 			path = ../Tests;
@@ -227,6 +250,7 @@
 				00ABD2210FF9FFC700965787 /* stream2.json */,
 				00727DEE101422FA005F9BB7 /* gen_expected1.json */,
 				00727E36101425AD005F9BB7 /* gen_expected2.json */,
+				0080423A10184D6F0090C385 /* object_expected_array.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -379,6 +403,9 @@
 				00C404CE0FE775D4003CE908 /* yajl_lex.h in Headers */,
 				00C404D00FE775D4003CE908 /* yajl_parser.h in Headers */,
 				00727D1910141A0A005F9BB7 /* YAJLGen.h in Headers */,
+				008042051018439A0090C385 /* NSObject+YAJL.h in Headers */,
+				008042091018448E0090C385 /* NSString+YAJL.h in Headers */,
+				0080420D101847A70090C385 /* YAJL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +483,7 @@
 				00ABD23A0FFA00C100965787 /* stream2.json in Resources */,
 				00727DFC101423B9005F9BB7 /* gen_expected1.json in Resources */,
 				00727E37101425B4005F9BB7 /* gen_expected2.json in Resources */,
+				0080423B10184D8F0090C385 /* object_expected_array.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +514,8 @@
 				00ABD1520FF9F36500965787 /* SBJSONScanner.m in Sources */,
 				00ABD2630FFA033900965787 /* YAJLTestCase.m in Sources */,
 				00727D4110141EB9005F9BB7 /* YAJLGenTest.m in Sources */,
+				00804210101848010090C385 /* NSObjectTest.m in Sources */,
+				008042121018480D0090C385 /* NSStringTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +533,8 @@
 				00C404CD0FE775D4003CE908 /* yajl_lex.c in Sources */,
 				00C404CF0FE775D4003CE908 /* yajl_parser.c in Sources */,
 				00727D1A10141A0A005F9BB7 /* YAJLGen.m in Sources */,
+				008042061018439A0090C385 /* NSObject+YAJL.m in Sources */,
+				0080420A1018448E0090C385 /* NSString+YAJL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
