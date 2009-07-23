@@ -336,8 +336,6 @@
 							<string>343pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXBottomSmartGroupGIDs</key>
@@ -389,12 +387,13 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>3</integer>
+											<integer>28</integer>
+											<integer>21</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 59}, {219, 325}}</string>
+									<string>{{0, 331}, {219, 325}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -428,12 +427,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>YAJLGen.h</string>
+								<string>CombineLibs.sh</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -441,37 +442,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>YAJLGen.h</string>
+										<string>CombineLibs.sh</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>005BF35710185F4E00C35A81</string>
+										<string>005BF36110185F9500C35A81</string>
 										<key>history</key>
 										<array>
 											<string>00C405A40FE778F9003CE908</string>
-											<string>00C405A50FE778F9003CE908</string>
 											<string>00C405A70FE778F9003CE908</string>
-											<string>00C406020FE77AE0003CE908</string>
-											<string>00C4066D0FE77DBF003CE908</string>
 											<string>00ABD3390FFA90A200965787</string>
-											<string>005BF31A10185BC500C35A81</string>
-											<string>005BF31B10185BC500C35A81</string>
-											<string>005BF31C10185BC500C35A81</string>
-											<string>005BF31D10185BC500C35A81</string>
+											<string>00C4066F0FE77DBF003CE908</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>00C405A90FE778F9003CE908</string>
 											<string>00C405AA0FE778F9003CE908</string>
 											<string>00C405AD0FE778F9003CE908</string>
-											<string>00C405AE0FE778F9003CE908</string>
-											<string>00C406040FE77AE0003CE908</string>
-											<string>00C4066F0FE77DBF003CE908</string>
-											<string>00ABD30D0FFA0C6400965787</string>
-											<string>005BF31E10185BC500C35A81</string>
-											<string>005BF31F10185BC500C35A81</string>
-											<string>005BF32010185BC500C35A81</string>
-											<string>005BF32110185BC500C35A81</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -654,7 +641,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>270032718.72788697</real>
+	<real>270032789.40162301</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -672,8 +659,8 @@
 		<string>005BF2F810185B5300C35A81</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/gabe/Projects/YAJL-ObjC/Project-IPhone/YAJLIPhone.xcodeproj</string>
 		<string>00C405310FE776A3003CE908</string>
+		<string>/Users/gabe/Projects/YAJL-ObjC/Project-IPhone/YAJLIPhone.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>46 146 1242 732 0 0 1440 878 </string>
@@ -766,7 +753,7 @@
 			<key>WindowToolGUID</key>
 			<string>00C405310FE776A3003CE908</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
