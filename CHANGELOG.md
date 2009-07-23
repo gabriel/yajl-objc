@@ -1,5 +1,8 @@
-== 0.2.5
+== 0.2.5 (in progress)
 - Added YAJLGen wrapper for yajl_gen
+- Added streaming support to YAJLDocument
+- Added NSString category
+- Added NSObject category
 
 == 0.2.4
 
