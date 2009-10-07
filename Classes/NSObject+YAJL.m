@@ -29,8 +29,11 @@
 
 #import "NSObject+YAJL.h"
 #import "YAJLGen.h"
+#import "YAJLDocument.h"
 
 @implementation NSObject (YAJL)
+
+#pragma mark Gen
 
 - (NSString *)yajl_JSONString {
 	return [self yajl_JSONStringWithOptions:YAJLGenOptionsNone indentString:@"  "];
@@ -43,5 +46,35 @@
 	[gen release];
 	return [buffer autorelease];
 }
+
+#pragma mark Parsing
+
+- (id)yajl_JSON {
+	NSError *error = nil;
+	id JSON = [self yajl_JSON:&error];
+	if (error) [NSException raise:YAJLParserException format:[error localizedDescription]];
+	return JSON;
+}
+
+- (id)yajl_JSON:(NSError **)error {
+	return [self yajl_JSONWithOptions:YAJLParserOptionsNone error:error];
+}
+
+- (id)yajl_JSONWithOptions:(YAJLParserOptions)options error:(NSError **)error {
+	NSData *data = nil;	
+	if ([self isKindOfClass:[NSData class]]) {
+		data = (NSData *)self;
+	} else if ([self respondsToSelector:@selector(dataUsingEncoding:)]) {
+		data = [(id)self dataUsingEncoding:NSUTF8StringEncoding];
+	} else {
+		[NSException raise:YAJLParsingUnsupportedException format:@"Object of type (%@) must implement dataUsingEncoding: to be parsed", [self class]];
+	}
+	
+	YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:YAJLParserOptionsNone error:error];
+	id root = [document.root retain];
+	[document release];
+	return [root autorelease];
+}
+
 
 @end

@@ -31,7 +31,8 @@
 #import "YAJLParser.h"
 
 NSString *const YAJLErrorDomain = @"YAJLErrorDomain";
-
+NSString *const YAJLParserException = @"YAJLParserException";
+NSString *const YAJLParsingUnsupportedException = @"YAJLParsingUnsupportedException";
 
 @interface YAJLParser ()
 @property (retain, nonatomic) NSError *parserError;

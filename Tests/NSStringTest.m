@@ -8,7 +8,7 @@
 
 #import "YAJLTestCase.h"
 
-#import "NSString+YAJL.h"
+#import "NSObject+YAJL.h"
 
 @interface NSStringTest : YAJLTestCase
 @end

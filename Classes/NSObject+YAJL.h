@@ -28,12 +28,80 @@
 //
 
 #import "YAJLGen.h"
+#import "YAJLParser.h"
 
 @interface NSObject (YAJL)
 
+#pragma mark Gen
+
+/*!
+ Create JSON string from object.
+ Supported objects include: NSArray, NSDictionary, NSNumber, NSString, NSNull
+ To handle JSON manually, implement (id)yajl_JSONObject;
+ Otherwise throws YAJLGenInvalidObjectException.
+ @result JSON String
+ */
 - (NSString *)yajl_JSONString;
 
+/*!
+ Create JSON string from object.
+ Supported objects include: NSArray, NSDictionary, NSNumber, NSString, NSNull
+ To handle JSON manually, implement (id)yajl_JSONObject;
+ Otherwise throws YAJLGenInvalidObjectException.
+ @param options
+ @param indentString
+ @result JSON String
+ */
 - (NSString *)yajl_JSONStringWithOptions:(YAJLGenOptions)options indentString:(NSString *)indentString;
 
 
+#pragma mark Parsing
+
+/*!
+ Parse JSON string.
+ @result JSON object
+ @throws YAJLParserException If a parse error occured
+ @throws YAJLParsingUnsupportedException If not NSData or doesn't respond to dataUsingEncoding:
+ 
+ @code
+ NSString *JSONString = @"{'foo':['bar', true]}";
+ [JSONString yajl_JSON];
+ @endcode
+ */
+- (id)yajl_JSON;
+
+/*!
+ Parse JSON string with out error.
+ @param error Error to set if we failed to parse
+ @result JSON object
+ @throws YAJLParserException If a parse error occured
+ @throws YAJLParsingUnsupportedException If not NSData or doesn't respond to dataUsingEncoding:
+ 
+ @code
+ NSString *JSONString = @"{'foo':['bar', true]}";
+ NSError *error = nil;
+ [JSONString yajl_JSON:error];
+ if (error) ...;
+ @endcode
+ */
+- (id)yajl_JSON:(NSError **)error;
+
+/*!
+ Parse JSON string with options and out error.
+ @param options Options (see YAJLParserOptions)
+ @param error Error to set if we failed to parse
+ @result JSON object
+ @throws YAJLParserException If a parse error occured
+ @throws YAJLParsingUnsupportedException If not NSData or doesn't respond to dataUsingEncoding:
+ 
+ @code
+ NSString *JSONString = @"{'foo':['bar', true]} // comment";
+ NSError *error = nil;
+ [JSONString yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:error];
+ if (error) ...;
+ @endcode
+ */
+- (id)yajl_JSONWithOptions:(YAJLParserOptions)options error:(NSError **)error;
+
 @end
+

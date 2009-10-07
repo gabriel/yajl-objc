@@ -32,6 +32,8 @@
 
 
 extern NSString *const YAJLErrorDomain;
+extern NSString *const YAJLParserException;
+extern NSString *const YAJLParsingUnsupportedException;
 
 #ifdef DEBUG
 #define YAJLDebug(...) NSLog(__VA_ARGS__)
