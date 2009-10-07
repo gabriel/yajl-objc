@@ -23,20 +23,19 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		00200220107D3EBB009ED6DF /* NSDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0020021F107D3EBB009ED6DF /* NSDataTest.m */; };
+		0020026F107D4291009ED6DF /* yajl_common.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 00C405080FE77675003CE908 /* yajl_common.h */; };
+		00200270107D4291009ED6DF /* yajl_gen.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 00C405090FE77675003CE908 /* yajl_gen.h */; };
+		00200271107D4291009ED6DF /* yajl_parse.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 00C4050A0FE77675003CE908 /* yajl_parse.h */; };
 		005BF2D810185B3000C35A81 /* NSObject+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D210185B3000C35A81 /* NSObject+YAJL.m */; };
-		005BF2D910185B3000C35A81 /* NSString+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D410185B3000C35A81 /* NSString+YAJL.m */; };
 		005BF2DA10185B3000C35A81 /* YAJLGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D710185B3000C35A81 /* YAJLGen.m */; };
 		005BF2DB10185B3000C35A81 /* NSObject+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D110185B3000C35A81 /* NSObject+YAJL.h */; };
 		005BF2DC10185B3000C35A81 /* NSObject+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D210185B3000C35A81 /* NSObject+YAJL.m */; };
-		005BF2DD10185B3000C35A81 /* NSString+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D310185B3000C35A81 /* NSString+YAJL.h */; };
-		005BF2DE10185B3000C35A81 /* NSString+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D410185B3000C35A81 /* NSString+YAJL.m */; };
 		005BF2DF10185B3000C35A81 /* YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D510185B3000C35A81 /* YAJL.h */; };
 		005BF2E010185B3000C35A81 /* YAJLGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D610185B3000C35A81 /* YAJLGen.h */; };
 		005BF2E110185B3000C35A81 /* YAJLGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D710185B3000C35A81 /* YAJLGen.m */; };
 		005BF2E210185B3000C35A81 /* NSObject+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D110185B3000C35A81 /* NSObject+YAJL.h */; };
 		005BF2E310185B3000C35A81 /* NSObject+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D210185B3000C35A81 /* NSObject+YAJL.m */; };
-		005BF2E410185B3000C35A81 /* NSString+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D310185B3000C35A81 /* NSString+YAJL.h */; };
-		005BF2E510185B3000C35A81 /* NSString+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D410185B3000C35A81 /* NSString+YAJL.m */; };
 		005BF2E610185B3000C35A81 /* YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D510185B3000C35A81 /* YAJL.h */; };
 		005BF2E710185B3000C35A81 /* YAJLGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D610185B3000C35A81 /* YAJLGen.h */; };
 		005BF2E810185B3000C35A81 /* YAJLGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D710185B3000C35A81 /* YAJLGen.m */; };
@@ -47,7 +46,6 @@
 		005BF30410185B7600C35A81 /* gen_expected2.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF30110185B7600C35A81 /* gen_expected2.json */; };
 		005BF30510185B7600C35A81 /* object_expected_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF30210185B7600C35A81 /* object_expected_array.json */; };
 		005BF31310185BA400C35A81 /* NSObject+YAJL.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 005BF2D110185B3000C35A81 /* NSObject+YAJL.h */; };
-		005BF31410185BA400C35A81 /* NSString+YAJL.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 005BF2D310185B3000C35A81 /* NSString+YAJL.h */; };
 		005BF31510185BA400C35A81 /* YAJL.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 005BF2D510185B3000C35A81 /* YAJL.h */; };
 		005BF31610185BA400C35A81 /* YAJLGen.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 005BF2D610185B3000C35A81 /* YAJLGen.h */; };
 		005BF35D10185F7E00C35A81 /* stream_array1.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF35B10185F7E00C35A81 /* stream_array1.json */; };
@@ -161,8 +159,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				0020026F107D4291009ED6DF /* yajl_common.h in CopyFiles */,
+				00200270107D4291009ED6DF /* yajl_gen.h in CopyFiles */,
+				00200271107D4291009ED6DF /* yajl_parse.h in CopyFiles */,
 				005BF31310185BA400C35A81 /* NSObject+YAJL.h in CopyFiles */,
-				005BF31410185BA400C35A81 /* NSString+YAJL.h in CopyFiles */,
 				005BF31510185BA400C35A81 /* YAJL.h in CopyFiles */,
 				005BF31610185BA400C35A81 /* YAJLGen.h in CopyFiles */,
 				00C406350FE77C1A003CE908 /* YAJLParser.h in CopyFiles */,
@@ -173,10 +173,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0020021F107D3EBB009ED6DF /* NSDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataTest.m; sourceTree = "<group>"; };
+		00200243107D4033009ED6DF /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = SOURCE_ROOT; };
 		005BF2D110185B3000C35A81 /* NSObject+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YAJL.h"; sourceTree = "<group>"; };
 		005BF2D210185B3000C35A81 /* NSObject+YAJL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YAJL.m"; sourceTree = "<group>"; };
-		005BF2D310185B3000C35A81 /* NSString+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YAJL.h"; sourceTree = "<group>"; };
-		005BF2D410185B3000C35A81 /* NSString+YAJL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YAJL.m"; sourceTree = "<group>"; };
 		005BF2D510185B3000C35A81 /* YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJL.h; sourceTree = "<group>"; };
 		005BF2D610185B3000C35A81 /* YAJLGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLGen.h; sourceTree = "<group>"; };
 		005BF2D710185B3000C35A81 /* YAJLGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLGen.m; sourceTree = "<group>"; };
@@ -313,8 +313,6 @@
 			children = (
 				005BF2D110185B3000C35A81 /* NSObject+YAJL.h */,
 				005BF2D210185B3000C35A81 /* NSObject+YAJL.m */,
-				005BF2D310185B3000C35A81 /* NSString+YAJL.h */,
-				005BF2D410185B3000C35A81 /* NSString+YAJL.m */,
 				005BF2D510185B3000C35A81 /* YAJL.h */,
 				005BF2D610185B3000C35A81 /* YAJLGen.h */,
 				005BF2D710185B3000C35A81 /* YAJLGen.m */,
@@ -412,6 +410,7 @@
 			children = (
 				005BF2FA10185B6C00C35A81 /* NSObjectTest.m */,
 				005BF2FB10185B6C00C35A81 /* NSStringTest.m */,
+				0020021F107D3EBB009ED6DF /* NSDataTest.m */,
 				005BF2FC10185B6C00C35A81 /* YAJLGenTest.m */,
 				00ABD3290FFA0D0E00965787 /* PerfTest.m */,
 				00ABD2F30FFA0C3100965787 /* YAJLTestCase.h */,
@@ -465,6 +464,7 @@
 		0867D691FE84028FC02AAC07 /* YAJLIPhone */ = {
 			isa = PBXGroup;
 			children = (
+				00200243107D4033009ED6DF /* CHANGELOG.md */,
 				00C406470FE77C51003CE908 /* README.md */,
 				00C405060FE77675003CE908 /* yajl */,
 				00C404FD0FE77661003CE908 /* Classes */,
@@ -519,7 +519,6 @@
 				00C405DA0FE779BF003CE908 /* yajl_lex.h in Headers */,
 				00C405DB0FE779BF003CE908 /* yajl_parser.h in Headers */,
 				005BF2DB10185B3000C35A81 /* NSObject+YAJL.h in Headers */,
-				005BF2DD10185B3000C35A81 /* NSString+YAJL.h in Headers */,
 				005BF2DF10185B3000C35A81 /* YAJL.h in Headers */,
 				005BF2E010185B3000C35A81 /* YAJLGen.h in Headers */,
 			);
@@ -542,7 +541,6 @@
 				00C405280FE77675003CE908 /* yajl_lex.h in Headers */,
 				00C4052A0FE77675003CE908 /* yajl_parser.h in Headers */,
 				005BF2E210185B3000C35A81 /* NSObject+YAJL.h in Headers */,
-				005BF2E410185B3000C35A81 /* NSString+YAJL.h in Headers */,
 				005BF2E610185B3000C35A81 /* YAJL.h in Headers */,
 				005BF2E710185B3000C35A81 /* YAJLGen.h in Headers */,
 			);
@@ -704,11 +702,11 @@
 				00ABD3090FFA0C5900965787 /* SBJSONScanner.m in Sources */,
 				00ABD32A0FFA0D0E00965787 /* PerfTest.m in Sources */,
 				005BF2D810185B3000C35A81 /* NSObject+YAJL.m in Sources */,
-				005BF2D910185B3000C35A81 /* NSString+YAJL.m in Sources */,
 				005BF2DA10185B3000C35A81 /* YAJLGen.m in Sources */,
 				005BF2FD10185B6C00C35A81 /* NSObjectTest.m in Sources */,
 				005BF2FE10185B6C00C35A81 /* NSStringTest.m in Sources */,
 				005BF2FF10185B6C00C35A81 /* YAJLGenTest.m in Sources */,
+				00200220107D3EBB009ED6DF /* NSDataTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,7 +724,6 @@
 				00C405E40FE779BF003CE908 /* yajl_lex.c in Sources */,
 				00C405E50FE779BF003CE908 /* yajl_parser.c in Sources */,
 				005BF2DC10185B3000C35A81 /* NSObject+YAJL.m in Sources */,
-				005BF2DE10185B3000C35A81 /* NSString+YAJL.m in Sources */,
 				005BF2E110185B3000C35A81 /* YAJLGen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,7 +742,6 @@
 				00C405270FE77675003CE908 /* yajl_lex.c in Sources */,
 				00C405290FE77675003CE908 /* yajl_parser.c in Sources */,
 				005BF2E310185B3000C35A81 /* NSObject+YAJL.m in Sources */,
-				005BF2E510185B3000C35A81 /* NSString+YAJL.m in Sources */,
 				005BF2E810185B3000C35A81 /* YAJLGen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -902,7 +898,7 @@
 			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "${YAJL_VERSION}";
 				DSTROOT = /tmp/YAJLIPhone.dst;
@@ -924,7 +920,7 @@
 			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CURRENT_PROJECT_VERSION = "${YAJL_VERSION}";
 				DSTROOT = /tmp/YAJLIPhone.dst;
 				DYLIB_COMPATIBILITY_VERSION = 0;

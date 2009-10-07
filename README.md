@@ -6,11 +6,11 @@ YAJL.framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.c
 
 ### Mac OS X
 
-[YAJL-0.2.5.zip](http://rel.me.s3.amazonaws.com/yajl/YAJL-0.2.5.zip) *YAJL.framework* (2009/07/23)
+[YAJL-0.2.6.zip](http://rel.me.s3.amazonaws.com/yajl/YAJL-0.2.6.zip) *YAJL.framework* (2009/10/07)
 
 ### iPhone
 
-[libYAJLIPhone-0.2.5.zip](https://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.5.zip) *Static Library for iPhone OS 3.0 Simulator & Device*
+[libYAJLIPhone-0.2.6.zip](https://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.6.zip) *Static Library for iPhone OS 3.0 Simulator & Device* (2009/10/07)
 
 ## Install (Mac OS X)
 
@@ -34,9 +34,35 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 
 ## Install (iPhone)
 
-Coming soon!
+- Add files (from static library build) to project.
+- Under 'Other Linker Flags' in the Test target, add -ObjC and -all_load (So NSObject+YAJL category is loaded).
 
 ## Usage
+
+To parse JSON from an NSString or NSData:
+
+	#import "NSObject+YAJL.h"
+
+	NSData *JSONData = [NSData dataWithContentsOfFile:@"example.json"];
+	NSArray *arrayFromData = [JSONData yajl_JSON];
+	
+	NSString *JSONString = @"[\"Test\"]";
+	NSArray *arrayFromString = [JSONString yajl_JSON];
+	
+	// With options and out error
+	NSError *error = nil;
+	NSArray *arrayFromString = [JSONString yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:&error];
+
+To generate JSON from an object:
+
+	#import "NSObject+YAJL.h"
+	
+	NSDictionary *dict = [NSDictionary dictionaryWithObject:@"value" forKey:@"key"];
+	NSString *JSONString = [dict yajl_JSONString];
+	
+	// Beautified with custon indent string
+	NSArray *array = [NSArray arrayWithObjects:@"value1", @"value2", nil];
+	NSString *JSONString = [dict yajl_JSONStringWithOptions:YAJLGenOptionsBeautify indentString:@"    "];
 
 To use the streaming (or SAX style) parser, use `YAJLParser`.
 

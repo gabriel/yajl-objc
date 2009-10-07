@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002002EF107D49BC009ED6DF /* NSDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002002EE107D49BC009ED6DF /* NSDataTest.m */; };
 		005BF33F10185ECF00C35A81 /* stream_array2.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF33E10185ECB00C35A81 /* stream_array2.json */; };
 		005BF34010185ED300C35A81 /* stream_array1.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF33D10185EC300C35A81 /* stream_array1.json */; };
 		00727D1910141A0A005F9BB7 /* YAJLGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 00727D1710141A0A005F9BB7 /* YAJLGen.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,8 +17,6 @@
 		00727E37101425B4005F9BB7 /* gen_expected2.json in Resources */ = {isa = PBXBuildFile; fileRef = 00727E36101425AD005F9BB7 /* gen_expected2.json */; };
 		008042051018439A0090C385 /* NSObject+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 008042031018439A0090C385 /* NSObject+YAJL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		008042061018439A0090C385 /* NSObject+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 008042041018439A0090C385 /* NSObject+YAJL.m */; };
-		008042091018448E0090C385 /* NSString+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 008042071018448E0090C385 /* NSString+YAJL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0080420A1018448E0090C385 /* NSString+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 008042081018448E0090C385 /* NSString+YAJL.m */; };
 		0080420D101847A70090C385 /* YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 0080420B101847A70090C385 /* YAJL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00804210101848010090C385 /* NSObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080420F101848010090C385 /* NSObjectTest.m */; };
 		008042121018480D0090C385 /* NSStringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 008042111018480D0090C385 /* NSStringTest.m */; };
@@ -91,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		002002EE107D49BC009ED6DF /* NSDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataTest.m; sourceTree = "<group>"; };
 		005BF33D10185EC300C35A81 /* stream_array1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array1.json; sourceTree = "<group>"; };
 		005BF33E10185ECB00C35A81 /* stream_array2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array2.json; sourceTree = "<group>"; };
 		0067B0B50FF8452F00441738 /* Tests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests_Prefix.pch; sourceTree = "<group>"; };
@@ -103,8 +103,6 @@
 		00727E36101425AD005F9BB7 /* gen_expected2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gen_expected2.json; sourceTree = "<group>"; };
 		008042031018439A0090C385 /* NSObject+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YAJL.h"; sourceTree = "<group>"; };
 		008042041018439A0090C385 /* NSObject+YAJL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YAJL.m"; sourceTree = "<group>"; };
-		008042071018448E0090C385 /* NSString+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YAJL.h"; sourceTree = "<group>"; };
-		008042081018448E0090C385 /* NSString+YAJL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YAJL.m"; sourceTree = "<group>"; };
 		0080420B101847A70090C385 /* YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJL.h; sourceTree = "<group>"; };
 		0080420F101848010090C385 /* NSObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectTest.m; sourceTree = "<group>"; };
 		008042111018480D0090C385 /* NSStringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTest.m; sourceTree = "<group>"; };
@@ -201,8 +199,6 @@
 				00727D1810141A0A005F9BB7 /* YAJLGen.m */,
 				008042031018439A0090C385 /* NSObject+YAJL.h */,
 				008042041018439A0090C385 /* NSObject+YAJL.m */,
-				008042071018448E0090C385 /* NSString+YAJL.h */,
-				008042081018448E0090C385 /* NSString+YAJL.m */,
 				0080420B101847A70090C385 /* YAJL.h */,
 			);
 			name = Classes;
@@ -227,6 +223,7 @@
 		00C404880FE77551003CE908 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				002002EE107D49BC009ED6DF /* NSDataTest.m */,
 				00C404890FE77551003CE908 /* GHUnitTestMain.m */,
 				00C4048A0FE77551003CE908 /* Samples */,
 				00C404900FE77552003CE908 /* YAJLDocumentTest.m */,
@@ -410,7 +407,6 @@
 				00C404D00FE775D4003CE908 /* yajl_parser.h in Headers */,
 				00727D1910141A0A005F9BB7 /* YAJLGen.h in Headers */,
 				008042051018439A0090C385 /* NSObject+YAJL.h in Headers */,
-				008042091018448E0090C385 /* NSString+YAJL.h in Headers */,
 				0080420D101847A70090C385 /* YAJL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +520,7 @@
 				00727D4110141EB9005F9BB7 /* YAJLGenTest.m in Sources */,
 				00804210101848010090C385 /* NSObjectTest.m in Sources */,
 				008042121018480D0090C385 /* NSStringTest.m in Sources */,
+				002002EF107D49BC009ED6DF /* NSDataTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +539,6 @@
 				00C404CF0FE775D4003CE908 /* yajl_parser.c in Sources */,
 				00727D1A10141A0A005F9BB7 /* YAJLGen.m in Sources */,
 				008042061018439A0090C385 /* NSObject+YAJL.m in Sources */,
-				0080420A1018448E0090C385 /* NSString+YAJL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +632,7 @@
 			baseConfigurationReference = 00C4049D0FE77562003CE908 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "${YAJL_VERSION}";
 				DYLIB_COMPATIBILITY_VERSION = 0;
@@ -659,6 +656,7 @@
 			baseConfigurationReference = 00C4049E0FE77562003CE908 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 0;
 				DYLIB_CURRENT_VERSION = 0.2.1;
