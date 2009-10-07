@@ -70,3 +70,17 @@ typedef NSUInteger YAJLGenOptions;
 - (NSString *)buffer;
 
 @end
+
+
+/*!
+ Custom objects can support manual JSON encoding.
+ */
+@protocol YAJLCoding <NSObject>
+
+/*!
+ Encode to JSON encodable object.
+ @result Object such as NSDictionary, NSArray, etc
+ */
+- (id)yajl_encodeJSON;
+
+@end
