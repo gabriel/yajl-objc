@@ -1,2 +1,4 @@
 build
 Tests-Instruments
+*.mode1v3
+*.pbxuser
