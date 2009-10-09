@@ -39,7 +39,7 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 
 ## Usage
 
-To parse JSON from an NSString or NSData:
+To parse JSON from an NSData (or NSString):
 
 	#import "NSObject+YAJL.h"
 
