@@ -54,9 +54,7 @@ extern NSString *GHUnitTest;
 		- (void)testB2; (GHTest with target GHTestCase2 + testB2)  
  
  */
-@interface GHTestSuite : GHTestGroup {
-
-}
+@interface GHTestSuite : GHTestGroup { }
 
 /*! 
  Create test suite with test cases.
@@ -69,6 +67,7 @@ extern NSString *GHUnitTest;
 /*!
  Creates a suite of all tests.
  Will load all classes that subclass from GHTestCase, SenTestCase or GTMTestCase (or register test case class).
+ @result Suite
  */
 + (GHTestSuite *)allTests;
 
@@ -86,9 +85,17 @@ extern NSString *GHUnitTest;
 + (GHTestSuite *)suiteWithTestFilter:(NSString *)testFilter;
 
 /*!
+ Create suite of tests that start with prefix.
+ @param prefix If test case class starts with the prefix; If nil or empty string, returns all tests
+ @param options Compare options
+ */
++ (GHTestSuite *)suiteWithPrefix:(NSString *)prefix options:(NSStringCompareOptions)options;
+
+/*!
  Suite for a single test/method.
  @param testCaseClass
  @param method
+ @result Suite
  */
 + (GHTestSuite *)suiteWithTestCaseClass:(Class)testCaseClass method:(SEL)method;
 
