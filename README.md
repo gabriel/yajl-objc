@@ -136,20 +136,20 @@ To implement JSON encodable value for custom objects or override for existing ob
 
 For example:
 
-  @interface CustomObject : NSObject
-  @end
+	@interface CustomObject : NSObject
+	@end
 
-  @implementation CustomObject
-  
-  - (id)JSON {
-    return [NSArray arrayWithObject:[NSNumber numberWithInteger:1]];
-  }
-  
-  @end
+	@implementation CustomObject
+
+	- (id)JSON {
+	  return [NSArray arrayWithObject:[NSNumber numberWithInteger:1]];
+	}
+
+	@end
   
 Then:
 
-  CustomObject *customObject = [[CustomObject alloc] init];
-  NSString *JSONString = [customObject yajl_JSON];
-  // JSONString == "[1]";
+	CustomObject *customObject = [[CustomObject alloc] init];
+	NSString *JSONString = [customObject yajl_JSON];
+	// JSONString == "[1]";
 
