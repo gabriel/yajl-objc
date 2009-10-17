@@ -6,11 +6,13 @@ YAJL.framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.c
 
 ### Mac OS X
 
-[YAJL-0.2.6.zip](http://rel.me.s3.amazonaws.com/yajl/YAJL-0.2.6.zip) *YAJL.framework* (2009/10/07)
+[YAJL-0.2.7.zip](http://rel.me.s3.amazonaws.com/yajl/YAJL-0.2.6.zip) *YAJL.framework* (2009/10/16)
 
 ### iPhone
 
-[libYAJLIPhone-0.2.6.zip](http://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.6.zip) *Static Library for iPhone OS 3.0 Simulator & Device* (2009/10/07)
+[libYAJLIPhone-0.2.7.zip](http://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.7.zip) *Static Library for iPhone OS 3.0 Simulator & Device* (2009/10/16)
+
+The static library is a universal arm6/7 binary so while it is double the size of previous builds, it compresses down to nearly the same size as standalone builds.
 
 ## Install (Mac OS X)
 
@@ -127,4 +129,27 @@ Or stream to the document:
 	// Access root element at document.root
 	NSLog(@"Root: %@", document.root);
 	[document release];
+
+## Customized Encoding
+
+To implement JSON encodable value for custom objects or override for existing objects, implement `- (id)JSON;`
+
+For example:
+
+  @interface CustomObject : NSObject
+  @end
+
+  @implementation CustomObject
+  
+  - (id)JSON {
+    return [NSArray arrayWithObject:[NSNumber numberWithInteger:1]];
+  }
+  
+  @end
+  
+Then:
+
+  CustomObject *customObject = [[CustomObject alloc] init];
+  NSString *JSONString = [customObject yajl_JSON];
+  // JSONString == "[1]";
 

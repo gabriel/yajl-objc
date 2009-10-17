@@ -1,3 +1,8 @@
+== 0.2.7
+
+- Changed yajl_encodeJSON to JSON for YAJLCoding protocol
+- Updating comments for YAJLCoding
+
 == 0.2.6
 
 - Supporting gen/parse from NSObject category (supports NSString, NSData and custom)

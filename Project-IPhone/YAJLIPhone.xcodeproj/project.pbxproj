@@ -29,7 +29,6 @@
 		00200271107D4291009ED6DF /* yajl_parse.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 00C4050A0FE77675003CE908 /* yajl_parse.h */; };
 		0041A1E4107E690E001DDCA8 /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0041A1DD107E690E001DDCA8 /* GHUnitIPhoneTestMain.m */; };
 		0041A1E5107E690E001DDCA8 /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0041A1DF107E690E001DDCA8 /* libGHUnitIPhone3_0.a */; };
-		0041A1E6107E690E001DDCA8 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 0041A1E0107E690E001DDCA8 /* Makefile */; };
 		0041A1E7107E690E001DDCA8 /* RunTests.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0041A1E3107E690E001DDCA8 /* RunTests.sh */; };
 		005BF2D810185B3000C35A81 /* NSObject+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D210185B3000C35A81 /* NSObject+YAJL.m */; };
 		005BF2DA10185B3000C35A81 /* YAJLGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D710185B3000C35A81 /* YAJLGen.m */; };
@@ -189,7 +188,6 @@
 		0041A1DD107E690E001DDCA8 /* GHUnitIPhoneTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIPhoneTestMain.m; sourceTree = "<group>"; };
 		0041A1DE107E690E001DDCA8 /* GHUNSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUNSObject+Swizzle.h"; sourceTree = "<group>"; };
 		0041A1DF107E690E001DDCA8 /* libGHUnitIPhone3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGHUnitIPhone3_0.a; sourceTree = "<group>"; };
-		0041A1E0107E690E001DDCA8 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0041A1E1107E690E001DDCA8 /* NSException+GHTestFailureExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+GHTestFailureExceptions.h"; sourceTree = "<group>"; };
 		0041A1E2107E690E001DDCA8 /* NSValue+GHValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+GHValueFormatter.h"; sourceTree = "<group>"; };
 		0041A1E3107E690E001DDCA8 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
@@ -309,7 +307,6 @@
 				0041A1DD107E690E001DDCA8 /* GHUnitIPhoneTestMain.m */,
 				0041A1DE107E690E001DDCA8 /* GHUNSObject+Swizzle.h */,
 				0041A1DF107E690E001DDCA8 /* libGHUnitIPhone3_0.a */,
-				0041A1E0107E690E001DDCA8 /* Makefile */,
 				0041A1E1107E690E001DDCA8 /* NSException+GHTestFailureExceptions.h */,
 				0041A1E2107E690E001DDCA8 /* NSValue+GHValueFormatter.h */,
 				0041A1E3107E690E001DDCA8 /* RunTests.sh */,
@@ -706,7 +703,6 @@
 				005BF2FF10185B6C00C35A81 /* YAJLGenTest.m in Sources */,
 				00200220107D3EBB009ED6DF /* NSDataTest.m in Sources */,
 				0041A1E4107E690E001DDCA8 /* GHUnitIPhoneTestMain.m in Sources */,
-				0041A1E6107E690E001DDCA8 /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
