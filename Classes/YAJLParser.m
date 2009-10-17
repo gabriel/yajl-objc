@@ -94,7 +94,9 @@ int yajl_null(void *ctx) {
 }
 
 int yajl_boolean(void *ctx, int boolVal) {
-	[(id)ctx _add:[NSNumber numberWithBool:(BOOL)boolVal]];
+	NSNumber *number = [[NSNumber alloc] initWithBool:(BOOL)boolVal];
+	[(id)ctx _add:number];
+	[number release];
 	return 1;
 }
 
@@ -117,9 +119,12 @@ int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
 	if ((d == HUGE_VAL || d == -HUGE_VAL) && errno == ERANGE) {
 		NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
 		[(id)ctx _cancelWithErrorForStatus:-2 message:[NSString stringWithFormat:@"double overflow on '%@'", s]];
+		[s release];
 		return 0;
 	}
-	[(id)ctx _add:[NSNumber numberWithDouble:d]];
+	NSNumber *number = [[NSNumber alloc] initWithDouble:d];
+	[(id)ctx _add:number];
+	[number release];
 	return 1;
 }
 
