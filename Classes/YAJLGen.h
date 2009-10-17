@@ -78,9 +78,9 @@ typedef NSUInteger YAJLGenOptions;
 @protocol YAJLCoding <NSObject>
 
 /*!
- Encode to JSON encodable object.
- @result Object such as NSDictionary, NSArray, etc
+ Provide custom and/or encodable object to parse to JSON string.
+ @result Object encodable as JSON such as NSDictionary, NSArray, etc
  */
-- (id)yajl_encodeJSON;
+- (id)JSON;
 
 @end

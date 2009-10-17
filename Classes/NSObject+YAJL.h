@@ -37,7 +37,7 @@
 /*!
  Create JSON string from object.
  Supported objects include: NSArray, NSDictionary, NSNumber, NSString, NSNull
- To handle JSON manually, implement (id)yajl_JSONObject;
+ To override JSON value to encode (or support custom objects), implement (id)JSON; See YAJLCoding in YAJLGen.h
  Otherwise throws YAJLGenInvalidObjectException.
  @result JSON String
  */
@@ -46,7 +46,7 @@
 /*!
  Create JSON string from object.
  Supported objects include: NSArray, NSDictionary, NSNumber, NSString, NSNull
- To handle JSON manually, implement (id)yajl_JSONObject;
+ To override JSON value to encode (or support custom objects), implement (id)JSON; See YAJLCoding in YAJLGen.h
  Otherwise throws YAJLGenInvalidObjectException.
  @param options
  @param indentString
@@ -107,3 +107,4 @@
 - (id)yajl_JSONWithOptions:(YAJLParserOptions)options error:(NSError **)error;
 
 @end
+

@@ -54,8 +54,8 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 }
 
 - (void)object:(id)obj {	
-	if ([obj respondsToSelector:@selector(yajl_encodeJSON)]) {
-		return [self object:[obj yajl_encodeJSON]];
+	if ([obj respondsToSelector:@selector(JSON)]) {
+		return [self object:[obj JSON]];
 	} else if ([obj isKindOfClass:[NSArray class]]) {
 		[self startArray];
 		for(id element in obj)

@@ -55,7 +55,7 @@
 
 @implementation CustomJSONObject
 
-- (id)yajl_encodeJSON {
+- (id)JSON {
 	return [NSArray arrayWithObject:@"Test"];
 }
 
