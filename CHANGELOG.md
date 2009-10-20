@@ -1,3 +1,9 @@
+== 0.2.8
+
+- Memory usage fix from wooster (autorelease to release)
+- Fixed memory leak when number parse error
+- Added default init methods for YAJLDocument and YAJLParser
+
 == 0.2.7
 
 - Changed yajl_encodeJSON to JSON for YAJLCoding protocol
