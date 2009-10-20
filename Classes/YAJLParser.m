@@ -58,8 +58,12 @@ NSString *const YAJLParsingUnsupportedException = @"YAJLParsingUnsupportedExcept
 
 @synthesize parserError=parserError_, delegate=delegate_;
 
+- (id)init {
+  return [self initWithParserOptions:0];
+}
+
 - (id)initWithParserOptions:(YAJLParserOptions)parserOptions {
-	if ((self = [self init])) {
+	if ((self = [super init])) {
 		parserOptions_ = parserOptions;		
 	}
 	return self;

@@ -24,7 +24,7 @@
 }
 
 - (void)testStreaming {
-	YAJLDocument *document = [[YAJLDocument alloc] initWithParserOptions:0];
+	YAJLDocument *document = [[YAJLDocument alloc] init];
 
 	NSError *error = nil;
 	NSData *data1 = [self loadData:@"stream_array1"];

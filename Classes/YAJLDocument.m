@@ -39,6 +39,10 @@
 
 @synthesize root=root_;
 
+- (id)init {
+  return [self initWithParserOptions:0];
+}
+
 - (id)initWithParserOptions:(YAJLParserOptions)parserOptions {
 	if ((self = [super init])) {
 		stack_ = [[NSMutableArray alloc] init];

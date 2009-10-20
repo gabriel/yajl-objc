@@ -13,7 +13,7 @@
 @implementation YAJLParserTest
 
 - (void)test {	
-	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
+	YAJLParser *parser = [[YAJLParser alloc] init];
 	[parser parse:[self loadData:@"example"]];
 	
 	NSError *error = [parser parserError];
