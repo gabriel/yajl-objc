@@ -1,4 +1,11 @@
 build
-Tests-Instruments
 *.mode1v3
+*.mode2v3
 *.pbxuser
+*.perspectivev3
+.DS_Store
+Documentation
+*.tm_build_errors
+*.swp
+*~.nib
+.gitattributes
