@@ -24,6 +24,7 @@
 		008042121018480D0090C385 /* NSStringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 008042111018480D0090C385 /* NSStringTest.m */; };
 		0080423B10184D8F0090C385 /* object_expected_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 0080423A10184D6F0090C385 /* object_expected_array.json */; };
 		008B7C680FF9E82500C791B4 /* PerfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 008B7C670FF9E82500C791B4 /* PerfTest.m */; };
+		00A59D30109017410032BD92 /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAJL.framework */; };
 		00ABD1500FF9F36400965787 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404750FE77543003CE908 /* NSObject+SBJSON.m */; };
 		00ABD1510FF9F36400965787 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404770FE77543003CE908 /* NSString+SBJSON.m */; };
 		00ABD1520FF9F36500965787 /* SBJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404790FE77543003CE908 /* SBJSONScanner.m */; };
@@ -84,6 +85,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				00A59D30109017410032BD92 /* YAJL.framework in CopyFiles */,
 				0041A106107E66B9001DDCA8 /* GHUnit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +427,7 @@
 				00E5DDF50F5B6E3E00C11F1D /* Sources */,
 				00E5DDF60F5B6E3E00C11F1D /* Frameworks */,
 				00C4FD960FE5F94D003CE908 /* CopyFiles */,
+				00A59CFD109014E80032BD92 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -507,6 +510,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00A59CFD109014E80032BD92 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "../Tests/RunTests.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00E5DDF50F5B6E3E00C11F1D /* Sources */ = {

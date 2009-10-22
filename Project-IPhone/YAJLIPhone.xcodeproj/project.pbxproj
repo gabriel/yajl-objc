@@ -53,6 +53,7 @@
 		005BF31610185BA400C35A81 /* YAJLGen.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 005BF2D610185B3000C35A81 /* YAJLGen.h */; };
 		005BF35D10185F7E00C35A81 /* stream_array1.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF35B10185F7E00C35A81 /* stream_array1.json */; };
 		005BF35E10185F7E00C35A81 /* stream_array2.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF35C10185F7E00C35A81 /* stream_array2.json */; };
+		00A59CEA109014550032BD92 /* error2.json in Resources */ = {isa = PBXBuildFile; fileRef = 00A59CE9109014550032BD92 /* error2.json */; };
 		00ABD2EF0FFA0C1800965787 /* overflow.json in Resources */ = {isa = PBXBuildFile; fileRef = 00ABD2EC0FFA0C1800965787 /* overflow.json */; };
 		00ABD2F00FFA0C1800965787 /* stream1.json in Resources */ = {isa = PBXBuildFile; fileRef = 00ABD2ED0FFA0C1800965787 /* stream1.json */; };
 		00ABD2F10FFA0C1800965787 /* stream2.json in Resources */ = {isa = PBXBuildFile; fileRef = 00ABD2EE0FFA0C1800965787 /* stream2.json */; };
@@ -204,6 +205,7 @@
 		005BF30210185B7600C35A81 /* object_expected_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = object_expected_array.json; sourceTree = "<group>"; };
 		005BF35B10185F7E00C35A81 /* stream_array1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array1.json; sourceTree = "<group>"; };
 		005BF35C10185F7E00C35A81 /* stream_array2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array2.json; sourceTree = "<group>"; };
+		00A59CE9109014550032BD92 /* error2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error2.json; sourceTree = "<group>"; };
 		00ABD2EC0FFA0C1800965787 /* overflow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = overflow.json; sourceTree = "<group>"; };
 		00ABD2ED0FFA0C1800965787 /* stream1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream1.json; sourceTree = "<group>"; };
 		00ABD2EE0FFA0C1800965787 /* stream2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream2.json; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 		00C4056E0FE777B4003CE908 /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				00A59CE9109014550032BD92 /* error2.json */,
 				005BF35B10185F7E00C35A81 /* stream_array1.json */,
 				005BF35C10185F7E00C35A81 /* stream_array2.json */,
 				005BF30010185B7600C35A81 /* gen_expected1.json */,
@@ -641,6 +644,7 @@
 				005BF35D10185F7E00C35A81 /* stream_array1.json in Resources */,
 				005BF35E10185F7E00C35A81 /* stream_array2.json in Resources */,
 				0041A1E7107E690E001DDCA8 /* RunTests.sh in Resources */,
+				00A59CEA109014550032BD92 /* error2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,7 +675,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "Libraries/libGHUnitIPhone3_0-0.4.13/RunTests.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
