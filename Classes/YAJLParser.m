@@ -227,7 +227,7 @@ yajl_end_array
 		NSAssert(self.parserError, @"Client cancelled, but we have no parserError set");
 		return YAJLParserStatusError;
 	} else if (status == yajl_status_error) {
-		unsigned char *errorMessage = yajl_get_error(handle_, 0, [data bytes], [data length]);
+		unsigned char *errorMessage = yajl_get_error(handle_, 1, [data bytes], [data length]);
 		NSString *errorString = [NSString stringWithUTF8String:(char *)errorMessage];
 		self.parserError = [self _errorForStatus:status message:errorString];
 		yajl_free_error(handle_, errorMessage);

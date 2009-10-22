@@ -40,6 +40,22 @@
 	[parser release];
 }
 
+- (void)testError2 {
+  YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
+	YAJLParserStatus status = [parser parse:[self loadData:@"error2"]];
+	GHAssertTrue(status == YAJLParserStatusError, @"Should have error status");
+	
+	NSError *error = [parser parserError];
+	if (error) {
+		GHTestLog(@"Parse error:\n%@", error);		
+    GHAssertTrue([[error localizedDescription] hasPrefix:@"parse error: invalid object key (must be a string)\n"], nil);
+	} else {
+		GHFail(@"Should have error");
+	}
+	
+	[parser release];
+}
+
 - (void)testComments {
 	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsAllowComments];
 	YAJLParserStatus status = [parser parse:[self loadData:@"comments"]];
