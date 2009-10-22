@@ -1,3 +1,7 @@
+== 0.2.9
+
+- Enabling verbose errors in yajl
+
 == 0.2.8
 
 - Memory usage fix from wooster (autorelease to release)

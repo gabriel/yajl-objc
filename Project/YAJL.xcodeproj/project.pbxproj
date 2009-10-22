@@ -62,6 +62,7 @@
 		00C404CF0FE775D4003CE908 /* yajl_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 00C404BC0FE775D4003CE908 /* yajl_parser.c */; };
 		00C404D00FE775D4003CE908 /* yajl_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404BD0FE775D4003CE908 /* yajl_parser.h */; };
 		00E5DE020F5B6E6100C11F1D /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAJL.framework */; };
+		00F09BF9108E9B7F000E5AB5 /* error2.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F09BED108E9B09000E5AB5 /* error2.json */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -157,6 +158,7 @@
 		00C404BD0FE775D4003CE908 /* yajl_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parser.h; sourceTree = "<group>"; };
 		00E5DDF80F5B6E3E00C11F1D /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E5DDFA0F5B6E3E00C11F1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		00F09BED108E9B09000E5AB5 /* error2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error2.json; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				00C4048B0FE77551003CE908 /* comments.json */,
 				00C4048C0FE77551003CE908 /* error.json */,
+				00F09BED108E9B09000E5AB5 /* error2.json */,
 				00C4048D0FE77551003CE908 /* example.json */,
 				00C4048E0FE77552003CE908 /* sample.json */,
 				00ABD1A10FF9F6F900965787 /* overflow.json */,
@@ -488,6 +491,7 @@
 				0080423B10184D8F0090C385 /* object_expected_array.json in Resources */,
 				005BF33F10185ECF00C35A81 /* stream_array2.json in Resources */,
 				005BF34010185ED300C35A81 /* stream_array1.json in Resources */,
+				00F09BF9108E9B7F000E5AB5 /* error2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
