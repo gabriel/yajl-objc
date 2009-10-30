@@ -76,4 +76,42 @@
 	GHAssertEqualStrings(buffer, expected, nil);	
 }
 
+- (void)testGenObjectUnknownType {
+  NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate dateWithTimeIntervalSince1970:1], @"date", nil];  
+  YAJLGen *gen = [[YAJLGen alloc] init];
+	GHAssertThrows([gen object:dict], nil);
+	[gen release];
+}
+
+- (void)testGenObjectIgnoreUnknownType {
+  NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate dateWithTimeIntervalSince1970:1], @"date", nil];
+  
+  YAJLGen *gen = [[YAJLGen alloc] initWithGenOptions:YAJLGenOptionsIgnoreUnknownTypes indentString:@""];
+	[gen object:dict];
+	NSString *buffer = [gen buffer];
+	[gen release];
+	
+	NSString *expected = [self loadString:@"gen_expected_ignore_unknown1"];	
+	GHTestLog(buffer);
+	GHAssertEqualStrings(buffer, expected, nil);	
+}
+
+- (void)testGenObjectPListTypes {
+  const char *testData = "ABCDEFG";
+  NSArray *array = [NSArray arrayWithObjects:
+                    [NSDate dateWithTimeIntervalSince1970:1], 
+                    [NSData dataWithBytes:testData length:6],
+                    [NSURL URLWithString:@"http://www.yelp.com/"],
+                    nil];
+  
+  YAJLGen *gen = [[YAJLGen alloc] initWithGenOptions:YAJLGenOptionsIncludeUnsupportedTypes indentString:@""];
+	[gen object:array];
+	NSString *buffer = [gen buffer];
+	[gen release];
+	
+	NSString *expected = [self loadString:@"gen_expected_plist1"];	
+	GHTestLog(buffer);
+	GHAssertEqualStrings(buffer, expected, nil);	
+}
+
 @end

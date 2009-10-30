@@ -28,6 +28,7 @@
 //
 
 #import "YAJLGen.h"
+#import "YAJL_GTMBase64.h"
 
 NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException";
 
@@ -39,6 +40,7 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 
 - (id)initWithGenOptions:(YAJLGenOptions)genOptions indentString:(NSString *)indentString {
 	if ((self = [super init])) {
+    genOptions_ = genOptions;
 		yajl_gen_config cfg = { 
 			((genOptions & YAJLGenOptionsBeautify) ? 1 : 0),
 			[indentString UTF8String]
@@ -78,8 +80,32 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 		[self string:obj];
 	} else if ([obj isKindOfClass:[NSNull class]]) {
 		[self null];
-	} else {
-		[NSException raise:YAJLGenInvalidObjectException format:@"Invalid object: %@", obj];
+	} else {    
+    
+    BOOL unknownType = NO;
+    if (genOptions_ & YAJLGenOptionsIncludeUnsupportedTypes) {
+      // Begin with support for non-JSON representable (PList) types
+      if ([obj isKindOfClass:[NSDate class]]) { 
+        [self number:[NSNumber numberWithLongLong:round([obj timeIntervalSince1970] * 1000)]];
+      } else if ([obj isKindOfClass:[NSData class]]) {
+        [self string:[YAJL_GTMBase64 stringByEncodingData:obj]];
+      } else if ([obj isKindOfClass:[NSURL class]]) {
+        [self string:[obj absoluteString]];
+      } else {
+        unknownType = YES;
+      }
+    } else {
+      unknownType = YES;
+    }
+    
+    // If we didn't handle special PList types
+    if (unknownType) {
+      if (!(genOptions_ & YAJLGenOptionsIgnoreUnknownTypes)) {
+        [NSException raise:YAJLGenInvalidObjectException format:@"Unknown object type: %@ (%@)", [obj class], obj];
+      } else {
+        [self null]; // Use null value for unknown type if we are ignoring
+      }
+    }
 	}
 }
 
@@ -133,3 +159,7 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 }	
 
 @end
+
+
+
+
