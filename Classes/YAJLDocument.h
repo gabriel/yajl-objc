@@ -36,7 +36,7 @@ typedef enum {
 	YAJLDecoderCurrentTypeDict
 } YAJLDecoderCurrentType;
 
-
+extern NSInteger YAJLDocumentStackCapacity;
 
 @interface YAJLDocument : NSObject <YAJLParserDelegate> {
 	
@@ -54,7 +54,7 @@ typedef enum {
 	YAJLDecoderCurrentType currentType_;
 	
 	YAJLParserStatus status_;
-	
+  
 }
 
 @property (readonly, nonatomic) id root; //! Root element

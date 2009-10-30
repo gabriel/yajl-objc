@@ -35,6 +35,8 @@
 - (void)_popKey;
 @end
 
+NSInteger YAJLDocumentStackCapacity = 20;
+
 @implementation YAJLDocument
 
 @synthesize root=root_;
@@ -45,8 +47,8 @@
 
 - (id)initWithParserOptions:(YAJLParserOptions)parserOptions {
 	if ((self = [super init])) {
-		stack_ = [[NSMutableArray alloc] init];
-		keyStack_ = [[NSMutableArray alloc] init];		
+		stack_ = [[NSMutableArray alloc] initWithCapacity:YAJLDocumentStackCapacity];
+		keyStack_ = [[NSMutableArray alloc] initWithCapacity:YAJLDocumentStackCapacity];		
 		status_ = YAJLParserStatusNone;
 		parser_ = [[YAJLParser alloc] initWithParserOptions:parserOptions];
 		parser_.delegate = self;
@@ -104,7 +106,7 @@
 }
 
 - (void)parserDidStartDictionary:(YAJLParser *)parser {
-	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+	NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity:YAJLDocumentStackCapacity];
 	if (!root_) root_ = [dict retain];
 	[stack_ addObject:dict]; // Push
 	[dict release];
@@ -120,7 +122,7 @@
 }
 
 - (void)parserDidStartArray:(YAJLParser *)parser {
-	NSMutableArray *array = [[NSMutableArray alloc] init];
+	NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:YAJLDocumentStackCapacity];
 	if (!root_) root_ = [array retain];
 	[stack_ addObject:array]; // Push
 	[array release];
