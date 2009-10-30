@@ -1,3 +1,8 @@
+== 0.2.10
+
+- Gen options for ignoring unknown types and supporting PList types like NSData and NSDate
+- Changed default capacity in YAJLDocument for slightly better perf
+
 == 0.2.9
 
 - Enabling verbose errors in yajl
