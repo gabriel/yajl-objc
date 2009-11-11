@@ -1,3 +1,7 @@
+== 0.2.11
+
+- Fixed bug where yajl_JSONWithOptions:error: would ignore options.
+
 == 0.2.10
 
 - Gen options for ignoring unknown types and supporting PList types like NSData and NSDate
