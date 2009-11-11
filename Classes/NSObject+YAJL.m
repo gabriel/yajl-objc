@@ -70,7 +70,7 @@
 		[NSException raise:YAJLParsingUnsupportedException format:@"Object of type (%@) must implement dataUsingEncoding: to be parsed", [self class]];
 	}
 	
-	YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:YAJLParserOptionsNone error:error];
+	YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:options error:error];
 	id root = [document.root retain];
 	[document release];
 	return [root autorelease];

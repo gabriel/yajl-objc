@@ -59,7 +59,7 @@
 - (void)testComments {
 	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsAllowComments];
 	YAJLParserStatus status = [parser parse:[self loadData:@"comments"]];
-	GHAssertTrue(status == YAJLParserStatusOK, @"Should have error status");
+	GHAssertTrue(status == YAJLParserStatusOK, @"Should have OK status");
 	
 	NSError *error = [parser parserError];
 	if (error) {

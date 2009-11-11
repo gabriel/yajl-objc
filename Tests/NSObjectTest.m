@@ -50,6 +50,14 @@
 	GHAssertEqualStrings(JSONString, expected, nil);	
 }
 
+- (void)testComments {
+  NSError *error = nil;
+  id JSONValue = [[self loadData:@"comments"] yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:&error];
+  GHTestLog(@"Error=%@", error);
+  GHAssertNil(error, nil);
+  GHAssertNotNil(JSONValue, nil);
+}
+
 @end
 
 
