@@ -1,3 +1,7 @@
+== 0.2.12
+
+- Fixing MacOSX build/install to use @rpath correctly
+
 == 0.2.11
 
 - Fixed bug where yajl_JSONWithOptions:error: would ignore options.

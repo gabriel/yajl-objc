@@ -6,7 +6,7 @@ YAJL.framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.c
 
 ### Mac OS X
 
-[YAJL-0.2.11.zip](http://rel.me.s3.amazonaws.com/yajl/YAJL-0.2.11.zip) *YAJL.framework* (2009/11/10)
+[YAJL-0.2.12.zip](http://rel.me.s3.amazonaws.com/yajl/YAJL-0.2.12.zip) *YAJL.framework* (2009/11/29)
 
 ### iPhone
 
