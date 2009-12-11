@@ -43,7 +43,7 @@ extern NSString *const YAJLParserValueKey; // Key in NSError userInfo for value 
 #define YAJLDebug(...) do {} while(0)
 #endif
 
-enum {
+typedef enum {
   YAJLParserErrorCodeAllocError = -1000,
   YAJLParserErrorCodeDoubleOverflow = -1001,
   YAJLParserErrorCodeIntegerOverflow = -1002
