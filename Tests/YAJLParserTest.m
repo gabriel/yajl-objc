@@ -85,7 +85,7 @@
 	[parser release];
 }
 
-- (void)testOverflow {
+- (void)testDoubleOverflow {
 	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
 	YAJLParserStatus status = [parser parse:[self loadData:@"overflow"]];
 	GHAssertTrue(status == YAJLParserStatusError, @"Should have error status");
@@ -93,6 +93,25 @@
 	NSError *error = [parser parserError];
 	if (error) {
 		GHTestLog(@"Parse error:\n%@", error);		
+    GHAssertEquals([error code], (NSInteger)YAJLParserErrorCodeDoubleOverflow, nil);
+    GHAssertEqualStrings([[error userInfo] objectForKey:YAJLParserValueKey], @"1.79769e+309", nil);    
+	} else {
+		GHFail(@"Should have error");
+	}
+	
+	[parser release];
+}
+
+- (void)testLongLongOverflow {
+	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
+	YAJLParserStatus status = [parser parse:[self loadData:@"overflow_longlong"]];
+	GHAssertTrue(status == YAJLParserStatusError, @"Should have error status");
+	
+	NSError *error = [parser parserError];
+	if (error) {
+		GHTestLog(@"Parse error:\n%@", error);		
+    GHAssertEquals([error code], (NSInteger)YAJLParserErrorCodeIntegerOverflow, nil);
+    GHAssertEqualStrings([[error userInfo] objectForKey:YAJLParserValueKey], @"9223372036854775807", nil);
 	} else {
 		GHFail(@"Should have error");
 	}
