@@ -119,16 +119,35 @@ int yajl_boolean(void *ctx, int boolVal) {
 //}
 
 int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
-	double d = strtod(numberVal, NULL);
-	if ((d == HUGE_VAL || d == -HUGE_VAL) && errno == ERANGE) {
-		NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
-		[(id)ctx _cancelWithErrorForStatus:-2 message:[NSString stringWithFormat:@"double overflow on '%@'", s]];
-		[s release];
-		return 0;
+	char buf[numberLen+1];
+	memcpy(buf, numberVal, numberLen);
+	buf[numberLen] = 0;
+	
+	if (memchr(numberVal, '.', numberLen) || memchr(numberVal, 'e', numberLen) || memchr(numberVal, 'E', numberLen)) {
+		double d = strtod((char *)buf, NULL);
+		if ((d == HUGE_VAL || d == -HUGE_VAL) && errno == ERANGE) {
+			NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
+			[(id)ctx _cancelWithErrorForStatus:-2 message:[NSString stringWithFormat:@"double overflow on '%@'", s]];
+			[s release];
+			return 0;
+		}
+		NSNumber *number = [[NSNumber alloc] initWithDouble:d];
+		[(id)ctx _add:number];
+		[number release];
 	}
-	NSNumber *number = [[NSNumber alloc] initWithDouble:d];
-	[(id)ctx _add:number];
-	[number release];
+	else {
+		long long i = strtoll((const char *) buf, NULL, 10);
+		if ((i == LLONG_MIN || i == LLONG_MAX) && errno == ERANGE) {
+			NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
+			[(id)ctx _cancelWithErrorForStatus:-2 message:[NSString stringWithFormat:@"integer overflow on '%@'", s]];
+			[s release];
+			return 0;
+		}
+		NSNumber *number = [[NSNumber alloc] initWithLongLong:i];
+		[(id)ctx _add:number];
+		[number release];
+	}
+	
 	return 1;
 }
 
