@@ -35,12 +35,19 @@ extern NSString *const YAJLErrorDomain;
 extern NSString *const YAJLParserException;
 extern NSString *const YAJLParsingUnsupportedException;
 
+extern NSString *const YAJLParserValueKey; // Key in NSError userInfo for value we errored on
+
 #ifdef DEBUG
 #define YAJLDebug(...) NSLog(__VA_ARGS__)
 #else
 #define YAJLDebug(...) do {} while(0)
 #endif
 
+enum {
+  YAJLParserErrorCodeAllocError = -1000,
+  YAJLParserErrorCodeDoubleOverflow = -1001,
+  YAJLParserErrorCodeIntegerOverflow = -1002
+} YAJLParserErrorCode;
 
 /*!
  @enum Parser options
