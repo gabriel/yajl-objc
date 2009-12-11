@@ -66,6 +66,7 @@
 		00C404CE0FE775D4003CE908 /* yajl_lex.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404BB0FE775D4003CE908 /* yajl_lex.h */; };
 		00C404CF0FE775D4003CE908 /* yajl_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 00C404BC0FE775D4003CE908 /* yajl_parser.c */; };
 		00C404D00FE775D4003CE908 /* yajl_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404BD0FE775D4003CE908 /* yajl_parser.h */; };
+		00C6F19410D2EFFC00A63AF1 /* overflow_longlong.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */; };
 		00E5DE020F5B6E6100C11F1D /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAJL.framework */; };
 		00F09BF9108E9B7F000E5AB5 /* error2.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F09BED108E9B09000E5AB5 /* error2.json */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
@@ -166,6 +167,7 @@
 		00C404BB0FE775D4003CE908 /* yajl_lex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_lex.h; sourceTree = "<group>"; };
 		00C404BC0FE775D4003CE908 /* yajl_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_parser.c; sourceTree = "<group>"; };
 		00C404BD0FE775D4003CE908 /* yajl_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parser.h; sourceTree = "<group>"; };
+		00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = overflow_longlong.json; sourceTree = "<group>"; };
 		00E5DDF80F5B6E3E00C11F1D /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E5DDFA0F5B6E3E00C11F1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		00F09BED108E9B09000E5AB5 /* error2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error2.json; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				005BF33E10185ECB00C35A81 /* stream_array2.json */,
 				00AC52F81098F1B0002B5508 /* gen_expected_ignore_unknown1.json */,
 				00AC52F91098F26D002B5508 /* gen_expected_plist1.json */,
+				00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				00F09BF9108E9B7F000E5AB5 /* error2.json in Resources */,
 				00AC52FA1098F26D002B5508 /* gen_expected_plist1.json in Resources */,
 				00AC52FD1098F2CE002B5508 /* gen_expected_ignore_unknown1.json in Resources */,
+				00C6F19410D2EFFC00A63AF1 /* overflow_longlong.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
