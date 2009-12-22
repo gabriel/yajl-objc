@@ -1,0 +1,46 @@
+{
+    "geo": {
+        "type": "Point",
+        "coordinates": [
+            50.96165050,
+            -1.42539830 
+        ] 
+    },
+    "source": "<a href=\"http://www.atebits.com/\" rel=\"nofollow\">Tweetie</a>",
+    "truncated": false,
+    "favorited": false,
+    "user": {
+        "profile_background_image_url": "http://s.twimg.com/a/1261078355/images/themes/theme1/bg.png",
+        "description": "",
+        "profile_link_color": "0000ff",
+        "profile_background_tile": false,
+        "statuses_count": 5,
+        "profile_background_color": "9ae4e8",
+        "following": true,
+        "followers_count": 1,
+        "profile_sidebar_fill_color": "e0ff92",
+        "friends_count": 1,
+        "time_zone": "London",
+        "profile_sidebar_border_color": "87bc44",
+        "protected": false,
+        "url": "http://meltinglobster.com",
+        "notifications": false,
+        "favourites_count": 0,
+        "profile_image_url": "http://s.twimg.com/a/1261078355/images/default_profile_5_normal.png",
+        "location": "",
+        "name": "MeltingLobster",
+        "id": 92150511,
+        "verified": false,
+        "geo_enabled": true,
+        "utc_offset": 0,
+        "created_at": "Mon Nov 23 23:59:37 +0000 2009",
+        "profile_text_color": "000000",
+        "screen_name": "meltinglobster" 
+    },
+    "in_reply_to_user_id": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_screen_name": null,
+    "id": 6926861840,
+    "text": "Geotweet again",
+    "created_at": "Tue Dec 22 11:56:36 +0000 2009"
+}

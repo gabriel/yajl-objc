@@ -69,6 +69,8 @@
 		00C6F19410D2EFFC00A63AF1 /* overflow_longlong.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */; };
 		00E5DE020F5B6E6100C11F1D /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAJL.framework */; };
 		00F09BF9108E9B7F000E5AB5 /* error2.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F09BED108E9B09000E5AB5 /* error2.json */; };
+		00F36FCE10E149B50088648B /* twitter.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F36FCD10E149B50088648B /* twitter.json */; };
+		00F36FD110E149C60088648B /* TwitterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F36FD010E149C60088648B /* TwitterTest.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -171,6 +173,8 @@
 		00E5DDF80F5B6E3E00C11F1D /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E5DDFA0F5B6E3E00C11F1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		00F09BED108E9B09000E5AB5 /* error2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error2.json; sourceTree = "<group>"; };
+		00F36FCD10E149B50088648B /* twitter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = twitter.json; sourceTree = "<group>"; };
+		00F36FD010E149C60088648B /* TwitterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTest.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				00727D4010141EB9005F9BB7 /* YAJLGenTest.m */,
 				0080420F101848010090C385 /* NSObjectTest.m */,
 				008042111018480D0090C385 /* NSStringTest.m */,
+				00F36FD010E149C60088648B /* TwitterTest.m */,
 			);
 			name = Tests;
 			path = ../Tests;
@@ -290,6 +295,7 @@
 				00AC52F81098F1B0002B5508 /* gen_expected_ignore_unknown1.json */,
 				00AC52F91098F26D002B5508 /* gen_expected_plist1.json */,
 				00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */,
+				00F36FCD10E149B50088648B /* twitter.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -531,6 +537,7 @@
 				00AC52FA1098F26D002B5508 /* gen_expected_plist1.json in Resources */,
 				00AC52FD1098F2CE002B5508 /* gen_expected_ignore_unknown1.json in Resources */,
 				00C6F19410D2EFFC00A63AF1 /* overflow_longlong.json in Resources */,
+				00F36FCE10E149B50088648B /* twitter.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +587,7 @@
 				00804210101848010090C385 /* NSObjectTest.m in Sources */,
 				008042121018480D0090C385 /* NSStringTest.m in Sources */,
 				002002EF107D49BC009ED6DF /* NSDataTest.m in Sources */,
+				00F36FD110E149C60088648B /* TwitterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
