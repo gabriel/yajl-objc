@@ -74,23 +74,26 @@
 	id<GHTest> test_; // The test to run; Could be a GHTestGroup (suite), GHTestGroup (test case), or GHTest (target/selector)
 	
 	NSObject<GHTestRunnerDelegate> *delegate_; // weak
-	
-	// If YES, will allow exceptions to be raised (so you can trigger the debugger)
-	BOOL raiseExceptions_;	
+		
+	GHTestOptions options_;	
 	
 	BOOL running_;
 	BOOL cancelling_;
-	
+  
+  NSTimeInterval startInterval_;
+  
 	NSOperationQueue *operationQueue_; //! If running a suite in operation queue
 }
 
 @property (retain) id<GHTest> test;
 @property (assign) NSObject<GHTestRunnerDelegate> *delegate;
-@property (assign) BOOL raiseExceptions;
+@property (assign) GHTestOptions options;
 @property (readonly) GHTestStats stats;
 @property (readonly, getter=isRunning) BOOL running;
 @property (readonly, getter=isCancelling) BOOL cancelling;
+@property (readonly) NSTimeInterval interval;
 @property (retain, nonatomic) NSOperationQueue *operationQueue;
+
 
 /*!
  Create runner for test.
@@ -136,12 +139,15 @@
 - (void)runInBackground;
 
 /*!
- Start the test runner.
+ Start the test runner with the default test.
  @result 0 is success, otherwise the failure count
  */
 - (int)runTests;
 
 - (void)cancel;
+
+- (void)setInParallel:(BOOL)inParallel;
+- (BOOL)isInParallel;
 
 /*!
  Write message to console.
