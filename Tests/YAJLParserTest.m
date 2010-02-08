@@ -86,9 +86,9 @@
 }
 
 - (void)testDoubleOverflow {
-	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
+	YAJLParser *parser = [[YAJLParser alloc] init];
 	YAJLParserStatus status = [parser parse:[self loadData:@"overflow"]];
-	GHAssertTrue(status == YAJLParserStatusError, @"Should have error status");
+	GHAssertEquals(status, (NSUInteger)YAJLParserStatusError, @"Should have error status");
 	
 	NSError *error = [parser parserError];
 	if (error) {
@@ -103,9 +103,9 @@
 }
 
 - (void)testLongLongOverflow {
-	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
+	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsStrictPrecision];
 	YAJLParserStatus status = [parser parse:[self loadData:@"overflow_longlong"]];
-	GHAssertTrue(status == YAJLParserStatusError, @"Should have error status");
+	GHAssertEquals(status, (NSUInteger)YAJLParserStatusError, @"Should have error status");
 	
 	NSError *error = [parser parserError];
 	if (error) {
@@ -117,6 +117,13 @@
 	}
 	
 	[parser release];
+}
+
+- (void)testOverflow2 {
+  YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
+	YAJLParserStatus status = [parser parse:[self loadData:@"overflow2"]];
+	GHAssertTrue(status == YAJLParserStatusOK, @"Should have ok status");
+  [parser release];
 }
 
 - (void)testStreaming {

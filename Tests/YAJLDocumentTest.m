@@ -13,14 +13,17 @@
 
 @implementation YAJLDocumentTest
 
+- (YAJLDocument *)_loadDocument:(NSString *)sampleName parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error {
+  NSData *data = [self loadData:sampleName];
+  YAJLDocument *document = [[[YAJLDocument alloc] initWithData:data parserOptions:parserOptions error:error] autorelease];
+  return document;
+}
+
 - (void)test {		
-	NSData *data = [self loadData:@"example"];
-	
 	NSError *error = nil;
-	YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:0 error:&error];
+  YAJLDocument *document = [self _loadDocument:@"example" parserOptions:0 error:&error];
 	if (error) GHFail(@"Error: %@", error);
 	GHTestLog(@"Root: %@", document.root);
-	[document release];
 }
 
 - (void)testStreaming {
@@ -40,6 +43,33 @@
 
 	GHTestLog(@"Root: %@", document.root);
 	[document release];	
+}
+
+- (void)testDoubleOverflow {
+  NSError *error = nil;
+  YAJLDocument *document = [self _loadDocument:@"overflow" parserOptions:0 error:&error];
+  GHAssertNotNil(document, nil);
+  GHTestLog(@"Root: %@", document.root);
+	YAJLParserStatus status = document.parserStatus;
+	GHAssertEquals(status, (NSUInteger)YAJLParserStatusError, @"Should have error status");
+	
+	if (error) {
+		GHTestLog(@"Parse error:\n%@", error);		
+    GHAssertEquals([error code], (NSInteger)YAJLParserErrorCodeDoubleOverflow, nil);
+    GHAssertEqualStrings([[error userInfo] objectForKey:YAJLParserValueKey], @"1.79769e+309", nil);    
+	} else {
+		GHFail(@"Should have error");
+	}
+}
+
+- (void)testOverflow2 {
+  NSError *error = nil;
+  YAJLDocument *document = [self _loadDocument:@"overflow2" parserOptions:0 error:&error];
+  GHTestLog(@"Root: %@", document.root);
+	YAJLParserStatus status = document.parserStatus;
+	GHAssertEquals(status, (NSUInteger)YAJLParserStatusOK, @"Should have OK status");
+  GHAssertEqualObjects([document.root objectForKey:@"key1"], [NSNumber numberWithDouble:12343434343434343434343434344343434.0], nil);
+  GHAssertEqualObjects([document.root objectForKey:@"key2"], [NSNumber numberWithDouble:343434343434344343434343434.0], nil);
 }
 
 // This sample.json is too insane; Will need to revisit

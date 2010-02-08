@@ -58,6 +58,22 @@
   GHAssertNotNil(JSONValue, nil);
 }
 
+- (void)testOverflow {
+  NSDictionary *dict = [[self loadData:@"overflow2"] yajl_JSON];
+  GHAssertNotNil(dict, nil);
+  GHAssertTrue([dict count] > 0, nil);
+}
+
+- (void)testPrecision {
+  NSError *error = nil;
+  id JSONValue = [[self loadData:@"overflow2"] yajl_JSONWithOptions:YAJLParserOptionsStrictPrecision error:&error];
+  GHTestLog(@"Error=%@", error);
+  GHAssertNotNil(error, nil);
+  GHTestLog(@"JSONValue=%@", JSONValue);
+  GHAssertNotNil(JSONValue, nil);
+  GHAssertTrue([JSONValue count] == 0, nil);
+}  
+
 @end
 
 
