@@ -56,16 +56,17 @@ typedef enum {
  */
 enum {
 	YAJLParserOptionsNone = 0,	
-	YAJLParserOptionsAllowComments = 1 << 0,
-	YAJLParserOptionsCheckUTF8 = 1 << 1,
+	YAJLParserOptionsAllowComments = 1 << 0, // Allows comments in JSON
+	YAJLParserOptionsCheckUTF8 = 1 << 1, // If YES will verify UTF-8
+  YAJLParserOptionsStrictPrecision = 1 << 2, // If YES will force strict precision and return integer overflow error
 };
 typedef NSUInteger YAJLParserOptions;
 
 enum {
 	YAJLParserStatusNone = 0,
 	YAJLParserStatusOK = 1,
-	YAJLParserStatusInsufficientData,
-	YAJLParserStatusError
+	YAJLParserStatusInsufficientData = 2,
+	YAJLParserStatusError = 3
 };
 typedef NSUInteger YAJLParserStatus;
 
@@ -106,6 +107,7 @@ typedef NSUInteger YAJLParserStatus;
 
 @property (assign, nonatomic) id <YAJLParserDelegate> delegate;
 @property (readonly, retain, nonatomic) NSError *parserError;
+@property (readonly, nonatomic) YAJLParserOptions parserOptions;
 
 /*!
  Create parser with data and options.

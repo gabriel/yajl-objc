@@ -58,7 +58,7 @@ NSString *const YAJLParserValueKey = @"YAJLParserValueKey";
 
 @implementation YAJLParser
 
-@synthesize parserError=parserError_, delegate=delegate_;
+@synthesize parserError=parserError_, delegate=delegate_, parserOptions=parserOptions_;
 
 - (id)init {
   return [self initWithParserOptions:0];
@@ -122,30 +122,39 @@ int yajl_boolean(void *ctx, int boolVal) {
 //	return 1;
 //}
 
+int ParseDouble(void *ctx, const char *buf, const char *numberVal, unsigned int numberLen) {
+  double d = strtod((char *)buf, NULL);
+  if ((d == HUGE_VAL || d == -HUGE_VAL) && errno == ERANGE) {
+    NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
+    [(id)ctx _cancelWithErrorForStatus:YAJLParserErrorCodeDoubleOverflow message:[NSString stringWithFormat:@"double overflow on '%@'", s] value:s];
+    [s release];
+    return 0;
+  }
+  NSNumber *number = [[NSNumber alloc] initWithDouble:d];
+  [(id)ctx _add:number];
+  [number release];
+  return 1;
+}
+
 int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
 	char buf[numberLen+1];
 	memcpy(buf, numberVal, numberLen);
 	buf[numberLen] = 0;
 	
 	if (memchr(numberVal, '.', numberLen) || memchr(numberVal, 'e', numberLen) || memchr(numberVal, 'E', numberLen)) {
-		double d = strtod((char *)buf, NULL);
-		if ((d == HUGE_VAL || d == -HUGE_VAL) && errno == ERANGE) {
-			NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
-			[(id)ctx _cancelWithErrorForStatus:YAJLParserErrorCodeDoubleOverflow message:[NSString stringWithFormat:@"double overflow on '%@'", s] value:s];
-			[s release];
-			return 0;
-		}
-		NSNumber *number = [[NSNumber alloc] initWithDouble:d];
-		[(id)ctx _add:number];
-		[number release];
-	}
-	else {
+    return ParseDouble(ctx, buf, numberVal, numberLen);
+	} else {
 		long long i = strtoll((const char *) buf, NULL, 10);
 		if ((i == LLONG_MIN || i == LLONG_MAX) && errno == ERANGE) {
-			NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
-			[(id)ctx _cancelWithErrorForStatus:YAJLParserErrorCodeIntegerOverflow message:[NSString stringWithFormat:@"integer overflow on '%@'", s] value:s];
-			[s release];
-			return 0;
+      if (([(id)ctx parserOptions] & YAJLParserOptionsStrictPrecision) == YAJLParserOptionsStrictPrecision) {
+        NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
+        [(id)ctx _cancelWithErrorForStatus:YAJLParserErrorCodeIntegerOverflow message:[NSString stringWithFormat:@"integer overflow on '%@'", s] value:s];
+        [s release];
+        return 0;
+      } else {
+        // If we integer overflow lets try double precision for HUGE_VAL > double > LLONG_MAX 
+        return ParseDouble(ctx, buf, numberVal, numberLen);
+      }
 		}
 		NSNumber *number = [[NSNumber alloc] initWithLongLong:i];
 		[(id)ctx _add:number];
