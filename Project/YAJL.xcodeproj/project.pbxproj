@@ -23,6 +23,7 @@
 		00804210101848010090C385 /* NSObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080420F101848010090C385 /* NSObjectTest.m */; };
 		008042121018480D0090C385 /* NSStringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 008042111018480D0090C385 /* NSStringTest.m */; };
 		0080423B10184D8F0090C385 /* object_expected_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 0080423A10184D6F0090C385 /* object_expected_array.json */; };
+		0082B4271110FA9400B3178E /* overflow2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0082B4261110FA9400B3178E /* overflow2.json */; };
 		008B7C680FF9E82500C791B4 /* PerfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 008B7C670FF9E82500C791B4 /* PerfTest.m */; };
 		00A59D30109017410032BD92 /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAJL.framework */; };
 		00ABD1500FF9F36400965787 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404750FE77543003CE908 /* NSObject+SBJSON.m */; };
@@ -118,6 +119,7 @@
 		0080420F101848010090C385 /* NSObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectTest.m; sourceTree = "<group>"; };
 		008042111018480D0090C385 /* NSStringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTest.m; sourceTree = "<group>"; };
 		0080423A10184D6F0090C385 /* object_expected_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = object_expected_array.json; sourceTree = "<group>"; };
+		0082B4261110FA9400B3178E /* overflow2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = overflow2.json; sourceTree = "<group>"; };
 		008B7C670FF9E82500C791B4 /* PerfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfTest.m; sourceTree = "<group>"; };
 		00ABD1A10FF9F6F900965787 /* overflow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = overflow.json; sourceTree = "<group>"; };
 		00ABD2200FF9FFB500965787 /* stream1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream1.json; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				00AC52F91098F26D002B5508 /* gen_expected_plist1.json */,
 				00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */,
 				00F36FCD10E149B50088648B /* twitter.json */,
+				0082B4261110FA9400B3178E /* overflow2.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				00AC52FD1098F2CE002B5508 /* gen_expected_ignore_unknown1.json in Resources */,
 				00C6F19410D2EFFC00A63AF1 /* overflow_longlong.json in Resources */,
 				00F36FCE10E149B50088648B /* twitter.json in Resources */,
+				0082B4271110FA9400B3178E /* overflow2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

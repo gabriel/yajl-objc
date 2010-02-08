@@ -1,3 +1,8 @@
+== 0.2.15
+
+- YAJLParserOptionsStrictPrecision option
+- Parsing as double on long long overflow, unless strict precision option
+
 == 0.2.14
 
 - Fixing build problem

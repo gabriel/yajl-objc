@@ -1,6 +1,6 @@
-YAJL_VERSION = 0.2.14
+YAJL_VERSION = 0.2.15
 
-YAJL_GENERAL_OTHER_CFLAGS = -Wdiv-by-zero -Wbad-function-cast  -Wnested-externs -Wold-style-definition
+YAJL_GENERAL_OTHER_CFLAGS = -Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition
 
 OTHER_CFLAGS = $(inherited) $(YAJL_GENERAL_OTHER_CFLAGS)
 
