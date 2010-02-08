@@ -39,7 +39,7 @@ NSInteger YAJLDocumentStackCapacity = 20;
 
 @implementation YAJLDocument
 
-@synthesize root=root_;
+@synthesize root=root_, parserStatus=parserStatus_;
 
 - (id)init {
   return [self initWithParserOptions:0];
@@ -49,7 +49,7 @@ NSInteger YAJLDocumentStackCapacity = 20;
 	if ((self = [super init])) {
 		stack_ = [[NSMutableArray alloc] initWithCapacity:YAJLDocumentStackCapacity];
 		keyStack_ = [[NSMutableArray alloc] initWithCapacity:YAJLDocumentStackCapacity];		
-		status_ = YAJLParserStatusNone;
+		parserStatus_ = YAJLParserStatusNone;
 		parser_ = [[YAJLParser alloc] initWithParserOptions:parserOptions];
 		parser_.delegate = self;
 	}
@@ -73,9 +73,9 @@ NSInteger YAJLDocumentStackCapacity = 20;
 }
 
 - (YAJLParserStatus)parse:(NSData *)data error:(NSError **)error {
-	status_ = [parser_ parse:data];
+	parserStatus_ = [parser_ parse:data];
 	if (error) *error = [parser_ parserError];
-	return status_;
+	return parserStatus_;
 }
 
 #pragma mark Delegates

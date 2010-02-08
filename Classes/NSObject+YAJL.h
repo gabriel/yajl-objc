@@ -75,6 +75,10 @@
 
 /*!
  Parse JSON (NSString or NSData or dataUsingEncoding:) with out error.
+ 
+ If an error occurs, the returned object will be the current state of the object when
+ the error occurred.
+
  @param error Error to set if we failed to parse
  @result JSON object
  @throws YAJLParserException If a parse error occured
@@ -91,6 +95,10 @@
 
 /*!
  Parse JSON (NSString or NSData or dataUsingEncoding:) with options and out error.
+ 
+ If an error occurs, the returned object will be the current state of the object when
+ the error occurred.
+ 
  @param options Options (see YAJLParserOptions)
  @param error Error to set if we failed to parse
  @result JSON object

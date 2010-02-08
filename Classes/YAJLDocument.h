@@ -53,11 +53,12 @@ extern NSInteger YAJLDocumentStackCapacity;
 	
 	YAJLDecoderCurrentType currentType_;
 	
-	YAJLParserStatus status_;
+	YAJLParserStatus parserStatus_;
   
 }
 
 @property (readonly, nonatomic) id root; //! Root element
+@property (readonly, nonatomic) YAJLParserStatus parserStatus;
 
 /*!
  Create document from data.
