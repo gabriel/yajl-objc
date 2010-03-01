@@ -1,7 +1,18 @@
-YAJL_VERSION = 0.2.15
+YAJL_VERSION = 0.2.16
 
 YAJL_GENERAL_OTHER_CFLAGS = -Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition
 
 OTHER_CFLAGS = $(inherited) $(YAJL_GENERAL_OTHER_CFLAGS)
 
 GCC_TREAT_WARNINGS_AS_ERRORS=YES
+
+GCC_PREFIX_HEADER = YAJL_Prefix.pch
+WRAPPER_EXTENSION = framework
+PRODUCT_NAME = YAJL
+INFOPLIST_FILE = Info.plist
+FRAMEWORK_VERSION = A
+LD_RUNPATH_SEARCH_PATHS = @loader_path/../Frameworks
+DYLIB_COMPATIBILITY_VERSION = 0
+INSTALL_PATH = @rpath
+
+HEADER_SEARCH_PATHS = "yajl-1.0.9/src/api"

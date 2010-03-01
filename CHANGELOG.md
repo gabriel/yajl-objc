@@ -1,3 +1,9 @@
+== 0.2.16
+
+- Hudson (JUnit XML support)
+- Fix YAJL.h import
+- Updated to use yajl 1.0.9
+
 == 0.2.15
 
 - YAJLParserOptionsStrictPrecision option
