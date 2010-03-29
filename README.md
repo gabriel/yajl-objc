@@ -104,7 +104,7 @@ There are options when parsing that can be specified with `YAJLParser#initWithPa
 
 	YAJLParser *parser = [[[YAJLParser alloc] init] autorelease];
 	parser.delegate = self;
-
+	
 	// A chunk of data comes...
 	YAJLParserStatus status = [parser parse:chunk1];
 	// 'status' should be YAJLParserStatusInsufficientData, if its not finished
@@ -129,12 +129,12 @@ To use the document style, use `YAJLDocument`. Usage should be very similar to `
 ### Streaming Example (Document)
 	
 	YAJLDocument *document = [[YAJLDocument alloc] init];
-  document.delegate = self;
+	document.delegate = self;
 	
 	NSError *error = nil;
 	[document parse:chunk1 error:error];
 	[document parse:chunk2 error:error];
-
+	
 	// You can access root element at document.root
 	NSLog(@"Root: %@", document.root);
 	[document release];
