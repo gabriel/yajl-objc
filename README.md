@@ -96,9 +96,9 @@ To use the streaming (or SAX style) parser, use `YAJLParser`. For higher level (
 
 There are options when parsing that can be specified with `YAJLParser#initWithParserOptions:`.
 
-- YAJLParserOptionsAllowComments: Allows comments in JSON
-- YAJLParserOptionsCheckUTF8: Will verify UTF-8
-- YAJLParserOptionsStrictPrecision: Will force strict precision and return integer overflow error, if number is greater than long long.
+- `YAJLParserOptionsAllowComments`: Allows comments in JSON
+- `YAJLParserOptionsCheckUTF8`: Will verify UTF-8
+- `YAJLParserOptionsStrictPrecision`: Will force strict precision and return integer overflow error, if number is greater than long long.
 	
 ### Streaming Example (Parser)
 
@@ -138,14 +138,13 @@ To use the document style, use `YAJLDocument`. Usage should be very similar to `
 	// You can access root element at document.root
 	NSLog(@"Root: %@", document.root);
 	[document release];
-  
-  // Or via the YAJLDocumentDelegate delegate methods
-  
-  - (void)document:(YAJLDocument *)document didAddDictionary:(NSDictionary *)dict { }
-  - (void)document:(YAJLDocument *)document didAddArray:(NSArray *)array { }
-  - (void)document:(YAJLDocument *)document didAddObject:(id)object toArray:(NSArray *)array { }
-  - (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict { }
-
+	
+	// Or via the YAJLDocumentDelegate delegate methods
+	
+	- (void)document:(YAJLDocument *)document didAddDictionary:(NSDictionary *)dict { }
+	- (void)document:(YAJLDocument *)document didAddArray:(NSArray *)array { }
+	- (void)document:(YAJLDocument *)document didAddObject:(id)object toArray:(NSArray *)array { }
+	- (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict { }
 
 ## Customized Encoding
 
