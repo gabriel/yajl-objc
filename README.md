@@ -66,7 +66,7 @@ To generate JSON from an object:
 	NSArray *array = [NSArray arrayWithObjects:@"value1", @"value2", nil];
 	NSString *JSONString = [dict yajl_JSONStringWithOptions:YAJLGenOptionsBeautify indentString:@"    "];
 
-To use the streaming (or SAX style) parser, use `YAJLParser`.
+To use the streaming (or SAX style) parser, use `YAJLParser`. For higher level (document) streaming, see below.
 
 	NSData *data = [NSData dataWithContentsOfFile:@"example.json"];
 
@@ -100,7 +100,7 @@ There are options when parsing that can be specified with `YAJLParser#initWithPa
 - YAJLParserOptionsCheckUTF8: Will verify UTF-8
 - YAJLParserOptionsStrictPrecision: Will force strict precision and return integer overflow error, if number is greater than long long.
 	
-### Streaming Example
+### Streaming Example (Parser)
 
 	YAJLParser *parser = [[[YAJLParser alloc] init] autorelease];
 	parser.delegate = self;
@@ -126,17 +126,26 @@ To use the document style, use `YAJLDocument`. Usage should be very similar to `
 	NSLog(@"Root: %@", document.root);
 	[document release];
 	
-Or stream to the document:
+### Streaming Example (Document)
 	
-	YAJLDocument *document = [[YAJLDocument alloc] initWithWithParserOptions:YAJLParserOptionsNone];
+	YAJLDocument *document = [[YAJLDocument alloc] init];
+  document.delegate = self;
 	
 	NSError *error = nil;
 	[document parse:chunk1 error:error];
 	[document parse:chunk2 error:error];
 
-	// Access root element at document.root
+	// You can access root element at document.root
 	NSLog(@"Root: %@", document.root);
 	[document release];
+  
+  // Or via the YAJLDocumentDelegate delegate methods
+  
+  - (void)document:(YAJLDocument *)document didAddDictionary:(NSDictionary *)dict { }
+  - (void)document:(YAJLDocument *)document didAddArray:(NSArray *)array { }
+  - (void)document:(YAJLDocument *)document didAddObject:(id)object toArray:(NSArray *)array { }
+  - (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict { }
+
 
 ## Customized Encoding
 

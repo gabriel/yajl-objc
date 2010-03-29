@@ -13,6 +13,7 @@
 
 - (NSData *)loadData:(NSString *)name {
 	NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
+  GHAssertNotNil(path, @"Invalid name for load data");
 	return [NSData dataWithContentsOfFile:path options:NSUncachedRead error:nil];	
 }
 

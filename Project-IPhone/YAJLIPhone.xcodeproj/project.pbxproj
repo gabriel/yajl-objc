@@ -23,6 +23,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		00073FB41161433500D8283B /* YAJLDocumentDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00073FB31161433500D8283B /* YAJLDocumentDelegateTest.m */; };
+		00073FB61161433D00D8283B /* document_streaming.json in Resources */ = {isa = PBXBuildFile; fileRef = 00073FB51161433D00D8283B /* document_streaming.json */; };
 		000E9218111FA0B700D2345B /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E9211111FA0B700D2345B /* GHUnitIPhoneTestMain.m */; };
 		000E9219111FA0B700D2345B /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 000E9213111FA0B700D2345B /* libGHUnitIPhone3_0.a */; };
 		000E921B111FA0B700D2345B /* RunTests.sh in Resources */ = {isa = PBXBuildFile; fileRef = 000E9217111FA0B700D2345B /* RunTests.sh */; };
@@ -192,6 +194,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00073FB31161433500D8283B /* YAJLDocumentDelegateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDocumentDelegateTest.m; sourceTree = "<group>"; };
+		00073FB51161433D00D8283B /* document_streaming.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = document_streaming.json; sourceTree = "<group>"; };
 		000E9207111FA0B700D2345B /* GHAsyncTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHAsyncTestCase.h; sourceTree = "<group>"; };
 		000E9208111FA0B700D2345B /* GHTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTest.h; sourceTree = "<group>"; };
 		000E9209111FA0B700D2345B /* GHTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestCase.h; sourceTree = "<group>"; };
@@ -451,6 +455,7 @@
 		00C4056C0FE777B4003CE908 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00073FB31161433500D8283B /* YAJLDocumentDelegateTest.m */,
 				000E922A111FA10400D2345B /* TwitterTest.m */,
 				005BF2FA10185B6C00C35A81 /* NSObjectTest.m */,
 				005BF2FB10185B6C00C35A81 /* NSStringTest.m */,
@@ -470,6 +475,7 @@
 		00C4056E0FE777B4003CE908 /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				00073FB51161433D00D8283B /* document_streaming.json */,
 				000E9224111FA0F700D2345B /* overflow2.json */,
 				000E9225111FA0F700D2345B /* twitter.json */,
 				000E9226111FA0F700D2345B /* overflow_longlong.json */,
@@ -705,6 +711,7 @@
 				000E9227111FA0F700D2345B /* overflow2.json in Resources */,
 				000E9228111FA0F700D2345B /* twitter.json in Resources */,
 				000E9229111FA0F700D2345B /* overflow_longlong.json in Resources */,
+				00073FB61161433D00D8283B /* document_streaming.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,6 +776,7 @@
 				00AC53631098F573002B5508 /* YAJL_GTMBase64.m in Sources */,
 				000E9218111FA0B700D2345B /* GHUnitIPhoneTestMain.m in Sources */,
 				000E922B111FA10400D2345B /* TwitterTest.m in Sources */,
+				00073FB41161433500D8283B /* YAJLDocumentDelegateTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,8 +858,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Libraries/GHUnitIPhone\"",
-					"\"$(SRCROOT)/Libraries/libGHUnitIPhone3_0-0.4.13\"",
 					"\"$(SRCROOT)/Libraries/libGHUnitIPhone3_0-0.4.19\"",
 				);
 				OTHER_LDFLAGS = (

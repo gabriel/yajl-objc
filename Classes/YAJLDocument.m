@@ -30,7 +30,7 @@
 
 #import "YAJLDocument.h"
 
-@interface YAJLDocument (Private)
+@interface YAJLDocument ()
 - (void)_pop;
 - (void)_popKey;
 @end
@@ -39,7 +39,7 @@ NSInteger YAJLDocumentStackCapacity = 20;
 
 @implementation YAJLDocument
 
-@synthesize root=root_, parserStatus=parserStatus_;
+@synthesize root=root_, parserStatus=parserStatus_, delegate=delegate_;
 
 - (id)init {
   return [self initWithParserOptions:0];
@@ -84,10 +84,14 @@ NSInteger YAJLDocumentStackCapacity = 20;
 	switch(currentType_) {
 		case YAJLDecoderCurrentTypeArray:
 			[array_ addObject:value];
+      if ([delegate_ respondsToSelector:@selector(document:didAddObject:toArray:)])
+        [delegate_ document:self didAddObject:value toArray:array_];
 			break;
 		case YAJLDecoderCurrentTypeDict:
 			NSParameterAssert(key_);
 			[dict_ setObject:value forKey:key_];
+      if ([delegate_ respondsToSelector:@selector(document:didSetObject:forKey:inDictionary:)])
+        [delegate_ document:self didSetObject:value forKey:key_ inDictionary:dict_];
 			[self _popKey];
 			break;
 	}	
@@ -116,9 +120,12 @@ NSInteger YAJLDocumentStackCapacity = 20;
 
 - (void)parserDidEndDictionary:(YAJLParser *)parser {
 	id value = [[stack_ objectAtIndex:[stack_ count]-1] retain];
+  NSDictionary *dict = dict_;
 	[self _pop];
 	[self parser:parser didAdd:value];
 	[value release];
+  if ([delegate_ respondsToSelector:@selector(document:didAddDictionary:)])
+    [delegate_ document:self didAddDictionary:dict];
 }
 
 - (void)parserDidStartArray:(YAJLParser *)parser {
@@ -132,9 +139,12 @@ NSInteger YAJLDocumentStackCapacity = 20;
 
 - (void)parserDidEndArray:(YAJLParser *)parser {
 	id value = [[stack_ objectAtIndex:[stack_ count]-1] retain];
+  NSArray *array = array_;
 	[self _pop];	
 	[self parser:parser didAdd:value];
 	[value release];
+  if ([delegate_ respondsToSelector:@selector(document:didAddArray:)])
+    [delegate_ document:self didAddArray:array];
 }
 
 - (void)_pop {

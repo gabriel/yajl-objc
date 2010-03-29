@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00073F8F11613F4900D8283B /* YAJLDocumentDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00073F8E11613F4900D8283B /* YAJLDocumentDelegateTest.m */; };
+		00073FA4116141A600D8283B /* document_streaming.json in Resources */ = {isa = PBXBuildFile; fileRef = 00073FA3116141A600D8283B /* document_streaming.json */; };
 		002002EF107D49BC009ED6DF /* NSDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002002EE107D49BC009ED6DF /* NSDataTest.m */; };
 		0041A103107E66B7001DDCA8 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0041A102107E66B7001DDCA8 /* GHUnit.framework */; };
 		0041A106107E66B9001DDCA8 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0041A102107E66B7001DDCA8 /* GHUnit.framework */; };
@@ -101,6 +103,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00073F8E11613F4900D8283B /* YAJLDocumentDelegateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDocumentDelegateTest.m; sourceTree = "<group>"; };
+		00073FA3116141A600D8283B /* document_streaming.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = document_streaming.json; sourceTree = "<group>"; };
 		002002EE107D49BC009ED6DF /* NSDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataTest.m; sourceTree = "<group>"; };
 		0041A102107E66B7001DDCA8 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnit.framework; sourceTree = "<group>"; };
 		005BF33D10185EC300C35A81 /* stream_array1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array1.json; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				0080420F101848010090C385 /* NSObjectTest.m */,
 				008042111018480D0090C385 /* NSStringTest.m */,
 				00F36FD010E149C60088648B /* TwitterTest.m */,
+				00073F8E11613F4900D8283B /* YAJLDocumentDelegateTest.m */,
 			);
 			name = Tests;
 			path = ../Tests;
@@ -299,6 +304,7 @@
 				00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */,
 				00F36FCD10E149B50088648B /* twitter.json */,
 				0082B4261110FA9400B3178E /* overflow2.json */,
+				00073FA3116141A600D8283B /* document_streaming.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 				00C6F19410D2EFFC00A63AF1 /* overflow_longlong.json in Resources */,
 				00F36FCE10E149B50088648B /* twitter.json in Resources */,
 				0082B4271110FA9400B3178E /* overflow2.json in Resources */,
+				00073FA4116141A600D8283B /* document_streaming.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +599,7 @@
 				008042121018480D0090C385 /* NSStringTest.m in Sources */,
 				002002EF107D49BC009ED6DF /* NSDataTest.m in Sources */,
 				00F36FD110E149C60088648B /* TwitterTest.m in Sources */,
+				00073F8F11613F4900D8283B /* YAJLDocumentDelegateTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
