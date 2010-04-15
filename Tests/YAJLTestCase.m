@@ -12,20 +12,20 @@
 @implementation YAJLTestCase
 
 - (NSData *)loadData:(NSString *)name {
-	NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
+  NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
   GHAssertNotNil(path, @"Invalid name for load data");
-	return [NSData dataWithContentsOfFile:path options:NSUncachedRead error:nil];	
+  return [NSData dataWithContentsOfFile:path options:NSUncachedRead error:nil]; 
 }
 
 - (NSString *)loadString:(NSString *)name {
-	return [[[NSString alloc] initWithData:[self loadData:name] encoding:NSUTF8StringEncoding] autorelease];
+  return [[[NSString alloc] initWithData:[self loadData:name] encoding:NSUTF8StringEncoding] autorelease];
 }
 
 - (NSString *)directoryWithPath:(NSString *)path {
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *fullPath = [[paths lastObject] stringByAppendingPathComponent:path];
-	GHTestLog(@"Using path: %@", fullPath);
-	return fullPath;
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  NSString *fullPath = [[paths lastObject] stringByAppendingPathComponent:path];
+  GHTestLog(@"Using path: %@", fullPath);
+  return fullPath;
 }
 
 

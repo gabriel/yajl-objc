@@ -214,7 +214,7 @@ static char ctrl[0x22];
     } while (*c == ',' && c++);
 
     [self raise:enocomma format:@"Expected , or ] while parsing array"];
-	return NO; // got rid of compiler warning
+  return NO; // got rid of compiler warning
 }
 
 - (BOOL)scanDictionary:(NSDictionary **)o
@@ -265,7 +265,7 @@ static char ctrl[0x22];
     } while (*c == ',' && c++);
     
     [self raise:enocomma format:@"Expected , or } while parsing dictionary"];
-	return NO; // JAE just got rid of compiler warning.
+  return NO; // JAE just got rid of compiler warning.
 }
 
 - (BOOL)scanRestOfString:(NSMutableString **)o

@@ -31,9 +31,9 @@
 #include "YAJLParser.h"
 
 typedef enum {
-	YAJLDecoderCurrentTypeNone,
-	YAJLDecoderCurrentTypeArray,
-	YAJLDecoderCurrentTypeDict
+  YAJLDecoderCurrentTypeNone,
+  YAJLDecoderCurrentTypeArray,
+  YAJLDecoderCurrentTypeDict
 } YAJLDecoderCurrentType;
 
 extern NSInteger YAJLDocumentStackCapacity;
@@ -49,22 +49,22 @@ extern NSInteger YAJLDocumentStackCapacity;
 @end
 
 @interface YAJLDocument : NSObject <YAJLParserDelegate> {
-	
-	id root_; // NSArray or NSDictionary
-	YAJLParser *parser_;
-	
+  
+  id root_; // NSArray or NSDictionary
+  YAJLParser *parser_;
+  
   __weak id<YAJLDocumentDelegate> delegate_;
-	
-	__weak NSMutableDictionary *dict_; // weak; if map in progress, points to the current map	
-	__weak NSMutableArray *array_; // weak; If array in progress, points the current array
-	__weak NSString *key_; // weak; If map in progress, points to current key
-	
-	NSMutableArray *stack_;
-	NSMutableArray *keyStack_;
-	
-	YAJLDecoderCurrentType currentType_;
-	
-	YAJLParserStatus parserStatus_;
+  
+  __weak NSMutableDictionary *dict_; // weak; if map in progress, points to the current map 
+  __weak NSMutableArray *array_; // weak; If array in progress, points the current array
+  __weak NSString *key_; // weak; If map in progress, points to current key
+  
+  NSMutableArray *stack_;
+  NSMutableArray *keyStack_;
+  
+  YAJLDecoderCurrentType currentType_;
+  
+  YAJLParserStatus parserStatus_;
   
 }
 

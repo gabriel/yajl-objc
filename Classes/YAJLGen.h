@@ -36,8 +36,8 @@ extern NSString *const YAJLGenInvalidObjectException;
  @constant YAJLGenOptionsBeautify
  */
 enum {
-	YAJLGenOptionsNone = 0,	
-	YAJLGenOptionsBeautify = 1 << 0,
+  YAJLGenOptionsNone = 0, 
+  YAJLGenOptionsBeautify = 1 << 0,
   YAJLGenOptionsIgnoreUnknownTypes = 1 << 1, // Ignore unknown types (will use null value)
   YAJLGenOptionsIncludeUnsupportedTypes = 1 << 2, // Handle non-JSON types (including NSDate, NSData, NSURL)
 };
@@ -59,7 +59,7 @@ typedef NSUInteger YAJLGenOptions;
  - NSURL -> URL (absolute) string 
  */
 @interface YAJLGen : NSObject {
-	yajl_gen gen_;
+  yajl_gen gen_;
   
   YAJLGenOptions genOptions_;
 }

@@ -65,46 +65,46 @@ NSString *const YAJLParserValueKey = @"YAJLParserValueKey";
 }
 
 - (id)initWithParserOptions:(YAJLParserOptions)parserOptions {
-	if ((self = [super init])) {
-		parserOptions_ = parserOptions;		
-	}
-	return self;
+  if ((self = [super init])) {
+    parserOptions_ = parserOptions;   
+  }
+  return self;
 }
 
 - (void)dealloc {
-	if (handle_ != NULL) {
-		yajl_free(handle_);
-		handle_ = NULL;
-	}	
-	
-	[parserError_ release];
-	[super dealloc];
+  if (handle_ != NULL) {
+    yajl_free(handle_);
+    handle_ = NULL;
+  } 
+  
+  [parserError_ release];
+  [super dealloc];
 }
 
 #pragma mark Error Helpers
 
 - (NSError *)_errorForStatus:(NSInteger)code message:(NSString *)message value:(NSString *)value {
-	NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:message forKey:NSLocalizedDescriptionKey];
+  NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:message forKey:NSLocalizedDescriptionKey];
   if (value) [userInfo setObject:value forKey:YAJLParserValueKey];
-	return [NSError errorWithDomain:YAJLErrorDomain code:code userInfo:userInfo];
+  return [NSError errorWithDomain:YAJLErrorDomain code:code userInfo:userInfo];
 }
 
 - (void)_cancelWithErrorForStatus:(NSInteger)code message:(NSString *)message value:(NSString *)value {
-	self.parserError = [self _errorForStatus:code message:message value:value];
+  self.parserError = [self _errorForStatus:code message:message value:value];
 }
 
 #pragma mark YAJL Callbacks
 
 int yajl_null(void *ctx) {
-	[(id)ctx _add:[NSNull null]];
-	return 1;
+  [(id)ctx _add:[NSNull null]];
+  return 1;
 }
 
 int yajl_boolean(void *ctx, int boolVal) {
-	NSNumber *number = [[NSNumber alloc] initWithBool:(BOOL)boolVal];
-	[(id)ctx _add:number];
-	[number release];
-	return 1;
+  NSNumber *number = [[NSNumber alloc] initWithBool:(BOOL)boolVal];
+  [(id)ctx _add:number];
+  [number release];
+  return 1;
 }
 
 // Instead of using yajl_integer, and yajl_double we use yajl_number and parse
@@ -113,13 +113,13 @@ int yajl_boolean(void *ctx, int boolVal) {
 // and is up to the parser?
 
 //int yajl_integer(void *ctx, long integerVal) {
-//	[(id)ctx _add:[NSNumber numberWithLong:integerVal]];
-//	return 1;
+//  [(id)ctx _add:[NSNumber numberWithLong:integerVal]];
+//  return 1;
 //}
 //
 //int yajl_double(void *ctx, double doubleVal) {
-//	[(id)ctx _add:[NSNumber numberWithDouble:doubleVal]];
-//	return 1;
+//  [(id)ctx _add:[NSNumber numberWithDouble:doubleVal]];
+//  return 1;
 //}
 
 int ParseDouble(void *ctx, const char *buf, const char *numberVal, unsigned int numberLen) {
@@ -137,15 +137,15 @@ int ParseDouble(void *ctx, const char *buf, const char *numberVal, unsigned int 
 }
 
 int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
-	char buf[numberLen+1];
-	memcpy(buf, numberVal, numberLen);
-	buf[numberLen] = 0;
-	
-	if (memchr(numberVal, '.', numberLen) || memchr(numberVal, 'e', numberLen) || memchr(numberVal, 'E', numberLen)) {
+  char buf[numberLen+1];
+  memcpy(buf, numberVal, numberLen);
+  buf[numberLen] = 0;
+  
+  if (memchr(numberVal, '.', numberLen) || memchr(numberVal, 'e', numberLen) || memchr(numberVal, 'E', numberLen)) {
     return ParseDouble(ctx, buf, numberVal, numberLen);
-	} else {
-		long long i = strtoll((const char *) buf, NULL, 10);
-		if ((i == LLONG_MIN || i == LLONG_MAX) && errno == ERANGE) {
+  } else {
+    long long i = strtoll((const char *) buf, NULL, 10);
+    if ((i == LLONG_MIN || i == LLONG_MAX) && errno == ERANGE) {
       if (([(id)ctx parserOptions] & YAJLParserOptionsStrictPrecision) == YAJLParserOptionsStrictPrecision) {
         NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
         [(id)ctx _cancelWithErrorForStatus:YAJLParserErrorCodeIntegerOverflow message:[NSString stringWithFormat:@"integer overflow on '%@'", s] value:s];
@@ -155,47 +155,47 @@ int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
         // If we integer overflow lets try double precision for HUGE_VAL > double > LLONG_MAX 
         return ParseDouble(ctx, buf, numberVal, numberLen);
       }
-		}
-		NSNumber *number = [[NSNumber alloc] initWithLongLong:i];
-		[(id)ctx _add:number];
-		[number release];
-	}
-	
-	return 1;
+    }
+    NSNumber *number = [[NSNumber alloc] initWithLongLong:i];
+    [(id)ctx _add:number];
+    [number release];
+  }
+  
+  return 1;
 }
 
 int yajl_string(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
-	NSString *s = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
-	[(id)ctx _add:s];
-	[s release];
-	return 1;
+  NSString *s = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
+  [(id)ctx _add:s];
+  [s release];
+  return 1;
 }
 
 int yajl_map_key(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
-	NSString *s = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
-	[(id)ctx _mapKey:s];
-	[s release];
-	return 1;
+  NSString *s = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
+  [(id)ctx _mapKey:s];
+  [s release];
+  return 1;
 }
 
 int yajl_start_map(void *ctx) {
-	[(id)ctx _startDictionary];
-	return 1;
+  [(id)ctx _startDictionary];
+  return 1;
 }
 
 int yajl_end_map(void *ctx) {
-	[(id)ctx _endDictionary];
-	return 1;
+  [(id)ctx _endDictionary];
+  return 1;
 }
 
 int yajl_start_array(void *ctx) {
-	[(id)ctx _startArray];
-	return 1;
+  [(id)ctx _startArray];
+  return 1;
 }
 
 int yajl_end_array(void *ctx) {
-	[(id)ctx _endArray];
-	return 1;
+  [(id)ctx _endArray];
+  return 1;
 }
 
 static yajl_callbacks callbacks = {
@@ -215,63 +215,63 @@ yajl_end_array
 #pragma mark -
 
 - (void)_add:(id)value {
-	[delegate_ parser:self didAdd:value];
+  [delegate_ parser:self didAdd:value];
 }
 
 - (void)_mapKey:(NSString *)key {
-	[delegate_ parser:self didMapKey:key];
+  [delegate_ parser:self didMapKey:key];
 }
 
 - (void)_startDictionary {
-	[delegate_ parserDidStartDictionary:self];
+  [delegate_ parserDidStartDictionary:self];
 }
 
 - (void)_endDictionary {
-	[delegate_ parserDidEndDictionary:self];
+  [delegate_ parserDidEndDictionary:self];
 }
 
-- (void)_startArray {	
-	[delegate_ parserDidStartArray:self];
+- (void)_startArray { 
+  [delegate_ parserDidStartArray:self];
 }
 
 - (void)_endArray {
-	[delegate_ parserDidEndArray:self];
+  [delegate_ parserDidEndArray:self];
 }
 
 - (YAJLParserStatus)parse:(NSData *)data {
-	if (!handle_) {
-		yajl_parser_config cfg = {
-			((parserOptions_ & YAJLParserOptionsAllowComments) ? 1 : 0), // allowComments: if nonzero, javascript style comments will be allowed in the input (both /* */ and //)
-			((parserOptions_ & YAJLParserOptionsCheckUTF8) ? 1 : 0)  // checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
-		};
-		
-		handle_ = yajl_alloc(&callbacks, &cfg, NULL, self);
-		if (!handle_) {	
-			self.parserError = [self _errorForStatus:YAJLParserErrorCodeAllocError message:@"Unable to allocate YAJL handle" value:nil];
-			return YAJLParserStatusError;
-		}	
-	}
-	
-	yajl_status status = yajl_parse(handle_, [data bytes], [data length]);
-	if (status == yajl_status_client_canceled) {
-		// We cancelled because we encountered an error here in the client;
-		// and parserError should be already set
-		NSAssert(self.parserError, @"Client cancelled, but we have no parserError set");
-		return YAJLParserStatusError;
-	} else if (status == yajl_status_error) {
-		unsigned char *errorMessage = yajl_get_error(handle_, 1, [data bytes], [data length]);
-		NSString *errorString = [NSString stringWithUTF8String:(char *)errorMessage];
-		self.parserError = [self _errorForStatus:status message:errorString value:nil];
-		yajl_free_error(handle_, errorMessage);
-		return YAJLParserStatusError;
-	} else if (status == yajl_status_insufficient_data) {
-		return YAJLParserStatusInsufficientData;
-	} else if (status == yajl_status_ok) {
-		return YAJLParserStatusOK;
-	} else {
-		self.parserError = [self _errorForStatus:status message:[NSString stringWithFormat:@"Unexpected status %d", status] value:nil];
-		return YAJLParserStatusError;
-	}
+  if (!handle_) {
+    yajl_parser_config cfg = {
+      ((parserOptions_ & YAJLParserOptionsAllowComments) ? 1 : 0), // allowComments: if nonzero, javascript style comments will be allowed in the input (both /* */ and //)
+      ((parserOptions_ & YAJLParserOptionsCheckUTF8) ? 1 : 0)  // checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
+    };
+    
+    handle_ = yajl_alloc(&callbacks, &cfg, NULL, self);
+    if (!handle_) { 
+      self.parserError = [self _errorForStatus:YAJLParserErrorCodeAllocError message:@"Unable to allocate YAJL handle" value:nil];
+      return YAJLParserStatusError;
+    } 
+  }
+  
+  yajl_status status = yajl_parse(handle_, [data bytes], [data length]);
+  if (status == yajl_status_client_canceled) {
+    // We cancelled because we encountered an error here in the client;
+    // and parserError should be already set
+    NSAssert(self.parserError, @"Client cancelled, but we have no parserError set");
+    return YAJLParserStatusError;
+  } else if (status == yajl_status_error) {
+    unsigned char *errorMessage = yajl_get_error(handle_, 1, [data bytes], [data length]);
+    NSString *errorString = [NSString stringWithUTF8String:(char *)errorMessage];
+    self.parserError = [self _errorForStatus:status message:errorString value:nil];
+    yajl_free_error(handle_, errorMessage);
+    return YAJLParserStatusError;
+  } else if (status == yajl_status_insufficient_data) {
+    return YAJLParserStatusInsufficientData;
+  } else if (status == yajl_status_ok) {
+    return YAJLParserStatusOK;
+  } else {
+    self.parserError = [self _errorForStatus:status message:[NSString stringWithFormat:@"Unexpected status %d", status] value:nil];
+    return YAJLParserStatusError;
+  }
 }
 
 @end

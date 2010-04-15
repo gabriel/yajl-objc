@@ -55,18 +55,18 @@ typedef enum {
  @constant YAJLParserOptionsCheckUTF8 Invalid UTF8 strings will cause a parse error
  */
 enum {
-	YAJLParserOptionsNone = 0,	
-	YAJLParserOptionsAllowComments = 1 << 0, // Allows comments in JSON
-	YAJLParserOptionsCheckUTF8 = 1 << 1, // If YES will verify UTF-8
+  YAJLParserOptionsNone = 0,  
+  YAJLParserOptionsAllowComments = 1 << 0, // Allows comments in JSON
+  YAJLParserOptionsCheckUTF8 = 1 << 1, // If YES will verify UTF-8
   YAJLParserOptionsStrictPrecision = 1 << 2, // If YES will force strict precision and return integer overflow error
 };
 typedef NSUInteger YAJLParserOptions;
 
 enum {
-	YAJLParserStatusNone = 0,
-	YAJLParserStatusOK = 1,
-	YAJLParserStatusInsufficientData = 2,
-	YAJLParserStatusError = 3
+  YAJLParserStatusNone = 0,
+  YAJLParserStatusOK = 1,
+  YAJLParserStatusInsufficientData = 2,
+  YAJLParserStatusError = 3
 };
 typedef NSUInteger YAJLParserStatus;
 
@@ -95,14 +95,14 @@ typedef NSUInteger YAJLParserStatus;
 
 
 @interface YAJLParser : NSObject {
-	
-	yajl_handle handle_;
-	
-	id <YAJLParserDelegate> delegate_; // weak
-		
-	YAJLParserOptions parserOptions_;
+  
+  yajl_handle handle_;
+  
+  id <YAJLParserDelegate> delegate_; // weak
+    
+  YAJLParserOptions parserOptions_;
 
-	NSError *parserError_;
+  NSError *parserError_;
 }
 
 @property (assign, nonatomic) id <YAJLParserDelegate> delegate;

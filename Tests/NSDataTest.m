@@ -16,15 +16,15 @@
 @implementation NSDataTest
 
 - (void)testExample {
-	NSData *data = [[self loadString:@"example"] dataUsingEncoding:NSUTF8StringEncoding];
-	id JSON = [data yajl_JSON];
-	GHTestLog([JSON description]);
-	
-	GHAssertTrue([JSON isKindOfClass:[NSDictionary class]], nil);
-	NSDictionary *glossary = [JSON objectForKey:@"glossary"];
-	GHAssertNotNil(glossary, nil);
-	NSString *title = [glossary objectForKey:@"title"];
-	GHAssertEqualStrings(title, @"example glossary", nil);
+  NSData *data = [[self loadString:@"example"] dataUsingEncoding:NSUTF8StringEncoding];
+  id JSON = [data yajl_JSON];
+  GHTestLog([JSON description]);
+  
+  GHAssertTrue([JSON isKindOfClass:[NSDictionary class]], nil);
+  NSDictionary *glossary = [JSON objectForKey:@"glossary"];
+  GHAssertNotNil(glossary, nil);
+  NSString *title = [glossary objectForKey:@"title"];
+  GHAssertEqualStrings(title, @"example glossary", nil);
 }
 
 @end

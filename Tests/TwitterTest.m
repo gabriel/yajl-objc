@@ -17,12 +17,12 @@
 
 - (void)testCoordinates {
   NSString *twitterJSONString = [self loadString:@"twitter"];
-	id JSON = [twitterJSONString yajl_JSON];
-	GHTestLog([JSON description]);
+  id JSON = [twitterJSONString yajl_JSON];
+  GHTestLog([JSON description]);
   
-	GHAssertTrue([JSON isKindOfClass:[NSDictionary class]], nil);
-	NSDictionary *geo = [JSON objectForKey:@"geo"];
-	GHAssertNotNil(geo, nil);
+  GHAssertTrue([JSON isKindOfClass:[NSDictionary class]], nil);
+  NSDictionary *geo = [JSON objectForKey:@"geo"];
+  GHAssertNotNil(geo, nil);
   NSArray *coordinates = [geo objectForKey:@"coordinates"];
   NSNumber *coord1 = [coordinates objectAtIndex:0];
   NSNumber *coord2 = [coordinates objectAtIndex:1];

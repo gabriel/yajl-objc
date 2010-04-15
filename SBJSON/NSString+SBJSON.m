@@ -57,7 +57,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     [NSException raise:@"enojson"
                 format:@"Failed to parse '%@' as JSON", self];
-	return nil;
+  return nil;
 }
 
 - (id)JSONFragmentValue
@@ -73,7 +73,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     [NSException raise:@"enofragment"
                 format:@"Failed to parse '%@' as a JSON fragment", self];
-	return nil;
+  return nil;
 }
 
 @end

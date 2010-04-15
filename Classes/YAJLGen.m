@@ -35,52 +35,52 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 @implementation YAJLGen
 
 - (id)init {
-	return [self initWithGenOptions:YAJLGenOptionsNone indentString:@""];
+  return [self initWithGenOptions:YAJLGenOptionsNone indentString:@""];
 }
 
 - (id)initWithGenOptions:(YAJLGenOptions)genOptions indentString:(NSString *)indentString {
-	if ((self = [super init])) {
+  if ((self = [super init])) {
     genOptions_ = genOptions;
-		yajl_gen_config cfg = { 
-			((genOptions & YAJLGenOptionsBeautify) ? 1 : 0),
-			[indentString UTF8String]
-		};		
-		gen_ = yajl_gen_alloc(&cfg, NULL);		
-	}
-	return self;
+    yajl_gen_config cfg = { 
+      ((genOptions & YAJLGenOptionsBeautify) ? 1 : 0),
+      [indentString UTF8String]
+    };    
+    gen_ = yajl_gen_alloc(&cfg, NULL);    
+  }
+  return self;
 }
 
-- (void)dealloc {	
-	if (gen_ != NULL) yajl_gen_free(gen_);
-	[super dealloc];
+- (void)dealloc { 
+  if (gen_ != NULL) yajl_gen_free(gen_);
+  [super dealloc];
 }
 
-- (void)object:(id)obj {	
-	if ([obj respondsToSelector:@selector(JSON)]) {
-		return [self object:[obj JSON]];
-	} else if ([obj isKindOfClass:[NSArray class]]) {
-		[self startArray];
-		for(id element in obj)
-			[self object:element];
-		[self endArray];
-	} else if ([obj isKindOfClass:[NSDictionary class]]) {
-		[self startDictionary];
-		for(id key in obj) {
-			[self object:key];
-			[self object:[obj objectForKey:key]];
-		}
-		[self endDictionary];
-	} else if ([obj isKindOfClass:[NSNumber class]]) {
-		if ('c' != *[obj objCType]) {
-			[self number:obj];
-		} else {
-			[self bool:[obj boolValue]];
-		}
-	} else if ([obj isKindOfClass:[NSString class]]) {
-		[self string:obj];
-	} else if ([obj isKindOfClass:[NSNull class]]) {
-		[self null];
-	} else {    
+- (void)object:(id)obj {  
+  if ([obj respondsToSelector:@selector(JSON)]) {
+    return [self object:[obj JSON]];
+  } else if ([obj isKindOfClass:[NSArray class]]) {
+    [self startArray];
+    for(id element in obj)
+      [self object:element];
+    [self endArray];
+  } else if ([obj isKindOfClass:[NSDictionary class]]) {
+    [self startDictionary];
+    for(id key in obj) {
+      [self object:key];
+      [self object:[obj objectForKey:key]];
+    }
+    [self endDictionary];
+  } else if ([obj isKindOfClass:[NSNumber class]]) {
+    if ('c' != *[obj objCType]) {
+      [self number:obj];
+    } else {
+      [self bool:[obj boolValue]];
+    }
+  } else if ([obj isKindOfClass:[NSString class]]) {
+    [self string:obj];
+  } else if ([obj isKindOfClass:[NSNull class]]) {
+    [self null];
+  } else {    
     
     BOOL unknownType = NO;
     if (genOptions_ & YAJLGenOptionsIncludeUnsupportedTypes) {
@@ -106,57 +106,57 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
         [self null]; // Use null value for unknown type if we are ignoring
       }
     }
-	}
+  }
 }
 
 - (void)null {
-	yajl_gen_null(gen_);
+  yajl_gen_null(gen_);
 }
 
 - (void)bool:(BOOL)b {
-	yajl_gen_bool(gen_, b);
+  yajl_gen_bool(gen_, b);
 }
 
 - (void)number:(NSNumber *)number {
-	NSString *s = [number stringValue];
-	unsigned int length = [s lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
-	const char *c = [s UTF8String];
-	yajl_gen_number(gen_, c, length);
+  NSString *s = [number stringValue];
+  unsigned int length = [s lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+  const char *c = [s UTF8String];
+  yajl_gen_number(gen_, c, length);
 }
 
 - (void)string:(NSString *)s {
-	unsigned int length = [s lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
-	const unsigned char *c = (const unsigned char *)[s UTF8String];	
-	yajl_gen_string(gen_, c, length);
+  unsigned int length = [s lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+  const unsigned char *c = (const unsigned char *)[s UTF8String]; 
+  yajl_gen_string(gen_, c, length);
 }
 
 - (void)startDictionary {
-	yajl_gen_map_open(gen_);
+  yajl_gen_map_open(gen_);
 }
 
 - (void)endDictionary {
-	yajl_gen_map_close(gen_);
+  yajl_gen_map_close(gen_);
 }
 
 - (void)startArray {
-	yajl_gen_array_open(gen_);
+  yajl_gen_array_open(gen_);
 }
 
 - (void)endArray {
-	yajl_gen_array_close(gen_);
+  yajl_gen_array_close(gen_);
 }
 
 - (void)clear {
-	yajl_gen_clear(gen_);
+  yajl_gen_clear(gen_);
 }
 
 - (NSString *)buffer {
-	const unsigned char *buf;  
-	unsigned int len;
-	yajl_gen_get_buf(gen_, &buf, &len); 
-	NSString *s = [NSString stringWithUTF8String:(const char*)buf];	
-	return s;
-}	
+  const unsigned char *buf;  
+  unsigned int len;
+  yajl_gen_get_buf(gen_, &buf, &len); 
+  NSString *s = [NSString stringWithUTF8String:(const char*)buf]; 
+  return s;
+} 
 
 @end
 

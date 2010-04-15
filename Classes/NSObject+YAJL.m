@@ -36,44 +36,44 @@
 #pragma mark Gen
 
 - (NSString *)yajl_JSONString {
-	return [self yajl_JSONStringWithOptions:YAJLGenOptionsNone indentString:@"  "];
+  return [self yajl_JSONStringWithOptions:YAJLGenOptionsNone indentString:@"  "];
 }
 
 - (NSString *)yajl_JSONStringWithOptions:(YAJLGenOptions)options indentString:(NSString *)indentString {
-	YAJLGen *gen = [[YAJLGen alloc] initWithGenOptions:options indentString:indentString];
-	[gen object:self];
-	NSString *buffer = [[gen buffer] retain];
-	[gen release];
-	return [buffer autorelease];
+  YAJLGen *gen = [[YAJLGen alloc] initWithGenOptions:options indentString:indentString];
+  [gen object:self];
+  NSString *buffer = [[gen buffer] retain];
+  [gen release];
+  return [buffer autorelease];
 }
 
 #pragma mark Parsing
 
 - (id)yajl_JSON {
-	NSError *error = nil;
-	id JSON = [self yajl_JSON:&error];
-	if (error) [NSException raise:YAJLParserException format:[error localizedDescription]];
-	return JSON;
+  NSError *error = nil;
+  id JSON = [self yajl_JSON:&error];
+  if (error) [NSException raise:YAJLParserException format:[error localizedDescription]];
+  return JSON;
 }
 
 - (id)yajl_JSON:(NSError **)error {
-	return [self yajl_JSONWithOptions:YAJLParserOptionsNone error:error];
+  return [self yajl_JSONWithOptions:YAJLParserOptionsNone error:error];
 }
 
 - (id)yajl_JSONWithOptions:(YAJLParserOptions)options error:(NSError **)error {
-	NSData *data = nil;	
-	if ([self isKindOfClass:[NSData class]]) {
-		data = (NSData *)self;
-	} else if ([self respondsToSelector:@selector(dataUsingEncoding:)]) {
-		data = [(id)self dataUsingEncoding:NSUTF8StringEncoding];
-	} else {
-		[NSException raise:YAJLParsingUnsupportedException format:@"Object of type (%@) must implement dataUsingEncoding: to be parsed", [self class]];
-	}
-	
-	YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:options error:error];
-	id root = [document.root retain];
-	[document release];
-	return [root autorelease];
+  NSData *data = nil; 
+  if ([self isKindOfClass:[NSData class]]) {
+    data = (NSData *)self;
+  } else if ([self respondsToSelector:@selector(dataUsingEncoding:)]) {
+    data = [(id)self dataUsingEncoding:NSUTF8StringEncoding];
+  } else {
+    [NSException raise:YAJLParsingUnsupportedException format:@"Object of type (%@) must implement dataUsingEncoding: to be parsed", [self class]];
+  }
+  
+  YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:options error:error];
+  id root = [document.root retain];
+  [document release];
+  return [root autorelease];
 }
 
 
