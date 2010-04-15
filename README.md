@@ -10,9 +10,7 @@ YAJL.framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.c
 
 ### iPhone
 
-[libYAJLIPhone-0.2.16.zip](http://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.16.zip) *Static Library for iPhone OS 3.0 Simulator & Device* (2010/03/01)
-
-The static library is a universal arm6/7 binary so while it is double the size of previous builds, it compresses down to nearly the same size as standalone builds.
+[libYAJLIPhone-0.2.17.zip](http://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.17.zip) *Static Library for iPhone OS 3.0 Simulator & Device* (2010/04/15)
 
 ## Install (Mac OS X)
 
