@@ -70,7 +70,7 @@ extern NSInteger YAJLDocumentStackCapacity;
 
 @property (readonly, nonatomic) id root; //! Root element
 @property (readonly, nonatomic) YAJLParserStatus parserStatus;
-@property (assign, nonatomic) id<YAJLDocumentDelegate> delegate;
+@property (assign, nonatomic) __weak id<YAJLDocumentDelegate> delegate;
 
 /*!
  Create document from data.

@@ -4,13 +4,7 @@ YAJL.framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.c
 
 ## Download
 
-### Mac OS X
-
-[YAJL-0.2.16.zip](http://rel.me.s3.amazonaws.com/yajl/YAJL-0.2.16.zip) *YAJL.framework* (2010/03/01)
-
-### iPhone
-
-[libYAJLIPhone-0.2.17.zip](http://rel.me.s3.amazonaws.com/yajl/libYAJLIPhone-0.2.17.zip) *Static Library for iPhone OS 3.0 Simulator & Device* (2010/04/15)
+See Downloads
 
 ## Install (Mac OS X)
 

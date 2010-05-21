@@ -722,7 +722,6 @@
 			baseConfigurationReference = 00C4049E0FE77562003CE908 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DYLIB_CURRENT_VERSION = "$(YAJL_VERSION)";
 			};
 			name = Release;
