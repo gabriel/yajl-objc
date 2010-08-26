@@ -123,7 +123,7 @@ To use the document style, use `YAJLDocument`. Usage should be very similar to `
 
 	NSData *data = [NSData dataWithContentsOfFile:@"example.json"];
 	NSError *error = nil;
-	YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:0 error:&error];
+	YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:YAJLParserOptionsNone error:&error];
 	// Access root element at document.root
 	NSLog(@"Root: %@", document.root);
 	[document release];
