@@ -28,7 +28,7 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 
 To use the framework:
 
-  #import <YAJL/YAJL.h>
+	#import <YAJL/YAJL.h>
 
 ## Install (iOS)
 
@@ -43,7 +43,7 @@ To use the framework:
 
 To use the framework:
 
-  #import <YAJLIOS/YAJLIOS.h>
+	#import <YAJLIOS/YAJLIOS.h>
 
 ## Usage
 
@@ -150,7 +150,7 @@ To use the document style, use `YAJLDocument`. Usage should be very similar to `
 
 ## Load JSON from Bundle
 
-  [[NSBundle mainBundle] yajl_JSONFromResource:@"kegs.json"];
+	id JSONValue = [[NSBundle mainBundle] yajl_JSONFromResource:@"kegs.json"];
 
 ## Customized Encoding
 
