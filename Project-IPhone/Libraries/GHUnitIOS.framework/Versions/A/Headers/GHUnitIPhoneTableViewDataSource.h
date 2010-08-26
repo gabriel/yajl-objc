@@ -1,8 +1,8 @@
 //
-//  YAJL.h
-//  YAJL
+//  GHUnitIPhoneTableViewDataSource.h
+//  GHUnitIPhone
 //
-//  Created by Gabriel Handford on 7/23/09.
+//  Created by Gabriel Handford on 5/5/09.
 //  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -27,8 +27,14 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "YAJLParser.h"
-#import "YAJLDocument.h"
-#import "YAJLGen.h"
-#import "NSObject+YAJL.h"
-#import "NSBundle+YAJL.h"
+#import "GHTestViewModel.h"
+
+@interface GHUnitIPhoneTableViewDataSource : GHTestViewModel <UITableViewDataSource> {
+  
+}
+
+- (GHTestNode *)nodeForIndexPath:(NSIndexPath *)indexPath;
+
+- (void)setSelectedForAllNodes:(BOOL)selected;
+
+@end

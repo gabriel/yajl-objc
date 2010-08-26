@@ -1,5 +1,5 @@
 //
-//  YAJL.h
+//  NSBundle+YAJL.m
 //  YAJL
 //
 //  Created by Gabriel Handford on 7/23/09.
@@ -27,8 +27,21 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "YAJLParser.h"
-#import "YAJLDocument.h"
-#import "YAJLGen.h"
-#import "NSObject+YAJL.h"
 #import "NSBundle+YAJL.h"
+#import "GHNSBundle+Utils.h"
+#import "NSObject+YAJL.h"
+
+@implementation NSBundle (YAJL)
+
+- (id)yajl_JSONFromResource:(NSString *)resource {
+  NSError *error = nil;
+  id JSONValue = [self yajl_JSONFromResource:resource options:YAJLParserOptionsNone error:&error];
+  if (error) [NSException raise:YAJLParserException format:[error localizedDescription], nil];
+  return JSONValue;
+}
+
+- (id)yajl_JSONFromResource:(NSString *)resource options:(YAJLParserOptions)options error:(NSError **)error {
+  return [[self gh_loadStringDataFromResource:resource] yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:error];
+}
+
+@end

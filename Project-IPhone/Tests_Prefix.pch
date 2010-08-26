@@ -4,8 +4,9 @@
 
 #ifdef __OBJC__
 #import <Foundation/Foundation.h>
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "YAJLDocument.h"
 #import "YAJLParser.h"
 #import "YAJLTestCase.h"
+#import "NSBundle+YAJL.h"
 #endif

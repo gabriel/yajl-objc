@@ -109,7 +109,7 @@
   
   NSError *error = [parser parserError];
   if (error) {
-    GHTestLog(@"Parse error:\n%@", error);    
+    GHTestLog(@"Parse error:\n%@", error);
     GHAssertEquals([error code], (NSInteger)YAJLParserErrorCodeIntegerOverflow, nil);
     GHAssertEqualStrings([[error userInfo] objectForKey:YAJLParserValueKey], @"9223372036854775807", nil);
   } else {

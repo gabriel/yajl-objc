@@ -1,9 +1,9 @@
 //
-//  YAJL.h
-//  YAJL
+//  GHUnitIPhoneView.h
+//  GHUnitIPhone
 //
-//  Created by Gabriel Handford on 7/23/09.
-//  Copyright 2009. All rights reserved.
+//  Created by Gabriel Handford on 4/12/10.
+//  Copyright 2010. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,8 +27,26 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "YAJLParser.h"
-#import "YAJLDocument.h"
-#import "YAJLGen.h"
-#import "NSObject+YAJL.h"
-#import "NSBundle+YAJL.h"
+
+@interface GHUnitIPhoneView : UIView {
+  UISearchBar *searchBar_;
+  
+  UITableView *tableView_;
+  
+  //! Status label at bottom of the view
+  UILabel *statusLabel_;
+ 
+  UISegmentedControl *filterControl_;
+    
+  UIToolbar *runToolbar_;  
+  
+  UIView *footerView_;
+}
+
+@property (readonly, nonatomic) UILabel *statusLabel;
+@property (readonly, nonatomic) UISegmentedControl *filterControl;
+@property (readonly, nonatomic) UISearchBar *searchBar;
+@property (readonly, nonatomic) UITableView *tableView;
+
+
+@end

@@ -1,5 +1,5 @@
 //
-//  YAJL.h
+//  NSBundle+YAJL.h
 //  YAJL
 //
 //  Created by Gabriel Handford on 7/23/09.
@@ -28,7 +28,23 @@
 //
 
 #import "YAJLParser.h"
-#import "YAJLDocument.h"
-#import "YAJLGen.h"
-#import "NSObject+YAJL.h"
-#import "NSBundle+YAJL.h"
+
+@interface NSBundle (YAJL)
+
+/*!
+ Load JSON from bundle. 
+ Throws an YAJLParserException on parse error.
+ @param resource Resource name with extension, for example, file.json
+ */
+- (id)yajl_JSONFromResource:(NSString *)resource;
+
+/*!
+ Load JSON from bundle.
+ @param resource Resource name with extension, for example, file.json
+ @param options Parser options
+ @param error Out error
+ @result JSON value (NSArray, NSDictionary) or nil if errored
+ */
+- (id)yajl_JSONFromResource:(NSString *)resource options:(YAJLParserOptions)options error:(NSError **)error;
+
+@end

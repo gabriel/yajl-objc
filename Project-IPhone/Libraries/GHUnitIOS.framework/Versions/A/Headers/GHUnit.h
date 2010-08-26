@@ -1,8 +1,8 @@
 //
-//  YAJL.h
-//  YAJL
+//  GHUnit.h
+//  GHUnit
 //
-//  Created by Gabriel Handford on 7/23/09.
+//  Created by Gabriel Handford on 1/19/09.
 //  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -27,8 +27,25 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "YAJLParser.h"
-#import "YAJLDocument.h"
-#import "YAJLGen.h"
-#import "NSObject+YAJL.h"
-#import "NSBundle+YAJL.h"
+#import "GHTestCase.h"
+#import "GHAsyncTestCase.h"
+#import "GHTestSuite.h"
+#import "GHTestMacros.h"
+#import "GHTestRunner.h"
+
+#import "GHTest.h"
+#import "GHTesting.h"
+#import "GHTestOperation.h"
+#import "GHTestGroup.h"
+#import "GHTest+JUnitXML.h"
+#import "GHTestGroup+JUnitXML.h"
+#import "NSException+GHTestFailureExceptions.h"
+#import "NSValue+GHValueFormatter.h"
+
+#ifdef DEBUG
+#define GHUDebug(fmt, ...) do { \
+fputs([[[NSString stringWithFormat:fmt, ##__VA_ARGS__] stringByAppendingString:@"\n"] UTF8String], stdout); \
+} while(0)
+#else
+#define GHUDebug(fmt, ...) do {} while(0)
+#endif

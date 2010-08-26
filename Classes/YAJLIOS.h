@@ -1,8 +1,8 @@
 //
-//  GHNSObject+Swizzle.h
-//  GHUnit
+//  YAJL.h
+//  YAJL
 //
-//  Created by Gabriel Handford on 4/13/09.
+//  Created by Gabriel Handford on 7/23/09.
 //  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -27,10 +27,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSObject (GHUSwizzle)
-
-+ (void)ghu_swizzleMethod:(SEL)original withMethod:(SEL)alternate;
-+ (void)ghu_swizzleClassMethod:(SEL)original withClassMethod:(SEL)alternate;
-
-@end
-
+#import "YAJLParser.h"
+#import "YAJLDocument.h"
+#import "YAJLGen.h"
+#import "NSObject+YAJL.h"
+#import "NSBundle+YAJL.h"

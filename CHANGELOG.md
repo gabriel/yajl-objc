@@ -1,4 +1,9 @@
+== 0.2.20
+
+- Added framework build for iPhone
+
 == 0.2.17
+
 - Updated to use yalj 1.0.9 (iPhone)
 
 == 0.2.16

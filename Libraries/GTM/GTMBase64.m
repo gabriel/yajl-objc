@@ -16,7 +16,7 @@
 //  the License.
 //
 
-#import "YAJL_GTMBase64.h"
+#import "GTMBase64.h"
 
 static const char *kBase64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 static const char *kWebSafeBase64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
@@ -212,7 +212,7 @@ GTM_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
 }
 
 
-@interface YAJL_GTMBase64 (PrivateMethods)
+@interface GTMBase64 (PrivateMethods)
 
 +(NSData *)baseEncode:(const void *)bytes
                length:(NSUInteger)length
@@ -241,7 +241,7 @@ GTM_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
 @end
 
 
-@implementation YAJL_GTMBase64
+@implementation GTMBase64
 
 //
 // Standard Base64 (RFC) handling
@@ -396,7 +396,7 @@ GTM_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
 
 @end
 
-@implementation YAJL_GTMBase64 (PrivateMethods)
+@implementation GTMBase64 (PrivateMethods)
 
 //
 // baseEncode:length:charset:padded:

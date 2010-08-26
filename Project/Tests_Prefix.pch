@@ -8,4 +8,5 @@
 #import "YAJLDocument.h"
 #import "YAJLParser.h"
 #import "YAJLTestCase.h"
+#import "NSBundle+YAJL.h"
 #endif

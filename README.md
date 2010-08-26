@@ -26,16 +26,28 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 	- Drag `YAJL.framework` into the the build phase
 	- Make sure the copy phase appears before any `Run Script` phases 
 
-## Install (iPhone)
+To use the framework:
 
-- Add files (from static library build) to project.
-- Under 'Other Linker Flags' in the Test target, add `-ObjC` and `-all_load` (So NSObject+YAJL category is loaded).
+  #import <YAJL/YAJL.h>
+
+## Install (iOS)
+
+- Add the `YAJLIOS.framework` to your project.
+- Add the following frameworks to `Linked Libraries`:
+  - `YAJLIOS.framework`
+  - `CoreGraphics.framework`
+  - `Foundation.framework`
+  - `UIKit.framework`
+- Under 'Framework Search Paths' make sure the (parent) directory to YAJLIOS.framework is listed.
+- Under 'Other Linker Flags' in the `Test` target, add `-ObjC` and `-all_load`
+
+To use the framework:
+
+  #import <YAJLIOS/YAJLIOS.h>
 
 ## Usage
 
 To parse JSON from an NSData (or NSString):
-
-	#import "NSObject+YAJL.h"
 
 	NSData *JSONData = [NSData dataWithContentsOfFile:@"example.json"];
 	NSArray *arrayFromData = [JSONData yajl_JSON];
@@ -49,8 +61,6 @@ To parse JSON from an NSData (or NSString):
 
 To generate JSON from an object:
 
-	#import "NSObject+YAJL.h"
-	
 	NSDictionary *dict = [NSDictionary dictionaryWithObject:@"value" forKey:@"key"];
 	NSString *JSONString = [dict yajl_JSONString];
 	
@@ -137,6 +147,10 @@ To use the document style, use `YAJLDocument`. Usage should be very similar to `
 	- (void)document:(YAJLDocument *)document didAddArray:(NSArray *)array { }
 	- (void)document:(YAJLDocument *)document didAddObject:(id)object toArray:(NSArray *)array { }
 	- (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict { }
+
+## Load JSON from Bundle
+
+  [[NSBundle mainBundle] yajl_JSONFromResource:@"kegs.json"];
 
 ## Customized Encoding
 
