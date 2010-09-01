@@ -6,27 +6,27 @@
 //  Copyright 2009. All rights reserved.
 //
 
-@interface NSBundle (GHUtils)
+@interface NSBundle (YAJL_GHUtils)
 
 /*!
  Load data from resource.
  @param resource Name of resource
  @result NSData
  */
-- (NSData *)gh_loadDataFromResource:(NSString *)resource;
+- (NSData *)yajl_gh_loadDataFromResource:(NSString *)resource;
 
 /*!
  Load string data from resource.
  @param resource Name of resource
  @result NSString
  */
-- (NSString *)gh_loadStringDataFromResource:(NSString *)resource;
+- (NSString *)yajl_gh_loadStringDataFromResource:(NSString *)resource;
 
 /*!
  Get URL for resource.
  @param resource Name of resource
  @result URL to resource
  */
-- (NSURL *)gh_URLForResource:(NSString *)resource;
+- (NSURL *)yajl_gh_URLForResource:(NSString *)resource;
 
 @end

@@ -212,7 +212,7 @@ GTM_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
 }
 
 
-@interface GTMBase64 (PrivateMethods)
+@interface YAJL_GTMBase64 (PrivateMethods)
 
 +(NSData *)baseEncode:(const void *)bytes
                length:(NSUInteger)length
@@ -241,7 +241,7 @@ GTM_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
 @end
 
 
-@implementation GTMBase64
+@implementation YAJL_GTMBase64
 
 //
 // Standard Base64 (RFC) handling
@@ -396,7 +396,7 @@ GTM_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
 
 @end
 
-@implementation GTMBase64 (PrivateMethods)
+@implementation YAJL_GTMBase64 (PrivateMethods)
 
 //
 // baseEncode:length:charset:padded:

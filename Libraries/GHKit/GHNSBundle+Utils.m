@@ -8,9 +8,9 @@
 
 #import "GHNSBundle+Utils.h"
 
-@implementation NSBundle (GHUtils)
+@implementation NSBundle (YAJL_GHUtils)
 
-- (NSData *)gh_loadDataFromResource:(NSString *)resource {
+- (NSData *)yajl_gh_loadDataFromResource:(NSString *)resource {
 	NSParameterAssert(resource);
 	NSString *resourcePath = [self pathForResource:[resource stringByDeletingPathExtension] ofType:[resource pathExtension]];	
 	if (!resourcePath) [NSException raise:NSInvalidArgumentException format:@"Resource not found: %@", resource];	
@@ -20,11 +20,11 @@
 	return data;
 }
 
-- (NSString *)gh_loadStringDataFromResource:(NSString *)resource {
-	return [[[NSString alloc] initWithData:[self gh_loadDataFromResource:resource] encoding:NSUTF8StringEncoding] autorelease];
+- (NSString *)yajl_gh_loadStringDataFromResource:(NSString *)resource {
+	return [[[NSString alloc] initWithData:[self yajl_gh_loadDataFromResource:resource] encoding:NSUTF8StringEncoding] autorelease];
 }
 
-- (NSURL *)gh_URLForResource:(NSString *)resource {
+- (NSURL *)yajl_gh_URLForResource:(NSString *)resource {
   NSParameterAssert(resource);
   NSString *resourcePath = [self pathForResource:[resource stringByDeletingPathExtension] ofType:[resource pathExtension]];	
   return resourcePath ? [NSURL fileURLWithPath:resourcePath] : nil;

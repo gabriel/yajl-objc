@@ -1,3 +1,7 @@
+== 0.2.21
+
+- Renaming categories to namespace them in case they are used externally.
+
 == 0.2.20
 
 - Added framework build for iPhone

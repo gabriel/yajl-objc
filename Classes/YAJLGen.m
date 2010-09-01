@@ -88,7 +88,7 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
       if ([obj isKindOfClass:[NSDate class]]) { 
         [self number:[NSNumber numberWithLongLong:round([obj timeIntervalSince1970] * 1000)]];
       } else if ([obj isKindOfClass:[NSData class]]) {
-        [self string:[GTMBase64 stringByEncodingData:obj]];
+        [self string:[YAJL_GTMBase64 stringByEncodingData:obj]];
       } else if ([obj isKindOfClass:[NSURL class]]) {
         [self string:[obj absoluteString]];
       } else {
