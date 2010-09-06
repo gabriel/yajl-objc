@@ -1,3 +1,7 @@
+== 0.2.22
+
+- Fixing YAJL (Mac OSX) build.
+
 == 0.2.21
 
 - Renaming categories to namespace them in case they are used externally.

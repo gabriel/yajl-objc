@@ -15,7 +15,7 @@
 		002F09F1122642B300766D62 /* GHNSBundle+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 002F09EF122642B300766D62 /* GHNSBundle+Utils.h */; };
 		002F09F2122642B300766D62 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F09F0122642B300766D62 /* GHNSBundle+Utils.m */; };
 		002F09F5122642C200766D62 /* NSBundle+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F09F3122642C200766D62 /* NSBundle+YAJL.m */; };
-		002F09F6122642C200766D62 /* NSBundle+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 002F09F4122642C200766D62 /* NSBundle+YAJL.h */; };
+		002F09F6122642C200766D62 /* NSBundle+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 002F09F4122642C200766D62 /* NSBundle+YAJL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		002F09F8122642D900766D62 /* NSBundleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F09F7122642D900766D62 /* NSBundleTest.m */; };
 		0041A103107E66B7001DDCA8 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0041A102107E66B7001DDCA8 /* GHUnit.framework */; };
 		0041A106107E66B9001DDCA8 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0041A102107E66B7001DDCA8 /* GHUnit.framework */; };
@@ -56,9 +56,9 @@
 		00C404980FE77552003CE908 /* YAJLDocumentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404900FE77552003CE908 /* YAJLDocumentTest.m */; };
 		00C404990FE77552003CE908 /* YAJLParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404910FE77552003CE908 /* YAJLParserTest.m */; };
 		00C6F19410D2EFFC00A63AF1 /* overflow_longlong.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */; };
-		00D80136113C3CE500C5BC4B /* yajl_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D80123113C3CE500C5BC4B /* yajl_common.h */; };
-		00D80137113C3CE500C5BC4B /* yajl_gen.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D80124113C3CE500C5BC4B /* yajl_gen.h */; };
-		00D80138113C3CE500C5BC4B /* yajl_parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D80125113C3CE500C5BC4B /* yajl_parse.h */; };
+		00D80136113C3CE500C5BC4B /* yajl_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D80123113C3CE500C5BC4B /* yajl_common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00D80137113C3CE500C5BC4B /* yajl_gen.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D80124113C3CE500C5BC4B /* yajl_gen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00D80138113C3CE500C5BC4B /* yajl_parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D80125113C3CE500C5BC4B /* yajl_parse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D80139113C3CE500C5BC4B /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00D80126113C3CE500C5BC4B /* CMakeLists.txt */; };
 		00D8013A113C3CE500C5BC4B /* yajl in Resources */ = {isa = PBXBuildFile; fileRef = 00D80127113C3CE500C5BC4B /* yajl */; };
 		00D8013B113C3CE500C5BC4B /* yajl.c in Sources */ = {isa = PBXBuildFile; fileRef = 00D80128113C3CE500C5BC4B /* yajl.c */; };
@@ -110,6 +110,7 @@
 /* Begin PBXFileReference section */
 		00073F8E11613F4900D8283B /* YAJLDocumentDelegateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDocumentDelegateTest.m; sourceTree = "<group>"; };
 		00073FA3116141A600D8283B /* document_streaming.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = document_streaming.json; sourceTree = "<group>"; };
+		00155ABC12348F9100B240AE /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		002002EE107D49BC009ED6DF /* NSDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataTest.m; sourceTree = "<group>"; };
 		002F09EA122642A700766D62 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		002F09EB122642A700766D62 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
@@ -399,9 +400,10 @@
 		0867D691FE84028FC02AAC07 /* YAJL */ = {
 			isa = PBXGroup;
 			children = (
-				00D80121113C3CE500C5BC4B /* src */,
+				00155ABC12348F9100B240AE /* Makefile */,
 				0067B0E40FF845DC00441738 /* README.md */,
 				0067B1000FF8464F00441738 /* CHANGELOG.md */,
+				00D80121113C3CE500C5BC4B /* src */,
 				00C4046D0FE77543003CE908 /* Classes */,
 				00C404720FE77543003CE908 /* SBJSON */,
 				00AC52D61098EFE2002B5508 /* Libraries */,

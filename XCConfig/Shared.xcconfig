@@ -1,4 +1,4 @@
-YAJL_VERSION = 0.2.20
+YAJL_VERSION = 0.2.22
 
 YAJL_GENERAL_OTHER_CFLAGS = -Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition
 
