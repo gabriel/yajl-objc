@@ -622,22 +622,21 @@
 			productReference = 006597AC11BEEF4800E89ABD /* libYAJLIOSSimulator.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		006597AE11BEEF5400E89ABD /* Tests (4.0) */ = {
+		006597AE11BEEF5400E89ABD /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 006597E711BEEF5400E89ABD /* Build configuration list for PBXNativeTarget "Tests (4.0)" */;
+			buildConfigurationList = 006597E711BEEF5400E89ABD /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
 				006597B311BEEF5400E89ABD /* Resources */,
 				006597C811BEEF5400E89ABD /* Sources */,
 				006597E311BEEF5400E89ABD /* Frameworks */,
 				006597E611BEEF5400E89ABD /* ShellScript */,
-				00588733122635F100292C90 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				006597EE11BEEF6900E89ABD /* PBXTargetDependency */,
 			);
-			name = "Tests (4.0)";
+			name = Tests;
 			productName = Tests;
 			productReference = 006597EA11BEEF5400E89ABD /* Tests.app */;
 			productType = "com.apple.product-type.application";
@@ -664,7 +663,7 @@
 			targets = (
 				0065975811BEEF4000E89ABD /* YAJLIPhone (Device) */,
 				0065977F11BEEF4800E89ABD /* YAJLIPhone (Simulator) */,
-				006597AE11BEEF5400E89ABD /* Tests (4.0) */,
+				006597AE11BEEF5400E89ABD /* Tests */,
 				005887351226360800292C90 /* Run make to build framework */,
 			);
 		};
@@ -701,19 +700,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		00588733122635F100292C90 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "";
-		};
 		005887341226360800292C90 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -992,7 +978,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		006597E711BEEF5400E89ABD /* Build configuration list for PBXNativeTarget "Tests (4.0)" */ = {
+		006597E711BEEF5400E89ABD /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				006597E811BEEF5400E89ABD /* Debug */,

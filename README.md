@@ -1,6 +1,6 @@
 # YAJL (Objective-C Wrapper)
 
-YAJL.framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.com/yajl/) SAX-style JSON parser.
+The YAJL framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.com/yajl/) SAX-style JSON parser.
 
 ## Download
 
