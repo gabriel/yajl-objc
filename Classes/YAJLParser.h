@@ -53,12 +53,13 @@ typedef enum {
  @enum Parser options
  @constant YAJLParserOptionsAllowComments Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
  @constant YAJLParserOptionsCheckUTF8 Invalid UTF8 strings will cause a parse error
+ @constant YAJLParserOptionsStrictPrecision If YES will force strict precision and return integer overflow error
  */
 enum {
   YAJLParserOptionsNone = 0,  
-  YAJLParserOptionsAllowComments = 1 << 0, // Allows comments in JSON
-  YAJLParserOptionsCheckUTF8 = 1 << 1, // If YES will verify UTF-8
-  YAJLParserOptionsStrictPrecision = 1 << 2, // If YES will force strict precision and return integer overflow error
+  YAJLParserOptionsAllowComments = 1 << 0,
+  YAJLParserOptionsCheckUTF8 = 1 << 1, 
+  YAJLParserOptionsStrictPrecision = 1 << 2,
 };
 typedef NSUInteger YAJLParserOptions;
 
@@ -73,15 +74,40 @@ typedef NSUInteger YAJLParserStatus;
 
 @class YAJLParser;
 
-
+/*!
+ Delegate for YAJL JSON parser.
+ */
 @protocol YAJLParserDelegate <NSObject>
 
+/*!
+ Parser did start dictionary.
+ @param parser Sender
+ */
 - (void)parserDidStartDictionary:(YAJLParser *)parser;
+
+/*!
+ Parser did end dictionary.
+ @param parser Sender
+ */
 - (void)parserDidEndDictionary:(YAJLParser *)parser;
 
+/*!
+ Parser did start array.
+ @param parser Sender
+ */
 - (void)parserDidStartArray:(YAJLParser *)parser;
+
+/*!
+ Parser did end array.
+ @param parser Sender
+ */
 - (void)parserDidEndArray:(YAJLParser *)parser;
 
+/*!
+ Parser did map key.
+ @param parser Sender
+ @param key Key that was mapped
+ */
 - (void)parser:(YAJLParser *)parser didMapKey:(NSString *)key;
 
 /*!
@@ -93,7 +119,33 @@ typedef NSUInteger YAJLParserStatus;
 
 @end
 
-
+/*!
+ JSON parser.
+ 
+ @code
+ NSData *data = [NSData dataWithContentsOfFile:@"example.json"];
+ 
+ YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsAllowComments];
+ parser.delegate = self;
+ [parser parse:data];
+ if (parser.parserError) {
+   NSLog(@"Error:\n%@", parser.parserError);
+ }
+ 
+ parser.delegate = nil;
+ [parser release];
+ 
+ // Include delegate methods from YAJLParserDelegate
+ - (void)parserDidStartDictionary:(YAJLParser *)parser { }
+ - (void)parserDidEndDictionary:(YAJLParser *)parser { }
+ 
+ - (void)parserDidStartArray:(YAJLParser *)parser { }
+ - (void)parserDidEndArray:(YAJLParser *)parser { }
+ 
+ - (void)parser:(YAJLParser *)parser didMapKey:(NSString *)key { }
+ - (void)parser:(YAJLParser *)parser didAdd:(id)value { }
+  @endcode
+ */
 @interface YAJLParser : NSObject {
   
   yajl_handle handle_;

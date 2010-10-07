@@ -31,7 +31,7 @@
 #import "GHNSBundle+Utils.h"
 #import "NSObject+YAJL.h"
 
-@implementation NSBundle (YAJL)
+@implementation NSBundle(YAJL)
 
 - (id)yajl_JSONFromResource:(NSString *)resource {
   NSError *error = nil;

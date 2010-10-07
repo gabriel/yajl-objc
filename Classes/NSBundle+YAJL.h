@@ -29,12 +29,19 @@
 
 #import "YAJLParser.h"
 
-@interface NSBundle (YAJL)
+/*!
+ Utilities for loading JSON from resource bundles.
+ 
+ @code
+ id JSONValue = [[NSBundle mainBundle] yajl_JSONFromResource:@"kegs.json"];
+ @endcode
+ */
+@interface NSBundle(YAJL)
 
 /*!
- Load JSON from bundle. 
- Throws an YAJLParserException on parse error.
+ Load JSON from bundle.  
  @param resource Resource name with extension, for example, file.json
+ @throws YAJLParserException On parse error
  */
 - (id)yajl_JSONFromResource:(NSString *)resource;
 
