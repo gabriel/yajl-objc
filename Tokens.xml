@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+  <Token>
+    <TokenIdentifier>
+      <Name>yajl_JSONFromResource:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_bundle_07_y_a_j_l_08.html</Path>
+    <Anchor>a7acba96d0a072047952cb431bceb74c1</Anchor>
+    <Abstract>Load JSON from bundle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>yajl_JSONFromResource:options:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_bundle_07_y_a_j_l_08.html</Path>
+    <Anchor>a6ecd138e0a24438372d7b820e4956ae2</Anchor>
+    <Abstract>Load JSON from bundle.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>yajl_JSONString</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_object_07_y_a_j_l_08.html</Path>
+    <Anchor>a3282ad9ec9217da932f734b529b342ae</Anchor>
+    <Abstract>Create JSON string from object.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>yajl_JSONStringWithOptions:indentString:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_object_07_y_a_j_l_08.html</Path>
+    <Anchor>a89272af6ea41aa8a9a53510003337019</Anchor>
+    <Abstract>Create JSON string from object.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>yajl_JSON</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_object_07_y_a_j_l_08.html</Path>
+    <Anchor>a762ba9c217b7c1dbde38ca32c6544540</Anchor>
+    <Abstract>Parse JSON (NSString or NSData or dataUsingEncoding:).</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>yajl_JSON:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_object_07_y_a_j_l_08.html</Path>
+    <Anchor>a6500ee2b571f3a78a36ddf7dd959eca6</Anchor>
+    <Abstract>Parse JSON (NSString or NSData or dataUsingEncoding:) with out error.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>yajl_JSONWithOptions:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_object_07_y_a_j_l_08.html</Path>
+    <Anchor>a9080548c8b88c4faefe18044b76be85d</Anchor>
+    <Abstract>Parse JSON (NSString or NSData or dataUsingEncoding:) with options and out error.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>JSON</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_coding-p.html</Path>
+    <Anchor>a3305ad3a3859fb687685cc6fc24f0e60</Anchor>
+    <Abstract>Provide custom and/or encodable object to parse to JSON string.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithData:parserOptions:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_document.html</Path>
+    <Anchor>a9b206b6d99ed1edd0cbec744ec75ff1b</Anchor>
+    <Abstract>Delegate.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithParserOptions:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_document.html</Path>
+    <Anchor>a5244e742acee8498bbc4b488ed63ad0c</Anchor>
+    <Abstract>Create empty document with parser options.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parse:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_document.html</Path>
+    <Anchor>a535595df957db118207836ca5217509f</Anchor>
+    <Abstract>Parse data.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parserStatus</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_document.html</Path>
+    <Anchor>a3ef4dae31a36129f29cc48046cdfd97e</Anchor>
+    <Abstract>The root element of the document, either NSArray or NSDictionary.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>delegate</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_document.html</Path>
+    <Anchor>a8f0312e4c03f935bd8cef8990e5ad97b</Anchor>
+    <Abstract>The current status of parsing.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>document:didAddDictionary:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_document_delegate-p.html</Path>
+    <Anchor>a621e8ae0d64269e16cda6d420441f454</Anchor>
+    <Abstract>Did add dictionary.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>document:didAddArray:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_document_delegate-p.html</Path>
+    <Anchor>ace984a9c02acbf30aa8618cf39ef901a</Anchor>
+    <Abstract>Did add array.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>document:didAddObject:toArray:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_document_delegate-p.html</Path>
+    <Anchor>aa34b725c5f9915569461a131fef14a03</Anchor>
+    <Abstract>Did add object to array.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>document:didSetObject:forKey:inDictionary:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_document_delegate-p.html</Path>
+    <Anchor>a768adbf1658e80fbaa902bd7be001830</Anchor>
+    <Abstract>Did set object for key on dictionary.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithGenOptions:indentString:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>af7ec25a4613926fbe1c680a5e1e35382</Anchor>
+    <Abstract>JSON generator with options.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>object:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>a86a412c3fecbd4d373c6d27d9d6cc629</Anchor>
+    <Abstract>Write JSON for object to buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>null</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>ae504147ecf0dea92aec1666d36cc68f2</Anchor>
+    <Abstract>Write null value to buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bool:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>a137bbb2d3e47e55e8da7c5e6c21460fc</Anchor>
+    <Abstract>Write bool value to buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>number:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>a1e4a8772e21f52bae06a2e65fa25d225</Anchor>
+    <Abstract>Write numeric value to buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>string:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>adce76a63a681bfb4afd182171ec0c6dd</Anchor>
+    <Abstract>Write string value to buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>startDictionary</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>a925dbacc9c51ae073cbfb63a8427a8e5</Anchor>
+    <Abstract>Write dictionary start (&amp;#39;{&amp;#39;) to buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>endDictionary</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>a4f61134985ea924512f3cf67f0acf031</Anchor>
+    <Abstract>Write dictionary end (&amp;#39;}&amp;#39;) to buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>startArray</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>af41d83df5c360fbe4c603ecee704ddac</Anchor>
+    <Abstract>Write array start (&amp;#39;[&amp;#39;) to buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>endArray</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>aeea6ec78ebb24d5251c8db1c7b25d38c</Anchor>
+    <Abstract>Write array end (&amp;#39;]&amp;#39;) to buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>clear</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>a08d4d2a7f58f09977e16bd56f1442e87</Anchor>
+    <Abstract>Clear JSON buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>buffer</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_gen.html</Path>
+    <Anchor>a66343aa54387a8be5864896e4d357468</Anchor>
+    <Abstract>Get current JSON buffer.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithParserOptions:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_parser.html</Path>
+    <Anchor>a3cddbd758c51a3cfbcdabe67f82ea151</Anchor>
+    <Abstract>Create parser with data and options.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parse:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_parser.html</Path>
+    <Anchor>a70ed47dee24d12e07e136413fffd4cdc</Anchor>
+    <Abstract>Parse data.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parserDidStartDictionary:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_parser_delegate-p.html</Path>
+    <Anchor>a68176263236a3ff3f7578816d0ec9e0d</Anchor>
+    <Abstract>Parser did start dictionary.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parserDidEndDictionary:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_parser_delegate-p.html</Path>
+    <Anchor>a24e62f45b73eb271dc0744b6787992ba</Anchor>
+    <Abstract>Parser did end dictionary.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parserDidStartArray:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_parser_delegate-p.html</Path>
+    <Anchor>ab28667c43cd21dee7500ed3f44137fd2</Anchor>
+    <Abstract>Parser did start array.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parserDidEndArray:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_parser_delegate-p.html</Path>
+    <Anchor>a2e07bb4fac65e5b329786b6f08efbddc</Anchor>
+    <Abstract>Parser did end array.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parser:didMapKey:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_parser_delegate-p.html</Path>
+    <Anchor>a9ad90afbda4e77208c1e61fc2a7175fe</Anchor>
+    <Abstract>Parser did map key.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parser:didAdd:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+    </TokenIdentifier>
+    <Path>protocol_y_a_j_l_parser_delegate-p.html</Path>
+    <Anchor>a2f554ab453f9108c0c046a9ad5b2034d</Anchor>
+    <Abstract>Did add value.</Abstract>
+  </Token>
+</Tokens>
