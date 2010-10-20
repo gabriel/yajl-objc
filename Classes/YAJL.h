@@ -40,6 +40,18 @@
  
  @section Usage Usage
  
+ To use the framework (for iOS):
+ 
+ @code
+ #import <YAJLIOS/YAJLIOS.h>
+ @endcode
+
+ To use the framework (for Mac OS X):
+ 
+ @code
+ #import <YAJL/YAJL.h>
+ @endcode
+ 
  To parse JSON from an NSData (or NSString):
  
  @code

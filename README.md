@@ -2,6 +2,10 @@
 
 The YAJL framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.com/yajl/) SAX-style JSON parser.
 
+## Documentation
+
+For documentation see [http://gabriel.github.com/yajl-objc/](http://gabriel.github.com/yajl-objc/)
+
 ## Docset
 
 Download and copy to docset to `~/Library/Developer/Shared/Documentation/DocSets/YAJL.docset`
@@ -32,10 +36,6 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 	- Drag `YAJL.framework` into the the build phase
 	- Make sure the copy phase appears before any `Run Script` phases 
 
-To use the framework:
-
-	#import <YAJL/YAJL.h>
-
 ## Install (iOS)
 
 - Add the `YAJLIOS.framework` to your project.
@@ -47,12 +47,6 @@ To use the framework:
 - Under 'Framework Search Paths' make sure the (parent) directory to YAJLIOS.framework is listed.
 - Under 'Other Linker Flags' in the `Test` target, add `-ObjC` and `-all_load`
 
-To use the framework:
 
-	#import <YAJLIOS/YAJLIOS.h>
-
-## Documentation
-
-For documentation see [http://gabriel.github.com/yajl-objc/](http://gabriel.github.com/yajl-objc/)
 
 
