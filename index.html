@@ -46,7 +46,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3 class="version">0.2.24 </h3><p>The YAJL framework is an Objective-C wrapper around the <a href="http://lloyd.github.com/yajl/">http://lloyd.github.com/yajl/</a> SAX-style JSON parser. </p>
 <h2><a class="anchor" id="Usage"></a>
 Usage</h2>
-<p>To parse JSON from an NSData (or NSString):</p>
+<p>To use the framework (for iOS):</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #import &lt;YAJLIOS/YAJLIOS.h&gt;</span>
+</pre></div><p>To use the framework (for Mac OS X):</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #import &lt;YAJL/YAJL.h&gt;</span>
+</pre></div><p>To parse JSON from an NSData (or NSString):</p>
 <div class="fragment"><pre class="fragment"> NSData *JSONData = [NSData dataWithContentsOfFile:<span class="stringliteral">@&quot;example.json&quot;</span>];
  NSArray *arrayFromData = [JSONData yajl_JSON];
  
@@ -173,7 +177,7 @@ Customized Encoding</h2>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 19 2010 23:09:29 for YAJL by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 19 2010 23:19:02 for YAJL by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
