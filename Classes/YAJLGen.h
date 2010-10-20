@@ -29,19 +29,17 @@
 
 #include "yajl_gen.h"
 
-//! Exception type if we encounter invalid object
-extern NSString *const YAJLGenInvalidObjectException;
 
-/*!
- JSON generate options.
- */
-enum {
-  YAJLGenOptionsNone = 0, /**< No options */
-  YAJLGenOptionsBeautify = 1 << 0, /**< Beautifiy JSON output */
-  YAJLGenOptionsIgnoreUnknownTypes = 1 << 1, /**< Ignore unknown types (will use null value) */
-  YAJLGenOptionsIncludeUnsupportedTypes = 1 << 2, /**< Handle non-JSON types (including NSDate, NSData, NSURL) */
+extern NSString *const YAJLGenInvalidObjectException; //! Exception type if we encounter invalid object
+
+//! JSON generate options
+enum YAJLGenOptions {
+  YAJLGenOptionsNone = 0, //!< No options
+  YAJLGenOptionsBeautify = 1 << 0, //!< Beautifiy JSON output
+  YAJLGenOptionsIgnoreUnknownTypes = 1 << 1, //!< Ignore unknown types (will use null value)
+  YAJLGenOptionsIncludeUnsupportedTypes = 1 << 2, //!< Handle non-JSON types (including NSDate, NSData, NSURL)
 };
-typedef NSUInteger YAJLGenOptions; /**< JSON generate options */
+typedef NSUInteger YAJLGenOptions;
 
 /*!
  YAJL JSON string generator.
@@ -67,6 +65,11 @@ typedef NSUInteger YAJLGenOptions; /**< JSON generate options */
 /*!
  JSON generator with options.
  @param genOptions Generate options
+  - YAJLGenOptionsNone: No options
+  - YAJLGenOptionsBeautify: Beautifiy JSON output
+  - YAJLGenOptionsIgnoreUnknownTypes: Ignore unknown types (will use null value)
+  - YAJLGenOptionsIncludeUnsupportedTypes: Handle non-JSON types (including NSDate, NSData, NSURL) 
+ 
  @param indentString String for indentation
  */
 - (id)initWithGenOptions:(YAJLGenOptions)genOptions indentString:(NSString *)indentString;

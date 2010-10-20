@@ -6,6 +6,16 @@ The YAJL framework is an Objective-C wrapper around the [YAJL](http://lloyd.gith
 
 See Downloads
 
+## Docset
+
+Download and copy to docset to `~/Library/Developer/Shared/Documentation/DocSets/YAJL.docset`
+
+(You may need to restart XCode after copying the file.)
+
+The documentation will appear within XCode:
+
+![YAJL-Docset](http://rel.me.s3.amazonaws.com/yajl/images/docset.png)
+
 ## Install (Mac OS X)
 
 There are two options. You can install it globally in /Library/Frameworks or with a little extra effort embed it with your project.

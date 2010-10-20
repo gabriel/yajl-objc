@@ -31,4 +31,20 @@
   GHAssertEqualObjects([NSNumber numberWithDouble:-1.42539830], coord2, nil);
 }
 
+- (void)testSnowflake {
+  // From Twitter snowflake discussion: http://groups.google.com/group/twitter-development-talk/browse_thread/thread/6a16efa375532182#
+  NSString *twitterJSONString = [self loadString:@"twitter_snowflake"];
+  id JSON = [twitterJSONString yajl_JSON];
+  GHTestLog([JSON description]);
+  
+  GHAssertTrue([JSON isKindOfClass:[NSArray class]], nil);
+  NSDictionary *tweet = [JSON objectAtIndex:0];
+  GHAssertNotNil(tweet, nil);
+  NSNumber *identifier = [tweet objectForKey:@"id"];
+  GHAssertEqualObjects([NSNumber numberWithLongLong:12738165059], identifier, nil);
+  NSString *identifierStr = [tweet objectForKey:@"id_str"];
+  GHAssertEqualStrings(@"12738165059", identifierStr, nil);
+  GHAssertEqualStrings([identifier stringValue], identifierStr, nil);
+}
+
 @end

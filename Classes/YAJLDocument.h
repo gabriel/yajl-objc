@@ -139,6 +139,10 @@ extern NSInteger YAJLDocumentStackCapacity;
  Create document from data.
  @param data Data to parse
  @param parserOptions Parse options
+  - YAJLParserOptionsNone: No options
+  - YAJLParserOptionsAllowComments: Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
+  - YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error
+  - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
  @param error Error to set on failure
  */
 - (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error;
@@ -146,6 +150,10 @@ extern NSInteger YAJLDocumentStackCapacity;
 /*!
  Create empty document with parser options.
  @param parserOptions Parse options
+  - YAJLParserOptionsNone: No options
+  - YAJLParserOptionsAllowComments: Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
+  - YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error
+  - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
  */
 - (id)initWithParserOptions:(YAJLParserOptions)parserOptions;
 
@@ -154,6 +162,10 @@ extern NSInteger YAJLDocumentStackCapacity;
  @param data Data to parse
  @param error Out error to set on failure
  @result Parser status
+  - YAJLParserStatusNone: No status
+  - YAJLParserStatusOK: Parsed OK 
+  - YAJLParserStatusInsufficientData: There was insufficient data
+  - YAJLParserStatusError: Parser errored
  */
 - (YAJLParserStatus)parse:(NSData *)data error:(NSError **)error;
 

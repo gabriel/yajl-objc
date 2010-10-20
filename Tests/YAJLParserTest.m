@@ -104,14 +104,22 @@
 
 - (void)testLongLongOverflow {
   YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsStrictPrecision];
+#if TARGET_OS_IPHONE
   YAJLParserStatus status = [parser parse:[self loadData:@"overflow_longlong"]];
+#else
+  YAJLParserStatus status = [parser parse:[self loadData:@"overflow_longlong_macosx"]];
+#endif
   GHAssertEquals(status, (NSUInteger)YAJLParserStatusError, @"Should have error status");
   
   NSError *error = [parser parserError];
   if (error) {
     GHTestLog(@"Parse error:\n%@", error);
     GHAssertEquals([error code], (NSInteger)YAJLParserErrorCodeIntegerOverflow, nil);
+#if TARGET_OS_IPHONE
+    GHAssertEqualStrings([[error userInfo] objectForKey:YAJLParserValueKey], @"9223372036854775808", nil);
+#else 
     GHAssertEqualStrings([[error userInfo] objectForKey:YAJLParserValueKey], @"9223372036854775807", nil);
+#endif
   } else {
     GHFail(@"Should have error");
   }

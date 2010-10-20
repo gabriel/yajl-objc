@@ -75,6 +75,11 @@
  To override JSON value to encode (or support custom objects), implement (id)JSON; See YAJLCoding in YAJLGen.h
  @throws YAJLGenInvalidObjectException If object is invalid
  @param options
+  - YAJLGenOptionsNone: No options
+  - YAJLGenOptionsBeautify: Beautifiy JSON output
+  - YAJLGenOptionsIgnoreUnknownTypes: Ignore unknown types (will use null value)
+  - YAJLGenOptionsIncludeUnsupportedTypes: Handle non-JSON types (including NSDate, NSData, NSURL) 
+ 
  @param indentString
  @result JSON String
  */
@@ -125,7 +130,12 @@
  If an error occurs, the returned object will be the current state of the object when
  the error occurred.
  
- @param options Options (see YAJLParserOptions)
+ @param options Parse options
+  - YAJLParserOptionsNone: No options
+  - YAJLParserOptionsAllowComments: Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
+  - YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error
+  - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
+ 
  @param error Error to set if we failed to parse
  @result JSON object
  @throws YAJLParserException If a parse error occured

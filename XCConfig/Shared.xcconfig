@@ -1,4 +1,4 @@
-YAJL_VERSION = 0.2.23
+YAJL_VERSION = 0.2.24
 
 YAJL_GENERAL_OTHER_CFLAGS = -Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition
 
@@ -10,6 +10,5 @@ GCC_PREFIX_HEADER = YAJL_Prefix.pch
 PRODUCT_NAME = YAJL
 INFOPLIST_FILE = Info.plist
 
-HEADER_SEARCH_PATHS = "yajl-1.0.9/src/api"
-
-
+HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../yajl-1.0.11"
+USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../yajl-1.0.11"

@@ -1,0 +1,51 @@
+[ 
+  { 
+    "coordinates": null, 
+    "truncated": false, 
+    "created_at": "Thu Oct 14 22:20:15 +0000 2010", 
+    "favorited": false, 
+    "entities": { 
+      "urls": [ 
+      ], 
+      "hashtags": [ 
+      ], 
+      "user_mentions": [ 
+        { 
+          "name": "Matt Harris", 
+          "id": 777925, 
+          "id_str": "777925", 
+          "indices": [ 
+            0, 
+            14 
+          ], 
+          "screen_name": "themattharris" 
+        } 
+      ] 
+    }, 
+    "text": "@themattharris hey how are things?", 
+    "annotations": null, 
+    "contributors": [ 
+      { 
+        "id": 819797, 
+        "id_str": "819797", 
+        "screen_name": "episod" 
+      } 
+    ], 
+    "id": 12738165059, 
+    "id_str": "12738165059", 
+    "retweet_count": 0, 
+    "geo": null, 
+    "retweeted": false, 
+    "in_reply_to_user_id": 777925, 
+    "in_reply_to_user_id_str": "777925", 
+    "in_reply_to_screen_name": "themattharris", 
+    "user": { 
+      "id": 6253282, 
+      "id_str": "6253282" 
+    }, 
+    "source": "web", 
+    "place": null, 
+    "in_reply_to_status_id": 12738040524, 
+    "in_reply_to_status_id_str": "12738040524" 
+  } 
+] 
