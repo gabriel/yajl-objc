@@ -49,27 +49,24 @@ typedef enum {
   YAJLParserErrorCodeIntegerOverflow = -1002
 } YAJLParserErrorCode;
 
-/*!
- @enum Parser options
- @constant YAJLParserOptionsAllowComments Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
- @constant YAJLParserOptionsCheckUTF8 Invalid UTF8 strings will cause a parse error
- @constant YAJLParserOptionsStrictPrecision If YES will force strict precision and return integer overflow error
- */
 enum {
   YAJLParserOptionsNone = 0,  
-  YAJLParserOptionsAllowComments = 1 << 0,
-  YAJLParserOptionsCheckUTF8 = 1 << 1, 
-  YAJLParserOptionsStrictPrecision = 1 << 2,
+  YAJLParserOptionsAllowComments = 1 << 0, /**< Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //) */
+  YAJLParserOptionsCheckUTF8 = 1 << 1, /**< Invalid UTF8 strings will cause a parse error */ 
+  YAJLParserOptionsStrictPrecision = 1 << 2, /**< If YES will force strict precision and return integer overflow error */
 };
-typedef NSUInteger YAJLParserOptions;
+typedef NSUInteger YAJLParserOptions; /*!< Parser options */
 
+/*!
+ Parser status.
+ */
 enum {
-  YAJLParserStatusNone = 0,
-  YAJLParserStatusOK = 1,
-  YAJLParserStatusInsufficientData = 2,
-  YAJLParserStatusError = 3
+  YAJLParserStatusNone = 0, 
+  YAJLParserStatusOK = 1, /*!< Parsed OK */
+  YAJLParserStatusInsufficientData = 2, /*!< There was insufficient data */
+  YAJLParserStatusError = 3 /*!< Parser errored */
 };
-typedef NSUInteger YAJLParserStatus;
+typedef NSUInteger YAJLParserStatus; /*!< Status of the last parse */
 
 
 @class YAJLParser;

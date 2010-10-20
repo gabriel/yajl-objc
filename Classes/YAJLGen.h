@@ -36,12 +36,12 @@ extern NSString *const YAJLGenInvalidObjectException;
  JSON generate options.
  */
 enum {
-  YAJLGenOptionsNone = 0, 
-  YAJLGenOptionsBeautify = 1 << 0, //! Beautifiy JSON output
-  YAJLGenOptionsIgnoreUnknownTypes = 1 << 1, // Ignore unknown types (will use null value)
-  YAJLGenOptionsIncludeUnsupportedTypes = 1 << 2, // Handle non-JSON types (including NSDate, NSData, NSURL)
+  YAJLGenOptionsNone = 0, /**< No options */
+  YAJLGenOptionsBeautify = 1 << 0, /**< Beautifiy JSON output */
+  YAJLGenOptionsIgnoreUnknownTypes = 1 << 1, /**< Ignore unknown types (will use null value) */
+  YAJLGenOptionsIncludeUnsupportedTypes = 1 << 2, /**< Handle non-JSON types (including NSDate, NSData, NSURL) */
 };
-typedef NSUInteger YAJLGenOptions; //! JSON generate options.
+typedef NSUInteger YAJLGenOptions; /**< JSON generate options */
 
 /*!
  YAJL JSON string generator.
