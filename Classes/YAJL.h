@@ -37,6 +37,14 @@
  @mainpage YAJL
  
  The YAJL framework is an Objective-C wrapper around the http://lloyd.github.com/yajl/ SAX-style JSON parser.
+
+ @section Links
+ 
+ Source: http://github.com/gabriel/yajl-objc
+ 
+ View docs online: http://gabriel.github.com/yajl-objc/
+ 
+ YAJL C docs: http://lloyd.github.com/yajl/
  
  @section Usage Usage
  
