@@ -126,8 +126,8 @@ Parsing as data becomes available</h3>
  <span class="comment">// &#39;status&#39; should be YAJLParserStatusOK if its finished</span>
  <span class="keywordflow">if</span> (parser.parserError)
    NSLog(<span class="stringliteral">@&quot;Error:\n%@&quot;</span>, parser.parserError);
-</pre></div><h3><a class="anchor" id="Example6"></a>
-Parsing as data becomes available</h3>
+</pre></div><h3><a class="anchor" id="Example7"></a>
+Document style parsing</h3>
 <p>To use the document style, use <a class="el" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a>. Usage should be very similar to NSXMLDocument.</p>
 <div class="fragment"><pre class="fragment"> NSData *data = [NSData dataWithContentsOfFile:<span class="stringliteral">@&quot;example.json&quot;</span>];
  NSError *error = nil;
@@ -135,7 +135,7 @@ Parsing as data becomes available</h3>
  <span class="comment">// Access root element at document.root</span>
  NSLog(<span class="stringliteral">@&quot;Root: %@&quot;</span>, document.root);
  [document release];
-</pre></div><h3><a class="anchor" id="Example7"></a>
+</pre></div><h3><a class="anchor" id="Example8"></a>
 Document style parsing as data becomes available</h3>
 <div class="fragment"><pre class="fragment"> <a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *document = [[<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> alloc] init];
  document.<a class="code" href="interface_y_a_j_l_document.html#a8f0312e4c03f935bd8cef8990e5ad97b" title="The current status of parsing.">delegate</a> = <span class="keyword">self</span>;
@@ -154,7 +154,7 @@ Document style parsing as data becomes available</h3>
  - (void)document:(<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *)document didAddArray:(NSArray *)array { }
  - (void)document:(<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *)document didAddObject:(id)<span class="keywordtype">object</span> toArray:(NSArray *)array { }
  - (void)document:(<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *)document didSetObject:(id)<span class="keywordtype">object</span> forKey:(<span class="keywordtype">id</span>)key inDictionary:(NSDictionary *)dict { }
-</pre></div><h3><a class="anchor" id="Example8"></a>
+</pre></div><h3><a class="anchor" id="Example9"></a>
 Load JSON from Bundle</h3>
 <div class="fragment"><pre class="fragment"> <span class="keywordtype">id</span> JSONValue = [[NSBundle mainBundle] yajl_JSONFromResource:<span class="stringliteral">@&quot;kegs.json&quot;</span>];
 </pre></div><h2><a class="anchor" id="CustomizedEncoding"></a>
@@ -186,7 +186,7 @@ Customized Encoding</h2>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 26 2010 16:52:06 for YAJL by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 26 2010 16:53:36 for YAJL by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
