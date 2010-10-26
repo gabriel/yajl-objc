@@ -55,47 +55,53 @@ Usage</h2>
 <div class="fragment"><pre class="fragment"><span class="preprocessor"> #import &lt;YAJLIOS/YAJLIOS.h&gt;</span>
 </pre></div><p>To use the framework (for Mac OS X):</p>
 <div class="fragment"><pre class="fragment"><span class="preprocessor"> #import &lt;YAJL/YAJL.h&gt;</span>
-</pre></div><p>To parse JSON from an NSData (or NSString):</p>
+</pre></div><h2><a class="anchor" id="Examples"></a>
+Examples</h2>
+<h3><a class="anchor" id="Example1"></a>
+To parse JSON from an NSData</h3>
 <div class="fragment"><pre class="fragment"> NSData *JSONData = [NSData dataWithContentsOfFile:<span class="stringliteral">@&quot;example.json&quot;</span>];
  NSArray *arrayFromData = [JSONData yajl_JSON];
- 
- NSString *JSONString = <span class="stringliteral">@&quot;[\&quot;</span>Test\<span class="stringliteral">&quot;]&quot;</span>;
+</pre></div><h3><a class="anchor" id="Example2"></a>
+To parse JSON from an NSString</h3>
+<div class="fragment"><pre class="fragment"> NSString *JSONString = <span class="stringliteral">@&quot;[1, 2, 3]&quot;</span>;
  NSArray *arrayFromString = [JSONString yajl_JSON];
- 
- <span class="comment">// With options and out error</span>
+</pre></div><h3><a class="anchor" id="Example2"></a>
+To parse JSON from an NSString</h3>
+<div class="fragment"><pre class="fragment"> <span class="comment">// With options and out error</span>
+ NSString *JSONString = <span class="stringliteral">@&quot;[1, 2, 3] // Allow comments&quot;</span>;
  NSError *error = nil;
  NSArray *arrayFromString = [JSONString yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:&amp;error];
-</pre></div><p>To generate JSON from an object:</p>
+</pre></div><h3><a class="anchor" id="Example3"></a>
+To generate JSON from an object</h3>
 <div class="fragment"><pre class="fragment"> NSDictionary *dict = [NSDictionary dictionaryWithObject:<span class="stringliteral">@&quot;value&quot;</span> forKey:<span class="stringliteral">@&quot;key&quot;</span>];
  NSString *JSONString = [dict yajl_JSONString];
- 
- <span class="comment">// Beautified with custon indent string</span>
+</pre></div><h3><a class="anchor" id="Example4"></a>
+To generate JSON from an object (beautified with custom indent):</h3>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Beautified with custon indent string</span>
  NSArray *array = [NSArray arrayWithObjects:<span class="stringliteral">@&quot;value1&quot;</span>, <span class="stringliteral">@&quot;value2&quot;</span>, nil];
  NSString *JSONString = [dict yajl_JSONStringWithOptions:YAJLGenOptionsBeautify indentString:<span class="stringliteral">@&quot;    &quot;</span>];
- 
- To use the streaming (or SAX style) parser, use <a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a>. For higher level (document) streaming, see below.
- 
- NSData *data = [NSData dataWithContentsOfFile:<span class="stringliteral">@&quot;example.json&quot;</span>];
+</pre></div><h3><a class="anchor" id="Example5"></a>
+To use the streaming (or SAX style) parser, use YAJLParser</h3>
+<div class="fragment"><pre class="fragment"> NSData *data = [NSData dataWithContentsOfFile:<span class="stringliteral">@&quot;example.json&quot;</span>];
  
  <a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *parser = [[<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> alloc] initWithParserOptions:YAJLParserOptionsAllowComments];
- parser.delegate = self;
+ parser.delegate = <span class="keyword">self</span>;
  [parser parse:data];
- if (parser.parserError) {
- NSLog(<span class="stringliteral">@&quot;Error:\n%@&quot;</span>, parser.parserError);
- }
+ <span class="keywordflow">if</span> (parser.parserError)
+   NSLog(<span class="stringliteral">@&quot;Error:\n%@&quot;</span>, parser.parserError);
  
  parser.delegate = nil;
  [parser release];
  
  <span class="comment">// Include delegate methods from YAJLParserDelegate </span>
- - (void)parserDidStartDictionary:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser;
- - (void)parserDidEndDictionary:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser;
+ - (void)parserDidStartDictionary:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser { }
+ - (void)parserDidEndDictionary:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser { }
  
- - (void)parserDidStartArray:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser;
- - (void)parserDidEndArray:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser;
+ - (void)parserDidStartArray:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser { }
+ - (void)parserDidEndArray:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser { }
  
- - (void)parser:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser didMapKey:(NSString *)key;
- - (void)parser:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser didAdd:(id)value;
+ - (void)parser:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser didMapKey:(NSString *)key { }
+ - (void)parser:(<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *)parser didAdd:(id)value { }
 </pre></div><h3><a class="anchor" id="ParserOptions"></a>
 Parser Options</h3>
 <p>There are options when parsing that can be specified with <a class="el" href="interface_y_a_j_l_parser.html#a3cddbd758c51a3cfbcdabe67f82ea151" title="Create parser with data and options.">initWithParserOptions: (YAJLParser)</a>.</p>
@@ -104,23 +110,25 @@ Parser Options</h3>
 <li>YAJLParserOptionsCheckUTF8: Will verify UTF-8</li>
 <li>YAJLParserOptionsStrictPrecision: Will force strict precision and return integer overflow error, if number is greater than long long.</li>
 </ul>
-<h3><a class="anchor" id="StreamingExample"></a>
-Streaming Example (Parser)</h3>
+<h3><a class="anchor" id="Example6"></a>
+Parsing as data becomes available</h3>
 <div class="fragment"><pre class="fragment"> <a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> *parser = [[[<a class="code" href="interface_y_a_j_l_parser.html" title="JSON parser.">YAJLParser</a> alloc] init] autorelease];
  parser.delegate = <span class="keyword">self</span>;
 
  <span class="comment">// A chunk of data comes...</span>
  YAJLParserStatus status = [parser parse:chunk1];
  <span class="comment">// &#39;status&#39; should be YAJLParserStatusInsufficientData, if its not finished</span>
- <span class="keywordflow">if</span> (parser.parserError) ...;
+ <span class="keywordflow">if</span> (parser.parserError)
+   NSLog(<span class="stringliteral">@&quot;Error:\n%@&quot;</span>, parser.parserError);
 
  <span class="comment">// Another chunk of data comes...</span>
  YAJLParserStatus status = [parser parse:chunk2];
  <span class="comment">// &#39;status&#39; should be YAJLParserStatusOK if its finished</span>
- <span class="keywordflow">if</span> (parser.parserError) ...;
+ <span class="keywordflow">if</span> (parser.parserError)
+   NSLog(<span class="stringliteral">@&quot;Error:\n%@&quot;</span>, parser.parserError);
  @encode
 
- @subsection UsageDocument Usage (Document-style)
+ @subsection Example6 Document style parsing
 
  To use the document style, use <a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a>. Usage should be very similar to NSXMLDocument.
 
@@ -131,8 +139,8 @@ Streaming Example (Parser)</h3>
  <span class="comment">// Access root element at document.root</span>
  NSLog(<span class="stringliteral">@&quot;Root: %@&quot;</span>, document.root);
  [document release];
-</pre></div><h3><a class="anchor" id="StreamingExampleDocument"></a>
-Streaming Example (Document)</h3>
+</pre></div><h3><a class="anchor" id="Example7"></a>
+Document style parsing as data becomes available</h3>
 <div class="fragment"><pre class="fragment"> <a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *document = [[<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> alloc] init];
  document.<a class="code" href="interface_y_a_j_l_document.html#a8f0312e4c03f935bd8cef8990e5ad97b" title="The current status of parsing.">delegate</a> = <span class="keyword">self</span>;
 
@@ -150,8 +158,8 @@ Streaming Example (Document)</h3>
  - (void)document:(<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *)document didAddArray:(NSArray *)array { }
  - (void)document:(<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *)document didAddObject:(id)<span class="keywordtype">object</span> toArray:(NSArray *)array { }
  - (void)document:(<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *)document didSetObject:(id)<span class="keywordtype">object</span> forKey:(<span class="keywordtype">id</span>)key inDictionary:(NSDictionary *)dict { }
-</pre></div><h2><a class="anchor" id="LoadJSONBundle"></a>
-Load JSON from Bundle</h2>
+</pre></div><h3><a class="anchor" id="Example8"></a>
+Load JSON from Bundle</h3>
 <div class="fragment"><pre class="fragment"> <span class="keywordtype">id</span> JSONValue = [[NSBundle mainBundle] yajl_JSONFromResource:<span class="stringliteral">@&quot;kegs.json&quot;</span>];
 </pre></div><h2><a class="anchor" id="CustomizedEncoding"></a>
 Customized Encoding</h2>
@@ -182,7 +190,7 @@ Customized Encoding</h2>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:09:10 for YAJL by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 26 2010 16:48:28 for YAJL by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
