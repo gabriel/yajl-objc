@@ -58,25 +58,25 @@ Usage</h2>
 </pre></div><h2><a class="anchor" id="Examples"></a>
 Examples</h2>
 <h3><a class="anchor" id="Example1"></a>
-To parse JSON from an NSData</h3>
+To parse JSON from NSData</h3>
 <div class="fragment"><pre class="fragment"> NSData *JSONData = [NSData dataWithContentsOfFile:<span class="stringliteral">@&quot;example.json&quot;</span>];
  NSArray *arrayFromData = [JSONData yajl_JSON];
 </pre></div><h3><a class="anchor" id="Example2"></a>
-To parse JSON from an NSString</h3>
+To parse JSON from NSString</h3>
 <div class="fragment"><pre class="fragment"> NSString *JSONString = <span class="stringliteral">@&quot;[1, 2, 3]&quot;</span>;
  NSArray *arrayFromString = [JSONString yajl_JSON];
 </pre></div><h3><a class="anchor" id="Example2"></a>
-To parse JSON from an NSString</h3>
+To parse JSON from NSString</h3>
 <div class="fragment"><pre class="fragment"> <span class="comment">// With options and out error</span>
  NSString *JSONString = <span class="stringliteral">@&quot;[1, 2, 3] // Allow comments&quot;</span>;
  NSError *error = nil;
  NSArray *arrayFromString = [JSONString yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:&amp;error];
 </pre></div><h3><a class="anchor" id="Example3"></a>
-To generate JSON from an object</h3>
+To generate JSON from an object, NSArray, NSDictionary, etc.</h3>
 <div class="fragment"><pre class="fragment"> NSDictionary *dict = [NSDictionary dictionaryWithObject:<span class="stringliteral">@&quot;value&quot;</span> forKey:<span class="stringliteral">@&quot;key&quot;</span>];
  NSString *JSONString = [dict yajl_JSONString];
 </pre></div><h3><a class="anchor" id="Example4"></a>
-To generate JSON from an object (beautified with custom indent):</h3>
+To generate JSON from an object, beautified with custom indent</h3>
 <div class="fragment"><pre class="fragment"> <span class="comment">// Beautified with custon indent string</span>
  NSArray *array = [NSArray arrayWithObjects:<span class="stringliteral">@&quot;value1&quot;</span>, <span class="stringliteral">@&quot;value2&quot;</span>, nil];
  NSString *JSONString = [dict yajl_JSONStringWithOptions:YAJLGenOptionsBeautify indentString:<span class="stringliteral">@&quot;    &quot;</span>];
@@ -126,14 +126,10 @@ Parsing as data becomes available</h3>
  <span class="comment">// &#39;status&#39; should be YAJLParserStatusOK if its finished</span>
  <span class="keywordflow">if</span> (parser.parserError)
    NSLog(<span class="stringliteral">@&quot;Error:\n%@&quot;</span>, parser.parserError);
- @encode
-
- @subsection Example6 Document style parsing
-
- To use the document style, use <a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a>. Usage should be very similar to NSXMLDocument.
-
- @code
- NSData *data = [NSData dataWithContentsOfFile:<span class="stringliteral">@&quot;example.json&quot;</span>];
+</pre></div><h3><a class="anchor" id="Example6"></a>
+Parsing as data becomes available</h3>
+<p>To use the document style, use <a class="el" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a>. Usage should be very similar to NSXMLDocument.</p>
+<div class="fragment"><pre class="fragment"> NSData *data = [NSData dataWithContentsOfFile:<span class="stringliteral">@&quot;example.json&quot;</span>];
  NSError *error = nil;
  <a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *document = [[<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> alloc] initWithData:data parserOptions:YAJLParserOptionsNone error:&amp;error];
  <span class="comment">// Access root element at document.root</span>
@@ -190,7 +186,7 @@ Customized Encoding</h2>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 26 2010 16:48:28 for YAJL by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 26 2010 16:52:06 for YAJL by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
