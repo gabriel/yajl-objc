@@ -152,7 +152,7 @@
    NSLog(@"Error:\n%@", parser.parserError);
  @endcode
 
- @subsection Example6 Document style parsing
+ @subsection Example7 Document style parsing
 
  To use the document style, use YAJLDocument. Usage should be very similar to NSXMLDocument.
 
@@ -165,7 +165,7 @@
  [document release];
  @endcode
 
- @subsection Example7 Document style parsing as data becomes available
+ @subsection Example8 Document style parsing as data becomes available
 
  @code
  YAJLDocument *document = [[YAJLDocument alloc] init];
@@ -187,7 +187,7 @@
  - (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict { }
  @endcode
 
- @subsection Example8 Load JSON from Bundle
+ @subsection Example9 Load JSON from Bundle
 
  @code
  id JSONValue = [[NSBundle mainBundle] yajl_JSONFromResource:@"kegs.json"];
