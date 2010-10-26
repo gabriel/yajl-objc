@@ -28,4 +28,29 @@
   GHAssertEqualStrings(title, @"example glossary", nil);
 }
 
+- (void)testArrayNumbers {
+  NSString *JSONString = @"[1, 2, 3]";
+  NSArray *JSON = [JSONString yajl_JSON];
+  GHTestLog([JSON description]);
+  NSArray *expected = [NSArray arrayWithObjects:
+                       [NSNumber numberWithInteger:1],
+                       [NSNumber numberWithInteger:2],
+                       [NSNumber numberWithInteger:3],
+                       nil];
+  GHAssertEqualObjects(expected, JSON, nil);  
+}
+
+- (void)testAllowComments {
+  NSString *JSONString = @"[1, 2, 3] // Allow comments";
+  NSError *error = nil;
+  NSArray *JSON = [JSONString yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:&error];
+  GHTestLog([JSON description]);
+  NSArray *expected = [NSArray arrayWithObjects:
+                       [NSNumber numberWithInteger:1],
+                       [NSNumber numberWithInteger:2],
+                       [NSNumber numberWithInteger:3],
+                       nil];
+  GHAssertEqualObjects(expected, JSON, nil);  
+}  
+
 @end
