@@ -62,21 +62,21 @@
  
  @section Examples Examples
  
- @subsection Example1 To parse JSON from an NSData
+ @subsection Example1 To parse JSON from NSData
  
  @code
  NSData *JSONData = [NSData dataWithContentsOfFile:@"example.json"];
  NSArray *arrayFromData = [JSONData yajl_JSON];
  @endcode
  
- @subsection Example2 To parse JSON from an NSString
+ @subsection Example2 To parse JSON from NSString
  
  @code
  NSString *JSONString = @"[1, 2, 3]";
  NSArray *arrayFromString = [JSONString yajl_JSON];
  @endcode
  
- @subsection Example2 To parse JSON from an NSString (with out error and comments enabled)
+ @subsection Example2 To parse JSON from NSString with error and comments
  
  @code
  // With options and out error
@@ -85,14 +85,14 @@
  NSArray *arrayFromString = [JSONString yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:&error];
  @endcode
  
- @subsection Example3 To generate JSON from an object
+ @subsection Example3 To generate JSON from an object, NSArray, NSDictionary, etc.
  
  @code
  NSDictionary *dict = [NSDictionary dictionaryWithObject:@"value" forKey:@"key"];
  NSString *JSONString = [dict yajl_JSONString];
  @endcode
  
- @subsection Example4 To generate JSON from an object (beautified with custom indent):
+ @subsection Example4 To generate JSON from an object, beautified with custom indent
  
  @code
  // Beautified with custon indent string
@@ -150,7 +150,7 @@
  // 'status' should be YAJLParserStatusOK if its finished
  if (parser.parserError)
    NSLog(@"Error:\n%@", parser.parserError);
- @encode
+ @endcode
 
  @subsection Example6 Document style parsing
 
