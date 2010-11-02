@@ -38,9 +38,8 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 
 ## Install (iOS)
 
-- Add the `
-.framework` to your project.
-- Add the following frameworks to `Linked Libraries`:
+- Add `YAJL.framework` to your project.
+- Add the frameworks to `Linked Libraries`:
   - `YAJL.framework`
   - `CoreGraphics.framework`
   - `Foundation.framework`
