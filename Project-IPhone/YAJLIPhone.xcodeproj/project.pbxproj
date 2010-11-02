@@ -21,8 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		002F094912263E6100766D62 /* YAJLIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 002F094712263E6100766D62 /* YAJLIOS.h */; };
-		002F094B12263E6100766D62 /* YAJLIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 002F094712263E6100766D62 /* YAJLIOS.h */; };
 		003DE13411BEF6F4007BD538 /* libYAJLIOSSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 006597AC11BEEF4800E89ABD /* libYAJLIOSSimulator.a */; };
 		00471EFC12263B3700E8A306 /* NSBundle+YAJL.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 00C113F412111824009C9B51 /* NSBundle+YAJL.h */; };
 		0052CD67126EABC10049CF17 /* yajl.c in Sources */ = {isa = PBXBuildFile; fileRef = 0052CD55126EABC10049CF17 /* yajl.c */; };
@@ -178,7 +176,6 @@
 		000E922A111FA10400D2345B /* TwitterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTest.m; sourceTree = "<group>"; };
 		0020021F107D3EBB009ED6DF /* NSDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataTest.m; sourceTree = "<group>"; };
 		00200243107D4033009ED6DF /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = SOURCE_ROOT; };
-		002F094712263E6100766D62 /* YAJLIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLIOS.h; sourceTree = "<group>"; };
 		0046C19011779AB80092DA2A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0052CD55126EABC10049CF17 /* yajl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl.c; sourceTree = "<group>"; };
 		0052CD56126EABC10049CF17 /* yajl_alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_alloc.c; sourceTree = "<group>"; };
@@ -380,7 +377,6 @@
 			children = (
 				005BF2D110185B3000C35A81 /* NSObject+YAJL.h */,
 				005BF2D210185B3000C35A81 /* NSObject+YAJL.m */,
-				002F094712263E6100766D62 /* YAJLIOS.h */,
 				005BF2D510185B3000C35A81 /* YAJL.h */,
 				005BF2D610185B3000C35A81 /* YAJLGen.h */,
 				005BF2D710185B3000C35A81 /* YAJLGen.m */,
@@ -544,7 +540,6 @@
 				0065976011BEEF4000E89ABD /* GTMBase64.h in Headers */,
 				00C113FA12111824009C9B51 /* NSBundle+YAJL.h in Headers */,
 				005886741226319D00292C90 /* GHNSBundle+Utils.h in Headers */,
-				002F094912263E6100766D62 /* YAJLIOS.h in Headers */,
 				0052CD69126EABC10049CF17 /* yajl_alloc.h in Headers */,
 				0052CD6B126EABC10049CF17 /* yajl_buf.h in Headers */,
 				0052CD6C126EABC10049CF17 /* yajl_bytestack.h in Headers */,
@@ -571,7 +566,6 @@
 				0065978711BEEF4800E89ABD /* GTMBase64.h in Headers */,
 				00C113FC12111824009C9B51 /* NSBundle+YAJL.h in Headers */,
 				005886761226319D00292C90 /* GHNSBundle+Utils.h in Headers */,
-				002F094B12263E6100766D62 /* YAJLIOS.h in Headers */,
 				0052CD7B126EABC10049CF17 /* yajl_alloc.h in Headers */,
 				0052CD7D126EABC10049CF17 /* yajl_buf.h in Headers */,
 				0052CD7E126EABC10049CF17 /* yajl_bytestack.h in Headers */,

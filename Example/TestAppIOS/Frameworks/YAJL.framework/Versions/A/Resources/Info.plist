@@ -4,19 +4,15 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>YAJL</string>
 	<key>CFBundleIdentifier</key>
-	<string>me.rel.YAJL</string>
+	<string>me.rel.yajl</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>YAJL</string>
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleSignature</key>
-	<string>GABE</string>
+	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.2.24</string>
+	<string>$(YAJL_VERSION)</string>
 </dict>
 </plist>

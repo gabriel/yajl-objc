@@ -7,7 +7,7 @@
 set -e
 
 # Define these to suit your nefarious purposes
-                 FRAMEWORK_NAME=YAJLIOS
+                 FRAMEWORK_NAME=YAJL
                        LIB_NAME=libYAJLIOS
               FRAMEWORK_VERSION=A
                      BUILD_TYPE=Release

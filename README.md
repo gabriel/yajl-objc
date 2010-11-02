@@ -38,14 +38,15 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 
 ## Install (iOS)
 
-- Add the `YAJLIOS.framework` to your project.
+- Add the `
+.framework` to your project.
 - Add the following frameworks to `Linked Libraries`:
-  - `YAJLIOS.framework`
+  - `YAJL.framework`
   - `CoreGraphics.framework`
   - `Foundation.framework`
   - `UIKit.framework`
-- Under 'Framework Search Paths' make sure the (parent) directory to YAJLIOS.framework is listed.
-- Under 'Other Linker Flags' in the `Test` target, add `-ObjC` and `-all_load`
+- Under `Framework Search Paths` make sure the (parent) directory to `YAJL.framework` is listed.
+- Under `Other Linker Flags` in your target, add `-ObjC` and `-all_load`
 
 
 

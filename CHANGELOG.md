@@ -1,3 +1,7 @@
+== 0.2.25
+
+- Fixing YAJL (iOS) build.
+
 == 0.2.22
 
 - Fixing YAJL (Mac OSX) build.

@@ -1,5 +1,5 @@
 //
-//  YAJL.h
+//  NSBundle+YAJL.h
 //  YAJL
 //
 //  Created by Gabriel Handford on 7/23/09.
@@ -28,7 +28,35 @@
 //
 
 #import "YAJLParser.h"
-#import "YAJLDocument.h"
-#import "YAJLGen.h"
-#import "NSObject+YAJL.h"
-#import "NSBundle+YAJL.h"
+
+/*!
+ Utilities for loading JSON from resource bundles.
+ 
+ @code
+ id JSONValue = [[NSBundle mainBundle] yajl_JSONFromResource:@"kegs.json"];
+ @endcode
+ */
+@interface NSBundle(YAJL)
+
+/*!
+ Load JSON from bundle.  
+ @param resource Resource name with extension, for example, file.json
+ @throws YAJLParserException On parse error
+ */
+- (id)yajl_JSONFromResource:(NSString *)resource;
+
+/*!
+ Load JSON from bundle.
+ @param resource Resource name with extension, for example, file.json
+ @param options Parser options
+  - YAJLParserOptionsNone: No options
+  - YAJLParserOptionsAllowComments: Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
+  - YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error
+  - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
+ 
+ @param error Out error
+ @result JSON value (NSArray, NSDictionary) or nil if errored
+ */
+- (id)yajl_JSONFromResource:(NSString *)resource options:(YAJLParserOptions)options error:(NSError **)error;
+
+@end
