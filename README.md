@@ -1,14 +1,23 @@
-# YAJL (Objective-C Wrapper)
+# YAJL Framework
 
-The YAJL framework is an Objective-C wrapper around the [YAJL](http://lloyd.github.com/yajl/) SAX-style JSON parser.
+The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.github.com/yajl/) SAX-style JSON parser.
 
-## Documentation & Examples
+## Features
 
-For documentation, usage and examples, see [http://gabriel.github.com/yajl-objc/](http://gabriel.github.com/yajl-objc/)
+- Stream parsing, comments in JSON, better error messages.
+- Parse directly from NSString or NSData.
+- Generate JSON from default or custom types.
+- Properly handles large numeric types.
+- Document style parser.
+- Error by exception or out error.
+
+## Links
+
+- The online [API documentation](http://gabriel.github.com/yajl-objc/).
 
 ## Docset
 
-Download and copy to docset to `~/Library/Developer/Shared/Documentation/DocSets/YAJL.docset`
+Download and copy the YAJL.docset to `~/Library/Developer/Shared/Documentation/DocSets/YAJL.docset`
 
 (You may need to restart XCode after copying the file.)
 
