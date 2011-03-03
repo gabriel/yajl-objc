@@ -51,7 +51,10 @@
  To use the framework (for Mac OS X or iOS):
  
  @code
+ // For Mac OS X
  #import <YAJL/YAJL.h>
+ // For iOS
+ #import <YAJLiOS/YAJL.h>
  @endcode
  
  @section Examples Examples

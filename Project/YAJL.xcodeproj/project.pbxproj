@@ -194,7 +194,6 @@
 		00C404910FE77552003CE908 /* YAJLParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLParserTest.m; sourceTree = "<group>"; };
 		00C4049D0FE77562003CE908 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		00C4049E0FE77562003CE908 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		00C4049F0FE77562003CE908 /* Shared-IPhone.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Shared-IPhone.xcconfig"; sourceTree = "<group>"; };
 		00C404A00FE77562003CE908 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = overflow_longlong.json; sourceTree = "<group>"; };
 		00E5DDF80F5B6E3E00C11F1D /* Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,7 +395,6 @@
 			children = (
 				00C4049D0FE77562003CE908 /* Debug.xcconfig */,
 				00C4049E0FE77562003CE908 /* Release.xcconfig */,
-				00C4049F0FE77562003CE908 /* Shared-IPhone.xcconfig */,
 				00C404A00FE77562003CE908 /* Shared.xcconfig */,
 			);
 			name = XCConfig;

@@ -5,7 +5,7 @@ set -e
 FLAVOR=""
 VERSION=`cat ../XCConfig/Shared.xcconfig | grep "YAJL_VERSION =" | cut -d '=' -f 2 | tr -d " "`
 
-NAME=libYAJLIOS
+NAME=libYAJLiOS
 OUTPUT_DIR=${BUILD_DIR}/Combined${BUILD_STYLE}${FLAVOR}
 OUTPUT_FILE=${NAME}${FLAVOR}.a
 ZIP_DIR=${BUILD_DIR}/Zip

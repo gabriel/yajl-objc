@@ -9,7 +9,7 @@
 #import "TestAppIOSAppDelegate.h"
 #import "TestAppIOSViewController.h"
 
-#import <YAJL/YAJL.h>
+#import <YAJLiOS/YAJL.h>
 
 @implementation TestAppIOSAppDelegate
 

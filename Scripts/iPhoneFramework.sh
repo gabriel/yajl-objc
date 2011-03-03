@@ -7,8 +7,8 @@
 set -e
 
 # Define these to suit your nefarious purposes
-                 FRAMEWORK_NAME=YAJL
-                       LIB_NAME=libYAJLIOS
+                 FRAMEWORK_NAME=YAJLiOS
+                       LIB_NAME=libYAJLiOS
               FRAMEWORK_VERSION=A
                      BUILD_TYPE=Release
 
@@ -66,6 +66,6 @@ lipo \
 # Now copy the final assets over: your library
 # header files and the plist file
 echo "Framework: Copying assets into current version..."
-cp ../Classes/*.h $FRAMEWORK_DIR/Headers/
-cp ../yajl-1.0.11/api/*.h $FRAMEWORK_DIR/Headers/
-cp Framework.plist $FRAMEWORK_DIR/Resources/Info.plist
+cp -v ../Classes/*.h $FRAMEWORK_DIR/Headers/
+cp -v ../yajl-1.0.11/api/*.h $FRAMEWORK_DIR/Headers/
+cp -v Framework.plist $FRAMEWORK_DIR/Resources/Info.plist

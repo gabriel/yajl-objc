@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		003DE13411BEF6F4007BD538 /* libYAJLIOSSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 006597AC11BEEF4800E89ABD /* libYAJLIOSSimulator.a */; };
+		003DE13411BEF6F4007BD538 /* libYAJLiOSSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 006597AC11BEEF4800E89ABD /* libYAJLiOSSimulator.a */; };
 		00471EFC12263B3700E8A306 /* NSBundle+YAJL.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 00C113F412111824009C9B51 /* NSBundle+YAJL.h */; };
 		0052CD67126EABC10049CF17 /* yajl.c in Sources */ = {isa = PBXBuildFile; fileRef = 0052CD55126EABC10049CF17 /* yajl.c */; };
 		0052CD68126EABC10049CF17 /* yajl_alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 0052CD56126EABC10049CF17 /* yajl_alloc.c */; };
@@ -62,7 +62,7 @@
 		005886E41226339500292C90 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005886E31226339500292C90 /* GHUnitIOS.framework */; };
 		00588702122634AD00292C90 /* Shared-MacOSX.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 00588701122634AD00292C90 /* Shared-MacOSX.xcconfig */; };
 		0058870E1226353B00292C90 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058870D1226353B00292C90 /* GHUnitIOSTestMain.m */; };
-		0065975A11BEEF4000E89ABD /* YAJLIPhone_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* YAJLIPhone_Prefix.pch */; };
+		0065975A11BEEF4000E89ABD /* YAJLiOS_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* YAJLiOS_Prefix.pch */; };
 		0065975B11BEEF4000E89ABD /* YAJLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404FE0FE77661003CE908 /* YAJLDocument.h */; };
 		0065975C11BEEF4000E89ABD /* YAJLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C405000FE77661003CE908 /* YAJLParser.h */; };
 		0065975D11BEEF4000E89ABD /* NSObject+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D110185B3000C35A81 /* NSObject+YAJL.h */; };
@@ -74,7 +74,7 @@
 		0065976D11BEEF4000E89ABD /* NSObject+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D210185B3000C35A81 /* NSObject+YAJL.m */; };
 		0065976E11BEEF4000E89ABD /* YAJLGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D710185B3000C35A81 /* YAJLGen.m */; };
 		0065976F11BEEF4000E89ABD /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AC534B1098F478002B5508 /* GTMBase64.m */; };
-		0065978111BEEF4800E89ABD /* YAJLIPhone_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* YAJLIPhone_Prefix.pch */; };
+		0065978111BEEF4800E89ABD /* YAJLiOS_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* YAJLiOS_Prefix.pch */; };
 		0065978211BEEF4800E89ABD /* YAJLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404FE0FE77661003CE908 /* YAJLDocument.h */; };
 		0065978311BEEF4800E89ABD /* YAJLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C405000FE77661003CE908 /* YAJLParser.h */; };
 		0065978411BEEF4800E89ABD /* NSObject+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D110185B3000C35A81 /* NSObject+YAJL.h */; };
@@ -145,7 +145,7 @@
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0065977F11BEEF4800E89ABD;
-			remoteInfo = "YAJLIPhone (Simulator-4.0)";
+			remoteInfo = "YAJLiOS (Simulator-4.0)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -213,8 +213,8 @@
 		005BF30210185B7600C35A81 /* object_expected_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = object_expected_array.json; sourceTree = "<group>"; };
 		005BF35B10185F7E00C35A81 /* stream_array1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array1.json; sourceTree = "<group>"; };
 		005BF35C10185F7E00C35A81 /* stream_array2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array2.json; sourceTree = "<group>"; };
-		0065977C11BEEF4000E89ABD /* libYAJLIOSDevice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYAJLIOSDevice.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		006597AC11BEEF4800E89ABD /* libYAJLIOSSimulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYAJLIOSSimulator.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0065977C11BEEF4000E89ABD /* libYAJLiOSDevice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYAJLiOSDevice.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		006597AC11BEEF4800E89ABD /* libYAJLiOSSimulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYAJLiOSSimulator.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		006597EA11BEEF5400E89ABD /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0066FE7F12262CF7009247B0 /* NSBundleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBundleTest.m; sourceTree = "<group>"; };
 		00A59CE9109014550032BD92 /* error2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error2.json; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 		00C405010FE77661003CE908 /* YAJLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLParser.m; sourceTree = "<group>"; };
 		00C4052C0FE77688003CE908 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		00C4052D0FE77688003CE908 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Shared-IPhone.xcconfig"; sourceTree = "<group>"; };
+		00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Shared-iOS.xcconfig"; sourceTree = "<group>"; };
 		00C4052F0FE77688003CE908 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		00C4054F0FE77760003CE908 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		00C4056F0FE777B4003CE908 /* comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comments.json; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 		00C405850FE7780E003CE908 /* Tests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests_Prefix.pch; sourceTree = "<group>"; };
 		00C406000FE77A81003CE908 /* CombineLibs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CombineLibs.sh; sourceTree = "<group>"; };
 		00C406470FE77C51003CE908 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
-		AA747D9E0F9514B9006C5449 /* YAJLIPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLIPhone_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AA747D9E0F9514B9006C5449 /* YAJLiOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLiOS_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -284,7 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				003DE13411BEF6F4007BD538 /* libYAJLIOSSimulator.a in Frameworks */,
+				003DE13411BEF6F4007BD538 /* libYAJLiOSSimulator.a in Frameworks */,
 				005886AB1226333300292C90 /* CoreGraphics.framework in Frameworks */,
 				005886B21226334500292C90 /* UIKit.framework in Frameworks */,
 				005886C81226337500292C90 /* Foundation.framework in Frameworks */,
@@ -396,7 +396,7 @@
 			children = (
 				00C4052F0FE77688003CE908 /* Shared.xcconfig */,
 				00588701122634AD00292C90 /* Shared-MacOSX.xcconfig */,
-				00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */,
+				00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */,
 				00C4052C0FE77688003CE908 /* Debug.xcconfig */,
 				00C4052D0FE77688003CE908 /* Release.xcconfig */,
 			);
@@ -404,12 +404,12 @@
 			path = ../XCConfig;
 			sourceTree = SOURCE_ROOT;
 		};
-		00C405550FE77784003CE908 /* Libraries (iPhone) */ = {
+		00C405550FE77784003CE908 /* Libraries (iOS) */ = {
 			isa = PBXGroup;
 			children = (
 				005886E31226339500292C90 /* GHUnitIOS.framework */,
 			);
-			name = "Libraries (iPhone)";
+			name = "Libraries (iOS)";
 			path = Libraries;
 			sourceTree = "<group>";
 		};
@@ -475,14 +475,14 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0065977C11BEEF4000E89ABD /* libYAJLIOSDevice.a */,
-				006597AC11BEEF4800E89ABD /* libYAJLIOSSimulator.a */,
+				0065977C11BEEF4000E89ABD /* libYAJLiOSDevice.a */,
+				006597AC11BEEF4800E89ABD /* libYAJLiOSSimulator.a */,
 				006597EA11BEEF5400E89ABD /* Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0867D691FE84028FC02AAC07 /* YAJLIPhone */ = {
+		0867D691FE84028FC02AAC07 /* YAJLiOS */ = {
 			isa = PBXGroup;
 			children = (
 				0046C19011779AB80092DA2A /* Makefile */,
@@ -490,7 +490,7 @@
 				00C406470FE77C51003CE908 /* README.md */,
 				0052CD4F126EABC10049CF17 /* yajl-1.0.11 */,
 				00C404FD0FE77661003CE908 /* Classes */,
-				00C405550FE77784003CE908 /* Libraries (iPhone) */,
+				00C405550FE77784003CE908 /* Libraries (iOS) */,
 				00AC53481098F478002B5508 /* Libraries */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				00C4052B0FE77688003CE908 /* XCConfig */,
@@ -504,7 +504,7 @@
 				005886B11226334500292C90 /* UIKit.framework */,
 				005886C71226337500292C90 /* Foundation.framework */,
 			);
-			name = YAJLIPhone;
+			name = YAJLiOS;
 			sourceTree = "<group>";
 		};
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
@@ -518,7 +518,7 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AA747D9E0F9514B9006C5449 /* YAJLIPhone_Prefix.pch */,
+				AA747D9E0F9514B9006C5449 /* YAJLiOS_Prefix.pch */,
 				00C405850FE7780E003CE908 /* Tests_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -531,7 +531,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0065975A11BEEF4000E89ABD /* YAJLIPhone_Prefix.pch in Headers */,
+				0065975A11BEEF4000E89ABD /* YAJLiOS_Prefix.pch in Headers */,
 				0065975B11BEEF4000E89ABD /* YAJLDocument.h in Headers */,
 				0065975C11BEEF4000E89ABD /* YAJLParser.h in Headers */,
 				0065975D11BEEF4000E89ABD /* NSObject+YAJL.h in Headers */,
@@ -557,7 +557,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0065978111BEEF4800E89ABD /* YAJLIPhone_Prefix.pch in Headers */,
+				0065978111BEEF4800E89ABD /* YAJLiOS_Prefix.pch in Headers */,
 				0065978211BEEF4800E89ABD /* YAJLDocument.h in Headers */,
 				0065978311BEEF4800E89ABD /* YAJLParser.h in Headers */,
 				0065978411BEEF4800E89ABD /* NSObject+YAJL.h in Headers */,
@@ -582,9 +582,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0065975811BEEF4000E89ABD /* YAJLIPhone (Device) */ = {
+		0065975811BEEF4000E89ABD /* YAJLiOS (Device) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0065977911BEEF4000E89ABD /* Build configuration list for PBXNativeTarget "YAJLIPhone (Device)" */;
+			buildConfigurationList = 0065977911BEEF4000E89ABD /* Build configuration list for PBXNativeTarget "YAJLiOS (Device)" */;
 			buildPhases = (
 				0065975911BEEF4000E89ABD /* Headers */,
 				0065976A11BEEF4000E89ABD /* Sources */,
@@ -594,14 +594,14 @@
 			);
 			dependencies = (
 			);
-			name = "YAJLIPhone (Device)";
-			productName = YAJLIPhone;
-			productReference = 0065977C11BEEF4000E89ABD /* libYAJLIOSDevice.a */;
+			name = "YAJLiOS (Device)";
+			productName = YAJLiOS;
+			productReference = 0065977C11BEEF4000E89ABD /* libYAJLiOSDevice.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		0065977F11BEEF4800E89ABD /* YAJLIPhone (Simulator) */ = {
+		0065977F11BEEF4800E89ABD /* YAJLiOS (Simulator) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 006597A911BEEF4800E89ABD /* Build configuration list for PBXNativeTarget "YAJLIPhone (Simulator)" */;
+			buildConfigurationList = 006597A911BEEF4800E89ABD /* Build configuration list for PBXNativeTarget "YAJLiOS (Simulator)" */;
 			buildPhases = (
 				0065978011BEEF4800E89ABD /* Headers */,
 				0065979111BEEF4800E89ABD /* Sources */,
@@ -613,9 +613,9 @@
 			);
 			dependencies = (
 			);
-			name = "YAJLIPhone (Simulator)";
-			productName = YAJLIPhone;
-			productReference = 006597AC11BEEF4800E89ABD /* libYAJLIOSSimulator.a */;
+			name = "YAJLiOS (Simulator)";
+			productName = YAJLiOS;
+			productReference = 006597AC11BEEF4800E89ABD /* libYAJLiOSSimulator.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		006597AE11BEEF5400E89ABD /* Tests */ = {
@@ -642,7 +642,7 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "YAJLIPhone" */;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "YAJLiOS" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -652,13 +652,13 @@
 				French,
 				German,
 			);
-			mainGroup = 0867D691FE84028FC02AAC07 /* YAJLIPhone */;
+			mainGroup = 0867D691FE84028FC02AAC07 /* YAJLiOS */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0065975811BEEF4000E89ABD /* YAJLIPhone (Device) */,
-				0065977F11BEEF4800E89ABD /* YAJLIPhone (Simulator) */,
+				0065975811BEEF4000E89ABD /* YAJLiOS (Device) */,
+				0065977F11BEEF4800E89ABD /* YAJLiOS (Simulator) */,
 				006597AE11BEEF5400E89ABD /* Tests */,
 				005887351226360800292C90 /* Run make to build framework */,
 			);
@@ -812,7 +812,7 @@
 /* Begin PBXTargetDependency section */
 		006597EE11BEEF6900E89ABD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0065977F11BEEF4800E89ABD /* YAJLIPhone (Simulator) */;
+			target = 0065977F11BEEF4800E89ABD /* YAJLiOS (Simulator) */;
 			targetProxy = 006597ED11BEEF6900E89ABD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -841,42 +841,40 @@
 		};
 		0065977A11BEEF4000E89ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */;
+			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
-				PRODUCT_NAME = YAJLIOSDevice;
+				PRODUCT_NAME = YAJLiOSDevice;
 			};
 			name = Debug;
 		};
 		0065977B11BEEF4000E89ABD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */;
+			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
-				PRODUCT_NAME = YAJLIOSDevice;
+				PRODUCT_NAME = YAJLiOSDevice;
 			};
 			name = Release;
 		};
 		006597AA11BEEF4800E89ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */;
+			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Info copy.plist";
-				PRODUCT_NAME = YAJLIOSSimulator;
-				SDKROOT = iphonesimulator4.1;
+				PRODUCT_NAME = YAJLiOSSimulator;
 			};
 			name = Debug;
 		};
 		006597AB11BEEF4800E89ABD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */;
+			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
-				PRODUCT_NAME = YAJLIOSSimulator;
-				SDKROOT = iphonesimulator4.1;
+				PRODUCT_NAME = YAJLiOSSimulator;
 			};
 			name = Release;
 		};
 		006597E811BEEF5400E89ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */;
+			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -906,7 +904,7 @@
 		};
 		006597E911BEEF5400E89ABD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-IPhone.xcconfig */;
+			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -974,7 +972,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0065977911BEEF4000E89ABD /* Build configuration list for PBXNativeTarget "YAJLIPhone (Device)" */ = {
+		0065977911BEEF4000E89ABD /* Build configuration list for PBXNativeTarget "YAJLiOS (Device)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0065977A11BEEF4000E89ABD /* Debug */,
@@ -983,7 +981,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		006597A911BEEF4800E89ABD /* Build configuration list for PBXNativeTarget "YAJLIPhone (Simulator)" */ = {
+		006597A911BEEF4800E89ABD /* Build configuration list for PBXNativeTarget "YAJLiOS (Simulator)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				006597AA11BEEF4800E89ABD /* Debug */,
@@ -1001,7 +999,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "YAJLIPhone" */ = {
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "YAJLiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,

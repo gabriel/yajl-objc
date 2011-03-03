@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00BDE74A12806BD2005A77AF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BDE74912806BD2005A77AF /* YAJL.framework */; };
+		00DB69F213202FDB00AF998E /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DB69F113202FDB00AF998E /* YAJLiOS.framework */; };
 		1D3623260D0F684500981E51 /* TestAppIOSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TestAppIOSAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00BDE74912806BD2005A77AF /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJL.framework; path = Frameworks/YAJL.framework; sourceTree = "<group>"; };
+		00DB69F113202FDB00AF998E /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = Frameworks/YAJLiOS.framework; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TestAppIOSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppIOSAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* TestAppIOSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppIOSAppDelegate.m; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				00BDE74A12806BD2005A77AF /* YAJL.framework in Frameworks */,
+				00DB69F213202FDB00AF998E /* YAJLiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +103,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				00BDE74912806BD2005A77AF /* YAJL.framework */,
+				00DB69F113202FDB00AF998E /* YAJLiOS.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -200,6 +200,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = TestAppIOS;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -216,6 +217,7 @@
 				GCC_PREFIX_HEADER = TestAppIOS_Prefix.pch;
 				INFOPLIST_FILE = "TestAppIOS-Info.plist";
 				PRODUCT_NAME = TestAppIOS;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

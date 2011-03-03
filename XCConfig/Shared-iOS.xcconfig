@@ -7,8 +7,8 @@ GCC_DYNAMIC_NO_PIC = NO
 //  stripped.
 STRIP_STYLE = debugging
 
-GCC_PREFIX_HEADER = YAJLIPhone_Prefix.pch
+GCC_PREFIX_HEADER = YAJLiOS_Prefix.pch
 
 IPHONEOS_DEPLOYMENT_TARGET = 3.0
 
-SDKROOT = iphoneos4.1
+SDKROOT = iphoneos

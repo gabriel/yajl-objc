@@ -37,56 +37,89 @@
  @mainpage YAJL
  
  The YAJL framework is an Objective-C wrapper around the http://lloyd.github.com/yajl/ SAX-style JSON parser.
+
+ @section Links
+ 
+ Source: http://github.com/gabriel/yajl-objc
+ 
+ View docs online: http://gabriel.github.com/yajl-objc/
+ 
+ YAJL C docs: http://lloyd.github.com/yajl/
  
  @section Usage Usage
  
- To parse JSON from an NSData (or NSString):
+ To use the framework (for Mac OS X or iOS):
+ 
+ @code
+ // For Mac OS X
+ #import <YAJL/YAJL.h>
+ // For iOS
+ #import <YAJLiOS/YAJL.h>
+ @endcode
+ 
+ @section Examples Examples
+ 
+ @subsection Example1 To parse JSON from NSData
  
  @code
  NSData *JSONData = [NSData dataWithContentsOfFile:@"example.json"];
  NSArray *arrayFromData = [JSONData yajl_JSON];
+ @endcode
  
- NSString *JSONString = @"[\"Test\"]";
+ @subsection Example2 To parse JSON from NSString
+ 
+ @code
+ NSString *JSONString = @"[1, 2, 3]";
  NSArray *arrayFromString = [JSONString yajl_JSON];
+ @endcode
  
+ @subsection Example2 To parse JSON from NSString with error and comments
+ 
+ @code
  // With options and out error
+ NSString *JSONString = @"[1, 2, 3] // Allow comments";
  NSError *error = nil;
  NSArray *arrayFromString = [JSONString yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:&error];
  @endcode
  
- To generate JSON from an object:
+ @subsection Example3 To generate JSON from an object, NSArray, NSDictionary, etc.
  
  @code
  NSDictionary *dict = [NSDictionary dictionaryWithObject:@"value" forKey:@"key"];
  NSString *JSONString = [dict yajl_JSONString];
+ @endcode
  
+ @subsection Example4 To generate JSON from an object, beautified with custom indent
+ 
+ @code
  // Beautified with custon indent string
  NSArray *array = [NSArray arrayWithObjects:@"value1", @"value2", nil];
  NSString *JSONString = [dict yajl_JSONStringWithOptions:YAJLGenOptionsBeautify indentString:@"    "];
+ @endcode
  
- To use the streaming (or SAX style) parser, use YAJLParser. For higher level (document) streaming, see below.
+ @subsection Example5 To use the streaming (or SAX style) parser, use YAJLParser
  
+ @code
  NSData *data = [NSData dataWithContentsOfFile:@"example.json"];
  
  YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsAllowComments];
  parser.delegate = self;
  [parser parse:data];
- if (parser.parserError) {
- NSLog(@"Error:\n%@", parser.parserError);
- }
+ if (parser.parserError)
+   NSLog(@"Error:\n%@", parser.parserError);
  
  parser.delegate = nil;
  [parser release];
  
  // Include delegate methods from YAJLParserDelegate 
- - (void)parserDidStartDictionary:(YAJLParser *)parser;
- - (void)parserDidEndDictionary:(YAJLParser *)parser;
+ - (void)parserDidStartDictionary:(YAJLParser *)parser { }
+ - (void)parserDidEndDictionary:(YAJLParser *)parser { }
  
- - (void)parserDidStartArray:(YAJLParser *)parser;
- - (void)parserDidEndArray:(YAJLParser *)parser;
+ - (void)parserDidStartArray:(YAJLParser *)parser { }
+ - (void)parserDidEndArray:(YAJLParser *)parser { }
  
- - (void)parser:(YAJLParser *)parser didMapKey:(NSString *)key;
- - (void)parser:(YAJLParser *)parser didAdd:(id)value;
+ - (void)parser:(YAJLParser *)parser didMapKey:(NSString *)key { }
+ - (void)parser:(YAJLParser *)parser didAdd:(id)value { }
  @endcode
 
  @subsection ParserOptions Parser Options
@@ -97,7 +130,7 @@
  - YAJLParserOptionsCheckUTF8: Will verify UTF-8
  - YAJLParserOptionsStrictPrecision: Will force strict precision and return integer overflow error, if number is greater than long long.
 
- @subsection StreamingExample Streaming Example (Parser)
+ @subsection Example6 Parsing as data becomes available
 
  @code
  YAJLParser *parser = [[[YAJLParser alloc] init] autorelease];
@@ -106,15 +139,17 @@
  // A chunk of data comes...
  YAJLParserStatus status = [parser parse:chunk1];
  // 'status' should be YAJLParserStatusInsufficientData, if its not finished
- if (parser.parserError) ...;
+ if (parser.parserError)
+   NSLog(@"Error:\n%@", parser.parserError);
 
  // Another chunk of data comes...
  YAJLParserStatus status = [parser parse:chunk2];
  // 'status' should be YAJLParserStatusOK if its finished
- if (parser.parserError) ...;
- @encode
+ if (parser.parserError)
+   NSLog(@"Error:\n%@", parser.parserError);
+ @endcode
 
- @subsection UsageDocument Usage (Document-style)
+ @subsection Example7 Document style parsing
 
  To use the document style, use YAJLDocument. Usage should be very similar to NSXMLDocument.
 
@@ -127,7 +162,7 @@
  [document release];
  @endcode
 
- @subsection StreamingExampleDocument Streaming Example (Document)
+ @subsection Example8 Document style parsing as data becomes available
 
  @code
  YAJLDocument *document = [[YAJLDocument alloc] init];
@@ -149,7 +184,7 @@
  - (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict { }
  @endcode
 
- @section LoadJSONBundle Load JSON from Bundle
+ @subsection Example9 Load JSON from Bundle
 
  @code
  id JSONValue = [[NSBundle mainBundle] yajl_JSONFromResource:@"kegs.json"];
