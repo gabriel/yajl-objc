@@ -76,8 +76,12 @@ Inheritance diagram for YAJLDocument:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_y_a_j_l_document.html#a9b206b6d99ed1edd0cbec744ec75ff1b">initWithData:parserOptions:error:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Delegate.  <a href="#a9b206b6d99ed1edd0cbec744ec75ff1b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_y_a_j_l_document.html#a032b8574b436e6260a54354cd4b6568c">initWithData:parserOptions:capacity:error:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create document from data.  <a href="#a032b8574b436e6260a54354cd4b6568c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_y_a_j_l_document.html#a5244e742acee8498bbc4b488ed63ad0c">initWithParserOptions:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create empty document with parser options.  <a href="#a5244e742acee8498bbc4b488ed63ad0c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_y_a_j_l_document.html#a0042a855ed0fbfecc496377a5d54d5b6">initWithParserOptions:capacity:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create empty document with parser options.  <a href="#a0042a855ed0fbfecc496377a5d54d5b6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(YAJLParserStatus)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_y_a_j_l_document.html#a535595df957db118207836ca5217509f">parse:error:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Parse data.  <a href="#a535595df957db118207836ca5217509f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17d21d8cd1413c4596dd23bcd9e69fb2"></a><!-- doxytag: member="YAJLDocument::_pop" ref="a17d21d8cd1413c4596dd23bcd9e69fb2" args="()" -->
@@ -144,6 +148,63 @@ id&lt; <a class="el" href="protocol_y_a_j_l_document_delegate-p.html">YAJLDocume
  - (void)document:(<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *)document didAddObject:(id)<span class="keywordtype">object</span> toArray:(NSArray *)array { }
  - (void)document:(<a class="code" href="interface_y_a_j_l_document.html" title="JSON document interface.">YAJLDocument</a> *)document didSetObject:(id)<span class="keywordtype">object</span> forKey:(<span class="keywordtype">id</span>)key inDictionary:(NSDictionary *)dict { }
 </pre></div> <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a032b8574b436e6260a54354cd4b6568c"></a><!-- doxytag: member="YAJLDocument::initWithData:parserOptions:capacity:error:" ref="a032b8574b436e6260a54354cd4b6568c" args="(NSData *data,[parserOptions] YAJLParserOptions parserOptions,[capacity] NSInteger capacity,[error] NSError **error)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithData: </td>
+          <td></td>
+          <td class="paramtype">(NSData *)&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">parserOptions:</td>
+          <td></td>
+          <td class="paramtype">(YAJLParserOptions)&nbsp;</td>
+          <td class="paramname"> <em>parserOptions</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">capacity:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>capacity</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">error:</td>
+          <td></td>
+          <td class="paramtype">(NSError **)&nbsp;</td>
+          <td class="paramname"> <em>error</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create document from data. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>Data to parse </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>parserOptions</em>&nbsp;</td><td>Parse options</p>
+<ul>
+<li>YAJLParserOptionsNone: No options</li>
+<li>YAJLParserOptionsAllowComments: Javascript style comments will be allowed in the input (both / / and //)</li>
+<li>YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error</li>
+<li>YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error </li>
+</ul>
+</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>capacity</em>&nbsp;</td><td>Initial capacity for NSArray and NSDictionary objects (Defaults to 20) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>error</em>&nbsp;</td><td>Error to set on failure </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a9b206b6d99ed1edd0cbec744ec75ff1b"></a><!-- doxytag: member="YAJLDocument::initWithData:parserOptions:error:" ref="a9b206b6d99ed1edd0cbec744ec75ff1b" args="(NSData *data,[parserOptions] YAJLParserOptions parserOptions,[error] NSError **error)" -->
 <div class="memitem">
 <div class="memproto">
@@ -228,6 +289,49 @@ id&lt; <a class="el" href="protocol_y_a_j_l_document_delegate-p.html">YAJLDocume
 
 </div>
 </div>
+<a class="anchor" id="a0042a855ed0fbfecc496377a5d54d5b6"></a><!-- doxytag: member="YAJLDocument::initWithParserOptions:capacity:" ref="a0042a855ed0fbfecc496377a5d54d5b6" args="(YAJLParserOptions parserOptions,[capacity] NSInteger capacity)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithParserOptions: </td>
+          <td></td>
+          <td class="paramtype">(YAJLParserOptions)&nbsp;</td>
+          <td class="paramname"> <em>parserOptions</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">capacity:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>capacity</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create empty document with parser options. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>parserOptions</em>&nbsp;</td><td>Parse options</p>
+<ul>
+<li>YAJLParserOptionsNone: No options</li>
+<li>YAJLParserOptionsAllowComments: Javascript style comments will be allowed in the input (both / / and //)</li>
+<li>YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error</li>
+<li>YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error </li>
+</ul>
+</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>capacity</em>&nbsp;</td><td>Initial capacity for NSArray and NSDictionary objects (Defaults to 20) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a535595df957db118207836ca5217509f"></a><!-- doxytag: member="YAJLDocument::parse:error:" ref="a535595df957db118207836ca5217509f" args="(NSData *data,[error] NSError **error)" -->
 <div class="memitem">
 <div class="memproto">
@@ -290,7 +394,7 @@ id&lt; <a class="el" href="protocol_y_a_j_l_document_delegate-p.html">YAJLDocume
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 2 2010 12:02:05 for YAJL by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Mar 3 2011 12:24:47 for YAJL by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

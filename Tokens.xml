@@ -92,12 +92,32 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>initWithData:parserOptions:capacity:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_document.html</Path>
+    <Anchor>a032b8574b436e6260a54354cd4b6568c</Anchor>
+    <Abstract>Create document from data.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>initWithParserOptions:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
     </TokenIdentifier>
     <Path>interface_y_a_j_l_document.html</Path>
     <Anchor>a5244e742acee8498bbc4b488ed63ad0c</Anchor>
+    <Abstract>Create empty document with parser options.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithParserOptions:capacity:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_y_a_j_l_document.html</Path>
+    <Anchor>a0042a855ed0fbfecc496377a5d54d5b6</Anchor>
     <Abstract>Create empty document with parser options.</Abstract>
   </Token>
   <Token>
