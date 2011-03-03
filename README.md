@@ -19,7 +19,7 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
 
 YAJL framework is used by:
 
-- Yelp iOS app: http://itunes.apple.com/us/app/yelp/id284910350?mt=8
+- [Yelp for iPhone/iPad](http://itunes.apple.com/us/app/yelp/id284910350?mt=8)
 - Add your app here!
 
 ## Docset
