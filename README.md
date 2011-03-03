@@ -15,6 +15,13 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
 
 - The online [API documentation](http://gabriel.github.com/yajl-objc/).
 
+## Apps
+
+YAJL framework is used by:
+
+- Yelp iOS app: http://itunes.apple.com/us/app/yelp/id284910350?mt=8
+- Add your app here!
+
 ## Docset
 
 Download and copy the YAJL.docset to `~/Library/Developer/Shared/Documentation/DocSets/YAJL.docset`
@@ -27,15 +34,7 @@ The documentation will appear within XCode:
 
 ## Install (Mac OS X)
 
-There are two options. You can install it globally in /Library/Frameworks or with a little extra effort embed it with your project.
-
-### Installing in /Library/Frameworks
-
-- Copy `YAJL.framework` to `/Library/Frameworks/`
-- In the target Info window, General tab:
-	- Add a linked library, under `Mac OS X 10.5 SDK` section, select `YAJL.framework`
-
-### Installing in your project
+### Installing in your project (Recommended)
 
 - Copy `YAJL.framework` to your project directory (maybe in MyProject/Frameworks/.)
 - Add the `YAJL.framekwork` files (from MyProject/Frameworks/) to your target. It should be visible as a `Linked Framework` in the target. 
@@ -45,15 +44,21 @@ There are two options. You can install it globally in /Library/Frameworks or wit
 	- Drag `YAJL.framework` into the the build phase
 	- Make sure the copy phase appears before any `Run Script` phases 
 
+### Installing in /Library/Frameworks
+
+- Copy `YAJL.framework` to `/Library/Frameworks/`
+- In the target Info window, General tab:
+	- Add a linked library, under `Mac OS X 10.5 SDK` section, select `YAJL.framework`
+
 ## Install (iOS)
 
-- Add `YAJL.framework` to your project.
+- Add `YAJLiOS.framework` to your project.
 - Add the frameworks to `Linked Libraries`:
-  - `YAJL.framework`
+  - `YAJLiOS.framework`
   - `CoreGraphics.framework`
   - `Foundation.framework`
   - `UIKit.framework`
-- Under `Framework Search Paths` make sure the (parent) directory to `YAJL.framework` is listed.
+- Under `Framework Search Paths` make sure the (parent) directory to `YAJLiOS.framework` is listed.
 - Under `Other Linker Flags` in your target, add `-ObjC` and `-all_load`
 
 
