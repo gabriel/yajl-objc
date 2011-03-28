@@ -66,8 +66,8 @@ To parse JSON from NSData</h3>
 To parse JSON from NSString</h3>
 <div class="fragment"><pre class="fragment"> NSString *JSONString = <span class="stringliteral">@&quot;[1, 2, 3]&quot;</span>;
  NSArray *arrayFromString = [JSONString yajl_JSON];
-</pre></div><h3><a class="anchor" id="Example2"></a>
-To parse JSON from NSString</h3>
+</pre></div><h3><a class="anchor" id="Example2_1"></a>
+To parse JSON from NSString with error and comments</h3>
 <div class="fragment"><pre class="fragment"> <span class="comment">// With options and out error</span>
  NSString *JSONString = <span class="stringliteral">@&quot;[1, 2, 3] // Allow comments&quot;</span>;
  NSError *error = nil;
@@ -76,6 +76,7 @@ To parse JSON from NSString</h3>
 To generate JSON from an object, NSArray, NSDictionary, etc.</h3>
 <div class="fragment"><pre class="fragment"> NSDictionary *dict = [NSDictionary dictionaryWithObject:<span class="stringliteral">@&quot;value&quot;</span> forKey:<span class="stringliteral">@&quot;key&quot;</span>];
  NSString *JSONString = [dict yajl_JSONString];
+ <span class="comment">// ==&gt; {&quot;key&quot;:&quot;value&quot;}</span>
 </pre></div><h3><a class="anchor" id="Example4"></a>
 To generate JSON from an object, beautified with custom indent</h3>
 <div class="fragment"><pre class="fragment"> <span class="comment">// Beautified with custon indent string</span>
@@ -187,7 +188,7 @@ Customized Encoding</h2>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Mar 3 2011 12:24:47 for YAJL by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:30 for YAJL by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
