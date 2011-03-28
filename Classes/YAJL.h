@@ -73,7 +73,7 @@
  NSArray *arrayFromString = [JSONString yajl_JSON];
  @endcode
  
- @subsection Example2 To parse JSON from NSString with error and comments
+ @subsection Example2_1 To parse JSON from NSString with error and comments
  
  @code
  // With options and out error
@@ -87,6 +87,7 @@
  @code
  NSDictionary *dict = [NSDictionary dictionaryWithObject:@"value" forKey:@"key"];
  NSString *JSONString = [dict yajl_JSONString];
+ // ==> {"key":"value"}
  @endcode
  
  @subsection Example4 To generate JSON from an object, beautified with custom indent

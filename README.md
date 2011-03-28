@@ -15,23 +15,6 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
 
 - The online [API documentation](http://gabriel.github.com/yajl-objc/).
 
-## Apps
-
-YAJL framework is used by:
-
-- [Yelp for iPhone/iPad](http://itunes.apple.com/us/app/yelp/id284910350?mt=8)
-- Add your app here!
-
-## Docset
-
-Download and copy the YAJL.docset to `~/Library/Developer/Shared/Documentation/DocSets/YAJL.docset`
-
-(You may need to restart XCode after copying the file.)
-
-The documentation will appear within XCode:
-
-![YAJL-Docset](http://rel.me.s3.amazonaws.com/yajl/images/docset.png)
-
 ## Install (Mac OS X)
 
 ### Installing in your project (Recommended)
@@ -61,6 +44,22 @@ The documentation will appear within XCode:
 - Under `Framework Search Paths` make sure the (parent) directory to `YAJLiOS.framework` is listed.
 - Under `Other Linker Flags` in your target, add `-ObjC` and `-all_load`
 
+## Apps
+
+YAJL framework is used by:
+
+- [Yelp for iPhone/iPad](http://itunes.apple.com/us/app/yelp/id284910350?mt=8)
+- Add your app here!
+
+## Docset
+
+Download and copy the YAJL.docset to `~/Library/Developer/Shared/Documentation/DocSets/YAJL.docset`
+
+(You may need to restart XCode after copying the file.)
+
+The documentation will appear within XCode:
+
+![YAJL-Docset](http://rel.me.s3.amazonaws.com/yajl/images/docset.png)
 
 
 
