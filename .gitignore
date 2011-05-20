@@ -9,3 +9,6 @@ Documentation
 *.swp
 *~.nib
 .gitattributes
+YAJL.docset
+Project-iOS/YAJLiOS.xcodeproj/xcuserdata/
+Project-iOS/YAJLiOS.xcodeproj/project.xcworkspace/xcuserdata/
