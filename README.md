@@ -60,6 +60,7 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
   - `UIKit.framework`
 - Under `Framework Search Paths` make sure the (parent) directory to `YAJLiOS.framework` is listed.
 - Under `Other Linker Flags` in your target, add `-ObjC` and `-all_load`
+- Import with `#import "YAJLiOS/YAJL.h"`.
 
 ## Apps
 
