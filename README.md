@@ -15,7 +15,7 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
 
 - The online [API documentation](http://gabriel.github.com/yajl-objc/).
 
-## Installing in XCode 4 (Mac OS X)
+## Installing in Xcode 4 (Mac OS X)
 
 - Copy `YAJL.framework` to your project directory (maybe in MyProject/Frameworks/.)
 - Add the `YAJL.framework` files (from MyProject/Frameworks/) to your target.
@@ -25,9 +25,9 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
   - Drag `YAJL.framework` into the the build phase
   - Make sure the copy phase appears before any `Run Script` phases
 - Import with `#import <YAJL/YAJL.h>`.
-- See the [API documenation](http://gabriel.github.com/yajl-objc/)
+- See the [API documentation](http://gabriel.github.com/yajl-objc/)
 
-## Installing in XCode 3 (Mac OS X)
+## Installing in Xcode 3 (Mac OS X)
 
 - Copy `YAJL.framework` to your project directory (maybe in MyProject/Frameworks/.)
 - Add the `YAJL.framework` files (from MyProject/Frameworks/) to your target. It should be visible as a `Linked Framework` in the target. 
@@ -37,7 +37,7 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
 	- Drag `YAJL.framework` into the the build phase
 	- Make sure the copy phase appears before any `Run Script` phases 
 
-## Installing in XCode 4 (iOS)
+## Installing in Xcode 4 (iOS)
 
 - Add `YAJLiOS.framework` to your project.
 - In `Build Phases`, make sure its listed in `Link Binary With Libraries`, along with:
@@ -47,10 +47,10 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
 - In `Build Settings`:
   - Under `Framework Search Paths` make sure the (parent) directory to `YAJLiOS.framework` is listed.
   - Under `Other Linker Flags` in your target, add `-ObjC` and `-all_load`
-- Import with `#import <YAJL/YAJL.h>`.
-- See the [API documenation](http://gabriel.github.com/yajl-objc/)
+- Import with `#import <YAJLiOS/YAJL.h>`.
+- See the [API documentation](http://gabriel.github.com/yajl-objc/)
 
-## Installing in XCode 3 (iOS)
+## Installing in Xcode 3 (iOS)
 
 - Add `YAJLiOS.framework` to your project.
 - Add the frameworks to `Linked Libraries`:
@@ -62,20 +62,13 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
 - Under `Other Linker Flags` in your target, add `-ObjC` and `-all_load`
 - Import with `#import "YAJLiOS/YAJL.h"`.
 
-## Apps
-
-YAJL framework is used by:
-
-- [Yelp for iPhone/iPad](http://itunes.apple.com/us/app/yelp/id284910350?mt=8)
-- Add your app here!
-
 ## Docset
 
 Download and copy the YAJL.docset to `~/Library/Developer/Shared/Documentation/DocSets/YAJL.docset`
 
-(You may need to restart XCode after copying the file.)
+(You may need to restart Xcode after copying the file.)
 
-The documentation will appear within XCode:
+The documentation will appear within Xcode:
 
 ![YAJL-Docset](http://rel.me.s3.amazonaws.com/yajl/images/docset.png)
 
