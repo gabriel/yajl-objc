@@ -137,6 +137,40 @@
 		00C3CEEE126EABFF00DF710D /* yajl_parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C3CEE6126EABFF00DF710D /* yajl_parse.h */; };
 		00C3CEEF126EABFF00DF710D /* yajl_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C3CEE7126EABFF00DF710D /* yajl_version.h */; };
 		00C3CEFC126EAC5700DF710D /* twitter_snowflake.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C3CEFB126EAC5700DF710D /* twitter_snowflake.json */; };
+		454B6FD21485DD1C0082EB70 /* NSData+YAJLtoObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC11485DD1C0082EB70 /* NSData+YAJLtoObject.h */; };
+		454B6FD31485DD1C0082EB70 /* NSData+YAJLtoObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC11485DD1C0082EB70 /* NSData+YAJLtoObject.h */; };
+		454B6FD41485DD1C0082EB70 /* NSData+YAJLtoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FC21485DD1C0082EB70 /* NSData+YAJLtoObject.m */; };
+		454B6FD51485DD1C0082EB70 /* NSData+YAJLtoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FC21485DD1C0082EB70 /* NSData+YAJLtoObject.m */; };
+		454B6FD61485DD1C0082EB70 /* NSObject+AQToolkitEXT.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC31485DD1C0082EB70 /* NSObject+AQToolkitEXT.h */; };
+		454B6FD71485DD1C0082EB70 /* NSObject+AQToolkitEXT.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC31485DD1C0082EB70 /* NSObject+AQToolkitEXT.h */; };
+		454B6FD81485DD1C0082EB70 /* NSObject+AQToolkitEXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FC41485DD1C0082EB70 /* NSObject+AQToolkitEXT.m */; };
+		454B6FD91485DD1C0082EB70 /* NSObject+AQToolkitEXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FC41485DD1C0082EB70 /* NSObject+AQToolkitEXT.m */; };
+		454B6FDA1485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC51485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.h */; };
+		454B6FDB1485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC51485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.h */; };
+		454B6FDC1485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FC61485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.m */; };
+		454B6FDD1485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FC61485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.m */; };
+		454B6FDE1485DD1C0082EB70 /* NSObject+Properties.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC71485DD1C0082EB70 /* NSObject+Properties.h */; };
+		454B6FDF1485DD1C0082EB70 /* NSObject+Properties.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC71485DD1C0082EB70 /* NSObject+Properties.h */; };
+		454B6FE01485DD1C0082EB70 /* NSObject+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FC81485DD1C0082EB70 /* NSObject+Properties.m */; };
+		454B6FE11485DD1C0082EB70 /* NSObject+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FC81485DD1C0082EB70 /* NSObject+Properties.m */; };
+		454B6FE21485DD1C0082EB70 /* NSObject+YAJLizable.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC91485DD1C0082EB70 /* NSObject+YAJLizable.h */; };
+		454B6FE31485DD1C0082EB70 /* NSObject+YAJLizable.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC91485DD1C0082EB70 /* NSObject+YAJLizable.h */; };
+		454B6FE41485DD1C0082EB70 /* NSObject+YAJLizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FCA1485DD1C0082EB70 /* NSObject+YAJLizable.m */; };
+		454B6FE51485DD1C0082EB70 /* NSObject+YAJLizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FCA1485DD1C0082EB70 /* NSObject+YAJLizable.m */; };
+		454B6FE61485DD1C0082EB70 /* NSString+CaseExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FCB1485DD1C0082EB70 /* NSString+CaseExt.h */; };
+		454B6FE71485DD1C0082EB70 /* NSString+CaseExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FCB1485DD1C0082EB70 /* NSString+CaseExt.h */; };
+		454B6FE81485DD1C0082EB70 /* NSString+CaseExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FCC1485DD1C0082EB70 /* NSString+CaseExt.m */; };
+		454B6FE91485DD1C0082EB70 /* NSString+CaseExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FCC1485DD1C0082EB70 /* NSString+CaseExt.m */; };
+		454B6FEA1485DD1C0082EB70 /* NSString+PropertyKVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FCD1485DD1C0082EB70 /* NSString+PropertyKVC.h */; };
+		454B6FEB1485DD1C0082EB70 /* NSString+PropertyKVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FCD1485DD1C0082EB70 /* NSString+PropertyKVC.h */; };
+		454B6FEC1485DD1C0082EB70 /* NSString+PropertyKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FCE1485DD1C0082EB70 /* NSString+PropertyKVC.m */; };
+		454B6FED1485DD1C0082EB70 /* NSString+PropertyKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FCE1485DD1C0082EB70 /* NSString+PropertyKVC.m */; };
+		454B6FEE1485DD1C0082EB70 /* YAJL-Entity.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FCF1485DD1C0082EB70 /* YAJL-Entity.h */; };
+		454B6FEF1485DD1C0082EB70 /* YAJL-Entity.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FCF1485DD1C0082EB70 /* YAJL-Entity.h */; };
+		454B6FF01485DD1C0082EB70 /* YAJLObjectParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FD01485DD1C0082EB70 /* YAJLObjectParser.h */; };
+		454B6FF11485DD1C0082EB70 /* YAJLObjectParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FD01485DD1C0082EB70 /* YAJLObjectParser.h */; };
+		454B6FF21485DD1C0082EB70 /* YAJLObjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */; };
+		454B6FF31485DD1C0082EB70 /* YAJLObjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +294,23 @@
 		00C405850FE7780E003CE908 /* Tests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests_Prefix.pch; sourceTree = "<group>"; };
 		00C406000FE77A81003CE908 /* CombineLibs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CombineLibs.sh; sourceTree = "<group>"; };
 		00C406470FE77C51003CE908 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
+		454B6FC11485DD1C0082EB70 /* NSData+YAJLtoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+YAJLtoObject.h"; path = "../YAJL-Entity/NSData+YAJLtoObject.h"; sourceTree = "<group>"; };
+		454B6FC21485DD1C0082EB70 /* NSData+YAJLtoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+YAJLtoObject.m"; path = "../YAJL-Entity/NSData+YAJLtoObject.m"; sourceTree = "<group>"; };
+		454B6FC31485DD1C0082EB70 /* NSObject+AQToolkitEXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+AQToolkitEXT.h"; path = "../YAJL-Entity/NSObject+AQToolkitEXT.h"; sourceTree = "<group>"; };
+		454B6FC41485DD1C0082EB70 /* NSObject+AQToolkitEXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AQToolkitEXT.m"; path = "../YAJL-Entity/NSObject+AQToolkitEXT.m"; sourceTree = "<group>"; };
+		454B6FC51485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+FillPropertiesWithDictionary.h"; path = "../YAJL-Entity/NSObject+FillPropertiesWithDictionary.h"; sourceTree = "<group>"; };
+		454B6FC61485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FillPropertiesWithDictionary.m"; path = "../YAJL-Entity/NSObject+FillPropertiesWithDictionary.m"; sourceTree = "<group>"; };
+		454B6FC71485DD1C0082EB70 /* NSObject+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Properties.h"; path = "../YAJL-Entity/NSObject+Properties.h"; sourceTree = "<group>"; };
+		454B6FC81485DD1C0082EB70 /* NSObject+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Properties.m"; path = "../YAJL-Entity/NSObject+Properties.m"; sourceTree = "<group>"; };
+		454B6FC91485DD1C0082EB70 /* NSObject+YAJLizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+YAJLizable.h"; path = "../YAJL-Entity/NSObject+YAJLizable.h"; sourceTree = "<group>"; };
+		454B6FCA1485DD1C0082EB70 /* NSObject+YAJLizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YAJLizable.m"; path = "../YAJL-Entity/NSObject+YAJLizable.m"; sourceTree = "<group>"; };
+		454B6FCB1485DD1C0082EB70 /* NSString+CaseExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CaseExt.h"; path = "../YAJL-Entity/NSString+CaseExt.h"; sourceTree = "<group>"; };
+		454B6FCC1485DD1C0082EB70 /* NSString+CaseExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CaseExt.m"; path = "../YAJL-Entity/NSString+CaseExt.m"; sourceTree = "<group>"; };
+		454B6FCD1485DD1C0082EB70 /* NSString+PropertyKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+PropertyKVC.h"; path = "../YAJL-Entity/NSString+PropertyKVC.h"; sourceTree = "<group>"; };
+		454B6FCE1485DD1C0082EB70 /* NSString+PropertyKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+PropertyKVC.m"; path = "../YAJL-Entity/NSString+PropertyKVC.m"; sourceTree = "<group>"; };
+		454B6FCF1485DD1C0082EB70 /* YAJL-Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YAJL-Entity.h"; path = "../YAJL-Entity/YAJL-Entity.h"; sourceTree = "<group>"; };
+		454B6FD01485DD1C0082EB70 /* YAJLObjectParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAJLObjectParser.h; path = "../YAJL-Entity/YAJLObjectParser.h"; sourceTree = "<group>"; };
+		454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAJLObjectParser.m; path = "../YAJL-Entity/YAJLObjectParser.m"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* YAJLiOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLiOS_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -488,6 +539,7 @@
 				0046C19011779AB80092DA2A /* Makefile */,
 				00200243107D4033009ED6DF /* CHANGELOG.md */,
 				00C406470FE77C51003CE908 /* README.md */,
+				454B6FBF1485DD0C0082EB70 /* YAJL-Entity */,
 				0052CD4F126EABC10049CF17 /* yajl-1.0.11 */,
 				00C404FD0FE77661003CE908 /* Classes */,
 				00C405550FE77784003CE908 /* Libraries (iOS) */,
@@ -524,6 +576,30 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		454B6FBF1485DD0C0082EB70 /* YAJL-Entity */ = {
+			isa = PBXGroup;
+			children = (
+				454B6FC11485DD1C0082EB70 /* NSData+YAJLtoObject.h */,
+				454B6FC21485DD1C0082EB70 /* NSData+YAJLtoObject.m */,
+				454B6FC31485DD1C0082EB70 /* NSObject+AQToolkitEXT.h */,
+				454B6FC41485DD1C0082EB70 /* NSObject+AQToolkitEXT.m */,
+				454B6FC51485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.h */,
+				454B6FC61485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.m */,
+				454B6FC71485DD1C0082EB70 /* NSObject+Properties.h */,
+				454B6FC81485DD1C0082EB70 /* NSObject+Properties.m */,
+				454B6FC91485DD1C0082EB70 /* NSObject+YAJLizable.h */,
+				454B6FCA1485DD1C0082EB70 /* NSObject+YAJLizable.m */,
+				454B6FCB1485DD1C0082EB70 /* NSString+CaseExt.h */,
+				454B6FCC1485DD1C0082EB70 /* NSString+CaseExt.m */,
+				454B6FCD1485DD1C0082EB70 /* NSString+PropertyKVC.h */,
+				454B6FCE1485DD1C0082EB70 /* NSString+PropertyKVC.m */,
+				454B6FCF1485DD1C0082EB70 /* YAJL-Entity.h */,
+				454B6FD01485DD1C0082EB70 /* YAJLObjectParser.h */,
+				454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */,
+			);
+			name = "YAJL-Entity";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -550,6 +626,15 @@
 				00C3CEE9126EABFF00DF710D /* yajl_gen.h in Headers */,
 				00C3CEEA126EABFF00DF710D /* yajl_parse.h in Headers */,
 				00C3CEEB126EABFF00DF710D /* yajl_version.h in Headers */,
+				454B6FD21485DD1C0082EB70 /* NSData+YAJLtoObject.h in Headers */,
+				454B6FD61485DD1C0082EB70 /* NSObject+AQToolkitEXT.h in Headers */,
+				454B6FDA1485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.h in Headers */,
+				454B6FDE1485DD1C0082EB70 /* NSObject+Properties.h in Headers */,
+				454B6FE21485DD1C0082EB70 /* NSObject+YAJLizable.h in Headers */,
+				454B6FE61485DD1C0082EB70 /* NSString+CaseExt.h in Headers */,
+				454B6FEA1485DD1C0082EB70 /* NSString+PropertyKVC.h in Headers */,
+				454B6FEE1485DD1C0082EB70 /* YAJL-Entity.h in Headers */,
+				454B6FF01485DD1C0082EB70 /* YAJLObjectParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +661,15 @@
 				00C3CEED126EABFF00DF710D /* yajl_gen.h in Headers */,
 				00C3CEEE126EABFF00DF710D /* yajl_parse.h in Headers */,
 				00C3CEEF126EABFF00DF710D /* yajl_version.h in Headers */,
+				454B6FD31485DD1C0082EB70 /* NSData+YAJLtoObject.h in Headers */,
+				454B6FD71485DD1C0082EB70 /* NSObject+AQToolkitEXT.h in Headers */,
+				454B6FDB1485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.h in Headers */,
+				454B6FDF1485DD1C0082EB70 /* NSObject+Properties.h in Headers */,
+				454B6FE31485DD1C0082EB70 /* NSObject+YAJLizable.h in Headers */,
+				454B6FE71485DD1C0082EB70 /* NSString+CaseExt.h in Headers */,
+				454B6FEB1485DD1C0082EB70 /* NSString+PropertyKVC.h in Headers */,
+				454B6FEF1485DD1C0082EB70 /* YAJL-Entity.h in Headers */,
+				454B6FF11485DD1C0082EB70 /* YAJLObjectParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +854,14 @@
 				0052CD70126EABC10049CF17 /* yajl_lex.c in Sources */,
 				0052CD72126EABC10049CF17 /* yajl_parser.c in Sources */,
 				0052CD74126EABC10049CF17 /* yajl_version.c in Sources */,
+				454B6FD41485DD1C0082EB70 /* NSData+YAJLtoObject.m in Sources */,
+				454B6FD81485DD1C0082EB70 /* NSObject+AQToolkitEXT.m in Sources */,
+				454B6FDC1485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.m in Sources */,
+				454B6FE01485DD1C0082EB70 /* NSObject+Properties.m in Sources */,
+				454B6FE41485DD1C0082EB70 /* NSObject+YAJLizable.m in Sources */,
+				454B6FE81485DD1C0082EB70 /* NSString+CaseExt.m in Sources */,
+				454B6FEC1485DD1C0082EB70 /* NSString+PropertyKVC.m in Sources */,
+				454B6FF21485DD1C0082EB70 /* YAJLObjectParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +884,14 @@
 				0052CD82126EABC10049CF17 /* yajl_lex.c in Sources */,
 				0052CD84126EABC10049CF17 /* yajl_parser.c in Sources */,
 				0052CD86126EABC10049CF17 /* yajl_version.c in Sources */,
+				454B6FD51485DD1C0082EB70 /* NSData+YAJLtoObject.m in Sources */,
+				454B6FD91485DD1C0082EB70 /* NSObject+AQToolkitEXT.m in Sources */,
+				454B6FDD1485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.m in Sources */,
+				454B6FE11485DD1C0082EB70 /* NSObject+Properties.m in Sources */,
+				454B6FE51485DD1C0082EB70 /* NSObject+YAJLizable.m in Sources */,
+				454B6FE91485DD1C0082EB70 /* NSString+CaseExt.m in Sources */,
+				454B6FED1485DD1C0082EB70 /* NSString+PropertyKVC.m in Sources */,
+				454B6FF31485DD1C0082EB70 /* YAJLObjectParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
