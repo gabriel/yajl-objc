@@ -50,7 +50,10 @@
             } else {
                 if (value == [NSNull null]) value = nil;
                 
-                [self setValue:value forKey:lowerKey];
+                @try {
+                    [self setValue:value forKey:lowerKey];
+                } @catch (NSException *exception) {
+                }
             }
         }
     }

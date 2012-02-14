@@ -258,7 +258,12 @@
                 [dict_ setValue:value forKey:key_];
             } else if ([dict_ hasPropertyNamed:key_]) {
                 if (value == [NSNull null]) value = nil;
-                [dict_ setValue:value forKey:key_];
+                @try {
+                    [dict_ setValue:value forKey:key_];
+                }
+                @catch (NSException *exception) {
+                }
+                
                 [[classObjectSweeperStack_ lastObject] removeObject:key_];
             }
             

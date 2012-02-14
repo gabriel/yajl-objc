@@ -953,6 +953,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				PRODUCT_NAME = YAJLiOSDevice;
 			};
 			name = Debug;
@@ -961,6 +965,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				PRODUCT_NAME = YAJLiOSDevice;
 			};
 			name = Release;
