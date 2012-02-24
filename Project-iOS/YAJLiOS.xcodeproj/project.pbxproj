@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		005887351226360800292C90 /* Run make to build framework */ = {
+		005887351226360800292C90 /* Build this target */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 005887381226363300292C90 /* Build configuration list for PBXAggregateTarget "Run make to build framework" */;
+			buildConfigurationList = 005887381226363300292C90 /* Build configuration list for PBXAggregateTarget "Build this target" */;
 			buildPhases = (
 				005887341226360800292C90 /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = "Run make to build framework";
+			name = "Build this target";
 			productName = "Run make to build";
 		};
 /* End PBXAggregateTarget section */
@@ -756,7 +756,7 @@
 				0065975811BEEF4000E89ABD /* YAJLiOS (Device) */,
 				0065977F11BEEF4800E89ABD /* YAJLiOS (Simulator) */,
 				006597AE11BEEF5400E89ABD /* Tests */,
-				005887351226360800292C90 /* Run make to build framework */,
+				005887351226360800292C90 /* Build this target */,
 			);
 		};
 /* End PBXProject section */
@@ -803,7 +803,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# shell script goes here\nexit 0";
+			shellScript = "# shell script goes here\nmake\nopen build";
 		};
 		006597E611BEEF5400E89ABD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -935,7 +935,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Run make to build";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
@@ -944,7 +944,7 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				PRODUCT_NAME = "Run make to build";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1098,7 +1098,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		005887381226363300292C90 /* Build configuration list for PBXAggregateTarget "Run make to build framework" */ = {
+		005887381226363300292C90 /* Build configuration list for PBXAggregateTarget "Build this target" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				005887361226360800292C90 /* Debug */,
