@@ -26,7 +26,7 @@
 
 int EWPropNameUpperCaseFirstChar = 1;
 
-@interface NSObject()
+@interface NSObject(YAJLizablePrivate)
 
 - (NSMutableDictionary *)newDictionaryOfPropertiesAsClass:(Class) aClass option:(EWPropDictOption)option;
 

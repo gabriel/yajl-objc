@@ -21,6 +21,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "NSObject+Properties.h"
 #import "YAJL.h"
 #import "NSObject+YAJLizable.h"
 
@@ -33,7 +34,7 @@
     
 	// Note for developer: __weak mark does NOTHING in a reference count runtime.
 	// iOS only have the reference count runtime, thus __weak does NOTHING in iOS
-	__weak id dict_; // weak; if map in progress, points to the current map 
+	id dict_; // weak; if map in progress, points to the current map 
 	__weak NSMutableArray *array_;  // weak; If array in progress, points the current array
 	__weak NSString *key_;          // weak; If map in progress, points to current key
 	__weak Class arrayType_;        // If the current object is an array, this is the type of the objects

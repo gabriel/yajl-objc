@@ -21,7 +21,6 @@
  */
 
 #import <Foundation/NSKeyValueCoding.h>
-#import "NSObject+Properties.h"
 #import "YAJLObjectParser.h"
 #import "NSString+CaseExt.h"
 #import "NSObject+AQToolkitEXT.h"
@@ -30,7 +29,7 @@
 
 - (BOOL)isClassObject
 {
-    return [self class] == self;
+    return [self class] == (Class)self;
 }
 
 @end 
