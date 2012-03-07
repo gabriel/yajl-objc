@@ -1,0 +1,33 @@
+{
+    "name" : "the entity name",
+    "value" : 100,
+    "addresses" : [
+        {
+            "city" : "Shanghai",
+            "zipcode" : "200000"
+        },
+        {
+            "city" : "Beijing",
+            "zipcode" : "100000"
+        }
+    ],
+    
+    "followers" : [200, 201, 202, 203],
+    
+    "parent" : {
+        "name" : "the inner entity name",
+        "value" : null,
+        "addresses" : [
+            {
+                "city" : "Shanghai inner",
+                "zipcode" : "200000"
+            },
+            {
+                "city" : "Beijing inner",
+                "zipcode" : "100000"
+            }
+        ],
+        "parent" : null
+    }
+}
+}

@@ -170,6 +170,9 @@
 		454B6FF11485DD1C0082EB70 /* YAJLObjectParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FD01485DD1C0082EB70 /* YAJLObjectParser.h */; };
 		454B6FF21485DD1C0082EB70 /* YAJLObjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */; };
 		454B6FF31485DD1C0082EB70 /* YAJLObjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */; };
+		45E03622150EFF4A000AA9FC /* MyAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E03619150EFE8F000AA9FC /* MyAddress.m */; };
+		45E03623150EFF4A000AA9FC /* MyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E0361B150EFE8F000AA9FC /* MyEntity.m */; };
+		45E03624150EFF4A000AA9FC /* YAJL-EntityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E0361C150EFE8F000AA9FC /* YAJL-EntityTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,6 +313,12 @@
 		454B6FCF1485DD1C0082EB70 /* YAJL-Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YAJL-Entity.h"; path = "../YAJL-Entity/YAJL-Entity.h"; sourceTree = "<group>"; };
 		454B6FD01485DD1C0082EB70 /* YAJLObjectParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAJLObjectParser.h; path = "../YAJL-Entity/YAJLObjectParser.h"; sourceTree = "<group>"; };
 		454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAJLObjectParser.m; path = "../YAJL-Entity/YAJLObjectParser.m"; sourceTree = "<group>"; };
+		45E03617150EFE8F000AA9FC /* my-entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "my-entity.json"; path = "../YAJL-Entity/Tests/my-entity.json"; sourceTree = "<group>"; };
+		45E03618150EFE8F000AA9FC /* MyAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAddress.h; path = "../YAJL-Entity/Tests/MyAddress.h"; sourceTree = "<group>"; };
+		45E03619150EFE8F000AA9FC /* MyAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAddress.m; path = "../YAJL-Entity/Tests/MyAddress.m"; sourceTree = "<group>"; };
+		45E0361A150EFE8F000AA9FC /* MyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyEntity.h; path = "../YAJL-Entity/Tests/MyEntity.h"; sourceTree = "<group>"; };
+		45E0361B150EFE8F000AA9FC /* MyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyEntity.m; path = "../YAJL-Entity/Tests/MyEntity.m"; sourceTree = "<group>"; };
+		45E0361C150EFE8F000AA9FC /* YAJL-EntityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YAJL-EntityTest.m"; path = "../YAJL-Entity/Tests/YAJL-EntityTest.m"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* YAJLiOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLiOS_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -578,6 +587,7 @@
 		454B6FBF1485DD0C0082EB70 /* YAJL-Entity */ = {
 			isa = PBXGroup;
 			children = (
+				45C64F8D15073CCD0051CC48 /* Tests */,
 				454B6FC11485DD1C0082EB70 /* NSData+YAJLtoObject.h */,
 				454B6FC21485DD1C0082EB70 /* NSData+YAJLtoObject.m */,
 				454B6FC31485DD1C0082EB70 /* NSObject+AQToolkitEXT.h */,
@@ -597,6 +607,27 @@
 				454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */,
 			);
 			name = "YAJL-Entity";
+			sourceTree = "<group>";
+		};
+		45C64F8D15073CCD0051CC48 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				45E03617150EFE8F000AA9FC /* my-entity.json */,
+				45E03618150EFE8F000AA9FC /* MyAddress.h */,
+				45E03619150EFE8F000AA9FC /* MyAddress.m */,
+				45E0361A150EFE8F000AA9FC /* MyEntity.h */,
+				45E0361B150EFE8F000AA9FC /* MyEntity.m */,
+				45E0361C150EFE8F000AA9FC /* YAJL-EntityTest.m */,
+				45C64F9E15073DB50051CC48 /* Samples */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		45C64F9E15073DB50051CC48 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Samples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -915,6 +946,9 @@
 				006597DB11BEEF5400E89ABD /* YAJLDocumentDelegateTest.m in Sources */,
 				005886941226329100292C90 /* NSBundleTest.m in Sources */,
 				0058870E1226353B00292C90 /* GHUnitIOSTestMain.m in Sources */,
+				45E03622150EFF4A000AA9FC /* MyAddress.m in Sources */,
+				45E03623150EFF4A000AA9FC /* MyEntity.m in Sources */,
+				45E03624150EFF4A000AA9FC /* YAJL-EntityTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

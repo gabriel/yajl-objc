@@ -24,7 +24,7 @@
 #import "NSObject+Properties.h"
 #import "NSString+CaseExt.h"
 
-int EWPropNameUpperCaseFirstChar = 1;
+int EWPropNameUpperCaseFirstChar = 0;
 
 @interface NSObject(YAJLizablePrivate)
 
