@@ -589,20 +589,17 @@
 			isa = PBXGroup;
 			children = (
 				45C64F8D15073CCD0051CC48 /* Tests */,
-				454B6FC11485DD1C0082EB70 /* NSData+YAJLtoObject.h */,
-				454B6FC21485DD1C0082EB70 /* NSData+YAJLtoObject.m */,
+				45D69B6F153E88FC0021ABC6 /* AQToolkit */,
 				454B6FC31485DD1C0082EB70 /* NSObject+AQToolkitEXT.h */,
 				454B6FC41485DD1C0082EB70 /* NSObject+AQToolkitEXT.m */,
+				454B6FC11485DD1C0082EB70 /* NSData+YAJLtoObject.h */,
+				454B6FC21485DD1C0082EB70 /* NSData+YAJLtoObject.m */,
 				454B6FC51485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.h */,
 				454B6FC61485DD1C0082EB70 /* NSObject+FillPropertiesWithDictionary.m */,
-				454B6FC71485DD1C0082EB70 /* NSObject+Properties.h */,
-				454B6FC81485DD1C0082EB70 /* NSObject+Properties.m */,
 				454B6FC91485DD1C0082EB70 /* NSObject+YAJLizable.h */,
 				454B6FCA1485DD1C0082EB70 /* NSObject+YAJLizable.m */,
 				454B6FCB1485DD1C0082EB70 /* NSString+CaseExt.h */,
 				454B6FCC1485DD1C0082EB70 /* NSString+CaseExt.m */,
-				454B6FCD1485DD1C0082EB70 /* NSString+PropertyKVC.h */,
-				454B6FCE1485DD1C0082EB70 /* NSString+PropertyKVC.m */,
 				454B6FCF1485DD1C0082EB70 /* YAJL-Entity.h */,
 				454B6FD01485DD1C0082EB70 /* YAJLObjectParser.h */,
 				454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */,
@@ -613,7 +610,6 @@
 		45C64F8D15073CCD0051CC48 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				45E03617150EFE8F000AA9FC /* my-entity.json */,
 				45E03618150EFE8F000AA9FC /* MyAddress.h */,
 				45E03619150EFE8F000AA9FC /* MyAddress.m */,
 				45E0361A150EFE8F000AA9FC /* MyEntity.h */,
@@ -627,8 +623,20 @@
 		45C64F9E15073DB50051CC48 /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				45E03617150EFE8F000AA9FC /* my-entity.json */,
 			);
 			name = Samples;
+			sourceTree = "<group>";
+		};
+		45D69B6F153E88FC0021ABC6 /* AQToolkit */ = {
+			isa = PBXGroup;
+			children = (
+				454B6FC71485DD1C0082EB70 /* NSObject+Properties.h */,
+				454B6FC81485DD1C0082EB70 /* NSObject+Properties.m */,
+				454B6FCD1485DD1C0082EB70 /* NSString+PropertyKVC.h */,
+				454B6FCE1485DD1C0082EB70 /* NSString+PropertyKVC.m */,
+			);
+			name = AQToolkit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

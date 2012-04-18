@@ -23,7 +23,6 @@
 #import "NSData+YAJLtoObject.h"
 #import "YAJLObjectParser.h"
 
-//MAKE_CATEGORIES_LOADABLE(NSData_YAJLtoObject);
 
 @implementation NSData(YAJLtoObject)
 
@@ -66,7 +65,6 @@
 	YAJLObjectParser *objParser = [[YAJLObjectParser alloc] initWithStubObject:obj parser:parser];
 	[parser parse:self];
     [objParser cleanClassObjects];
-//	id ret = [objParser.root retain];
 	
 	parser.delegate = nil;
 	[objParser release];
