@@ -14,3 +14,5 @@ Project-iOS/YAJLiOS.xcodeproj/xcuserdata/
 Project-iOS/YAJLiOS.xcodeproj/project.xcworkspace/xcuserdata/
 Project/YAJL.xcodeproj/xcuserdata
 Project/YAJL.xcodeproj/project.xcworkspace/xcuserdata
+
+*.orig
