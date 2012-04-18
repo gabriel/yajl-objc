@@ -2,6 +2,12 @@ This extension can deserialize JSON data to custom objects. Currently it do has 
 
 # A Short Demo
 
+**Import line:** 
+
+```objective-c
+#import <YAJLiOS/YAJL-Entity.h>
+```
+
 In `YAJL-EntityTest.m`:
 
 
