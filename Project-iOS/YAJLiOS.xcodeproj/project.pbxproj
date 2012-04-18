@@ -732,7 +732,6 @@
 				0065979111BEEF4800E89ABD /* Sources */,
 				0065979E11BEEF4800E89ABD /* Frameworks */,
 				006597A011BEEF4800E89ABD /* CopyFiles */,
-				0097077F125E6435002B2065 /* Generate docset */,
 			);
 			buildRules = (
 			);
@@ -850,21 +849,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = ../Tests/RunTests.sh;
-		};
-		0097077F125E6435002B2065 /* Generate docset */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Generate docset";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd .. && make docs";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1107,11 +1091,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
-				SDKROOT = iphoneos;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};

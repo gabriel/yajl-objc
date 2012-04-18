@@ -142,7 +142,7 @@ typedef NSUInteger YAJLParserStatus; //!< Status of the last parse event
   
   yajl_handle handle_;
   
-  __weak id <YAJLParserDelegate> delegate_; // weak
+  id<YAJLParserDelegate> delegate_; // weak
     
   YAJLParserOptions parserOptions_;
 

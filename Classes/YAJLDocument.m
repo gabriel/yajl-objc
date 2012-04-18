@@ -89,7 +89,7 @@ NSInteger YAJLDocumentStackCapacity = 20;
 #pragma mark Delegates
 
 - (void)parser:(YAJLParser *)parser didAdd:(id)value {
-  switch(currentType_) {
+  switch (currentType_) {
     case YAJLDecoderCurrentTypeArray:
       [array_ addObject:value];
       if ([delegate_ respondsToSelector:@selector(document:didAddObject:toArray:)])
