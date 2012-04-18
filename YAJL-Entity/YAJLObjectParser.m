@@ -234,12 +234,17 @@
 
 - (void)parser:(YAJLParser *)parser didMapKey:(NSString *)key
 {    
-	if ([key isEqualToString:[key uppercaseString]] || [dict_ isKindOfClass:[NSDictionary class]])
+	if ([key isEqualToString:[key uppercaseString]] || [dict_ isKindOfClass:[NSDictionary class]]) {
         key_ = key;
-    else {
+    } else {
         key_ = [key stringByLowercaseFirstChar];
+        
+        if ([key_ characterAtIndex:[key_ length] - 1] == '?') {
+            key_ = [key_ substringToIndex:[key_ length] - 1];
+        }
+        
         if (![dict_ hasPropertyNamed:key_]) {
-            key_ = [key camelcaseString];
+            key_ = [key_ camelcaseString];
         }
     }
     

@@ -33,4 +33,7 @@
 @property (nonatomic, copy) NSArray *followers;
 @property (nonatomic, retain) MyEntity *parent;
 
+@property (nonatomic, assign) BOOL isNew;
+@property (nonatomic, assign) BOOL outdated;
+
 @end

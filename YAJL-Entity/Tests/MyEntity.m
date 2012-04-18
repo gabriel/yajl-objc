@@ -27,7 +27,7 @@
 
 @implementation MyEntity
 
-@synthesize name, parent, value, addresses, followers;
+@synthesize name, parent, value, addresses, followers, isNew, outdated;
 
 - (id)JSON
 {

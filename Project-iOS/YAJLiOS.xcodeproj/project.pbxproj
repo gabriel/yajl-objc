@@ -136,6 +136,7 @@
 		00C3CEEE126EABFF00DF710D /* yajl_parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C3CEE6126EABFF00DF710D /* yajl_parse.h */; };
 		00C3CEEF126EABFF00DF710D /* yajl_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C3CEE7126EABFF00DF710D /* yajl_version.h */; };
 		00C3CEFC126EAC5700DF710D /* twitter_snowflake.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C3CEFB126EAC5700DF710D /* twitter_snowflake.json */; };
+		450A0CCB150F08240055B5DF /* my-entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 45E03617150EFE8F000AA9FC /* my-entity.json */; };
 		454B6FD21485DD1C0082EB70 /* NSData+YAJLtoObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC11485DD1C0082EB70 /* NSData+YAJLtoObject.h */; };
 		454B6FD31485DD1C0082EB70 /* NSData+YAJLtoObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 454B6FC11485DD1C0082EB70 /* NSData+YAJLtoObject.h */; };
 		454B6FD41485DD1C0082EB70 /* NSData+YAJLtoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 454B6FC21485DD1C0082EB70 /* NSData+YAJLtoObject.m */; };
@@ -817,6 +818,7 @@
 				006597C611BEEF5400E89ABD /* overflow_longlong.json in Resources */,
 				006597C711BEEF5400E89ABD /* document_streaming.json in Resources */,
 				00C3CEFC126EAC5700DF710D /* twitter_snowflake.json in Resources */,
+				450A0CCB150F08240055B5DF /* my-entity.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
