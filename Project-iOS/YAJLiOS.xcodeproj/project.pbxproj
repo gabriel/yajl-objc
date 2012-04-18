@@ -314,6 +314,7 @@
 		454B6FCF1485DD1C0082EB70 /* YAJL-Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YAJL-Entity.h"; path = "../YAJL-Entity/YAJL-Entity.h"; sourceTree = "<group>"; };
 		454B6FD01485DD1C0082EB70 /* YAJLObjectParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAJLObjectParser.h; path = "../YAJL-Entity/YAJLObjectParser.h"; sourceTree = "<group>"; };
 		454B6FD11485DD1C0082EB70 /* YAJLObjectParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAJLObjectParser.m; path = "../YAJL-Entity/YAJLObjectParser.m"; sourceTree = "<group>"; };
+		45D69B76153E89EE0021ABC6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = "../YAJL-Entity/README.md"; sourceTree = "<group>"; };
 		45E03617150EFE8F000AA9FC /* my-entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "my-entity.json"; path = "../YAJL-Entity/Tests/my-entity.json"; sourceTree = "<group>"; };
 		45E03618150EFE8F000AA9FC /* MyAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAddress.h; path = "../YAJL-Entity/Tests/MyAddress.h"; sourceTree = "<group>"; };
 		45E03619150EFE8F000AA9FC /* MyAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAddress.m; path = "../YAJL-Entity/Tests/MyAddress.m"; sourceTree = "<group>"; };
@@ -588,6 +589,7 @@
 		454B6FBF1485DD0C0082EB70 /* YAJL-Entity */ = {
 			isa = PBXGroup;
 			children = (
+				45D69B76153E89EE0021ABC6 /* README.md */,
 				45C64F8D15073CCD0051CC48 /* Tests */,
 				45D69B6F153E88FC0021ABC6 /* AQToolkit */,
 				454B6FC31485DD1C0082EB70 /* NSObject+AQToolkitEXT.h */,
