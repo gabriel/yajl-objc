@@ -97,7 +97,7 @@ NSInteger YAJLDocumentStackCapacity = 20;
       break;
     case YAJLDecoderCurrentTypeDict:
       NSParameterAssert(key_);
-      [dict_ setObject:value forKey:key_];
+      if (value) [dict_ setObject:value forKey:key_];
       if ([delegate_ respondsToSelector:@selector(document:didSetObject:forKey:inDictionary:)])
         [delegate_ document:self didSetObject:value forKey:key_ inDictionary:dict_];
       [self _popKey];
