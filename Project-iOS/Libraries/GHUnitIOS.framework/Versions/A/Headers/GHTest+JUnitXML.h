@@ -27,14 +27,18 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+//! @cond DEV
+
 #import "GHTest.h"
 
-@interface GHTest (JUnitXML)
+@interface GHTest(JUnitXML)
 
 /*!
  Return test results in JUnit XML format for external parsing use
- (such as a Continuous Integration system like Hudson)
+ (such as a Continuous Integration system like Jenkins).
  */
 - (NSString *)JUnitXML;
 
 @end
+
+//! @endcond

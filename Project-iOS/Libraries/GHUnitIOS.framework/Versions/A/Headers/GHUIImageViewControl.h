@@ -1,8 +1,9 @@
 //
-//  GHUnitIPhoneAppDelegate.h
+//  GHUIImageViewControl.h
 //  GHUnitIOS
 //
-//  Created by Gabriel Handford on 6/28/11.
+//  Created by Gabriel Handford on 4/1/11.
+//  Copyright 2011. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,11 +27,15 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHUnitIOSAppDelegate.h"
+#import <UIKit/UIKit.h>
 
-// For backwards compatibility (see GHUnitIOSAppDelegate)
-@interface GHUnitIPhoneAppDelegate : GHUnitIOSAppDelegate {
-    
+@interface GHUIImageViewControl : UIControl { 
+  UIImageView *_imageView;
 }
+
+@property (readonly, nonatomic) UIImageView *imageView;
+@property (nonatomic) UIImage *image;
+
+- (id)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage;
 
 @end

@@ -6,7 +6,6 @@
 //  Copyright 2009. All rights reserved.
 //
 
-
 @interface YAJLParserTest : YAJLTestCase {}
 @end
 
@@ -115,11 +114,7 @@
   if (error) {
     GHTestLog(@"Parse error:\n%@", error);
     GHAssertEquals([error code], (NSInteger)YAJLParserErrorCodeIntegerOverflow, nil);
-#if TARGET_OS_IPHONE
-    GHAssertEqualStrings([[error userInfo] objectForKey:YAJLParserValueKey], @"9223372036854775808", nil);
-#else 
     GHAssertEqualStrings([[error userInfo] objectForKey:YAJLParserValueKey], @"9223372036854775807", nil);
-#endif
   } else {
     GHFail(@"Should have error");
   }

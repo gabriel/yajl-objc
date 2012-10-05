@@ -27,7 +27,7 @@
   if ([key isEqualToString:@"test"]) return;
   
   static NSInteger index = 1;
-  NSString *expectedKey = [NSString stringWithFormat:@"array%d", index];
+  NSString *expectedKey = [NSString stringWithFormat:@"array%ld", (signed long)index];
   NSArray *expectedValue = [NSArray arrayWithObject:[NSNumber numberWithInteger:index]];
   index++;
   GHAssertEqualStrings(expectedKey, key, nil);

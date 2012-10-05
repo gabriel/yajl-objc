@@ -42,6 +42,11 @@
 #import "NSException+GHTestFailureExceptions.h"
 #import "NSValue+GHValueFormatter.h"
 
+#if TARGET_OS_IPHONE
+#import "GHUnitIOSAppDelegate.h"
+#import "GHViewTestCase.h"
+#endif
+
 #ifdef DEBUG
 #define GHUDebug(fmt, ...) do { \
 fputs([[[NSString stringWithFormat:fmt, ##__VA_ARGS__] stringByAppendingString:@"\n"] UTF8String], stdout); \

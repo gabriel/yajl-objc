@@ -77,6 +77,8 @@
 //  the License.
 //
 
+#import <Foundation/Foundation.h>
+
 #import "NSException+GHTestFailureExceptions.h"
 #import "NSValue+GHValueFormatter.h"
 
@@ -89,14 +91,17 @@ extern NSString *const GHTestFailureException;
 #if defined(__cplusplus) 
 extern "C" 
 #endif 
+
 NSString *GHComposeString(NSString *, ...);
 
-// Generates a failure when a1 != noErr
-//  Args:
-//    a1: should be either an OSErr or an OSStatus
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+
+/*!
+ Generates a failure when a1 != noErr
+
+ @param a1 Should be either an OSErr or an OSStatus
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ...: A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertNoErr(a1, description, ...) \
 do { \
 @try {\
@@ -120,13 +125,14 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-// Generates a failure when a1 != a2
-//  Args:
-//    a1: received value. Should be either an OSErr or an OSStatus
-//    a2: expected value. Should be either an OSErr or an OSStatus
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*!
+ Generates a failure when a1 != a2
+
+ @param a1 Rreceived value. Should be either an OSErr or an OSStatus
+ @param a2 Expected value. Should be either an OSErr or an OSStatus
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertErr(a1, a2, description, ...) \
 do { \
 @try {\
@@ -152,12 +158,13 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 } while(0)
 
 
-// Generates a failure when a1 is NULL
-//  Args:
-//    a1: should be a pointer (use GHAssertNotNil for an object)
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*!
+ Generates a failure when a1 is NULL
+
+ @param a1 Should be a pointer (use GHAssertNotNil for an object)
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertNotNULL(a1, description, ...) \
 do { \
 @try {\
@@ -181,12 +188,13 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-// Generates a failure when a1 is not NULL
-//  Args:
-//    a1: should be a pointer (use GHAssertNil for an object)
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*!
+ Generates a failure when a1 is not NULL
+
+ @param a1 should be a pointer (use GHAssertNil for an object)
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertNULL(a1, description, ...) \
 do { \
 @try {\
@@ -210,18 +218,18 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-// Generates a failure when a1 is equal to a2. This test is for C scalars, 
-// structs and unions.
-//  Args:
-//    a1: argument 1
-//    a2: argument 2
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*!
+ Generates a failure when a1 is equal to a2. This test is for C scalars, structs and unions.
+
+ @param a1 Argument 1
+ @param a2 Argument 2
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertNotEquals(a1, a2, description, ...) \
 do { \
 @try {\
-if (@encode(__typeof__(a1)) != @encode(__typeof__(a2))) { \
+if (strcmp(@encode(__typeof__(a1)), @encode(__typeof__(a2))) != 0) { \
 [self failWithException:[NSException ghu_failureInFile:[NSString stringWithUTF8String:__FILE__] \
 atLine:__LINE__ \
 withDescription:[@"Type mismatch -- " stringByAppendingString:GHComposeString(description, ##__VA_ARGS__)]]]; \
@@ -250,20 +258,21 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-// Generates a failure when a1 is equal to a2. This test is for objects.
-//  Args:
-//    a1: argument 1. object.
-//    a2: argument 2. object.
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*!
+ Generates a failure when a1 is equal to a2. This test is for objects.
+
+ @param a1 Argument 1. object.
+ @param a2 Argument 2. object.
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertNotEqualObjects(a1, a2, desc, ...) \
 do { \
 @try {\
 id a1value = (a1); \
 id a2value = (a2); \
-if ( (@encode(__typeof__(a1value)) == @encode(id)) && \
-(@encode(__typeof__(a2value)) == @encode(id)) && \
+if ( (strcmp(@encode(__typeof__(a1value)), @encode(id)) == 0) && \
+(strcmp(@encode(__typeof__(a2value)), @encode(id)) == 0) && \
 ![(id)a1value isEqual:(id)a2value] ) continue; \
 NSString *_expression = [NSString stringWithFormat:@"%s('%@') != %s('%@')", #a1, [a1 description], #a2, [a2 description]]; \
 if (desc) { \
@@ -282,18 +291,19 @@ withDescription:GHComposeString(desc, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-// Generates a failure when a1 is not 'op' to a2. This test is for C scalars. 
-//  Args:
-//    a1: argument 1
-//    a2: argument 2
-//    op: operation
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*!
+ Generates a failure when a1 is not 'op' to a2. This test is for C scalars. 
+
+ @param a1 Argument 1
+ @param a2 Argument 2
+ @param op Operation
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertOperation(a1, a2, op, description, ...) \
 do { \
 @try {\
-if (@encode(__typeof__(a1)) != @encode(__typeof__(a2))) { \
+if (strcmp(@encode(__typeof__(a1)), @encode(__typeof__(a2))) != 0) { \
 [self failWithException:[NSException ghu_failureInFile:[NSString stringWithUTF8String:__FILE__] \
 atLine:__LINE__ \
 withDescription:[@"Type mismatch -- " stringByAppendingString:GHComposeString(description, ##__VA_ARGS__)]]]; \
@@ -323,61 +333,65 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-// Generates a failure when a1 is not > a2. This test is for C scalars. 
-//  Args:
-//    a1: argument 1
-//    a2: argument 2
-//    op: operation
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*! 
+ Generates a failure when a1 is not > a2. This test is for C scalars. 
+
+ @param a1 argument 1
+ @param a2 argument 2
+ @param op operation
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent. 
+ */
 #define GHAssertGreaterThan(a1, a2, description, ...) \
 GHAssertOperation(a1, a2, >, description, ##__VA_ARGS__)
 
-// Generates a failure when a1 is not >= a2. This test is for C scalars. 
-//  Args:
-//    a1: argument 1
-//    a2: argument 2
-//    op: operation
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*! 
+ Generates a failure when a1 is not >= a2. This test is for C scalars. 
+
+ @param a1 argument 1
+ @param a2 argument 2
+ @param op operation
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent. 
+ */
 #define GHAssertGreaterThanOrEqual(a1, a2, description, ...) \
 GHAssertOperation(a1, a2, >=, description, ##__VA_ARGS__)
 
-// Generates a failure when a1 is not < a2. This test is for C scalars. 
-//  Args:
-//    a1: argument 1
-//    a2: argument 2
-//    op: operation
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*! 
+ Generates a failure when a1 is not < a2. This test is for C scalars. 
+
+ @param a1 argument 1
+ @param a2 argument 2
+ @param op operation
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertLessThan(a1, a2, description, ...) \
 GHAssertOperation(a1, a2, <, description, ##__VA_ARGS__)
 
-// Generates a failure when a1 is not <= a2. This test is for C scalars. 
-//  Args:
-//    a1: argument 1
-//    a2: argument 2
-//    op: operation
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*! Generates a failure when a1 is not <= a2. This test is for C scalars. 
+
+ @param a1 argument 1
+ @param a2 argument 2
+ @param op operation
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertLessThanOrEqual(a1, a2, description, ...) \
 GHAssertOperation(a1, a2, <=, description, ##__VA_ARGS__)
 
-// Generates a failure when string a1 is not equal to string a2. This call
-// differs from GHAssertEqualObjects in that strings that are different in
-// composition (precomposed vs decomposed) will compare equal if their final
-// representation is equal.
-// ex O + umlaut decomposed is the same as O + umlaut composed.
-//  Args:
-//    a1: string 1
-//    a2: string 2
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*! 
+ Generates a failure when string a1 is not equal to string a2. This call
+ differs from GHAssertEqualObjects in that strings that are different in
+ composition (precomposed vs decomposed) will compare equal if their final
+ representation is equal.
+ ex O + umlaut decomposed is the same as O + umlaut composed.
+
+ @param a1 string 1
+ @param a2 string 2
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertEqualStrings(a1, a2, description, ...) \
 do { \
 @try {\
@@ -402,26 +416,30 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-// Generates a failure when string a1 is equal to string a2. This call
-// differs from GHAssertEqualObjects in that strings that are different in
-// composition (precomposed vs decomposed) will compare equal if their final
-// representation is equal.
-// ex O + umlaut decomposed is the same as O + umlaut composed.
-//  Args:
-//    a1: string 1
-//    a2: string 2
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*! 
+ Generates a failure when string a1 is equal to string a2. This call
+ differs from GHAssertEqualObjects in that strings that are different in
+ composition (precomposed vs decomposed) will compare equal if their final
+ representation is equal.
+ ex O + umlaut decomposed is the same as O + umlaut composed.
+
+ @param a1 string 1
+ @param a2 string 2
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertNotEqualStrings(a1, a2, description, ...) \
 do { \
 @try {\
 id a1value = (a1); \
 id a2value = (a2); \
-if ([a1value isKindOfClass:[NSString class]] && \
+if (([a1value isKindOfClass:[NSString class]] && \
 [a2value isKindOfClass:[NSString class]] && \
-[a1value compare:a2value options:0] != NSOrderedSame) continue; \
-[self failWithException:[NSException ghu_failureInEqualityBetweenObject: a1value \
+[a1value compare:a2value options:0] != NSOrderedSame) || \
+(a1value == nil && [a2value isKindOfClass:[NSString class]]) || \
+(a2value == nil && [a1value isKindOfClass:[NSString class]]) \
+) continue; \
+[self failWithException:[NSException ghu_failureInInequalityBetweenObject: a1value \
 andObject: a2value \
 inFile: [NSString stringWithUTF8String:__FILE__] \
 atLine: __LINE__ \
@@ -436,13 +454,14 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-// Generates a failure when c-string a1 is not equal to c-string a2.
-//  Args:
-//    a1: string 1
-//    a2: string 2
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*! 
+ Generates a failure when c-string a1 is not equal to c-string a2.
+
+ @param a1 string 1
+ @param a2 string 2
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertEqualCStrings(a1, a2, description, ...) \
 do { \
 @try {\
@@ -465,13 +484,14 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-// Generates a failure when c-string a1 is equal to c-string a2.
-//  Args:
-//    a1: string 1
-//    a2: string 2
-//    description: A format string as in the printf() function. Can be nil or
-//                 an empty string but must be present.
-//    ...: A variable number of arguments to the format string. Can be absent.
+/*! 
+ Generates a failure when c-string a1 is equal to c-string a2.
+
+ @param a1 string 1
+ @param a2 string 2
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present.
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertNotEqualCStrings(a1, a2, description, ...) \
 do { \
 @try {\
@@ -496,14 +516,14 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 // GTM_END
 
 // SENTE_BEGIN
-/*" Generates a failure when !{ [a1 isEqualTo:a2] } is false 
+/*! Generates a failure when !{ [a1 isEqualTo:a2] } is false 
  (or one is nil and the other is not). 
- _{a1    The object on the left.}
- _{a2    The object on the right.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+
+ @param a1    The object on the left
+ @param a2    The object on the right
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertEqualObjects(a1, a2, description, ...) \
 do { \
 @try {\
@@ -529,14 +549,14 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 } while(0)
 
 
-/*" Generates a failure when a1 is not equal to a2. This test is for
+/*! Generates a failure when a1 is not equal to a2. This test is for
  C scalars, structs and unions.
- _{a1    The argument on the left.}
- _{a2    The argument on the right.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+
+ @param a1    The argument on the left
+ @param a2    The argument on the right
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertEquals(a1, a2, description, ...) \
 do { \
 @try {\
@@ -568,25 +588,25 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
+//! Absolute difference
 #define GHAbsoluteDifference(left,right) (MAX(left,right)-MIN(left,right))
 
 
-/*" Generates a failure when a1 is not equal to a2 within + or - accuracy is false. 
+/*! 
+ Generates a failure when a1 is not equal to a2 within + or - accuracy is false. 
  This test is for scalars such as floats and doubles where small differences 
  could make these items not exactly equal, but also works for all scalars.
- _{a1    The scalar on the left.}
- _{a2    The scalar on the right.}
- _{accuracy  The maximum difference between a1 and a2 for these values to be
- considered equal.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
 
+ @param a1    The scalar on the left
+ @param a2    The scalar on the right
+ @param accuracy  The maximum difference between a1 and a2 for these values to be considered equal
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertEqualsWithAccuracy(a1, a2, accuracy, description, ...) \
 do { \
 @try {\
-if (@encode(__typeof__(a1)) != @encode(__typeof__(a2))) { \
+if (strcmp(@encode(__typeof__(a1)), @encode(__typeof__(a2))) != 0) { \
 [self failWithException:[NSException ghu_failureInFile:[NSString stringWithUTF8String:__FILE__] \
 atLine:__LINE__ \
 withDescription:[@"Type mismatch -- " stringByAppendingString:GHComposeString(description, ##__VA_ARGS__)]]]; \
@@ -618,11 +638,12 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 
 
 
-/*" Generates a failure unconditionally. 
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+/*! 
+ Generates a failure unconditionally. 
+
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHFail(description, ...) \
 [self failWithException:[NSException ghu_failureInFile: [NSString stringWithUTF8String:__FILE__] \
 atLine: __LINE__ \
@@ -630,12 +651,13 @@ withDescription: GHComposeString(description, ##__VA_ARGS__)]]
 
 
 
-/*" Generates a failure when a1 is not nil.
- _{a1    An object.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+/*! 
+ Generates a failure when a1 is not nil.
+
+ @param a1    An object
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertNil(a1, description, ...) \
 do { \
 @try {\
@@ -660,12 +682,13 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 } while(0)
 
 
-/*" Generates a failure when a1 is nil.
- _{a1    An object.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+/*! 
+ Generates a failure when a1 is nil.
+
+ @param a1    An object
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertNotNil(a1, description, ...) \
 do { \
 @try {\
@@ -690,12 +713,13 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 } while(0)
 
 
-/*" Generates a failure when expression evaluates to false. 
- _{expr    The expression that is tested.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+/*! 
+ Generates a failure when expression evaluates to false. 
+
+ @param expr    The expression that is tested
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertTrue(expr, description, ...) \
 do { \
 BOOL _evaluatedExpression = (expr);\
@@ -710,13 +734,14 @@ withDescription: GHComposeString(description, ##__VA_ARGS__)]]; \
 } while (0)
 
 
-/*" Generates a failure when expression evaluates to false and in addition will 
+/*! 
+ Generates a failure when expression evaluates to false and in addition will 
  generate error messages if an exception is encountered. 
- _{expr    The expression that is tested.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+ 
+ @param expr    The expression that is tested
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertTrueNoThrow(expr, description, ...) \
 do { \
 @try {\
@@ -740,12 +765,13 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 } while (0)
 
 
-/*" Generates a failure when the expression evaluates to true. 
- _{expr    The expression that is tested.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+/*! 
+ Generates a failure when the expression evaluates to true. 
+
+ @param expr    The expression that is tested
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertFalse(expr, description, ...) \
 do { \
 BOOL _evaluatedExpression = (expr);\
@@ -760,13 +786,14 @@ withDescription: GHComposeString(description, ##__VA_ARGS__)]]; \
 } while (0)
 
 
-/*" Generates a failure when the expression evaluates to true and in addition 
+/*! 
+ Generates a failure when the expression evaluates to true and in addition 
  will generate error messages if an exception is encountered.
- _{expr    The expression that is tested.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+ 
+ @param expr    The expression that is tested
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertFalseNoThrow(expr, description, ...) \
 do { \
 @try {\
@@ -790,12 +817,13 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 } while (0)
 
 
-/*" Generates a failure when expression does not throw an exception. 
- _{expression    The expression that is evaluated.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.
- "*/
+/*! 
+ Generates a failure when expression does not throw an exception. 
+
+ @param expression    The expression that is evaluated
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent.
+ */
 #define GHAssertThrows(expr, description, ...) \
 do { \
 @try { \
@@ -812,14 +840,15 @@ withDescription: GHComposeString(description, ##__VA_ARGS__)]]; \
 } while (0)
 
 
-/*" Generates a failure when expression does not throw an exception of a 
+/*! 
+ Generates a failure when expression does not throw an exception of a 
  specific class. 
- _{expression    The expression that is evaluated.}
- _{specificException    The specified class of the exception.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+
+ @param expression    The expression that is evaluated
+ @param specificException    The specified class of the exception
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertThrowsSpecific(expr, specificException, description, ...) \
 do { \
 @try { \
@@ -846,18 +875,17 @@ withDescription: GHComposeString(_descrip, ##__VA_ARGS__)]]; \
 } while (0)
 
 
-/*" Generates a failure when expression does not throw an exception of a 
+/*! Generates a failure when expression does not throw an exception of a 
  specific class with a specific name.  Useful for those frameworks like
  AppKit or Foundation that throw generic NSException w/specific names 
  (NSInvalidArgumentException, etc).
- _{expression    The expression that is evaluated.}
- _{specificException    The specified class of the exception.}
- _{aName    The name of the specified exception.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- 
- "*/
+
+ @param expression    The expression that is evaluated
+ @param specificException    The specified class of the exception
+ @param aName    The name of the specified exception
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertThrowsSpecificNamed(expr, specificException, aName, description, ...) \
 do { \
 @try { \
@@ -894,12 +922,13 @@ withDescription: GHComposeString(_descrip, ##__VA_ARGS__)]]; \
 } while (0)
 
 
-/*" Generates a failure when expression does throw an exception. 
- _{expression    The expression that is evaluated.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+/*! 
+ Generates a failure when expression does throw an exception. 
+
+ @param expression    The expression that is evaluated
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertNoThrow(expr, description, ...) \
 do { \
 @try { \
@@ -915,14 +944,15 @@ withDescription: GHComposeString(description, ##__VA_ARGS__)]]; \
 } while (0)
 
 
-/*" Generates a failure when expression does throw an exception of the specitied
+/*! 
+ Generates a failure when expression does throw an exception of the specitied
  class. Any other exception is okay (i.e. does not generate a failure).
- _{expression    The expression that is evaluated.}
- _{specificException    The specified class of the exception.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- "*/
+
+ @param expression    The expression that is evaluated
+ @param specificException    The specified class of the exception
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertNoThrowSpecific(expr, specificException, description, ...) \
 do { \
 @try { \
@@ -941,18 +971,18 @@ withDescription: GHComposeString(description, ##__VA_ARGS__)]]; \
 } while (0)
 
 
-/*" Generates a failure when expression does throw an exception of a 
+/*! 
+ Generates a failure when expression does throw an exception of a 
  specific class with a specific name.  Useful for those frameworks like
  AppKit or Foundation that throw generic NSException w/specific names 
  (NSInvalidArgumentException, etc).
- _{expression    The expression that is evaluated.}
- _{specificException    The specified class of the exception.}
- _{aName    The name of the specified exception.}
- _{description A format string as in the printf() function. Can be nil or
- an empty string but must be present.}
- _{... A variable number of arguments to the format string. Can be absent.}
- 
- "*/
+
+ @param expression The expression that is evaluated.
+ @param specificException    The specified class of the exception
+ @param aName    The name of the specified exception
+ @param description A format string as in the printf() function. Can be nil or an empty string but must be present
+ @param ... A variable number of arguments to the format string. Can be absent
+ */
 #define GHAssertNoThrowSpecificNamed(expr, specificException, aName, description, ...) \
 do { \
 @try { \
@@ -976,7 +1006,7 @@ continue; \
 } while (0)
 
 
-@interface NSException (GHTestMacros_GTMSenTestAdditions)
+@interface NSException(GHTestMacros_GTMSenTestAdditions)
 + (NSException *)ghu_failureInFile:(NSString *)filename 
                         atLine:(int)lineNumber 
                withDescription:(NSString *)formatString, ...;
@@ -990,6 +1020,11 @@ continue; \
                                          inFile:(NSString *)filename
                                          atLine:(int)lineNumber
                                 withDescription:(NSString *)formatString, ...;
++ (NSException *)ghu_failureInInequalityBetweenObject:(id)left
+                                            andObject:(id)right
+                                               inFile:(NSString *)filename
+                                               atLine:(int)lineNumber
+                                      withDescription:(NSString *)formatString, ...;
 + (NSException *)ghu_failureInEqualityBetweenValue:(NSValue *)left 
                                       andValue:(NSValue *)right 
                                   withAccuracy:(NSValue *)accuracy 
@@ -1005,6 +1040,10 @@ continue; \
                          inFile:(NSString *)filename 
                          atLine:(int)lineNumber 
                 withDescription:(NSString *)formatString, ...;
++ (NSException *)ghu_failureWithName:(NSString *)name
+                              inFile:(NSString *)filename
+                              atLine:(int)lineNumber
+                              reason:(NSString *)reason;
 @end
 
 // SENTE_END

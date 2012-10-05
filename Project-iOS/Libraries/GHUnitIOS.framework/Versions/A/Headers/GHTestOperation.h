@@ -37,6 +37,11 @@
   GHTestOptions options_;
 }
 
+/*!
+ Create operation that wraps a GHTest instance.
+ @param test Test
+ @param options Options
+ */
 - (id)initWithTest:(id<GHTest>)test options:(GHTestOptions)options;
 
 @end

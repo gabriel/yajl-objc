@@ -4,7 +4,7 @@
 
 #ifdef __OBJC__
 #import <Foundation/Foundation.h>
-#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnit.h>
 #import "YAJLDocument.h"
 #import "YAJLParser.h"
 #import "YAJLTestCase.h"

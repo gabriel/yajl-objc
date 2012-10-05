@@ -1,8 +1,9 @@
 //
-//  GHUnitIPhoneAppDelegate.h
+//  GHImageDiffView.h
 //  GHUnitIOS
 //
-//  Created by Gabriel Handford on 6/28/11.
+//  Created by John Boiles on 10/27/11.
+//  Copyright (c) 2011. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,11 +27,23 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHUnitIOSAppDelegate.h"
+#import <UIKit/UIKit.h>
 
-// For backwards compatibility (see GHUnitIOSAppDelegate)
-@interface GHUnitIPhoneAppDelegate : GHUnitIOSAppDelegate {
-    
+@interface GHImageDiffView : UIView {
+  UIScrollView *scrollView_;
+  UISegmentedControl *segmentedControl_;
+
+  UIImageView *savedImageView_;
+  UIImageView *renderedImageView_;
+  UIImageView *diffImageView_;
 }
+
+- (void)setSavedImage:(UIImage *)savedImage renderedImage:(UIImage *)renderedImage diffImage:(UIImage *)diffImage;
+
+- (void)showSavedImage;
+
+- (void)showRenderedImage;
+
+- (void)showDiffImage;
 
 @end

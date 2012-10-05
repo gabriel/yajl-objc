@@ -26,35 +26,48 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+//! @cond DEV
+
 #import "GHTest.h"
 #import "GHTestCase.h"
 
 /*!
- @brief Interface for a group of tests.
+ Interface for a group of tests.
 
  This group conforms to the GHTest protocol as well (see Composite pattern).
  */
 @protocol GHTestGroup <GHTest>
+
+/*!
+ Name.
+ */
 - (NSString *)name;
+
+/*!
+ Parent for test group.
+ */
 - (id<GHTestGroup>)parent;
+
+/*!
+ Children for test group.
+ */
 - (NSArray *)children;
+
 @end
 
 /*!
- @brief A collection of tests (or test groups).
+ A collection of tests (or test groups).
 
- A test group is a collection of id<GHTest>, that may represent a set of test case methods. 
+ A test group is a collection of `id<GHTest>`, that may represent a set of test case methods. 
  
  For example, if you had the following GHTestCase.
 
- @code
- @interface FooTest : GHTestCase {}
- - (void)testFoo;
- - (void)testBar;
- @end
- @endcode
+     @interface FooTest : GHTestCase {}
+     - (void)testFoo;
+     - (void)testBar;
+     @end
  
- The GHTestGroup would consist of and array of GHTest, [FooTest#testFoo and FooTest#testBar], 
+ The GHTestGroup would consist of and array of GHTest: FooTest#testFoo, FooTest#testBar, 
  each test being a target and selector pair.
 
  A test group may also consist of a group of groups (since GHTestGroup conforms to GHTest),
@@ -62,8 +75,7 @@
  */
 @interface GHTestGroup : NSObject <GHTestDelegate, GHTestGroup> {
   
-  NSObject<GHTestDelegate> *delegate_; // weak
-  id<GHTestGroup> parent_; // weak
+  id<GHTestGroup> __unsafe_unretained parent_; // weak
   
   NSMutableArray */*of id<GHTest>*/children_;
     
@@ -83,9 +95,9 @@
   NSException *exception_; // If exception happens in group setUpClass/tearDownClass
 }
 
-@property (readonly, nonatomic) NSArray */*of id<GHTest>*/children;
-@property (assign, nonatomic) id<GHTestGroup> parent;
-@property (readonly, nonatomic) id testCase;
+@property (readonly, strong, nonatomic) NSArray */*of id<GHTest>*/children;
+@property (unsafe_unretained, nonatomic) id<GHTestGroup> parent;
+@property (readonly, strong, nonatomic) id testCase;
 @property (assign, nonatomic) GHTestOptions options;
 
 /*!
@@ -106,9 +118,9 @@
 
 /*!
  Create test group from a single test.
- @param testCase
+ @param testCase Test case, could be a subclass of SenTestCase or GHTestCase
  @param selector Test to run 
- @param delegate
+ @param delegate Delegate, notifies of test start and end
  */
 - (id)initWithTestCase:(id)testCase selector:(SEL)selector delegate:(id<GHTestDelegate>)delegate;
 
@@ -126,13 +138,34 @@
  */
 - (void)addTestCase:(id)testCase;
 
+/*!
+ Add a test group to this test group.
+ @param testGroup Test group to add
+ */
 - (void)addTestGroup:(GHTestGroup *)testGroup;
 
+/*!
+ Add tests to this group.
+ @param tests Tests to add
+ */
 - (void)addTests:(NSArray */*of id<GHTest>*/)tests;
 
+/*!
+ Add test to this group.
+ @param test Test to add
+ */
 - (void)addTest:(id<GHTest>)test;
 
+/*!
+ Whether the test group should run on the main thread.
+ Call passes to test case instance if enabled.
+ */
 - (BOOL)shouldRunOnMainThread;
+
+/*!
+ @result YES if we have any enabled chilren, NO if all children have been disabled.
+ */
+- (BOOL)hasEnabledChildren;
 
 /*!
  Get list of failed tests.
@@ -149,3 +182,5 @@
 - (void)runInOperationQueue:(NSOperationQueue *)operationQueue options:(GHTestOptions)options;
 
 @end
+
+//! @endcond

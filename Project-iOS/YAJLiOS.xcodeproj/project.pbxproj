@@ -60,7 +60,7 @@
 		005886B21226334500292C90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005886B11226334500292C90 /* UIKit.framework */; };
 		005886C81226337500292C90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005886C71226337500292C90 /* Foundation.framework */; };
 		005886E41226339500292C90 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005886E31226339500292C90 /* GHUnitIOS.framework */; };
-		0058870E1226353B00292C90 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058870D1226353B00292C90 /* GHUnitIOSTestMain.m */; };
+		0058870E1226353B00292C90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058870D1226353B00292C90 /* main.m */; };
 		0065975A11BEEF4000E89ABD /* YAJLiOS_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* YAJLiOS_Prefix.pch */; };
 		0065975B11BEEF4000E89ABD /* YAJLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404FE0FE77661003CE908 /* YAJLDocument.h */; };
 		0065975C11BEEF4000E89ABD /* YAJLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C405000FE77661003CE908 /* YAJLParser.h */; };
@@ -197,7 +197,7 @@
 		005886C71226337500292C90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		005886E31226339500292C90 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
 		00588701122634AD00292C90 /* Shared-MacOSX.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Shared-MacOSX.xcconfig"; sourceTree = "<group>"; };
-		0058870D1226353B00292C90 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIOSTestMain.m; sourceTree = "<group>"; };
+		0058870D1226353B00292C90 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		005887431226372C00292C90 /* iPhoneFramework.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = iPhoneFramework.sh; sourceTree = "<group>"; };
 		005BF2D110185B3000C35A81 /* NSObject+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YAJL.h"; sourceTree = "<group>"; };
 		005BF2D210185B3000C35A81 /* NSObject+YAJL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YAJL.m"; sourceTree = "<group>"; };
@@ -428,7 +428,7 @@
 				00C405740FE777B4003CE908 /* YAJLDocumentTest.m */,
 				00C405750FE777B4003CE908 /* YAJLParserTest.m */,
 				0066FE7F12262CF7009247B0 /* NSBundleTest.m */,
-				0058870D1226353B00292C90 /* GHUnitIOSTestMain.m */,
+				0058870D1226353B00292C90 /* main.m */,
 			);
 			name = Tests;
 			path = ../Tests;
@@ -641,7 +641,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "YAJLiOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -788,7 +788,7 @@
 				006597DA11BEEF5400E89ABD /* TwitterTest.m in Sources */,
 				006597DB11BEEF5400E89ABD /* YAJLDocumentDelegateTest.m in Sources */,
 				005886941226329100292C90 /* NSBundleTest.m in Sources */,
-				0058870E1226353B00292C90 /* GHUnitIOSTestMain.m in Sources */,
+				0058870E1226353B00292C90 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,14 +873,6 @@
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
 				PRODUCT_NAME = Tests;
 			};
 			name = Debug;
@@ -901,14 +893,6 @@
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
 				PRODUCT_NAME = Tests;
 				ZERO_LINK = NO;
 			};
@@ -923,7 +907,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -935,7 +919,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

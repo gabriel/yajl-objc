@@ -27,6 +27,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+//! @cond DEV
+
 #import "GHTestGroup.h"
 
 /*!
@@ -60,7 +62,7 @@ extern NSString *GHUnitTest;
  Create test suite with test cases.
  @param name Label to give the suite
  @param testCases Array of init'ed test case classes
- @param delegate
+ @param delegate Delegate
  */
 - (id)initWithName:(NSString *)name testCases:(NSArray *)testCases delegate:(id<GHTestDelegate>)delegate;
 
@@ -93,8 +95,8 @@ extern NSString *GHUnitTest;
 
 /*!
  Suite for a single test/method.
- @param testCaseClass
- @param method
+ @param testCaseClass Test case class
+ @param method Method
  @result Suite
  */
 + (GHTestSuite *)suiteWithTestCaseClass:(Class)testCaseClass method:(SEL)method;
@@ -109,6 +111,8 @@ extern NSString *GHUnitTest;
 
 @interface GHTestSuite (JUnitXML)
 
-- (BOOL)writeJUnitXML:(NSError **)error;
+- (BOOL)writeJUnitXMLToDirectory:(NSString *)directory error:(NSError **)error;
 
 @end
+
+//! @endcond

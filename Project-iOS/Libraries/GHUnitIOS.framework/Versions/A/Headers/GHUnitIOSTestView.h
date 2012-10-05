@@ -1,8 +1,9 @@
 //
-//  GHUnitIPhoneAppDelegate.h
+//  GHUnitIOSTestView.h
 //  GHUnitIOS
 //
-//  Created by Gabriel Handford on 6/28/11.
+//  Created by John Boiles on 8/8/11.
+//  Copyright 2011. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,11 +27,33 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHUnitIOSAppDelegate.h"
+#import <UIKit/UIKit.h>
+#import "GHUIImageViewControl.h"
 
-// For backwards compatibility (see GHUnitIOSAppDelegate)
-@interface GHUnitIPhoneAppDelegate : GHUnitIOSAppDelegate {
-    
+@class GHUnitIOSTestView;
+
+@protocol GHUnitIOSTestViewDelegate <NSObject>
+- (void)testViewDidSelectSavedImage:(GHUnitIOSTestView *)testView;
+- (void)testViewDidSelectRenderedImage:(GHUnitIOSTestView *)testView;
+- (void)testViewDidApproveChange:(GHUnitIOSTestView *)testView;
+@end
+
+@interface GHUnitIOSTestView : UIScrollView {
+  id<GHUnitIOSTestViewDelegate> __unsafe_unretained controlDelegate_;
+
+  // TODO(johnb): Perhaps hold a scrollview here as subclassing UIViews can be weird.
+
+  GHUIImageViewControl *savedImageView_;
+  GHUIImageViewControl *renderedImageView_;
+
+  UIButton *approveButton_;
+
+  UILabel *textLabel_;
 }
+@property(unsafe_unretained, nonatomic) id<GHUnitIOSTestViewDelegate> controlDelegate;
+
+- (void)setSavedImage:(UIImage *)savedImage renderedImage:(UIImage *)renderedImage text:(NSString *)text;
+
+- (void)setText:(NSString *)text;
 
 @end

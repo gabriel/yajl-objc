@@ -1,8 +1,9 @@
 //
-//  GHUnitIPhoneAppDelegate.h
+//  GHUnitIOSTableViewDataSource.h
 //  GHUnitIOS
 //
-//  Created by Gabriel Handford on 6/28/11.
+//  Created by Gabriel Handford on 5/5/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,11 +27,18 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHUnitIOSAppDelegate.h"
+#import <UIKit/UIKit.h>
+#import "GHTestViewModel.h"
 
-// For backwards compatibility (see GHUnitIOSAppDelegate)
-@interface GHUnitIPhoneAppDelegate : GHUnitIOSAppDelegate {
-    
+/*
+ Table view data source for iOS test application.
+ */
+@interface GHUnitIOSTableViewDataSource : GHTestViewModel <UITableViewDataSource> {
+  
 }
+
+- (GHTestNode *)nodeForIndexPath:(NSIndexPath *)indexPath;
+
+- (void)setSelectedForAllNodes:(BOOL)selected;
 
 @end

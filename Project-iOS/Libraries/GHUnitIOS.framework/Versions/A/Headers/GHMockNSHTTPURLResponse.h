@@ -1,8 +1,9 @@
 //
-//  GHUnitIPhoneAppDelegate.h
-//  GHUnitIOS
+//  GHMockNSHTTPURLResponse.h
+//  GHUnit
 //
-//  Created by Gabriel Handford on 6/28/11.
+//  Created by Gabriel Handford on 4/9/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,11 +27,20 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHUnitIOSAppDelegate.h"
+#import <Foundation/Foundation.h>
 
-// For backwards compatibility (see GHUnitIOSAppDelegate)
-@interface GHUnitIPhoneAppDelegate : GHUnitIOSAppDelegate {
-    
+/*
+ NSHTTPURLResponse subclass for use with mocking.
+ Allows us to manually set the status code and headers in the response.
+ */
+@interface GHMockNSHTTPURLResponse : NSHTTPURLResponse {
+	NSInteger statusCode_;
+	NSDictionary *headers_;
 }
+
+- (id)initWithStatusCode:(NSInteger)statusCode headers:(NSDictionary *)headers;
+
+- (void)setStatusCode:(NSInteger)code;
+- (void)setHeaders:(NSDictionary *)headers;
 
 @end

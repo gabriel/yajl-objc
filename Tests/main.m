@@ -1,8 +1,9 @@
 //
-//  GHUnitIPhoneAppDelegate.h
-//  GHUnitIOS
+//  main.m
+//  Tests
 //
-//  Created by Gabriel Handford on 6/28/11.
+//  Created by Gabriel Handford on 1/25/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,11 +27,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHUnitIOSAppDelegate.h"
+#import <UIKit/UIKit.h>
 
-// For backwards compatibility (see GHUnitIOSAppDelegate)
-@interface GHUnitIPhoneAppDelegate : GHUnitIOSAppDelegate {
-    
+int main(int argc, char *argv[]) {
+  @autoreleasepool {
+      return UIApplicationMain(argc, argv, nil, @"GHUnitIOSAppDelegate");
+  }
 }
-
-@end

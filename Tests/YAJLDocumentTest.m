@@ -76,7 +76,7 @@
 - (void)_testEqualToSBJSON {
   
   NSData *data = [self loadData:@"sample"];
-  GHTestLog(@"Sample data size: %d", [data length]);
+  GHTestLog(@"Sample data size: %lu", (unsigned long)[data length]);
   
   NSError *error = nil;
 

@@ -1,8 +1,9 @@
 //
-//  GHUnitIPhoneAppDelegate.h
+//  GHUnitIOSViewController.h
 //  GHUnitIOS
 //
-//  Created by Gabriel Handford on 6/28/11.
+//  Created by Gabriel Handford on 1/25/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,11 +27,47 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHUnitIOSAppDelegate.h"
+#import "GHUnitIOSView.h"
 
-// For backwards compatibility (see GHUnitIOSAppDelegate)
-@interface GHUnitIPhoneAppDelegate : GHUnitIOSAppDelegate {
+#import "GHUnitIOSTableViewDataSource.h"
+#import "GHUnitIOSTestViewController.h"
+
+/*
+ Main view controller for the iOS test application.
+ */
+@interface GHUnitIOSViewController : UIViewController <UITableViewDelegate, GHTestRunnerDelegate, UISearchBarDelegate> {
     
+  GHUnitIOSView *view_;
+
+  GHUnitIOSTableViewDataSource *dataSource_;
+  GHTestSuite *suite_;
+  
+  UIBarButtonItem *runButton_;
+  
+  // If set then we will no longer auto scroll as tests are run
+  BOOL userDidDrag_;
+  
 }
 
+@property (strong, nonatomic) GHTestSuite *suite;
+
+- (void)reloadTest:(id<GHTest>)test;
+
+- (void)scrollToTest:(id<GHTest>)test;
+- (void)scrollToBottom;
+
+- (void)setStatusText:(NSString *)message;
+
+- (void)runTests;
+
+- (void)cancel;
+
+- (void)reload;
+
+- (void)loadDefaults;
+- (void)saveDefaults;
+
+- (GHUnitIOSTableViewDataSource *)dataSource;
+
 @end
+
