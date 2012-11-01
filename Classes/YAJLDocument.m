@@ -172,6 +172,10 @@ NSInteger YAJLDocumentStackCapacity = 20;
     dict_ = (NSMutableDictionary *)value;
     currentType_ = YAJLDecoderCurrentTypeDict;
   }
+  if ([stack_ count] == 0) {
+    if ([delegate_ respondsToSelector:@selector(didEndDocument:)])
+      [delegate_ didEndDocument:self];
+  }
 }
 
 @end
