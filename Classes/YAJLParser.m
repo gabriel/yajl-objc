@@ -245,6 +245,10 @@ yajl_end_array
 
 //! @endinternal
 
+- (unsigned int)bytesConsumed {
+    return handle_ ? yajl_get_bytes_consumed(handle_) : 0;
+}
+
 - (YAJLParserStatus)parse:(NSData *)data {
   if (!handle_) {
     yajl_parser_config cfg = {
