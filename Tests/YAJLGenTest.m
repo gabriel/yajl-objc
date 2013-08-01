@@ -26,6 +26,7 @@
   [gen null];
   [gen number:[NSNumber numberWithInteger:1]];
   [gen number:[NSNumber numberWithDouble:234234.234234]];
+  [gen number:[NSDecimalNumber notANumber]];
   [gen endArray];
   [gen endDictionary];
   NSString *buffer = [gen buffer];
@@ -48,6 +49,7 @@
   [gen null];
   [gen number:[NSNumber numberWithInteger:1]];
   [gen number:[NSNumber numberWithDouble:234234.234234]];
+  [gen number:[NSDecimalNumber notANumber]];
   [gen endArray];
   [gen endDictionary];
   NSString *buffer = [gen buffer];
@@ -63,7 +65,7 @@
 - (void)testGenObject1 {
   NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
    [NSArray arrayWithObjects:@"arrayValue1", [NSNumber numberWithBool:YES], [NSNumber numberWithBool:NO], [NSNull null], 
-    [NSNumber numberWithInteger:1], [NSNumber numberWithDouble:234234.234234], nil], @"key2",
+    [NSNumber numberWithInteger:1], [NSNumber numberWithDouble:234234.234234], [NSDecimalNumber notANumber], nil], @"key2",
    nil];
   
   YAJLGen *gen = [[YAJLGen alloc] initWithGenOptions:YAJLGenOptionsBeautify indentString:@"  "];
