@@ -118,10 +118,14 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 }
 
 - (void)number:(NSNumber *)number {
-  NSString *s = [number stringValue];
-  unsigned int length = [s lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
-  const char *c = [s UTF8String];
-  yajl_gen_number(gen_, c, length);
+  if ([number isEqualToNumber:[NSDecimalNumber notANumber]]) {
+    yajl_gen_null(gen_);
+  } else {
+    NSString *s = [number stringValue];
+    unsigned int length = [s lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    const char *c = [s UTF8String];
+    yajl_gen_number(gen_, c, length);
+  }
 }
 
 - (void)string:(NSString *)s {
