@@ -21,7 +21,7 @@
 - (void)testDictionary {
   NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                         [NSArray arrayWithObjects:@"arrayValue1", [NSNumber numberWithBool:YES], [NSNumber numberWithBool:NO], [NSNull null], 
-                         [NSNumber numberWithInteger:1], [NSNumber numberWithDouble:234234.234234], nil], @"key2",
+                         [NSNumber numberWithInteger:1], [NSNumber numberWithDouble:234234.234234], [NSDecimalNumber notANumber], nil], @"key2",
                         nil];
 
   NSString *JSONString = [dict yajl_JSONStringWithOptions:YAJLGenOptionsBeautify indentString:@"  "];
