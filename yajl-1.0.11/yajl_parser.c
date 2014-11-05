@@ -111,7 +111,7 @@ yajl_render_error_string(yajl_handle hand, const unsigned char * jsonText,
         text[i] = 0;
         {
             char * newStr = (char *)
-                YA_MALLOC(&(hand->alloc), (strlen((char *) str) +
+                YA_MALLOC(&(hand->alloc), (unsigned int) (strlen((char *) str) +
                                            strlen((char *) text) +
                                            strlen(arrow) + 1));
             newStr[0] = 0;

@@ -263,14 +263,14 @@ yajl_end_array
     } 
   }
   
-  yajl_status status = yajl_parse(handle_, [data bytes], [data length]);
+  yajl_status status = yajl_parse(handle_, [data bytes], (unsigned int) [data length]);
   if (status == yajl_status_client_canceled) {
     // We cancelled because we encountered an error here in the client;
     // and parserError should be already set
     NSAssert(self.parserError, @"Client cancelled, but we have no parserError set");
     return YAJLParserStatusError;
   } else if (status == yajl_status_error) {
-    unsigned char *errorMessage = yajl_get_error(handle_, 1, [data bytes], [data length]);
+    unsigned char *errorMessage = yajl_get_error(handle_, 1, [data bytes], (unsigned int) [data length]);
     NSString *errorString = [NSString stringWithUTF8String:(char *)errorMessage];
     self.parserError = [self _errorForStatus:status message:errorString value:nil];
     yajl_free_error(handle_, errorMessage);

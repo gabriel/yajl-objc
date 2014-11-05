@@ -133,7 +133,7 @@ yajl_gen_free(yajl_gen g)
             unsigned int _i;                                            \
             for (_i=0;_i<g->depth;_i++)                                 \
                 g->print(g->ctx, g->indentString,                       \
-                         strlen(g->indentString));                      \
+                         (unsigned int) strlen(g->indentString));                      \
         }                                                               \
     }
 
@@ -183,7 +183,7 @@ yajl_gen_integer(yajl_gen g, long int number)
     char i[32];
     ENSURE_VALID_STATE; ENSURE_NOT_KEY; INSERT_SEP; INSERT_WHITESPACE;
     sprintf(i, "%ld", number);
-    g->print(g->ctx, i, strlen(i));
+    g->print(g->ctx, i, (unsigned int) strlen(i));
     APPENDED_ATOM;
     FINAL_NEWLINE;
     return yajl_gen_status_ok;
@@ -203,7 +203,7 @@ yajl_gen_double(yajl_gen g, double number)
     if (isnan(number) || isinf(number)) return yajl_gen_invalid_number;
     INSERT_SEP; INSERT_WHITESPACE;
     sprintf(i, "%g", number);
-    g->print(g->ctx, i, strlen(i));
+    g->print(g->ctx, i, (unsigned int) strlen(i));
     APPENDED_ATOM;
     FINAL_NEWLINE;
     return yajl_gen_status_ok;
@@ -248,7 +248,7 @@ yajl_gen_bool(yajl_gen g, int boolean)
     const char * val = boolean ? "true" : "false";
 
 	ENSURE_VALID_STATE; ENSURE_NOT_KEY; INSERT_SEP; INSERT_WHITESPACE;
-    g->print(g->ctx, val, strlen(val));
+    g->print(g->ctx, val, (unsigned int) strlen(val));
     APPENDED_ATOM;
     FINAL_NEWLINE;
     return yajl_gen_status_ok;
