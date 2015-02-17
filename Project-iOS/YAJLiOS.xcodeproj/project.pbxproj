@@ -261,6 +261,7 @@
 		00C406470FE77C51003CE908 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
 		AA747D9E0F9514B9006C5449 /* YAJLiOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLiOS_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AE50688F1A93EB5100FBEA93 /* NS_ENUM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NS_ENUM.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +386,7 @@
 				00C405010FE77661003CE908 /* YAJLParser.m */,
 				00C113F412111824009C9B51 /* NSBundle+YAJL.h */,
 				00C113F512111824009C9B51 /* NSBundle+YAJL.m */,
+				AE50688F1A93EB5100FBEA93 /* NS_ENUM.h */,
 			);
 			name = Classes;
 			path = ../Classes;

@@ -28,18 +28,18 @@
 //
 
 #include "yajl_gen.h"
+#include "NS_ENUM.h"
 
 
 extern NSString *const YAJLGenInvalidObjectException; //! Exception type if we encounter invalid object
 
 //! JSON generate options
-enum YAJLGenOptions {
+typedef NS_ENUM(NSUInteger, YAJLGenOptions) {
   YAJLGenOptionsNone = 0, //!< No options
   YAJLGenOptionsBeautify = 1 << 0, //!< Beautifiy JSON output
   YAJLGenOptionsIgnoreUnknownTypes = 1 << 1, //!< Ignore unknown types (will use null value)
   YAJLGenOptionsIncludeUnsupportedTypes = 1 << 2, //!< Handle non-JSON types (including NSDate, NSData, NSURL)
 };
-typedef NSUInteger YAJLGenOptions;
 
 /*!
  YAJL JSON string generator.
