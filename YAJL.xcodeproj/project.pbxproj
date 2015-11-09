@@ -24,7 +24,6 @@
 		0065975B11BEEF4000E89ABD /* YAJLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404FE0FE77661003CE908 /* YAJLDocument.h */; };
 		0065975C11BEEF4000E89ABD /* YAJLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C405000FE77661003CE908 /* YAJLParser.h */; };
 		0065975D11BEEF4000E89ABD /* NSObject+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D110185B3000C35A81 /* NSObject+YAJL.h */; };
-		0065975E11BEEF4000E89ABD /* YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D510185B3000C35A81 /* YAJL.h */; };
 		0065975F11BEEF4000E89ABD /* YAJLGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D610185B3000C35A81 /* YAJLGen.h */; };
 		0065976B11BEEF4000E89ABD /* YAJLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404FF0FE77661003CE908 /* YAJLDocument.m */; };
 		0065976C11BEEF4000E89ABD /* YAJLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C405010FE77661003CE908 /* YAJLParser.m */; };
@@ -105,7 +104,6 @@
 		005886C71226337500292C90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		005BF2D110185B3000C35A81 /* NSObject+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YAJL.h"; sourceTree = "<group>"; };
 		005BF2D210185B3000C35A81 /* NSObject+YAJL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YAJL.m"; sourceTree = "<group>"; };
-		005BF2D510185B3000C35A81 /* YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJL.h; sourceTree = "<group>"; };
 		005BF2D610185B3000C35A81 /* YAJLGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLGen.h; sourceTree = "<group>"; };
 		005BF2D710185B3000C35A81 /* YAJLGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLGen.m; sourceTree = "<group>"; };
 		005BF2FA10185B6C00C35A81 /* NSObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectTest.m; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			children = (
 				005BF2D110185B3000C35A81 /* NSObject+YAJL.h */,
 				005BF2D210185B3000C35A81 /* NSObject+YAJL.m */,
-				005BF2D510185B3000C35A81 /* YAJL.h */,
 				005BF2D610185B3000C35A81 /* YAJLGen.h */,
 				005BF2D710185B3000C35A81 /* YAJLGen.m */,
 				00C404FE0FE77661003CE908 /* YAJLDocument.h */,
@@ -308,7 +305,6 @@
 				0065975B11BEEF4000E89ABD /* YAJLDocument.h in Headers */,
 				0065975C11BEEF4000E89ABD /* YAJLParser.h in Headers */,
 				0065975D11BEEF4000E89ABD /* NSObject+YAJL.h in Headers */,
-				0065975E11BEEF4000E89ABD /* YAJL.h in Headers */,
 				0065975F11BEEF4000E89ABD /* YAJLGen.h in Headers */,
 				63D6C93E1BF13587007C028C /* yajl_tree.h in Headers */,
 				0052CD69126EABC10049CF17 /* yajl_alloc.h in Headers */,
