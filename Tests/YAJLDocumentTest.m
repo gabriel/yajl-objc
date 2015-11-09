@@ -33,7 +33,7 @@
 	NSError *error = nil;
 	NSData *data1 = [self loadData:@"stream_array1"];
 	YAJLParserStatus status1 = [document parse:data1 error:&error];
-	XCTAssertEqual(status1, YAJLParserStatusInsufficientData);
+	XCTAssertEqual(status1, YAJLParserStatusOK);
 	if (error) XCTFail(@"Error: %@", error);
 	NSLog(@"First part: %@", document.root);
 	

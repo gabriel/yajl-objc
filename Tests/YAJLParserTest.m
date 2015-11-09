@@ -121,7 +121,7 @@
 	YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:0];
 	YAJLParserStatus status;
 	status = [parser parse:[self loadData:@"stream1"]];
-	XCTAssertTrue(status == YAJLParserStatusInsufficientData, @"Should have insufficient data");
+	XCTAssertTrue(status == YAJLParserStatusOK, @"Should not have insufficient data");
 	
 	status = [parser parse:[self loadData:@"stream2"]];
 	XCTAssertTrue(status == YAJLParserStatusOK, @"Should have finished");

@@ -132,7 +132,7 @@ int yajl_boolean(void *ctx, int boolVal) {
 //	return 1;
 //}
 
-int ParseDouble(void *ctx, const char *buf, const char *numberVal, unsigned int numberLen) {
+int ParseDouble(void *ctx, const char *buf, const char *numberVal, size_t numberLen) {
 	double d = strtod((char *)buf, NULL);
 	if ((d == HUGE_VAL || d == -HUGE_VAL) && errno == ERANGE) {
 		NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
@@ -144,7 +144,7 @@ int ParseDouble(void *ctx, const char *buf, const char *numberVal, unsigned int 
 	return 1;
 }
 
-int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
+int yajl_number(void *ctx, const char *numberVal, size_t numberLen) {
 	char buf[numberLen+1];
 	memcpy(buf, numberVal, numberLen);
 	buf[numberLen] = 0;
@@ -170,13 +170,13 @@ int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
 	return 1;
 }
 
-int yajl_string(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
+int yajl_string(void *ctx, const unsigned char *stringVal, size_t stringLen) {
 	NSString *s = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
 	[(__bridge id)ctx _add:s];
 	return 1;
 }
 
-int yajl_map_key(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
+int yajl_map_key(void *ctx, const unsigned char *stringVal, size_t stringLen) {
 	NSString *s = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
 	[(__bridge id)ctx _mapKey:s];
 	return 1;
@@ -247,17 +247,15 @@ static yajl_callbacks callbacks = {
 //! @endinternal
 
 - (unsigned int)bytesConsumed {
-	return handle_ ? yajl_get_bytes_consumed(handle_) : 0;
+	return handle_ ? (unsigned int)yajl_get_bytes_consumed(handle_) : 0;
 }
 
 - (YAJLParserStatus)parse:(NSData *)data {
 	if (!handle_) {
-		yajl_parser_config cfg = {
-			((parserOptions_ & YAJLParserOptionsAllowComments) ? 1 : 0), // allowComments: if nonzero, javascript style comments will be allowed in the input (both /* */ and //)
-			((parserOptions_ & YAJLParserOptionsCheckUTF8) ? 1 : 0)	// checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
-		};
+		handle_ = yajl_alloc(&callbacks, NULL, (__bridge void *)(self));
+		yajl_config(handle_, yajl_allow_comments, (parserOptions_ & YAJLParserOptionsAllowComments) ? 1 : 0);
+		yajl_config(handle_, yajl_dont_validate_strings, (parserOptions_ & YAJLParserOptionsCheckUTF8) ? 1 : 0);
 		
-		handle_ = yajl_alloc(&callbacks, &cfg, NULL, (__bridge void *)(self));
 		if (!handle_) {
 			self.parserError = [self _errorForStatus:YAJLParserErrorCodeAllocError message:@"Unable to allocate YAJL handle" value:nil];
 			return YAJLParserStatusError;
@@ -276,8 +274,6 @@ static yajl_callbacks callbacks = {
 		self.parserError = [self _errorForStatus:status message:errorString value:nil];
 		yajl_free_error(handle_, errorMessage);
 		return YAJLParserStatusError;
-	} else if (status == yajl_status_insufficient_data) {
-		return YAJLParserStatusInsufficientData;
 	} else if (status == yajl_status_ok) {
 		return YAJLParserStatusOK;
 	} else {

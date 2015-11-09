@@ -44,11 +44,11 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 - (instancetype)initWithGenOptions:(YAJLGenOptions)genOptions indentString:(NSString *)indentString {
 	if ((self = [super init])) {
 		genOptions_ = genOptions;
-		yajl_gen_config cfg = {
-			((genOptions & YAJLGenOptionsBeautify) ? 1 : 0),
-			indentString.UTF8String
-		};
-		gen_ = yajl_gen_alloc(&cfg, NULL);
+
+		gen_ = yajl_gen_alloc(NULL);
+		
+		yajl_gen_config(gen_, yajl_gen_beautify, (genOptions & YAJLGenOptionsBeautify) ? 1 : 0);
+		yajl_gen_config(gen_, yajl_gen_indent_string, indentString.UTF8String);
 	}
 	return self;
 }
@@ -158,7 +158,7 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 
 - (NSString *)buffer {
 	const unsigned char *buf;
-	unsigned int len;
+	size_t len;
 	yajl_gen_get_buf(gen_, &buf, &len);
 	NSString *s = @((const char*)buf);
 	return s;
