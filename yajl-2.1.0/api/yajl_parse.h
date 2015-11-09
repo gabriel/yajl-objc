@@ -19,7 +19,7 @@
  * Interface to YAJL's JSON stream parsing facilities.
  */
 
-#include <yajl/yajl_common.h>
+#include "yajl_common.h"
 
 #ifndef __YAJL_PARSE_H__
 #define __YAJL_PARSE_H__
