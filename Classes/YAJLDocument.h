@@ -30,11 +30,11 @@
 
 #include "YAJLParser.h"
 
-typedef enum {
+typedef NS_ENUM(unsigned int, YAJLDecoderCurrentType) {
   YAJLDecoderCurrentTypeNone,
   YAJLDecoderCurrentTypeArray,
   YAJLDecoderCurrentTypeDict
-} YAJLDecoderCurrentType;
+};
 
 extern NSInteger YAJLDocumentStackCapacity;
 
@@ -145,7 +145,7 @@ extern NSInteger YAJLDocumentStackCapacity;
   - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
  @param error Error to set on failure
  */
-- (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error;
+- (instancetype)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error;
 
 /*!
  Create document from data.
@@ -158,7 +158,7 @@ extern NSInteger YAJLDocumentStackCapacity;
  @param capacity Initial capacity for NSArray and NSDictionary objects (Defaults to 20)
  @param error Error to set on failure
  */
-- (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions capacity:(NSInteger)capacity error:(NSError **)error;
+- (instancetype)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions capacity:(NSInteger)capacity error:(NSError **)error;
 
 /*!
  Create empty document with parser options.
@@ -168,7 +168,7 @@ extern NSInteger YAJLDocumentStackCapacity;
   - YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error
   - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
  */
-- (id)initWithParserOptions:(YAJLParserOptions)parserOptions;
+- (instancetype)initWithParserOptions:(YAJLParserOptions)parserOptions;
 
 /*!
  Create empty document with parser options.
@@ -179,7 +179,7 @@ extern NSInteger YAJLDocumentStackCapacity;
  - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
  @param capacity Initial capacity for NSArray and NSDictionary objects (Defaults to 20)
  */
-- (id)initWithParserOptions:(YAJLParserOptions)parserOptions capacity:(NSInteger)capacity;
+- (instancetype)initWithParserOptions:(YAJLParserOptions)parserOptions capacity:(NSInteger)capacity NS_DESIGNATED_INITIALIZER;
 
 /*!
  Parse data.

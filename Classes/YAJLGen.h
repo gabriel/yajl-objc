@@ -27,8 +27,7 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#include "yajl_gen.h"
-#include "NS_ENUM.h"
+@import Foundation;
 
 
 extern NSString *const YAJLGenInvalidObjectException; //! Exception type if we encounter invalid object
@@ -56,11 +55,7 @@ typedef NS_ENUM(NSUInteger, YAJLGenOptions) {
  - NSData: Base64 encoded string
  - NSURL: URL (absolute) string 
  */
-@interface YAJLGen : NSObject {
-  yajl_gen gen_;
-  
-  YAJLGenOptions genOptions_;
-}
+@interface YAJLGen : NSObject
 
 /*!
  JSON generator with options.
@@ -72,7 +67,7 @@ typedef NS_ENUM(NSUInteger, YAJLGenOptions) {
  
  @param indentString String for indentation
  */
-- (id)initWithGenOptions:(YAJLGenOptions)genOptions indentString:(NSString *)indentString;
+- (instancetype)initWithGenOptions:(YAJLGenOptions)genOptions indentString:(NSString *)indentString NS_DESIGNATED_INITIALIZER;
 
 /*!
  Write JSON for object to buffer.
@@ -131,7 +126,7 @@ typedef NS_ENUM(NSUInteger, YAJLGenOptions) {
 /*!
  Get current JSON buffer.
  */
-- (NSString *)buffer;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *buffer;
 
 @end
 
@@ -166,6 +161,6 @@ typedef NS_ENUM(NSUInteger, YAJLGenOptions) {
  Provide custom and/or encodable object to parse to JSON string.
  @result Object encodable as JSON such as NSDictionary, NSArray, etc
  */
-- (id)JSON;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) id JSON;
 
 @end

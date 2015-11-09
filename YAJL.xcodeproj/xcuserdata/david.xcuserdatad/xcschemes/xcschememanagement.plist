@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>YAJL Framework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>YAJL Library.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>005887351226360800292C90</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0065975811BEEF4000E89ABD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0065977F11BEEF4800E89ABD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>006597AE11BEEF5400E89ABD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>633F876B1BF11F4600A465AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63D6C9281BF126B5007C028C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

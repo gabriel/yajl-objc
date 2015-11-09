@@ -27,9 +27,7 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
-#include "yajl_parse.h"
-#include "NS_ENUM.h"
+@import Foundation;
 
 
 extern NSString *const YAJLErrorDomain; //! Error domain for YAJL
@@ -136,16 +134,7 @@ typedef NS_ENUM(NSUInteger, YAJLParserStatus) {
  - (void)parser:(YAJLParser *)parser didAdd:(id)value { }
   @endcode
  */
-@interface YAJLParser : NSObject {
-  
-  yajl_handle handle_;
-  
-  id<YAJLParserDelegate> delegate_; // weak
-    
-  YAJLParserOptions parserOptions_;
-
-  NSError *parserError_;
-}
+@interface YAJLParser : NSObject
 
 @property (assign, nonatomic) id <YAJLParserDelegate> delegate;
 @property (readonly, retain, nonatomic) NSError *parserError;
@@ -160,7 +149,7 @@ typedef NS_ENUM(NSUInteger, YAJLParserStatus) {
   - YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error
   - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
  */
-- (id)initWithParserOptions:(YAJLParserOptions)parserOptions;
+- (instancetype)initWithParserOptions:(YAJLParserOptions)parserOptions NS_DESIGNATED_INITIALIZER;
 
 /*!
  Parse data.
