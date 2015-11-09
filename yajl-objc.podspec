@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { "Gabriel Handford" => "gabrielh@gmail.com", "David Hart" => "david@hartbit.com" }
   s.source       = { :git => "https://github.com/hartbit/yajl-objc.git", :branch => "master" }
-  s.source_files = 'Classes/*.{h,m}', 'yajl-2.1.0/*.{h,m}', 'yajl-2.1.0/api/*.h'
+  s.source_files = 'Classes/*.{h,m}', 'yajl-2.1.0/*.{h,c}', 'yajl-2.1.0/api/*.h'
   s.public_header_files = 'Classes/*.h'
   s.requires_arc = true
   s.ios.deployment_target = "7.0"
