@@ -55,7 +55,6 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 
 - (void)dealloc {
 	if (gen_ != NULL) yajl_gen_free(gen_);
-	[super dealloc];
 }
 
 - (void)object:(id)obj {

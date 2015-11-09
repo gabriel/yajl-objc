@@ -116,7 +116,7 @@ extern NSInteger YAJLDocumentStackCapacity;
   YAJLParser *parser_;
   
   // TODO(gabe): This should be __weak
-  id<YAJLDocumentDelegate> delegate_;
+  id<YAJLDocumentDelegate> __weak delegate_;
   
   __weak NSMutableDictionary *dict_; // weak; if map in progress, points to the current map 
   __weak NSMutableArray *array_; // weak; If array in progress, points the current array
@@ -133,7 +133,7 @@ extern NSInteger YAJLDocumentStackCapacity;
 
 @property (readonly, nonatomic) id root; //! The root element of the document, either NSArray or NSDictionary
 @property (readonly, nonatomic) YAJLParserStatus parserStatus; //! The current status of parsing
-@property (assign, nonatomic) id<YAJLDocumentDelegate> delegate; //! Delegate
+@property (weak, nonatomic) id<YAJLDocumentDelegate> delegate; //! Delegate
 
 /*!
  Create document from data.

@@ -470,6 +470,7 @@
 		0065977A11BEEF4000E89ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PREFIX_HEADER = "";
 				PRODUCT_NAME = YAJL;
 			};
@@ -478,6 +479,7 @@
 		0065977B11BEEF4000E89ABD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PREFIX_HEADER = "";
 				PRODUCT_NAME = YAJL;
 			};
