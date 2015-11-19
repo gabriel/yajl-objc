@@ -48,7 +48,7 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 		gen_ = yajl_gen_alloc(NULL);
 		
 		yajl_gen_config(gen_, yajl_gen_beautify, (genOptions & YAJLGenOptionsBeautify) ? 1 : 0);
-		yajl_gen_config(gen_, yajl_gen_indent_string, indentString.UTF8String);
+		yajl_gen_config(gen_, yajl_gen_indent_string, (indentString ?: @"").UTF8String);
 	}
 	return self;
 }
