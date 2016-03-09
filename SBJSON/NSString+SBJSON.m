@@ -50,7 +50,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
 
     BOOL success = ([scanner scanDictionary:&o] || [scanner scanArray:&o]) && [scanner isAtEnd];
-    [scanner release];
 
     if (success)
         return o;
@@ -66,7 +65,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     SBJSONScanner *scanner = [[SBJSONScanner alloc] initWithString:self];
     BOOL success = [scanner scanValue:&o] && [scanner isAtEnd];
-    [scanner release];
 
     if (success)
         return o;

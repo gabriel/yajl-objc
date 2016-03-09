@@ -28,6 +28,8 @@
 //
 
 
+#import <Foundation/Foundation.h>
+
 #include "YAJLParser.h"
 
 typedef enum {
@@ -115,10 +117,9 @@ extern NSInteger YAJLDocumentStackCapacity;
   id root_; // NSArray or NSDictionary
   YAJLParser *parser_;
   
-  // TODO(gabe): This should be __weak
-  id<YAJLDocumentDelegate> delegate_;
+  __weak id<YAJLDocumentDelegate> delegate_;
   
-  __weak NSMutableDictionary *dict_; // weak; if map in progress, points to the current map 
+  __weak NSMutableDictionary *dict_; // weak; if map in progress, points to the current map
   __weak NSMutableArray *array_; // weak; If array in progress, points the current array
   __weak NSString *key_; // weak; If map in progress, points to current key
   
@@ -133,7 +134,7 @@ extern NSInteger YAJLDocumentStackCapacity;
 
 @property (readonly, nonatomic) id root; //! The root element of the document, either NSArray or NSDictionary
 @property (readonly, nonatomic) YAJLParserStatus parserStatus; //! The current status of parsing
-@property (assign, nonatomic) id<YAJLDocumentDelegate> delegate; //! Delegate
+@property (weak, nonatomic) id<YAJLDocumentDelegate> delegate; //! Delegate
 
 /*!
  Create document from data.

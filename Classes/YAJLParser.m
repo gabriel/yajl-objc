@@ -37,7 +37,7 @@ NSString *const YAJLParsingUnsupportedException = @"YAJLParsingUnsupportedExcept
 NSString *const YAJLParserValueKey = @"YAJLParserValueKey";
 
 @interface YAJLParser ()
-@property (retain, nonatomic) NSError *parserError;
+@property (strong, nonatomic) NSError *parserError;
 @end
 
 //! @internal
@@ -78,10 +78,7 @@ NSString *const YAJLParserValueKey = @"YAJLParserValueKey";
   if (handle_ != NULL) {
     yajl_free(handle_);
     handle_ = NULL;
-  } 
-  
-  [parserError_ release];
-  [super dealloc];
+  }
 }
 
 #pragma mark Error Helpers
@@ -99,14 +96,13 @@ NSString *const YAJLParserValueKey = @"YAJLParserValueKey";
 #pragma mark YAJL Callbacks
 
 int yajl_null(void *ctx) {
-  [(id)ctx _add:[NSNull null]];
+  [(__bridge id)ctx _add:[NSNull null]];
   return 1;
 }
 
 int yajl_boolean(void *ctx, int boolVal) {
   NSNumber *number = [[NSNumber alloc] initWithBool:(BOOL)boolVal];
-  [(id)ctx _add:number];
-  [number release];
+  [(__bridge id)ctx _add:number];
   return 1;
 }
 
@@ -129,13 +125,11 @@ int ParseDouble(void *ctx, const char *buf, const char *numberVal, unsigned int 
   double d = strtod((char *)buf, NULL);
   if ((d == HUGE_VAL || d == -HUGE_VAL) && errno == ERANGE) {
     NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
-    [(id)ctx _cancelWithErrorForStatus:YAJLParserErrorCodeDoubleOverflow message:[NSString stringWithFormat:@"double overflow on '%@'", s] value:s];
-    [s release];
+    [(__bridge id)ctx _cancelWithErrorForStatus:YAJLParserErrorCodeDoubleOverflow message:[NSString stringWithFormat:@"double overflow on '%@'", s] value:s];
     return 0;
   }
   NSNumber *number = [[NSNumber alloc] initWithDouble:d];
-  [(id)ctx _add:number];
-  [number release];
+  [(__bridge id)ctx _add:number];
   return 1;
 }
 
@@ -149,10 +143,9 @@ int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
   } else {
     long long i = strtoll((const char *) buf, NULL, 10);
     if ((i == LLONG_MIN || i == LLONG_MAX) && errno == ERANGE) {
-      if (([(id)ctx parserOptions] & YAJLParserOptionsStrictPrecision) == YAJLParserOptionsStrictPrecision) {
+      if (([(__bridge id)ctx parserOptions] & YAJLParserOptionsStrictPrecision) == YAJLParserOptionsStrictPrecision) {
         NSString *s = [[NSString alloc] initWithBytes:numberVal length:numberLen encoding:NSUTF8StringEncoding];
-        [(id)ctx _cancelWithErrorForStatus:YAJLParserErrorCodeIntegerOverflow message:[NSString stringWithFormat:@"integer overflow on '%@'", s] value:s];
-        [s release];
+        [(__bridge id)ctx _cancelWithErrorForStatus:YAJLParserErrorCodeIntegerOverflow message:[NSString stringWithFormat:@"integer overflow on '%@'", s] value:s];
         return 0;
       } else {
         // If we integer overflow lets try double precision for HUGE_VAL > double > LLONG_MAX 
@@ -160,8 +153,7 @@ int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
       }
     }
     NSNumber *number = [[NSNumber alloc] initWithLongLong:i];
-    [(id)ctx _add:number];
-    [number release];
+    [(__bridge id)ctx _add:number];
   }
   
   return 1;
@@ -169,35 +161,33 @@ int yajl_number(void *ctx, const char *numberVal, unsigned int numberLen) {
 
 int yajl_string(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
   NSString *s = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
-  [(id)ctx _add:s];
-  [s release];
+  [(__bridge id)ctx _add:s];
   return 1;
 }
 
 int yajl_map_key(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
   NSString *s = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
-  [(id)ctx _mapKey:s];
-  [s release];
+  [(__bridge id)ctx _mapKey:s];
   return 1;
 }
 
 int yajl_start_map(void *ctx) {
-  [(id)ctx _startDictionary];
+  [(__bridge id)ctx _startDictionary];
   return 1;
 }
 
 int yajl_end_map(void *ctx) {
-  [(id)ctx _endDictionary];
+  [(__bridge id)ctx _endDictionary];
   return 1;
 }
 
 int yajl_start_array(void *ctx) {
-  [(id)ctx _startArray];
+  [(__bridge id)ctx _startArray];
   return 1;
 }
 
 int yajl_end_array(void *ctx) {
-  [(id)ctx _endArray];
+  [(__bridge id)ctx _endArray];
   return 1;
 }
 
@@ -256,7 +246,7 @@ yajl_end_array
       ((parserOptions_ & YAJLParserOptionsCheckUTF8) ? 1 : 0)  // checkUTF8: if nonzero, invalid UTF8 strings will cause a parse error
     };
     
-    handle_ = yajl_alloc(&callbacks, &cfg, NULL, self);
+    handle_ = yajl_alloc(&callbacks, &cfg, NULL, (__bridge void *)(self));
     if (!handle_) { 
       self.parserError = [self _errorForStatus:YAJLParserErrorCodeAllocError message:@"Unable to allocate YAJL handle" value:nil];
       return YAJLParserStatusError;

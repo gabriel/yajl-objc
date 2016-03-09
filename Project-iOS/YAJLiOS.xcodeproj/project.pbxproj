@@ -196,7 +196,6 @@
 		005886B11226334500292C90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		005886C71226337500292C90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		005886E31226339500292C90 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
-		00588701122634AD00292C90 /* Shared-MacOSX.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Shared-MacOSX.xcconfig"; sourceTree = "<group>"; };
 		0058870D1226353B00292C90 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		005887431226372C00292C90 /* iPhoneFramework.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = iPhoneFramework.sh; sourceTree = "<group>"; };
 		005BF2D110185B3000C35A81 /* NSObject+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YAJL.h"; sourceTree = "<group>"; };
@@ -245,10 +244,6 @@
 		00C404FF0FE77661003CE908 /* YAJLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDocument.m; sourceTree = "<group>"; };
 		00C405000FE77661003CE908 /* YAJLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLParser.h; sourceTree = "<group>"; };
 		00C405010FE77661003CE908 /* YAJLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLParser.m; sourceTree = "<group>"; };
-		00C4052C0FE77688003CE908 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		00C4052D0FE77688003CE908 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Shared-iOS.xcconfig"; sourceTree = "<group>"; };
-		00C4052F0FE77688003CE908 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		00C4054F0FE77760003CE908 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		00C4056F0FE777B4003CE908 /* comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comments.json; sourceTree = "<group>"; };
 		00C405700FE777B4003CE908 /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error.json; sourceTree = "<group>"; };
@@ -392,19 +387,6 @@
 			path = ../Classes;
 			sourceTree = SOURCE_ROOT;
 		};
-		00C4052B0FE77688003CE908 /* XCConfig */ = {
-			isa = PBXGroup;
-			children = (
-				00C4052F0FE77688003CE908 /* Shared.xcconfig */,
-				00588701122634AD00292C90 /* Shared-MacOSX.xcconfig */,
-				00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */,
-				00C4052C0FE77688003CE908 /* Debug.xcconfig */,
-				00C4052D0FE77688003CE908 /* Release.xcconfig */,
-			);
-			name = XCConfig;
-			path = ../XCConfig;
-			sourceTree = SOURCE_ROOT;
-		};
 		00C405550FE77784003CE908 /* Libraries (iOS) */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,7 +476,6 @@
 				00C405550FE77784003CE908 /* Libraries (iOS) */,
 				00AC53481098F478002B5508 /* Libraries */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
-				00C4052B0FE77688003CE908 /* XCConfig */,
 				00ABD2FF0FFA0C5900965787 /* SBJSON */,
 				00C4056C0FE777B4003CE908 /* Tests */,
 				00C405FF0FE77A81003CE908 /* Scripts */,
@@ -643,7 +624,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0720;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "YAJLiOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -827,7 +808,6 @@
 		};
 		0065977A11BEEF4000E89ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = YAJLiOSDevice;
 			};
@@ -835,7 +815,6 @@
 		};
 		0065977B11BEEF4000E89ABD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = YAJLiOSDevice;
 			};
@@ -843,7 +822,6 @@
 		};
 		006597AA11BEEF4800E89ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Info copy.plist";
 				PRODUCT_NAME = YAJLiOSSimulator;
@@ -852,7 +830,6 @@
 		};
 		006597AB11BEEF4800E89ABD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = YAJLiOSSimulator;
 			};
@@ -860,7 +837,6 @@
 		};
 		006597E811BEEF5400E89ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -875,13 +851,13 @@
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.rel.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = Tests;
 			};
 			name = Debug;
 		};
 		006597E911BEEF5400E89ABD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C4052E0FE77688003CE908 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -895,6 +871,7 @@
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.rel.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = Tests;
 				ZERO_LINK = NO;
 			};
@@ -903,11 +880,12 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
@@ -916,7 +894,6 @@
 		1DEB922408733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

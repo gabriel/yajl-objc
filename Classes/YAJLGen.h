@@ -27,6 +27,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 #include "yajl_gen.h"
 #include "NS_ENUM.h"
 

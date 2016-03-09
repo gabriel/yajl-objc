@@ -66,11 +66,10 @@ static opts_t defaults(NSDictionary *x)
 
     if( [json length] < 240 ) {
         // If the result is shorter than the capacity, copy it to avoid wasting the empty space:
-        NSString *result = [[json copy] autorelease];
-        [json release];
+        NSString *result = [json copy];
         return result;
     } else
-        return [json autorelease];
+        return json;
 }
 
 - (void)JSONFragmentWithOptions:(opts_t *)x into: (NSMutableString *)json
@@ -111,7 +110,7 @@ static opts_t defaults(NSDictionary *x)
 {
     static NSMutableCharacterSet *kEscapeChars;
     if( ! kEscapeChars ) {
-        kEscapeChars = [[NSMutableCharacterSet characterSetWithRange: NSMakeRange(0,32)] retain];
+        kEscapeChars = [NSMutableCharacterSet characterSetWithRange: NSMakeRange(0,32)];
         [kEscapeChars addCharactersInString: @"\"\\"];
     }
     

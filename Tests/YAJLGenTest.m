@@ -30,7 +30,6 @@
   [gen endArray];
   [gen endDictionary];
   NSString *buffer = [gen buffer];
-  [gen release];
   
   NSString *expected = [self loadString:@"gen_expected1"];
   
@@ -54,7 +53,6 @@
   [gen endDictionary];
   NSString *buffer = [gen buffer];
   [gen clear];
-  [gen release];
   
   NSString *expected = [self loadString:@"gen_expected2"];
   
@@ -71,7 +69,6 @@
   YAJLGen *gen = [[YAJLGen alloc] initWithGenOptions:YAJLGenOptionsBeautify indentString:@"  "];
   [gen object:dict];
   NSString *buffer = [gen buffer];
-  [gen release];
   
   NSString *expected = [self loadString:@"gen_expected1"];  
   GHTestLog(buffer);
@@ -82,7 +79,6 @@
   NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate dateWithTimeIntervalSince1970:1], @"date", nil];  
   YAJLGen *gen = [[YAJLGen alloc] init];
   GHAssertThrows([gen object:dict], nil);
-  [gen release];
 }
 
 - (void)testGenObjectIgnoreUnknownType {
@@ -91,7 +87,6 @@
   YAJLGen *gen = [[YAJLGen alloc] initWithGenOptions:YAJLGenOptionsIgnoreUnknownTypes indentString:@""];
   [gen object:dict];
   NSString *buffer = [gen buffer];
-  [gen release];
   
   NSString *expected = [self loadString:@"gen_expected_ignore_unknown1"]; 
   GHTestLog(buffer);
@@ -109,7 +104,6 @@
   YAJLGen *gen = [[YAJLGen alloc] initWithGenOptions:YAJLGenOptionsIncludeUnsupportedTypes indentString:@""];
   [gen object:array];
   NSString *buffer = [gen buffer];
-  [gen release];
   
   NSString *expected = [self loadString:@"gen_expected_plist1"];  
   GHTestLog(buffer);

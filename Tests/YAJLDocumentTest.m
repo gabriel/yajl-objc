@@ -15,7 +15,7 @@
 
 - (YAJLDocument *)_loadDocument:(NSString *)sampleName parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error {
   NSData *data = [self loadData:sampleName];
-  YAJLDocument *document = [[[YAJLDocument alloc] initWithData:data parserOptions:parserOptions error:error] autorelease];
+  YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:parserOptions error:error];
   return document;
 }
 
@@ -42,7 +42,6 @@
   if (error) GHFail(@"Error: %@", error);
 
   GHTestLog(@"Root: %@", document.root);
-  [document release]; 
 }
 
 - (void)testDoubleOverflow {
@@ -83,17 +82,15 @@
   // Build from YAJL  
   YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:0 error:&error];
   if (error) GHFail(@"Error: %@", error);
-  id YAJLRoot = [document.root retain]; 
+  id YAJLRoot = document.root; 
   // Save
   [NSKeyedArchiver archiveRootObject:YAJLRoot toFile:[self directoryWithPath:@"yajl_sample.plist"]];
-  [document release];
   
   // Build from SBJSON  
   NSString *testString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-  id SBJSONRoot = [[testString JSONValue] retain];
+  id SBJSONRoot = [testString JSONValue];
   // Save 
   [NSKeyedArchiver archiveRootObject:SBJSONRoot toFile:[self directoryWithPath:@"sbjson_sample.plist"]];
-  [testString release];
 
 }
 

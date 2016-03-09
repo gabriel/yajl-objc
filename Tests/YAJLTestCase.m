@@ -18,7 +18,7 @@
 }
 
 - (NSString *)loadString:(NSString *)name {
-  return [[[NSString alloc] initWithData:[self loadData:name] encoding:NSUTF8StringEncoding] autorelease];
+  return [[NSString alloc] initWithData:[self loadData:name] encoding:NSUTF8StringEncoding];
 }
 
 - (NSString *)directoryWithPath:(NSString *)path {

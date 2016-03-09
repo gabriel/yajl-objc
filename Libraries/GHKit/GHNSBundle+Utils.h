@@ -6,6 +6,8 @@
 //  Copyright 2009. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @interface NSBundle (YAJL_GHUtils)
 
 /*!

@@ -17,19 +17,17 @@
 
 - (void)_testYAJLParser {
   NSString *examplePath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"json"];
-  NSData *data = [[NSData dataWithContentsOfFile:examplePath options:NSUncachedRead error:nil] retain]; 
+  NSData *data = [NSData dataWithContentsOfFile:examplePath options:NSUncachedRead error:nil]; 
   
   NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
   for(NSInteger i = 0; i < kPerfTestCount; i++) {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsNone];
-    if (![parser parse:data]) GHFail(@"Failed to parse: %@", parser.parserError);   
-    [parser release];
-    [pool release];
+    @autoreleasepool {
+      YAJLParser *parser = [[YAJLParser alloc] initWithParserOptions:YAJLParserOptionsNone];
+      if (![parser parse:data]) GHFail(@"Failed to parse: %@", parser.parserError);   
+    }
   }
   NSTimeInterval took = [NSDate timeIntervalSinceReferenceDate] - start;
   GHTestLog(@"Took %0.4f sec", took);
-  [data release];
 }
 
 - (void)_testSBJSON {
@@ -39,15 +37,14 @@
   
   NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
   for(NSInteger i = 0; i < kPerfTestCount; i++) {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    id value = [testString JSONValue];    
-    if (!value) GHFail(@"No result");
-    [pool release];   
+    @autoreleasepool {
+      id value = [testString JSONValue];    
+      if (!value) GHFail(@"No result");
+    }   
   }
   NSTimeInterval took = [NSDate timeIntervalSinceReferenceDate] - start;
   GHTestLog(@"Took %0.4f", took);
   
-  [testString release];
   
 }
 
