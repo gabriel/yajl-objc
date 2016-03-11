@@ -77,6 +77,12 @@ extern NSInteger YAJLDocumentStackCapacity;
  @param dict Dictionary object was set for key on
  */
 - (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict;
+
+/*!
+ Did reach the end of document.
+ @param document Sender
+ */
+- (void)didEndDocument:(YAJLDocument *)document;
 @end
 
 /*!
