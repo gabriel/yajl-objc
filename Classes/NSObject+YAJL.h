@@ -67,7 +67,7 @@
  @throws YAJLGenInvalidObjectException If object is invalid
  @result JSON String
  */
-- (NSString *)yajl_JSONString;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *yajl_JSONString;
 
 /*!
  Create JSON string from object.
@@ -102,7 +102,7 @@
  id JSONValue = [JSONData yajl_JSON];
  @endcode
  */
-- (id)yajl_JSON;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) id yajl_JSON;
 
 /*!
  Parse JSON (NSString or NSData or dataUsingEncoding:) with out error.

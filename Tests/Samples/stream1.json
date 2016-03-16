@@ -1,7 +1,7 @@
 {
-    "glossary": {
-        "title": "example glossary",
+	"glossary": {
+		"title": "example glossary",
 		"GlossDiv": {
-            "title": "S",
+			"title": "S",
 			"GlossList": {
-                "GlossEntry": {
+				"GlossEntry": {

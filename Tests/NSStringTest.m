@@ -1,9 +1,9 @@
 //
-//  NSStringTest.m
-//  YAJL
+//	NSStringTest.m
+//	YAJL
 //
-//  Created by Gabriel Handford on 7/23/09.
-//  Copyright 2009. All rights reserved.
+//	Created by Gabriel Handford on 7/23/09.
+//	Copyright 2009. All rights reserved.
 //
 
 #import "YAJLTestCase.h"
@@ -16,41 +16,30 @@
 @implementation NSStringTest
 
 - (void)testExample {
-  NSString *exampleString = [self loadString:@"example"];
-  GHTestLog(@"Example string: %@", exampleString);
-  id JSON = [exampleString yajl_JSON];
-  GHTestLog([JSON description]);
-    
-  GHAssertTrue([JSON isKindOfClass:[NSDictionary class]], nil);
-  NSDictionary *glossary = [JSON objectForKey:@"glossary"];
-  GHAssertNotNil(glossary, nil);
-  NSString *title = [glossary objectForKey:@"title"];
-  GHAssertEqualStrings(title, @"example glossary", nil);
+	NSString *exampleString = [self loadString:@"example"];
+	NSLog(@"Example string: %@", exampleString);
+	id JSON = [exampleString yajl_JSON];
+	
+	XCTAssertTrue([JSON isKindOfClass:[NSDictionary class]]);
+	NSDictionary *glossary = JSON[@"glossary"];
+	XCTAssertNotNil(glossary);
+	NSString *title = glossary[@"title"];
+	XCTAssertEqualObjects(title, @"example glossary");
 }
 
 - (void)testArrayNumbers {
-  NSString *JSONString = @"[1, 2, 3]";
-  NSArray *JSON = [JSONString yajl_JSON];
-  GHTestLog([JSON description]);
-  NSArray *expected = [NSArray arrayWithObjects:
-                       [NSNumber numberWithInteger:1],
-                       [NSNumber numberWithInteger:2],
-                       [NSNumber numberWithInteger:3],
-                       nil];
-  GHAssertEqualObjects(expected, JSON, nil);  
+	NSString *JSONString = @"[1, 2, 3]";
+	NSArray *JSON = [JSONString yajl_JSON];
+	NSArray *expected = @[@1, @2, @3];
+	XCTAssertEqualObjects(expected, JSON);
 }
 
 - (void)testAllowComments {
-  NSString *JSONString = @"[1, 2, 3] // Allow comments";
-  NSError *error = nil;
-  NSArray *JSON = [JSONString yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:&error];
-  GHTestLog([JSON description]);
-  NSArray *expected = [NSArray arrayWithObjects:
-                       [NSNumber numberWithInteger:1],
-                       [NSNumber numberWithInteger:2],
-                       [NSNumber numberWithInteger:3],
-                       nil];
-  GHAssertEqualObjects(expected, JSON, nil);  
-}  
+	NSString *JSONString = @"[1, 2, 3] // Allow comments";
+	NSError *error = nil;
+	NSArray *JSON = [JSONString yajl_JSONWithOptions:YAJLParserOptionsAllowComments error:&error];
+	NSArray *expected = @[@1, @2, @3];
+	XCTAssertEqualObjects(expected, JSON);
+}
 
 @end
