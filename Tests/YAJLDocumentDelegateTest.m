@@ -20,6 +20,7 @@
   document.delegate = self;
   [document parse:data error:&error];
   GHAssertNil(error, nil);
+  [document release];
 }
 
 - (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict {

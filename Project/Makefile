@@ -1,6 +1,6 @@
 
 TEST_TARGET=Tests
-SDK=macosx10.7
+SDK=macosx10.5
 COMMAND=xcodebuild
 
 default:

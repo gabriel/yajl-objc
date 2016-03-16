@@ -43,7 +43,7 @@
 }
 
 - (void)testCustom {
-  CustomJSONObject *obj = [[CustomJSONObject alloc] init];
+  CustomJSONObject *obj = [[[CustomJSONObject alloc] init] autorelease];
   NSString *JSONString = [obj yajl_JSONString];
   NSString *expected = @"[\"Test\"]";
   GHTestLog(JSONString);

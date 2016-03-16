@@ -1,0 +1,14 @@
+YAJL_VERSION = 0.2.27
+
+YAJL_GENERAL_OTHER_CFLAGS = -Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition
+
+OTHER_CFLAGS = $(inherited) $(YAJL_GENERAL_OTHER_CFLAGS)
+
+GCC_TREAT_WARNINGS_AS_ERRORS=YES
+
+GCC_PREFIX_HEADER = YAJL_Prefix.pch
+PRODUCT_NAME = YAJL
+INFOPLIST_FILE = Info.plist
+
+HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../yajl-1.0.11"
+USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../yajl-1.0.11"

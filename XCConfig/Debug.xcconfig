@@ -1,0 +1,5 @@
+#include "Shared-MacOSX.xcconfig"
+
+GCC_PREPROCESSOR_DEFINITIONS=DEBUG
+ARCHS = $(NATIVE_ARCH_ACTUAL)
+GCC_ENABLE_OBJC_GC = supported

@@ -27,7 +27,6 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
 
 #include "yajl_parse.h"
 #include "NS_ENUM.h"
@@ -141,15 +140,15 @@ typedef NS_ENUM(NSUInteger, YAJLParserStatus) {
   
   yajl_handle handle_;
   
-  id<YAJLParserDelegate> __strong delegate_; // weak
+  id<YAJLParserDelegate> delegate_; // weak
     
   YAJLParserOptions parserOptions_;
 
   NSError *parserError_;
 }
 
-@property (strong, nonatomic) id <YAJLParserDelegate> delegate;
-@property (readonly, strong, nonatomic) NSError *parserError;
+@property (assign, nonatomic) id <YAJLParserDelegate> delegate;
+@property (readonly, retain, nonatomic) NSError *parserError;
 @property (readonly, nonatomic) YAJLParserOptions parserOptions;
 @property (readonly, nonatomic) unsigned int bytesConsumed;
 

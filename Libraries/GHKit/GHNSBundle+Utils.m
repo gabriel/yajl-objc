@@ -21,7 +21,7 @@
 }
 
 - (NSString *)yajl_gh_loadStringDataFromResource:(NSString *)resource {
-	return [[NSString alloc] initWithData:[self yajl_gh_loadDataFromResource:resource] encoding:NSUTF8StringEncoding];
+	return [[[NSString alloc] initWithData:[self yajl_gh_loadDataFromResource:resource] encoding:NSUTF8StringEncoding] autorelease];
 }
 
 - (NSURL *)yajl_gh_URLForResource:(NSString *)resource {

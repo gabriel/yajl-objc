@@ -42,8 +42,7 @@
 		003B881F126EBBF8007A57F4 /* twitter_snowflake.json in Resources */ = {isa = PBXBuildFile; fileRef = 003B881E126EBBF8007A57F4 /* twitter_snowflake.json */; };
 		003B8823126EBC80007A57F4 /* overflow_longlong_macosx.json in Resources */ = {isa = PBXBuildFile; fileRef = 003B8822126EBC80007A57F4 /* overflow_longlong_macosx.json */; };
 		0041A103107E66B7001DDCA8 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0041A102107E66B7001DDCA8 /* GHUnit.framework */; };
-		0041A106107E66B9001DDCA8 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0041A102107E66B7001DDCA8 /* GHUnit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		00473ED91C8FED7C005F0BF4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DC2EF5A0486A6940098B216 /* Info.plist */; };
+		0041A106107E66B9001DDCA8 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0041A102107E66B7001DDCA8 /* GHUnit.framework */; };
 		005BF33F10185ECF00C35A81 /* stream_array2.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF33E10185ECB00C35A81 /* stream_array2.json */; };
 		005BF34010185ED300C35A81 /* stream_array1.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BF33D10185EC300C35A81 /* stream_array1.json */; };
 		00727D1910141A0A005F9BB7 /* YAJLGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 00727D1710141A0A005F9BB7 /* YAJLGen.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,7 +58,7 @@
 		0080423B10184D8F0090C385 /* object_expected_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 0080423A10184D6F0090C385 /* object_expected_array.json */; };
 		0082B4271110FA9400B3178E /* overflow2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0082B4261110FA9400B3178E /* overflow2.json */; };
 		008B7C680FF9E82500C791B4 /* PerfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 008B7C670FF9E82500C791B4 /* PerfTest.m */; };
-		00A59D30109017410032BD92 /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAJL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		00A59D30109017410032BD92 /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAJL.framework */; };
 		00ABD1500FF9F36400965787 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404750FE77543003CE908 /* NSObject+SBJSON.m */; };
 		00ABD1510FF9F36400965787 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404770FE77543003CE908 /* NSString+SBJSON.m */; };
 		00ABD1520FF9F36500965787 /* SBJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404790FE77543003CE908 /* SBJSONScanner.m */; };
@@ -193,9 +192,12 @@
 		00C4048E0FE77552003CE908 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.json; sourceTree = "<group>"; };
 		00C404900FE77552003CE908 /* YAJLDocumentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDocumentTest.m; sourceTree = "<group>"; };
 		00C404910FE77552003CE908 /* YAJLParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLParserTest.m; sourceTree = "<group>"; };
+		00C4049D0FE77562003CE908 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		00C4049E0FE77562003CE908 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		00C404A00FE77562003CE908 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		00C6F19310D2EFFC00A63AF1 /* overflow_longlong.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = overflow_longlong.json; sourceTree = "<group>"; };
-		00E5DDF80F5B6E3E00C11F1D /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		00E5DDFA0F5B6E3E00C11F1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Tests-Info.plist"; path = "../Project/Tests-Info.plist"; sourceTree = "<group>"; };
+		00E5DDF80F5B6E3E00C11F1D /* Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E5DDFA0F5B6E3E00C11F1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		00F09BED108E9B09000E5AB5 /* error2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error2.json; sourceTree = "<group>"; };
 		00F36FCD10E149B50088648B /* twitter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = twitter.json; sourceTree = "<group>"; };
 		00F36FD010E149C60088648B /* TwitterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTest.m; sourceTree = "<group>"; };
@@ -341,7 +343,6 @@
 		00C404880FE77551003CE908 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				00E5DDFA0F5B6E3E00C11F1D /* Tests-Info.plist */,
 				002F09F7122642D900766D62 /* NSBundleTest.m */,
 				002002EE107D49BC009ED6DF /* NSDataTest.m */,
 				00C404890FE77551003CE908 /* GHUnitTestMain.m */,
@@ -389,6 +390,17 @@
 			path = Samples;
 			sourceTree = "<group>";
 		};
+		00C4049C0FE77562003CE908 /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				00C4049D0FE77562003CE908 /* Debug.xcconfig */,
+				00C4049E0FE77562003CE908 /* Release.xcconfig */,
+				00C404A00FE77562003CE908 /* Shared.xcconfig */,
+			);
+			name = XCConfig;
+			path = ../XCConfig;
+			sourceTree = SOURCE_ROOT;
+		};
 		00C4FD370FE5F789003CE908 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,7 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* YAJL.framework */,
-				00E5DDF80F5B6E3E00C11F1D /* Tests.app */,
+				00E5DDF80F5B6E3E00C11F1D /* Tests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -419,9 +431,11 @@
 				00C404880FE77551003CE908 /* Tests */,
 				00C4FD370FE5F789003CE908 /* Frameworks */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
+				00C4049C0FE77562003CE908 /* XCConfig */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
+				00E5DDFA0F5B6E3E00C11F1D /* Tests-Info.plist */,
 			);
 			name = YAJL;
 			sourceTree = "<group>";
@@ -523,7 +537,7 @@
 			);
 			name = Tests;
 			productName = Tests;
-			productReference = 00E5DDF80F5B6E3E00C11F1D /* Tests.app */;
+			productReference = 00E5DDF80F5B6E3E00C11F1D /* Tests.framework */;
 			productType = "com.apple.product-type.application";
 		};
 		8DC2EF4F0486A6940098B216 /* YAJL */ = {
@@ -551,7 +565,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "YAJL" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -607,7 +621,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00473ED91C8FED7C005F0BF4 /* Info.plist in Resources */,
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -699,10 +712,10 @@
 /* Begin XCBuildConfiguration section */
 		00E5DDFB0F5B6E3F00C11F1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C4049D0FE77562003CE908 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "${YAJL_VERSION}";
@@ -712,30 +725,29 @@
 					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.rel.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = Tests;
 			};
 			name = Debug;
 		};
 		00E5DDFC0F5B6E3F00C11F1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C4049E0FE77562003CE908 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = "${YAJL_VERSION}";
@@ -744,52 +756,46 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
 				);
+				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.rel.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = Tests;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C4049D0FE77562003CE908 /* Debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_CURRENT_VERSION = "${YAJL_VERSION}";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.rel.${PRODUCT_NAME:identifier}";
-				PRODUCT_NAME = YAJL;
 			};
 			name = Debug;
 		};
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C4049E0FE77562003CE908 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_CURRENT_VERSION = "$(YAJL_VERSION)";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.rel.${PRODUCT_NAME:identifier}";
-				PRODUCT_NAME = YAJL;
 			};
 			name = Release;
 		};
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -803,6 +809,7 @@
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
