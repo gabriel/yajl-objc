@@ -120,7 +120,6 @@ typedef NS_ENUM(NSUInteger, YAJLParserStatus) {
  }
  
  parser.delegate = nil;
- [parser release];
  
  // Include delegate methods from YAJLParserDelegate
  - (void)parserDidStartDictionary:(YAJLParser *)parser { }

@@ -77,7 +77,6 @@ if (parser.parserError) {
   NSLog(@"Error:\n%@", parser.parserError);
 }
 parser.delegate = nil;
-[parser release];
 
 // Include delegate methods from YAJLParserDelegate
 - (void)parserDidStartDictionary:(YAJLParser *)parser { }
@@ -95,12 +94,14 @@ parser.delegate = nil;
 There are options when parsing that can be specified with initWithParserOptions: (YAJLParser).
 
 ```objc
-YAJLParserOptionsAllowComments: Allows comments in JSON
-YAJLParserOptionsCheckUTF8: Will verify UTF-8
-YAJLParserOptionsStrictPrecision: Will force strict precision and return integer overflow error, if number is greater than long long.
-Parsing as data becomes available
+ YAJLParserOptionsAllowComments: Allows comments in JSON
+ YAJLParserOptionsCheckUTF8: Will verify UTF-8
+ YAJLParserOptionsStrictPrecision: Will force strict precision and return integer overflow error, if number is greater than long long.
+```
 
- YAJLParser *parser = [[[YAJLParser alloc] init] autorelease];
+### Parsing as data becomes available
+
+ YAJLParser *parser = [[YAJLParser alloc] init];
  parser.delegate = self;
 
  // A chunk of data comes...
@@ -114,18 +115,23 @@ Parsing as data becomes available
  // 'status' should be YAJLParserStatusOK if its finished
  if (parser.parserError)
    NSLog(@"Error:\n%@", parser.parserError);
-Document style parsing
+```
+
+### Document style parsing
 
 To use the document style, use YAJLDocument. Usage should be very similar to NSXMLDocument.
 
+```objc
  NSData *data = [NSData dataWithContentsOfFile:@"example.json"];
  NSError *error = nil;
  YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:YAJLParserOptionsNone error:&error];
  // Access root element at document.root
  NSLog(@"Root: %@", document.root);
- [document release];
-Document style parsing as data becomes available
+```
 
+### Document style parsing as data becomes available
+
+```
  YAJLDocument *document = [[YAJLDocument alloc] init];
  document.delegate = self;
 

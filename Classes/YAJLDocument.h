@@ -86,7 +86,6 @@ extern NSInteger YAJLDocumentStackCapacity;
  YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:YAJLParserOptionsNone error:&error];
  // Access root element at document.root
  NSLog(@"Root: %@", document.root);
- [document release];
  @endcode
  
  Example for streaming:
@@ -100,7 +99,6 @@ extern NSInteger YAJLDocumentStackCapacity;
  
  // You can access root element at document.root
  NSLog(@"Root: %@", document.root);
- [document release];
  
  // Or via the YAJLDocumentDelegate delegate methods
  
