@@ -142,7 +142,6 @@ To use the document style, use YAJLDocument. Usage should be very similar to NSX
 
  // You can access root element at document.root
  NSLog(@"Root: %@", document.root);
- [document release];
 
  // Or via the YAJLDocumentDelegate delegate methods
 
