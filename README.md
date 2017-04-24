@@ -14,16 +14,16 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
 # Podfile
 
 ```ruby
-pod "yajl-objc"
+pod "YAJLO"
 ```
 
 # Usage
 
 ```objc
-#import <yajl-objc/NSObject+YAJL.h>
-#import <yajl-objc/YAJLDocument.h>
-#import <yajl-objc/YAJLGen.h>
-#import <yajl-objc/YAJLParser.h>
+#import <YAJLO/NSObject+YAJL.h>
+#import <YAJLO/YAJLDocument.h>
+#import <YAJLO/YAJLGen.h>
+#import <YAJLO/YAJLParser.h>
 ```
 
 ### To parse JSON from NSData

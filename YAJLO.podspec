@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "yajl-objc"
+  s.name         = "YAJLO"
   s.version      = "0.3.2"
   s.summary      = "Objective-C bindings for YAJL (Yet Another JSON Library) C library"
   s.homepage     = "http://lloyd.github.com/yajl"
