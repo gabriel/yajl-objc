@@ -20,7 +20,10 @@ pod "yajl-objc"
 # Usage
 
 ```objc
-#import <yajl-objc/YAJL.h>
+#import <yajl-objc/NSObject+YAJL.h>
+#import <yajl-objc/YAJLDocument.h>
+#import <yajl-objc/YAJLGen.h>
+#import <yajl-objc/YAJLParser.h>
 ```
 
 ### To parse JSON from NSData

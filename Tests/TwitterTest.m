@@ -8,7 +8,7 @@
 
 #import "YAJLTestCase.h"
 
-#import "NSObject+YAJL.h"
+#import "NSObjectYAJL.h"
 
 @interface TwitterTest : YAJLTestCase
 @end
