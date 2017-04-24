@@ -20,13 +20,7 @@ pod "yajl-objc"
 # Usage
 
 ```objc
-// For object methods
 #import <yajl-objc/YAJL.h>
-```
-
-```objc
-NSString *JSONString = @"[1, 2, 3]";
-NSArray *arrayFromString = [JSONString yajl_JSON];
 ```
 
 ### To parse JSON from NSData
@@ -160,7 +154,7 @@ To implement JSON encodable value for custom objects or override for existing ob
 
 For example:
 
-```
+```objc
 @interface CustomObject : NSObject
 @end
 
