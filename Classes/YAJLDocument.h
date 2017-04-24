@@ -110,26 +110,7 @@ extern NSInteger YAJLDocumentStackCapacity;
  - (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict { }
  @endcode
  */
-@interface YAJLDocument : NSObject <YAJLParserDelegate> {
-  
-  id root_; // NSArray or NSDictionary
-  YAJLParser *parser_;
-  
-  // TODO(gabe): This should be __weak
-  id<YAJLDocumentDelegate> __weak delegate_;
-  
-  __weak NSMutableDictionary *dict_; // weak; if map in progress, points to the current map 
-  __weak NSMutableArray *array_; // weak; If array in progress, points the current array
-  __weak NSString *key_; // weak; If map in progress, points to current key
-  
-  NSMutableArray *stack_;
-  NSMutableArray *keyStack_;
-  
-  YAJLDecoderCurrentType currentType_;
-  
-  YAJLParserStatus parserStatus_;
-  
-}
+@interface YAJLDocument : NSObject <YAJLParserDelegate>
 
 @property (readonly, nonatomic) id root; //! The root element of the document, either NSArray or NSDictionary
 @property (readonly, nonatomic) YAJLParserStatus parserStatus; //! The current status of parsing

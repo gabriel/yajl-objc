@@ -115,6 +115,7 @@
 		005BF35B10185F7E00C35A81 /* stream_array1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array1.json; sourceTree = "<group>"; };
 		005BF35C10185F7E00C35A81 /* stream_array2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream_array2.json; sourceTree = "<group>"; };
 		0065977C11BEEF4000E89ABD /* libYAJL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYAJL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0090D4C51EAE9E880080E53C /* YAJLO.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = YAJLO.podspec; sourceTree = "<group>"; };
 		00A59CE9109014550032BD92 /* error2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error2.json; sourceTree = "<group>"; };
 		00ABD2EC0FFA0C1800965787 /* overflow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = overflow.json; sourceTree = "<group>"; };
 		00ABD2ED0FFA0C1800965787 /* stream1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream1.json; sourceTree = "<group>"; };
@@ -273,6 +274,7 @@
 		0867D691FE84028FC02AAC07 /* YAJLiOS */ = {
 			isa = PBXGroup;
 			children = (
+				0090D4C51EAE9E880080E53C /* YAJLO.podspec */,
 				00200243107D4033009ED6DF /* CHANGELOG.md */,
 				00C406470FE77C51003CE908 /* README.md */,
 				0052CD4F126EABC10049CF17 /* yajl-2.1.0 */,

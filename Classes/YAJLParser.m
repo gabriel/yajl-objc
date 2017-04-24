@@ -44,6 +44,8 @@ NSString *const YAJLParserValueKey = @"YAJLParserValueKey";
 //! @internal
 
 @interface YAJLParser ()
+@property yajl_handle handle;
+
 - (void)_add:(id)value;
 - (void)_mapKey:(NSString *)key;
 
@@ -60,18 +62,7 @@ NSString *const YAJLParserValueKey = @"YAJLParserValueKey";
 //! @endinternal
 
 
-@implementation YAJLParser {
-	
-	yajl_handle handle_;
-	
-	id<YAJLParserDelegate> __weak delegate_; // weak
-	
-	YAJLParserOptions parserOptions_;
-	
-	NSError *parserError_;
-}
-
-@synthesize parserError=parserError_, delegate=delegate_, parserOptions=parserOptions_;
+@implementation YAJLParser
 
 - (instancetype)init {
 	return [self initWithParserOptions:0];
@@ -79,15 +70,15 @@ NSString *const YAJLParserValueKey = @"YAJLParserValueKey";
 
 - (instancetype)initWithParserOptions:(YAJLParserOptions)parserOptions {
 	if ((self = [super init])) {
-		parserOptions_ = parserOptions;
+		_parserOptions = parserOptions;
 	}
 	return self;
 }
 
 - (void)dealloc {
-	if (handle_ != NULL) {
-		yajl_free(handle_);
-		handle_ = NULL;
+	if (_handle != NULL) {
+		yajl_free(_handle);
+		_handle = NULL;
 	}
 	
 }
@@ -221,58 +212,58 @@ static yajl_callbacks callbacks = {
 //! @internal
 
 - (void)_add:(id)value {
-	[delegate_ parser:self didAdd:value];
+	[_delegate parser:self didAdd:value];
 }
 
 - (void)_mapKey:(NSString *)key {
-	[delegate_ parser:self didMapKey:key];
+	[_delegate parser:self didMapKey:key];
 }
 
 - (void)_startDictionary {
-	[delegate_ parserDidStartDictionary:self];
+	[_delegate parserDidStartDictionary:self];
 }
 
 - (void)_endDictionary {
-	[delegate_ parserDidEndDictionary:self];
+	[_delegate parserDidEndDictionary:self];
 }
 
 - (void)_startArray {
-	[delegate_ parserDidStartArray:self];
+	[_delegate parserDidStartArray:self];
 }
 
 - (void)_endArray {
-	[delegate_ parserDidEndArray:self];
+	[_delegate parserDidEndArray:self];
 }
 
 //! @endinternal
 
 - (unsigned int)bytesConsumed {
-	return handle_ ? (unsigned int)yajl_get_bytes_consumed(handle_) : 0;
+	return _handle ? (unsigned int)yajl_get_bytes_consumed(_handle) : 0;
 }
 
 - (YAJLParserStatus)parse:(NSData *)data {
-	if (!handle_) {
-		handle_ = yajl_alloc(&callbacks, NULL, (__bridge void *)(self));
-		yajl_config(handle_, yajl_allow_comments, (parserOptions_ & YAJLParserOptionsAllowComments) ? 1 : 0);
-		yajl_config(handle_, yajl_dont_validate_strings, (parserOptions_ & YAJLParserOptionsCheckUTF8) ? 1 : 0);
+	if (!_handle) {
+		_handle = yajl_alloc(&callbacks, NULL, (__bridge void *)(self));
+		yajl_config(_handle, yajl_allow_comments, (_parserOptions & YAJLParserOptionsAllowComments) ? 1 : 0);
+		yajl_config(_handle, yajl_dont_validate_strings, (_parserOptions & YAJLParserOptionsCheckUTF8) ? 1 : 0);
 		
-		if (!handle_) {
+		if (!_handle) {
 			self.parserError = [self _errorForStatus:YAJLParserErrorCodeAllocError message:@"Unable to allocate YAJL handle" value:nil];
 			return YAJLParserStatusError;
 		}
 	}
 	
-	yajl_status status = yajl_parse(handle_, data.bytes, (unsigned int) data.length);
+	yajl_status status = yajl_parse(_handle, data.bytes, (unsigned int) data.length);
 	if (status == yajl_status_client_canceled) {
 		// We cancelled because we encountered an error here in the client;
 		// and parserError should be already set
 		NSAssert(self.parserError, @"Client cancelled, but we have no parserError set");
 		return YAJLParserStatusError;
 	} else if (status == yajl_status_error) {
-		unsigned char *errorMessage = yajl_get_error(handle_, 1, data.bytes, (unsigned int) data.length);
+		unsigned char *errorMessage = yajl_get_error(_handle, 1, data.bytes, (unsigned int) data.length);
 		NSString *errorString = @((char *)errorMessage);
 		self.parserError = [self _errorForStatus:status message:errorString value:nil];
-		yajl_free_error(handle_, errorMessage);
+		yajl_free_error(_handle, errorMessage);
 		return YAJLParserStatusError;
 	} else if (status == yajl_status_ok) {
 		return YAJLParserStatusOK;

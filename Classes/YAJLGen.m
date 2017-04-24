@@ -32,10 +32,12 @@
 
 NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException";
 
-@implementation YAJLGen {
-	yajl_gen gen_;	
-	YAJLGenOptions genOptions_;
-}
+@interface YAJLGen ()
+@property yajl_gen gen;
+@property YAJLGenOptions genOptions;
+@end
+
+@implementation YAJLGen
 
 - (instancetype)init {
 	return [self initWithGenOptions:YAJLGenOptionsNone indentString:@""];
@@ -43,18 +45,18 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 
 - (instancetype)initWithGenOptions:(YAJLGenOptions)genOptions indentString:(NSString *)indentString {
 	if ((self = [super init])) {
-		genOptions_ = genOptions;
+		_genOptions = genOptions;
 
-		gen_ = yajl_gen_alloc(NULL);
+		_gen = yajl_gen_alloc(NULL);
 		
-		yajl_gen_config(gen_, yajl_gen_beautify, (genOptions & YAJLGenOptionsBeautify) ? 1 : 0);
-		yajl_gen_config(gen_, yajl_gen_indent_string, (indentString ?: @"").UTF8String);
+		yajl_gen_config(_gen, yajl_gen_beautify, (genOptions & YAJLGenOptionsBeautify) ? 1 : 0);
+		yajl_gen_config(_gen, yajl_gen_indent_string, (indentString ?: @"").UTF8String);
 	}
 	return self;
 }
 
 - (void)dealloc {
-	if (gen_ != NULL) yajl_gen_free(gen_);
+	if (_gen != NULL) yajl_gen_free(_gen);
 }
 
 - (void)object:(id)obj {
@@ -85,7 +87,7 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 	} else {
 		
 		BOOL unknownType = NO;
-		if (genOptions_ & YAJLGenOptionsIncludeUnsupportedTypes) {
+		if (_genOptions & YAJLGenOptionsIncludeUnsupportedTypes) {
 			// Begin with support for non-JSON representable (PList) types
 			if ([obj isKindOfClass:[NSDate class]]) {
 				[self number:[NSNumber numberWithLongLong:round([obj timeIntervalSince1970] * 1000)]];
@@ -102,7 +104,7 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 		
 		// If we didn't handle special PList types
 		if (unknownType) {
-			if (!(genOptions_ & YAJLGenOptionsIgnoreUnknownTypes)) {
+			if (!(_genOptions & YAJLGenOptionsIgnoreUnknownTypes)) {
 				[NSException raise:YAJLGenInvalidObjectException format:@"Unknown object type: %@ (%@)", [obj class], obj];
 			} else {
 				[self null]; // Use null value for unknown type if we are ignoring
@@ -112,54 +114,54 @@ NSString *const YAJLGenInvalidObjectException = @"YAJLGenInvalidObjectException"
 }
 
 - (void)null {
-	yajl_gen_null(gen_);
+	yajl_gen_null(_gen);
 }
 
 - (void)bool:(BOOL)b {
-	yajl_gen_bool(gen_, b);
+	yajl_gen_bool(_gen, b);
 }
 
 - (void)number:(NSNumber *)number {
 	if ([number isEqualToNumber:[NSDecimalNumber notANumber]]) {
-		yajl_gen_null(gen_);
+		yajl_gen_null(_gen);
 	} else {
 		NSString *s = number.stringValue;
 		NSUInteger length = [s lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
 		const char *c = s.UTF8String;
-		yajl_gen_number(gen_, c, (unsigned int) length);
+		yajl_gen_number(_gen, c, (unsigned int) length);
 	}
 }
 
 - (void)string:(NSString *)s {
 	NSUInteger length = [s lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
 	const unsigned char *c = (const unsigned char *)s.UTF8String;
-	yajl_gen_string(gen_, c, (unsigned int) length);
+	yajl_gen_string(_gen, c, (unsigned int) length);
 }
 
 - (void)startDictionary {
-	yajl_gen_map_open(gen_);
+	yajl_gen_map_open(_gen);
 }
 
 - (void)endDictionary {
-	yajl_gen_map_close(gen_);
+	yajl_gen_map_close(_gen);
 }
 
 - (void)startArray {
-	yajl_gen_array_open(gen_);
+	yajl_gen_array_open(_gen);
 }
 
 - (void)endArray {
-	yajl_gen_array_close(gen_);
+	yajl_gen_array_close(_gen);
 }
 
 - (void)clear {
-	yajl_gen_clear(gen_);
+	yajl_gen_clear(_gen);
 }
 
 - (NSString *)buffer {
 	const unsigned char *buf;
 	size_t len;
-	yajl_gen_get_buf(gen_, &buf, &len);
+	yajl_gen_get_buf(_gen, &buf, &len);
 	NSString *s = @((const char*)buf);
 	return s;
 }
