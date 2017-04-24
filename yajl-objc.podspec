@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://lloyd.github.com/yajl"
   s.license      = 'MIT'
   s.author       = { "Gabriel Handford" => "gabrielh@gmail.com", "David Hart" => "david@hartbit.com" }
-  s.source       = { :git => "https://github.com/hartbit/yajl-objc.git", :branch => "master" }
+  s.source       = { :git => "https://github.com/gabriel/yajl-objc.git", :tag => s.version.to_s }
   s.source_files = 'Classes/*.{h,m}', 'yajl-2.1.0/*.{h,c}', 'yajl-2.1.0/api/*.h'
   s.public_header_files = 'Classes/*.h'
   s.requires_arc = true
