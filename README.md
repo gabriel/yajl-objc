@@ -93,11 +93,9 @@ parser.delegate = nil;
 
 There are options when parsing that can be specified with initWithParserOptions: (YAJLParser).
 
-```objc
- YAJLParserOptionsAllowComments: Allows comments in JSON
- YAJLParserOptionsCheckUTF8: Will verify UTF-8
- YAJLParserOptionsStrictPrecision: Will force strict precision and return integer overflow error, if number is greater than long long.
-```
+- `YAJLParserOptionsAllowComments`: Allows comments in JSON
+- `YAJLParserOptionsCheckUTF8`: Will verify UTF-8
+- `YAJLParserOptionsStrictPrecision`: Will force strict precision and return integer overflow error, if number is greater than long long.
 
 ### Parsing as data becomes available
 
