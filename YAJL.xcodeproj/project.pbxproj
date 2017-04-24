@@ -21,14 +21,15 @@
 		0052CD72126EABC10049CF17 /* yajl_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 0052CD60126EABC10049CF17 /* yajl_parser.c */; };
 		0052CD73126EABC10049CF17 /* yajl_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0052CD61126EABC10049CF17 /* yajl_parser.h */; };
 		0052CD74126EABC10049CF17 /* yajl_version.c in Sources */ = {isa = PBXBuildFile; fileRef = 0052CD62126EABC10049CF17 /* yajl_version.c */; };
-		0065975B11BEEF4000E89ABD /* YAJLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404FE0FE77661003CE908 /* YAJLDocument.h */; };
-		0065975C11BEEF4000E89ABD /* YAJLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C405000FE77661003CE908 /* YAJLParser.h */; };
-		0065975D11BEEF4000E89ABD /* NSObject+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D110185B3000C35A81 /* NSObject+YAJL.h */; };
-		0065975F11BEEF4000E89ABD /* YAJLGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D610185B3000C35A81 /* YAJLGen.h */; };
+		0065975B11BEEF4000E89ABD /* YAJLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C404FE0FE77661003CE908 /* YAJLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0065975C11BEEF4000E89ABD /* YAJLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C405000FE77661003CE908 /* YAJLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0065975D11BEEF4000E89ABD /* NSObject+YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D110185B3000C35A81 /* NSObject+YAJL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0065975F11BEEF4000E89ABD /* YAJLGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 005BF2D610185B3000C35A81 /* YAJLGen.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0065976B11BEEF4000E89ABD /* YAJLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C404FF0FE77661003CE908 /* YAJLDocument.m */; };
 		0065976C11BEEF4000E89ABD /* YAJLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C405010FE77661003CE908 /* YAJLParser.m */; };
 		0065976D11BEEF4000E89ABD /* NSObject+YAJL.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D210185B3000C35A81 /* NSObject+YAJL.m */; };
 		0065976E11BEEF4000E89ABD /* YAJLGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 005BF2D710185B3000C35A81 /* YAJLGen.m */; };
+		00BC20A31EAE9600005F1075 /* YAJL.h in Headers */ = {isa = PBXBuildFile; fileRef = 00BC20A21EAE9600005F1075 /* YAJL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00C3CEE8126EABFF00DF710D /* yajl_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C3CEE4126EABFF00DF710D /* yajl_common.h */; };
 		00C3CEE9126EABFF00DF710D /* yajl_gen.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C3CEE5126EABFF00DF710D /* yajl_gen.h */; };
 		00C3CEEA126EABFF00DF710D /* yajl_parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C3CEE6126EABFF00DF710D /* yajl_parse.h */; };
@@ -123,6 +124,7 @@
 		00ABD2F40FFA0C3100965787 /* YAJLTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLTestCase.m; sourceTree = "<group>"; };
 		00AC53511098F49D002B5508 /* gen_expected_ignore_unknown1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gen_expected_ignore_unknown1.json; sourceTree = "<group>"; };
 		00AC53521098F49D002B5508 /* gen_expected_plist1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gen_expected_plist1.json; sourceTree = "<group>"; };
+		00BC20A21EAE9600005F1075 /* YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJL.h; sourceTree = "<group>"; };
 		00C3CEE4126EABFF00DF710D /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_common.h; sourceTree = "<group>"; };
 		00C3CEE5126EABFF00DF710D /* yajl_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_gen.h; sourceTree = "<group>"; };
 		00C3CEE6126EABFF00DF710D /* yajl_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parse.h; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		00C404FD0FE77661003CE908 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				00BC20A21EAE9600005F1075 /* YAJL.h */,
 				005BF2D110185B3000C35A81 /* NSObject+YAJL.h */,
 				005BF2D210185B3000C35A81 /* NSObject+YAJL.m */,
 				005BF2D610185B3000C35A81 /* YAJLGen.h */,
@@ -302,6 +305,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00BC20A31EAE9600005F1075 /* YAJL.h in Headers */,
 				0065975B11BEEF4000E89ABD /* YAJLDocument.h in Headers */,
 				0065975C11BEEF4000E89ABD /* YAJLParser.h in Headers */,
 				0065975D11BEEF4000E89ABD /* NSObject+YAJL.h in Headers */,
@@ -363,7 +367,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
 				TargetAttributes = {
 					633F876B1BF11F4600A465AA = {
 						CreatedOnToolsVersion = 7.2;
@@ -490,11 +494,27 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -505,9 +525,25 @@
 		1DEB922408733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
