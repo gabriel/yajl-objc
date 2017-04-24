@@ -101,6 +101,7 @@ There are options when parsing that can be specified with initWithParserOptions:
 
 ### Parsing as data becomes available
 
+```objc
  YAJLParser *parser = [[YAJLParser alloc] init];
  parser.delegate = self;
 
@@ -131,7 +132,7 @@ To use the document style, use YAJLDocument. Usage should be very similar to NSX
 
 ### Document style parsing as data becomes available
 
-```
+```objc
  YAJLDocument *document = [[YAJLDocument alloc] init];
  document.delegate = self;
 
