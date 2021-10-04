@@ -140,6 +140,7 @@
 		00C405740FE777B4003CE908 /* YAJLDocumentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDocumentTest.m; sourceTree = "<group>"; };
 		00C405750FE777B4003CE908 /* YAJLParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLParserTest.m; sourceTree = "<group>"; };
 		00C406470FE77C51003CE908 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		49FA84B1270AB1AE000CB3C4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		633F876C1BF11F4600A465AA /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D6C93D1BF13587007C028C /* yajl_tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_tree.h; sourceTree = "<group>"; };
 		63D6C93F1BF13590007C028C /* yajl_tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_tree.c; sourceTree = "<group>"; };
@@ -274,6 +275,7 @@
 		0867D691FE84028FC02AAC07 /* YAJLiOS */ = {
 			isa = PBXGroup;
 			children = (
+				49FA84B1270AB1AE000CB3C4 /* Package.swift */,
 				0090D4C51EAE9E880080E53C /* YAJLO.podspec */,
 				00200243107D4033009ED6DF /* CHANGELOG.md */,
 				00C406470FE77C51003CE908 /* README.md */,
