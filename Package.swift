@@ -14,7 +14,7 @@ let package = Package(
         .target(
             name: "YAJLO",
             dependencies: [],
-            excluse: ["YAJLO.podspec", "CHANGELOG", "README", "Tests"],
+            exclude: ["YAJLO.podspec", "CHANGELOG", "README", "Tests"],
             path: "./",
             sources: ["./Classes", "./yajl-2.1.0"],
             publicHeadersPath: "./Classes",
