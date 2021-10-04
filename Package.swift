@@ -15,7 +15,7 @@ let package = Package(
             name: "YAJLO",
             dependencies: [],
             path: "./",
-            exclude: ["YAJLO.podspec", "CHANGELOG", "README", "Tests"],
+            exclude: ["YAJLO.podspec", "*.md", "Tests", "LICENSE", "Tests-Info.plist", "Info.plist"],
             sources: ["./Classes", "./yajl-2.1.0"],
             publicHeadersPath: "./Classes",
             cxxSettings: [
