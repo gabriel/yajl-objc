@@ -15,9 +15,11 @@ let package = Package(
             name: "YAJLO",
             dependencies: [],
             path: "./",
-            //exclude: <#T##[String]#>,
             sources: ["./Classes", "./yajl-2.1.0"],
-            publicHeadersPath: "./Classes"
+            publicHeadersPath: "./Classes",
+            cxxSettings: [
+                .headerSearchPath("./yajl-2.1.0")
+            ]
         ),
         .testTarget(name: "yajlTests", dependencies: ["YAJLO"]),
     ]
