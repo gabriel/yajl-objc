@@ -21,7 +21,7 @@ pod "YAJLO"
 
 ## Swift Package Manager
 
-You can use The Swift Package Manager to install yajl-objc  by adding the proper description to your Package.swift file:
+You can use The Swift Package Manager to install yajl-objc by adding the proper description to your Package.swift file:
 
 ```swift
 // swift-tools-version:5.5
