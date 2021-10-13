@@ -11,10 +11,28 @@ The YAJL framework is an Objective-C framework for the [YAJL](http://lloyd.githu
 - Document style parser.
 - Error by exception or out error.
 
-# Podfile
+# Integration
+
+## CocoaPods
 
 ```ruby
 pod "YAJLO"
+```
+
+## Swift Package Manager
+
+You can use The Swift Package Manager to install yajl-objc by adding the proper description to your Package.swift file:
+
+```swift
+// swift-tools-version:5.5
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT_NAME",
+    dependencies: [
+        .package(url: "https://github.com/gabriel/yajl-objc.git", from: "0.3.4"),
+    ]
+)
 ```
 
 # Usage
